@@ -170,15 +170,16 @@ Año de lanzamiento: 2015
 Referencias que se han tomado: escenario y mecánica
 </li>
 
-    <li>
-        <h4>El profesor Layton (Saga)</h4>
+    
+<li><h4>El profesor Layton (Saga)</h4>
 Compañía: Nintendo
 Año de lanzamiento: 2007
 Referencias que se han tomado: puzles y estética
-    </li>
+</li>
+    
+<li><h3>Películas de Alfred Hitchcock</h3>
+(Vértigo (1958), Falso culpable (1956), Con la muerte en los talones(1959)):
+Se utiliza el tópico que utilizaba el cineasta en sus películas en las que alguien era culpado de un crimen que nunca cometió.
+</li>
+    
 
-Películas de Alfred Hitchcock (Vértigo (1958), Falso culpable (1956), Con la muerte en los talones(1959)):
-Se utiliza el tópico que utilizaba el cineasta en sus películas en las que alguien era culpado de un crimen que nunca cometió
-    
-    
-    </ul>
