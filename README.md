@@ -162,12 +162,14 @@ Al final del juego se presentarán dos cinemáticas diferentes, dependiendo de l
 Compañía: Rusty Lake.
 Año de lanzamiento del primer juego: 2015
 Referencias que se han tomado: escenario y mecánica
+![maxresdefault](https://user-images.githubusercontent.com/82366515/134493496-72de5a62-0356-4df5-ab5f-3ffce8d402d2.jpg)
 </li>
 
 <li><h4>Spotlight room escape</h4>
 Compañía: Javelin OU
 Año de lanzamiento: 2015
 Referencias que se han tomado: escenario y mecánica
+![2_spotlight_room_escape](https://user-images.githubusercontent.com/82366515/134493553-2b978123-4ea1-4226-bcbf-e7a1eb14f96d.jpg)
 </li>
 
     
@@ -175,6 +177,7 @@ Referencias que se han tomado: escenario y mecánica
 Compañía: Nintendo
 Año de lanzamiento: 2007
 Referencias que se han tomado: puzles y estética
+![CelJaded-Professor-Layton-and-the-Lost-Future-1](https://user-images.githubusercontent.com/82366515/134493607-1d1053f4-81ca-402a-a8a5-0d8bd9cc66e4.jpg)
 </li>
     
 <li><h3>Películas de Alfred Hitchcock</h3>
