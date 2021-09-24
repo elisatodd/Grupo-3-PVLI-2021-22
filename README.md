@@ -131,7 +131,24 @@ La otra pieza clave de la jugabilidad son los puzzles, donde, usando los objetos
 El juego consta de X habitaciones en las habrá difrerentes puzles y enigmas a descifrar.
 
 <h3>Objetos</h3>
-
+<p>
+<li>Plaza:
+<ol>Moneda: debemos entregarlo al niño que se encuentra en la caseta de feria.</ol></li>
+<li>Casa del protagonista:
+    <ol>Sombrero: deberemos entregarlo a la clienta que se encuentra en la sombrerería.</ol>
+    <ol>Carta: deberemos entregarlo a la dueña que se encuentra en la sombrerería.</ol></li>
+<li>Camino/Bosque:
+    <ol>Pajarita: deberemos entregarlo al policía que se encuentra en el camino/bosque.</ol></li>
+    <li>Feria.</li>
+    <li>Caseta de feria.</li>
+    <li>Casa de los espejos.</li>
+<li>Calle comercial:
+    <ol>Flor: deberemos entregarlo al enamorado que se encuentra en el parque.</ol></li>
+    <li>Sombrerería.</li>
+    <li>Mercado:
+        <ol>Pescado: debemos entregarlo a la señora que se encuentra en la calle comercial.</ol></li>
+    <li>Parque.</li>
+</p>
 
 <h3>Historia</h3>
 
