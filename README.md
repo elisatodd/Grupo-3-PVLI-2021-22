@@ -181,22 +181,12 @@ El juego consta de X habitaciones en las habrá difrerentes puzles y enigmas a d
 
 <h3>Objetos</h3>
 <p>
-<li>Plaza:
-<ol>Moneda: debemos entregarlo al niño que se encuentra en la caseta de feria.</ol></li>
-<li>Casa del protagonista:
-    <ol>Sombrero: deberemos entregarlo a la clienta que se encuentra en la sombrerería.</ol>
-    <ol>Carta: deberemos entregarlo a la dueña que se encuentra en la sombrerería.</ol></li>
-<li>Camino/Bosque:
-    <ol>Pajarita: deberemos entregarlo al policía que se encuentra en el camino/bosque.</ol></li>
-    <li>Feria.</li>
-    <li>Caseta de feria.</li>
-    <li>Casa de los espejos.</li>
-<li>Calle comercial:
-    <ol>Flor: deberemos entregarlo al enamorado que se encuentra en el parque.</ol></li>
-    <li>Sombrerería.</li>
-    <li>Mercado:
-        <ol>Pescado: debemos entregarlo a la señora que se encuentra en la calle comercial.</ol></li>
-    <li>Parque.</li>
+<li>Moneda: Se encontrará en la plaza del pueblo, en el suelo junto a la fuente.</li>
+<li>Sombrero: se encuentra en la casa de Donald, colgado de un perchero.</li>
+<li>Carta: se encuentra en la casa de Donald, en el suelo junto a la puerta.</li>
+<li>Pajarita: Se encuentra en el camino hacia la feria, entre la maleza del bosque.</li>
+<li>Flor: Se encuentra en la calle comercial, en un rosal.</ol></li>
+<li>Pescado: Se encuentra en el mercado, en el suelo junto al puesto de pescadería.</li>
 </p>
 
 <h3>Historia</h3>
