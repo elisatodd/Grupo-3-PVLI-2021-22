@@ -24,7 +24,7 @@ Conexión a internet necesaria.
 
 
 <h2>Descripción</h2>
-<p>En (nombre del pueblo) tomaremos el papel de Donald Calthrop , joven acusado a muerte por un crimen que solo él sabe que no ha cometido. Para demostrar su inocencia tendrá que convencer al jurado popular, recogiendo pruebas y conversando con ellos antes de que se celebre el juicio. Esto no será tarea fácil pues, para probar su versión, tendrá que contestar preguntas, buscar objetos y resolver puzles. Su veredicto se decidirá al final de la partida en base a la opinión popular.</p>
+<p>En (nombre del juego) tomaremos el papel de Donald Calthrop , joven acusado a muerte por un crimen que solo él sabe que no ha cometido. Para demostrar su inocencia tendrá que convencer al jurado popular, recogiendo pruebas y conversando con ellos antes de que se celebre el juicio. Esto no será tarea fácil pues, para probar su versión, tendrá que contestar preguntas, buscar objetos y resolver puzles. Su veredicto se decidirá al final de la partida en base a la opinión popular.</p>
 
 
 <h2>Aspectos generales</h2>
@@ -79,8 +79,30 @@ La otra pieza clave de la jugabilidad son los puzzles, donde, usando los objetos
 
 <h3>Dinámica</h3>
 
+<p>Hay un sistema de puntuación interno: la reputación. Se mide en números enteros y comenzará a 0. Cada vez que el jugador resuelva un problema en el pueblo, su reputación aumentará en un punto, hasta un máximo de 15. El objetivo del juego es ser declarado inocente, por lo que el jugador debe intentar resolver la mayor cantidad de puzles posible para tener una buena reputación.
+El juego tiene tres posibles finales, dependiendo de la reputación que el jugador pueda conseguir en el tiempo dado.
+    <ul>
+<li>Perder: Si al finalizar el tiempo la reputación tiene un valor de 7 o menor, el jugador pierde.</li>
+<li>Ganar: Si al finalizar el tiempo la reputación tiene un valor de 8 o mayor, el jugador gana.</li>
+<li>Ganar con final perfecto: Si al finalizar el tiempo la reputación tiene un valor exacto de 15, el jugador gana, y, además, se mostrará el verdadero culpable del crimen.</li>
+</ul>
+Durante una misma sesión de juego, se mostrará al jugador su récord de reputación conseguida en una partida, en un desplegable del menú de inicio.
+Del jugador se espera que desarrolle una estrategia basada en observar bien las habitaciones y relacionar los elementos que contienen. Para resolver los puzles se requiere tener habilidades lógicas e intuitivas. 
+Es de esperar que el jugador promedio necesite jugar más de una vez para conseguir ganar con el final perfecto. Esto se conseguirá ajustando el tiempo límite para que el jugador tenga que administrar bien el tiempo, y ser rápido en la observación de los escenarios. Con cada vez que juegue se dará cuenta de algunos aspectos del juego de los que no se había percatado en su partida anterior, avanzando así y pudiendo superar el juego completo en dos o tres partidas de media.
+</p>
 
-
+<p>En el juego hay diferentes puzles cada uno con una dinámica única que deberemos completar para poder avanzar en el juego. Estos puzles son:</p>
+<ul>
+<li>Cafetería: en este puzle se nos presentarán cuatro mesas con un número determinado de objetos de diferente valor. En una de las mesas faltará un objeto y el jugador deberá averiguar cual es el objeto que se necesita en esa mesa para que todas ellas tengan el mismo valor.</li>
+<li>Número de teléfono: para completar este puzle deberemos obtener la combinación correcta de una secuencia de números. Para ello nos darán una serie de pistas para poder saber el orden de estos.</li> 
+<li>Banderines: para completar este puzle deberemos encontrar el orden correcto de los diferentes banderines para que los signos matemáticos y números para hacer una operación que tenga sentido matemático.</li>
+<li>Palomitas:</li>
+<li>Espejos: en este puzle se nos presentará una pantalla con vista cenital mostrándonos una serie de espejos colocados de diferentes formas y un pequeño láser. El objetivo será obtener el camino que haría el láser al rebotar con ellos averiguando por cuales de las diferentes salidas pasará el láser al final.</li>
+<li>Topos: en este puzle se nos presentará un tablero 3x3 donde estarán todas las piezas cara abajo. Al clicar sobre una de ellas todas las piezas adyacentes cambiarán a la posición opuesta a la que se encontraban. Para completar este puzle deberemos tener todas las piezas del tablero cara arriba.</li>
+<li>Carta: en este puzle se nos presentará un texto en el cual deberemos sacar un mensaje secreto a partir de la primera letra de cada frase.</li>
+<li>Niños: en este puzle se nos presentan cuatro personajes los cuales están acusados de un hurto. Cada uno de ellos da una frase en su defensa, aunque solo uno de ellos dice la verdad. Para completar este puzle deberemos averiguar utilizando la lógica cuáles de los personajes es el verdadero culpable.</li>
+<li>Candado: en este puzle se nos presenta un sistema de ecuaciones codificadas con una serie de símbolos. Cada símbolo representa un número de una cifra. De esta manera deberemos obtener el valor de cada símbolo para sacar la combinación correcta, que está compuesta de dos símbolos, indicados en el candado.</li>
+    </ul>
 
 <h3>Estética</h3>
 
