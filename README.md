@@ -133,6 +133,30 @@ La otra pieza clave de la jugabilidad son los puzzles, donde, usando los objetos
 El juego consta de X habitaciones en las habrá difrerentes puzles y enigmas a descifrar.
 ![Zonas](images/zones.png)
 
+<h3>Personajes</h3>
+<ul>
+    <li>Donald: protagonista del juego, se ve todo desde su punto de vista. Ha sido acusado de un asesinato y debe ir entregando objetos y resolviendo puzles para ganarse la simpatía del jurado y demostrar su inocencia</li>
+    <li>Policía: Al principio del juego impide el paso de la zona 1 a la zona 3. Con el avance del juego, el policía se desplaza y hay que entregarle la pajarita para completar su misión.</li>
+    <li>Gerente: Se encuentra en la plaza. Desbloquea el puzle de la cafetería.
+</li>
+    <li>Primo: Se encuentra al entrar en la casa, para ganarse su favor hay que resolver el puzle del número de teléfono.
+</li>
+    <li>Señora: Se encuentra en la calle comercial. Está preocupada porque su gato está atrapado en un árbol; para ayudarle hay que entregarle el pescado.</li>
+    <li>Carnicero: Se encuentra en la zona del pescado. Para completar su misión hay que resolver el puzle de los niños.</li>
+    <li>Enamorado: Se encuentra en el parque, está desesperado porque no sabe que regalarle a su amada; para completar esta misión hay que entregarle la flor.</li>
+    <li>Dueña: Se encuentra en la sombrerería, hay que entregarle la carta para tener acceso al puzle que completa su misión. Para ganar el favor hay que completar el puzle que está contenido en la carta
+</li>
+    <li>Clienta: Está situada en la sombrerería. Al acercarse a ella se muestra perturbada por no poder encontrar un sombrero que le agrade. Para ganarse su favor hay que entregarle el sombrero.</li>
+    <li>Campesino: Se encuentra en la zona del bosque, para ganarse su favor hay que entregarle la caja.</li>
+    <li>Circense: Está en la zona de la feria, para completar su misión hay que hacer el puzle de los banderines y después el de las palomitas.
+</li>
+    <li>Niño: Se encuentra en la zona de la caseta de las ferias. El niño está llorando porque no tiene dinero para montarse en una atracción, para ganarse su favor, hay que entregarle la moneda.
+</li>
+    <li>Forzudo: Se encuentra en la caseta de feria, da acceso al puzle de los topos.</li>
+    <li>Excéntrico: Se encuentra en la casa de los espejos, donde hay que completar el puzle de los espejos para superar su misión.</li>
+    
+</ul>
+
 <h3>Objetos</h3>
 <p>
 <li>Plaza:
@@ -184,9 +208,6 @@ Al final del juego se presentarán dos cinemáticas diferentes, dependiendo de l
 <h3>Niveles</h3>
 
 <p>El juego no se divide en niveles sino que se desarrolla toda la trama e historia del juego en una única partida con una duración determinada. </p>
-
-
-<h3>Personajes y enemigos</h3>
 
 
 <h2>Referencias</h2>
