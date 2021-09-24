@@ -60,6 +60,13 @@ La otra pieza clave de la jugabilidad son los puzzles, donde, usando los objetos
     Los pop ups serán diferentes con cada uno de estos casos. En el caso de la conversación, se mostrarán al protagonista y al NPC con el que se hable, y un cuadro de texto en la zona inferior. En el caso de los problemas, ocupará toda la pantalla, impidiendo ver la habitación actual.</li>
 </ul>
 
+<h4>Mecánicas de puzles</h4>
+<ul>
+<li>Escribir número/palabra: para este tipo de puzles tendremos que escribir por teclado la solución del problema ya sea un número o alguna palabra clave. Los puzles que se resolverán con esta mecánica son Número de teléfono y  La carta.</li>
+<li>Clicar en la solución correcta: para este tipo de puzles tendremos que clicar con el puntero del ratón en la solución del puzle que creamos correcta. Las soluciones se mostrarán en la pantalla. Los puzles que se resolverán con esta mecánica son Cafetería, Niños y Espejos.</li>
+<li>Arrastrar con el puntero: para este tipo de puzles tendremos que arrastrar los diferentes elementos que se nos indique en cada uno de los puzles para poder superarlos. Los puzles que se resolverán con esta mecánica son Candado, Banderines, Palomitas y Laberinto.</li>
+</ul>
+
 
 <h4>Controles</h4>
 <p>El jugador podrá moverse apuntando y hclicando con el puntero del ratón a la flecha correspondiente a la dirección en la que desea desplazarse. Para interactuar con objetos y personajes también utilizará el ratón, clicando  sobre aquello con lo que quiera interactuar.</p>
@@ -131,6 +138,7 @@ La otra pieza clave de la jugabilidad son los puzzles, donde, usando los objetos
 <h2>Contenido</h2>
 
 El juego consta de X habitaciones en las habrá difrerentes puzles y enigmas a descifrar.
+![Zonas](images/zones.png)
 
 <h3>Objetos</h3>
 <p>
