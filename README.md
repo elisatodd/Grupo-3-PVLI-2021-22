@@ -100,26 +100,19 @@ La otra pieza clave de la jugabilidad son los puzzles, donde, usando los objetos
 ![Menus](images/menus.png)
 
 <ul>
-<li>Menú portada: el menú que se encontrará el jugador al entrar al título y siempre que salga de partida. Tendrá el botón de inicio de partida y servirá como puente para entrar al juego como tal.</li>
+<li>Menú portada: el menú que se encontrará el jugador al entrar al título y siempre que salga de partida. Tendrá el botón de inicio de partida y servirá como puente para entrar al juego como tal. A su vez mostrará el mayor porcentaje de credibilidad, que hará las veces de puntuación, conseguido en la sesión.</li>
 
 <li>Menú de pausa: menú que podrá desplegar  el jugador en cualquier momento que este ingame: podrá reanudar la partida y salir. Mientras esté activado, no transcurrirá el tiempo límite de la partida.</li> 
 
 <li>Menú fin de partida: menú donde se mostrará el porcentaje de credibilidad y buena reputación en el pueblo que has conseguido al finalizar la partida. Tendrá una imagen diferente según si has salido inocente o culpable. Desde él se puede salir al menú portada.</li>    
 </ul>
 
-<p>Los elementos con los que contarán estos menús son:</p>
-<ul>
-    <li>Arte para la portada: una ilustración.</li>
-    <li>Arte para fin de partida: 2 ilustraciones.</li>
-    <li>Diseño para cada tipo de botón (3 en total).</li>
-    <li>Arte para el menú de pausa.</li>
-</ul>
 
 <h3>Configuración</h3>
 
 **Sonido:** se puede tanto activar como desactivar el sonido en el juego.
 
-<h2>Interfaz y control</h2>
+<h3>Interfaz y control</h3>
 
 <p>La interfaz de juego tendrá un botón de pausa que parará el cronómetro juego y dará acceso a un menú con tres botones de interacción:</p>
 <ul>
@@ -176,6 +169,17 @@ Al final del juego se presentarán dos cinemáticas diferentes, dependiendo de l
 <li>Si ha perdido por no poder aportar las pruebas necesarias, se mostrará el juicio en el que se le declara culpable y se le condena a muerte en la plaza de la ciudad.</li>
 <li>Si, en cambio, se han recogido las pruebas necesarias, se mostrará el juicio con la acusación de Alfred, las disculpas del alcalde por la falsa acusación. Alfred será condenado a muerte.</li>
 </ul>
+
+<h3>Menús</h3>
+<p>Los menús poseerán una serie de elementos:</p>
+<ul>
+    <li>Panel para la portada: una ilustración.</li>
+    <li>Panel dinámico para el marcador de mejor puntuación</li>
+    <li>Arte para fin de partida tras la cinemática correspondiente.</li>
+    <li>Botones diferentes para la interacción de los menús.(4 en total).</li>
+    <li>Panel para el menú de pausa.</li>
+</ul>
+
 
 <h3>Niveles</h3>
 
