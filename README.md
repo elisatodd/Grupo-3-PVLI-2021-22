@@ -88,7 +88,9 @@ La otra pieza clave de la jugabilidad son los puzzles, donde, usando los objetos
 
 <h2>Menús y modos de juego</h2>
 
-<p>El juego poseerá 2 dos menús:</p>
+<p>El juego poseerá 3 menús:</p>
+
+![Menus](images/menus.png)
 
 <ul>
 <li>Menú portada: el menú que se encontrará el jugador al entrar al título y siempre que salga de partida. Tendrá el botón de inicio de partida y servirá como puente para entrar al juego como tal.</li>
