@@ -130,6 +130,9 @@ La otra pieza clave de la jugabilidad son los puzzles, donde, usando los objetos
 
 El juego consta de X habitaciones en las habrá difrerentes puzles y enigmas a descifrar.
 
+<h3>Objetos</h3>
+
+
 <h3>Historia</h3>
 
 <p>Se ha encontrado el cadáver de Grace Bergman, hija del Alcalde de la ciudad, en trágicas condiciones. Donald Calthrop es el principal acusado, ya que mantenían una relación sentimental y fue el último en verla con vida durante la feria del pueblo. El alcalde acusa a Donald sin cuestionarlo, ya que creía que trataba mal a la víctima. Llega una carta a casa de Donald, es el principal sospechoso. Tiene un día para demostrar su inocencia y encontrar simpatizantes entre el jurado popular. </p>
