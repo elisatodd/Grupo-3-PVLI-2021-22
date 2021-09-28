@@ -21,7 +21,7 @@ Conexión a internet necesaria.
 
 
 <h2>Descripción</h2>
-<p>En _The Right Man_ tomaremos el papel de Donald Calthrop , un joven acusado a muerte por el crimen de su amada, que solo tú sabes que no has cometido. Para demostrar tu inocencia, tendrás que convencer al jurado, recogiendo pruebas e investigando lo que realmente ocurrió, antes de que se celebre el juicio. Mientras tanto intentarás limpiar tu nombre, ayudando a los habitantes del pueblo en sus tareas.</p>
+<p>En <em>The Right Man</em> tomaremos el papel de Donald Calthrop , un joven acusado a muerte por el crimen de su amada, que solo tú sabes que no has cometido. Para demostrar tu inocencia, tendrás que convencer al jurado, recogiendo pruebas e investigando lo que realmente ocurrió, antes de que se celebre el juicio. Mientras tanto intentarás limpiar tu nombre, ayudando a los habitantes del pueblo en sus tareas.</p>
 
 
 <h2>Logotipo y portada de juego</h2>
@@ -63,9 +63,9 @@ La otra pieza clave de la jugabilidad son los puzzles, que se encontrarán distr
 
 <h4>Mecánicas de puzles</h4>
 <ul>
-<li>Escribir un número o palabra: para este tipo de puzles tendremos que escribir por teclado la solución del problema, ya sea un número o alguna palabra clave. Los puzles que se resolverán con esta mecánica son _Números Rasgados_ y _La Carta_, _Encadenados_, _El Código Indiscreto_</li>
-<li>Clicar en la solución correcta: para este tipo de puzles tendremos que clicar con el puntero del ratón en la solución del puzle que creamos correcta. Las opciones se mostrarán en la pantalla. Los puzles que se resolverán con esta mecánica son _Alarma por el Expreso_, _Inocencia y Juventud_ y _El Juego de los Espejos_.</li>
-<li>Arrastrar con el puntero: para este tipo de puzles tendremos que arrastrar los diferentes elementos que se nos indique en cada uno de los puzles para poder superarlos. Los puzles que se resolverán con esta mecánica son _Banderines de Vértigo_ y _Topoz_.</li>
+<li>Escribir un número o palabra: para este tipo de puzles tendremos que escribir por teclado la solución del problema, ya sea un número o alguna palabra clave. Los puzles que se resolverán con esta mecánica son Números Rasgados y La Carta, Encadenados, El Código Indiscreto</li>
+<li>Clicar en la solución correcta: para este tipo de puzles tendremos que clicar con el puntero del ratón en la solución del puzle que creamos correcta. Las opciones se mostrarán en la pantalla. Los puzles que se resolverán con esta mecánica son Alarma por el Expreso, Inocencia y Juventud y El Juego de los Espejos.</li>
+<li>Arrastrar con el puntero: para este tipo de puzles tendremos que arrastrar los diferentes elementos que se nos indique en cada uno de los puzles para poder superarlos. Los puzles que se resolverán con esta mecánica son Banderines de Vértigo y Topoz.</li>
 </ul>
 
 <h4>Controles</h4>
@@ -101,6 +101,15 @@ Del jugador se espera que desarrolle una estrategia basada en observar bien las 
 <li>Encadenados: en este puzle se presenta un sistema de ecuaciones codificadas con una serie de símbolos. Cada símbolo representará un número de una cifra. De esta manera deberemos obtener el valor de cada símbolo para sacar la combinación correcta, que está compuesta de dos símbolos, indicados en el candado.</li>
     </ul>
 <p>La última dinámica es la recolección de objetos, esparcidos por el mapa de juego, que se utilizarán para intentar ayudar a los diferentes personajes que se encuentren. El jugador deberá hacer uso de la lógica para intuir que objeto puede servir de ayuda a cada NPC con el que hable, apoyándose en los diálogos que haya tenido con dicho personaje. Cada vez que haga un uso adecuado de un objeto, su reputación aumentará en un punto.</p>
+<ul>
+<li>Moneda: se entregará al niño de la feria.</li>
+<li>Carta: se entregará a la dueña de la sombrerería. Una vez entregada desbloqueará el camibo hacia el bosque.</li>
+<li>Sombrero: se entregará a la clienta de la sombrerería.</li>
+<li>Flor: se entregará al enamorado del parque.</li>
+<li>Pescado: se entregará a la señora de la calle comercial.</li>
+<li>Pajarita: se entregará al policia en el bosque.</li>
+<li>Caja de cartón: se entregará al campesino en el bosque.</li>
+</ul>
 
 <h3>Estética</h3>
 <p>La paleta de colores del juego se basará en tonos pastel apagados recordando a las películas de Hitchcock. Dará el ambiente lúgubre y pesimista que se vive en el pueblo tras el asesinato, a la vez que refleja la situación animica del protagonista.</p>
@@ -177,6 +186,7 @@ Del jugador se espera que desarrolle una estrategia basada en observar bien las 
 <li>Pajarita: se encuentra en el camino hacia la feria, entre la maleza del bosque.</li>
 <li>Flor: se encuentra en la calle comercial, en un rosal.</li>
 <li>Pescado: se encuentra en el mercado, en el suelo junto al puesto de pescadería.</li>
+<li>Caja de cartón: se encuentra en el parque, tirada en el suelo.</li>
 </ul>
 
 <h3>Niveles</h3>
@@ -215,7 +225,7 @@ Al final del juego se presentarán tres cinemáticas diferentes, dependiendo de 
 </li>
     
 <li><h4>Películas de Alfred Hitchcock</h4>
-    <p>El juego está basado en el tópico utilizado por el cineasta frecuentemente en sus películas, en las que alguien era acusado de un crimen que nunca cometió. Puede observarse en las siguientes películas: _Vértigo_ (1958), _Falso culpable_ (1956), _Con la muerte en los talones_ (1959). Además, los nombres de los puzles están inspirados en los títulos de la filmografía de este director.</p>
+    <p>El juego está basado en el tópico utilizado por el cineasta frecuentemente en sus películas, en las que alguien era acusado de un crimen que nunca cometió. Puede observarse en las siguientes películas: <em>Vértigo</em> (1958), <em>Falso culpable</em> (1956), <em>Con la muerte en los talones</em> (1959). Además, los nombres de los puzles están inspirados en los títulos de la filmografía de este director.</p>
 </li>
     
     
