@@ -66,6 +66,7 @@ La otra pieza clave de la jugabilidad son los puzzles, que se encontrarán distr
 <li>Escribir un número o palabra: para este tipo de puzles tendremos que escribir por teclado la solución del problema, ya sea un número o alguna palabra clave. Los puzles que se resolverán con esta mecánica son Números Rasgados y La Carta, Encadenados, El Código Indiscreto</li>
 <li>Clicar en la solución correcta: para este tipo de puzles tendremos que clicar con el puntero del ratón en la solución del puzle que creamos correcta. Las opciones se mostrarán en la pantalla. Los puzles que se resolverán con esta mecánica son Alarma por el Expreso, Inocencia y Juventud y El Juego de los Espejos.</li>
 <li>Arrastrar con el puntero: para este tipo de puzles tendremos que arrastrar los diferentes elementos que se nos indique en cada uno de los puzles para poder superarlos. Los puzles que se resolverán con esta mecánica son Banderines de Vértigo y Topoz.</li>
+ ![Mec_puzles](images/tipos_puzzles.png)   
 </ul>
 
 <h4>Controles</h4>
@@ -87,6 +88,8 @@ El juego tiene tres posibles finales, dependiendo de la reputación que el jugad
 <p>Durante una misma sesión de juego, se mostrará al jugador su récord de reputación conseguida en una partida, en un desplegable del menú de inicio.
 Del jugador se espera que desarrolle una estrategia basada en observar bien las habitaciones y relacionar los elementos que contienen. Para resolver los puzles se requiere tener habilidades lógicas e intuitivas.</p>
 <p>Es de esperar que el jugador promedio necesite jugar más de una vez para conseguir ganar con el final perfecto. Esto se conseguirá ajustando el tiempo límite para que el jugador tenga que administrar bien el tiempo, y ser rápido en la observación de los escenarios. Con cada vez que juegue se dará cuenta de algunos aspectos del juego de los que no se había percatado en su partida anterior, avanzando así y pudiendo superar el juego completo en dos o tres partidas de media.</p>
+
+![Dinámica_1](images/dinámica_partida.png)
 
 <p>En el juego hay diferentes puzles cada uno con una dinámica única que deberemos completar para poder avanzar en el juego. Estos puzles son:</p>
 <ul>
@@ -111,7 +114,10 @@ Del jugador se espera que desarrolle una estrategia basada en observar bien las 
 <li>Caja de cartón: se entregará al campesino en el bosque.</li>
 </ul>
 
+![Dinámica_2](images/puzles_objetos.png)
+
 <h3>Estética</h3>
+ ![Mec_puzles](images/paleton.png)   
 <p>La paleta de colores del juego se basará en tonos pastel apagados recordando a las películas de Hitchcock. Dará el ambiente lúgubre y pesimista que se vive en el pueblo tras el asesinato, a la vez que refleja la situación animica del protagonista.</p>
 <p>El estilo artístico del juego será minimalista para reforzar a nivel visual los objetos relevantes para los puzzles.</p>
 <p>Los diferentes escenarios constarán de fondos simples que establecerán la ambientación de un antiguo pueblo inglés. Los objetos que se encuentren por las habitaciones, y no tengan relevancia con la trama, mantendrán la simpleza, acentuando sólo los elementos necesarios para el uso correcto e intuitivo por parte del jugador; evitando así la sobrecarga visual en el escenario.</p>
