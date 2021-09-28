@@ -93,7 +93,7 @@ Del jugador se espera que desarrolle una estrategia basada en observar bien las 
 <li>Alarma por el Expreso: en este puzle se presentarán cuatro mesas con un número determinado de objetos de diferente valor. En una de las mesas faltará un objeto y el jugador deberá averiguar cual es el objeto que se necesita en esa mesa para que todas ellas tengan el mismo valor.</li>
 <li>Números rasgados: para completar este puzle el jugador deberá obtener la combinación correcta de una secuencia de números. Para ello se darán una serie de pistas para poder saber el orden de ellos.</li> 
 <li>Banderines de Vértigo: para completar este puzle se deberá encontrar el orden correcto de una serie de banderines, para que los signos matemáticos y números que cada uno representa, formen una operación que tenga sentido matemático.</li>
-<li>El Código Insicreto: en este puzle se presentará al jugador una imágen con un código numérico oculto. Deberá descifrarlo para completar el puzle.</li>
+<li>El Código Indiscreto: en este puzle se presentará al jugador una imágen con un código numérico oculto. Deberá descifrarlo para completar el puzle.</li>
 <li>El Juego de los Espejos: en este puzle se presentará una pantalla con vista cenital mostrándonos una serie de espejos colocados de diferentes formas junto con un pequeño láser. El objetivo será obtener el camino que haría el láser al rebotar con ellos averiguando por cuales de las diferentes salidas pasará el láser al final.</li>
 <li>Topoz: en este puzle se presentará un tablero 3x3 donde estarán todas las piezas cara abajo. Al clicar sobre una de ella, esa pieza y todas las adyacentes cambiarán a la posición opuesta a la que se encontraban. Para completar este puzle el jugador deberá colocar todas las piezas del tablero cara arriba.</li>
 <li>La Carta: en este puzle se presentará un texto del cual el jugador deberá sacar un mensaje secreto, a partir de la primera letra de cada frase.</li>
@@ -114,7 +114,7 @@ Del jugador se espera que desarrolle una estrategia basada en observar bien las 
 <h3>Estética</h3>
 <p>La paleta de colores del juego se basará en tonos pastel apagados recordando a las películas de Hitchcock. Dará el ambiente lúgubre y pesimista que se vive en el pueblo tras el asesinato, a la vez que refleja la situación animica del protagonista.</p>
 <p>El estilo artístico del juego será minimalista para reforzar a nivel visual los objetos relevantes para los puzzles.</p>
-<p>Los diferentes escenarios constarán de fondos simples que establecerán la ambientación de un antiguo pueblo inglés. Los objetos que se encuentren por el escenario, y no tengan relevancia con los problemas, mantendrán la simpleza, acentuando sólo los elementos necesarios para el uso correcto e intuitivo por parte del jugador; evitando así la sobrecarga visual en escenario.</p>
+<p>Los diferentes escenarios constarán de fondos simples que establecerán la ambientación de un antiguo pueblo inglés. Los objetos que se encuentren por las habitaciones, y no tengan relevancia con la trama, mantendrán la simpleza, acentuando sólo los elementos necesarios para el uso correcto e intuitivo por parte del jugador; evitando así la sobrecarga visual en el escenario.</p>
 <p>En la misma línea los personajes que se presenten ante el jugador serán sencillos, dando predilección por elementos característicos (bigotes, sombreros, barbas, vestimenta…) sobre el detalle elevado; manteniendo la concordancia y dando estímulos visuales al jugador.</p>
 
 
