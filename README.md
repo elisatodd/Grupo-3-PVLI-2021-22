@@ -35,7 +35,9 @@ La otra pieza clave de la jugabilidad son los puzzles, que se encontrarán distr
 <p>La historia gira en torno a un asesinato. El protagonista es acusado del mismo y deberá demostrar su inocencia. Para esto tendrá un tiempo limitado hasta que se celebre el juicio. Se dejará la intriga hasta el final, tanto al jugador como al protagonista, de si ha logrado reunir las pruebas suficientes para ser exculpado.</p>
 
 <h3>Vista general del juego</h3>
-
+<p>Así se verá una partida de The Right Man.</p>
+  <img src="images/PartidaTipica.jpg" width="615"> 
+<p>Imágenes sacadas de la franquicia de juegos "El Profesor Layton".</p>
 
 <h3>Relato breve y parcial de una partida típica</h3>
 
