@@ -52,7 +52,7 @@ La otra pieza clave de la jugabilidad son los puzzles, que se encontrarán distr
 
 <h4> Mecánicas del personaje</h4>
 <ul>
-<li>Interacción con objetos: El jugador podrá interactuar con objetos arrastrándolos hacia un punto o recogerlos para guardarlos en su inventario, clicando en ellos. Si los intenta arrastrar habrá dos posibles resultados. El primer caso es que volverán a su inventario sin que ocurra nada una vez suelte el objeto. Si no, activarán un evento que desbloqueará un porblema o un diálogo con un NPC.</li>
+<li>Interacción con objetos: El jugador podrá interactuar con objetos arrastrándolos desde el inventario que se muestra en la pantalla hacia los diferentes personajes que se encuentren en esa habitación. También se podrán recoger los objetos para guardarlos en su inventario, clicando sobre ellos. Si los intenta arrastrar hacia los personajes habrá dos posibles resultados. El primer caso es que volverán a su inventario sin que ocurra nada una vez suelte el objeto (objeto erroneo). Si no, activarán un evento que desbloqueará un problema o un diálogo con un NPC (objeto correcto).</li>
 <li>Interacción con personajes (NPCs): El jugador podrá interactuar con los personajes que se vaya encontrando por las diferentes habitaciones. Lo hará clicando sobre ellos, y, si tienen algún diálogo disponible, se activará. También se les podrá intentar entregar objetos, lo que desencadenará la mecánica descrita anteriormente.</li>
 </ul>
 
