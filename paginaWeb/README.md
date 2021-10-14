@@ -1,3 +1,3 @@
-# Juego simple con Phaser
+# Página web temporal
 
-Este juego ha sido desarrollado por Carlos León Aznar (<https://github.com/cleongh/simplephasergame>). En este repositorio solo se ha hecho una reorganización del código y de los assets usados para su desarrollo.
+Usando juego de muestra mostrado en PVLI.
