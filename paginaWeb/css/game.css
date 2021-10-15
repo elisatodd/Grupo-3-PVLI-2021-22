@@ -5,31 +5,57 @@
 h1{
     font-family: newsPaper; 
     text-align: center;   
+    font-size: 60px;
 }
 
 h2{
   font-family: newsPaper; 
-  text-align: center;   
+  text-align: center;  
+  font-size: 50px; 
 }
 h3{
   font-family: newsPaper; 
   text-align: center;   
+  font-size: 40px;
 }
 
 #one{
   font-family:'Times New Roman', Times, serif;
   text-align:center;
-  font-size: medium;
+  font-size: large;
+  color:cornsilk;
+  background-color: rgba(48, 21, 16, 0.5)
 }
 #two{
   font-family:'Times New Roman', Times, serif;
   text-align:center;
-  font-size: medium;
+  font-size: 30px;
   word-spacing: 50px;
+  background-color: rgba(48, 21, 16, 0.5)
 }
 
 body
 {
-  background-image: url();
+  background-image: url("/assets/images/PartidaTipica.jpg");
   background-repeat: no-repeat;
+  background-size: auto;
+}
+
+a:link {
+  color: white;
+}
+
+/* visited link */
+a:visited {
+  color: cornsilk;
+}
+
+/* mouse over link */
+a:hover {
+  color: white;
+}
+
+/* selected link */
+a:active {
+  color: white;
 }
