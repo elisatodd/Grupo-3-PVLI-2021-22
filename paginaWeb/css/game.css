@@ -1,3 +1,35 @@
-h1 {
-  text-align: center;
+@font-face{
+    font-family:"newsPaper";
+    src:url("/assets/fonts/newsPaperFont.ttf") format("opentype");
+}
+h1{
+    font-family: newsPaper; 
+    text-align: center;   
+}
+
+h2{
+  font-family: newsPaper; 
+  text-align: center;   
+}
+h3{
+  font-family: newsPaper; 
+  text-align: center;   
+}
+
+#one{
+  font-family:'Times New Roman', Times, serif;
+  text-align:center;
+  font-size: medium;
+}
+#two{
+  font-family:'Times New Roman', Times, serif;
+  text-align:center;
+  font-size: medium;
+  word-spacing: 50px;
+}
+
+body
+{
+  background-image: url();
+  background-repeat: no-repeat;
 }
