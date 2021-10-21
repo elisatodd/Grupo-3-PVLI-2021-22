@@ -1,6 +1,6 @@
 @font-face{
     font-family:"newsPaper";
-    src:url("/assets/fonts/newsPaperFont.ttf") format("opentype");
+    src:url("../assets/fonts/newsPaperFont.ttf") format("opentype");
 }
 h1{
     font-family: newsPaper; 
@@ -42,7 +42,7 @@ body
   position: relative;
   align-items: center;
   justify-content: center;
-  background-image: url("/assets/images/PartidaTipica.jpg");
+  background-image: url("../assets/images/PartidaTipica.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
