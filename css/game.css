@@ -20,26 +20,33 @@ h3{
 }
 
 #one{
-  font-family:'Times New Roman', Times, serif;
+  font-family:'Garamond', Times, serif;
   text-align:center;
-  font-size: large;
-  color:cornsilk;
-  background-color: rgba(48, 21, 16, 0.5)
+  font-weight: 700;
+  font-size: 25px;
+  color:rgb(0, 0, 0);
+  background-color: rgba(32, 206, 197, 0.75);
 }
 #two{
-  font-family:'Times New Roman', Times, serif;
+  font-family:'Garamond', Times, serif;
   text-align:center;
+  font-weight: 100;
   font-size: 30px;
   word-spacing: 50px;
   background-color: rgba(48, 21, 16, 0.5)
 }
 
+
 body
 {
+  position: relative;
+  align-items: center;
+  justify-content: center;
   background-image: url("/assets/images/PartidaTipica.jpg");
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
 }
+
 
 a:link {
   color: white;
@@ -47,12 +54,12 @@ a:link {
 
 /* visited link */
 a:visited {
-  color: cornsilk;
+  color: rgb(255, 255, 255);
 }
 
 /* mouse over link */
 a:hover {
-  color: white;
+  color: rgb(40, 223, 230);
 }
 
 /* selected link */
