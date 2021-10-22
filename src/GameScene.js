@@ -100,7 +100,10 @@ export default class GameZone extends Phaser.Scene {
           box.setInteractive();  
           box.on('pointerdown', this.callEvents, this);
        }
-
+       /**
+        * 
+        * @param {*} metodoParaEscribirTexto 
+        */
        callInfo(sentence)
        {
         console.log("info");        
