@@ -16,7 +16,7 @@ export default class Puzzle extends Phaser.Scene {
     this.load.image('wallpaperPuzzle', './assets/images/puzle.png');
   }
 
-  create() {
+  create() { // Crea los cuatro puntos del puzzle
     console.log("puzleCreado");
     this.add.image(this.cameras.main.width / 2, this.cameras.main.height / 2, 'wallpaperPuzzle');
 
