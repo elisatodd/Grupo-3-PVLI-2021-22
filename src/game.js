@@ -6,7 +6,10 @@ let config = {
   type: Phaser.AUTO,
   width: 800,
   height: 600,
-  autocenter: Phaser.Scale.CENTER_HORIZONTALLY,
+  scale: {
+    // mode: Phaser.Scale.FIT,  
+    autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
+},
   scene: [GameZone, Puzzle]
   };
 
