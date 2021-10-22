@@ -1,3 +1,68 @@
-h1 {
-  text-align: center;
+@font-face{
+    font-family:"newsPaper";
+    src:url("../assets/fonts/newsPaperFont.ttf") format("opentype");
+}
+h1{
+    font-family: newsPaper; 
+    text-align: center;   
+    font-size: 60px;
+}
+
+h2{
+  font-family: newsPaper; 
+  text-align: center;  
+  font-size: 50px; 
+}
+h3{
+  font-family: newsPaper; 
+  text-align: center;   
+  font-size: 40px;
+}
+
+#one{
+  font-family:'Garamond', Times, serif;
+  text-align:center;
+  font-weight: 700;
+  font-size: 25px;
+  color:rgb(0, 0, 0);
+  background-color: rgba(32, 206, 197, 0.75);
+}
+#two{
+  font-family:'Garamond', Times, serif;
+  text-align:center;
+  font-weight: 100;
+  font-size: 30px;
+  word-spacing: 50px;
+  background-color: rgba(48, 21, 16, 0.5)
+}
+
+
+body
+{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../assets/images/PartidaTipica.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+a:link {
+  color: white;
+}
+
+/* visited link */
+a:visited {
+  color: rgb(255, 255, 255);
+}
+
+/* mouse over link */
+a:hover {
+  color: rgb(40, 223, 230);
+}
+
+/* selected link */
+a:active {
+  color: white;
 }
