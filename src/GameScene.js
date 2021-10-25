@@ -13,7 +13,7 @@ export default class GameZone extends Phaser.Scene {
 
     constructor() {
       // Nombre de la escena para el SceneManager, es deci, al cargar la escena desde algún lado debes usar este nombre
-      super({ key: 'gameScene' });       
+      super({ key: 'gameScene' });       // Siempre hay que llamar al super para sobreescribir la escena
       {
       }; 
       
@@ -23,13 +23,14 @@ export default class GameZone extends Phaser.Scene {
     
   
     // Métodos init, preload, create, update
-    preload() {
+    preload() { // Cargas todo lo que vayas a usar
         this.load.image('wallpaper', './assets/images/pueblo.jpg');
         this.load.image('personaje', './assets/images/chica.png');
         this.load.image('box', './assets/images/box.png');
       }
       
-    create(data) {
+    create(data) { // "start"
+        //Pongo el fondo
         let wallpaper = this.add.image(this.cameras.main.width / 2, this.cameras.main.height / 2, 'wallpaper');
 
         //obtiene el tamaño de la cámara
@@ -42,19 +43,20 @@ export default class GameZone extends Phaser.Scene {
         let character = this.add.image(200, 400, 'personaje');
         character.setScale(this.scale/2.5).setScrollFactor(0);
 
+        // Quiero una imagen interactuable -> al clicar se lanzan eventos
         character.setInteractive();
-
-       
+        // Cuando se hará el evento, al método al que llamas, y donde está
         character.on('pointerdown', this.callEvents, this);
 
         
         console.log(data);
-        if(data === '0'|| data === '1') 
+        if(data === '0'|| data === '1') // Lo pasa el puzle
          this.actualiceEvents(data);
        // this.input.on('gameobjectdown', this.callDialogue, this);
         }
-     
-        actualiceEvents(data)
+
+        // MÉTODOS
+        actualiceEvents(data) // Mezcla de los eventos de abajo
         {
           console.log("actualizando eventos");
           this.sceneMoment = 2;
@@ -68,7 +70,7 @@ export default class GameZone extends Phaser.Scene {
           this.callInfo("El enigma debe de ser resuelto");
         }
 
-        callEvents()
+        callEvents() // Cambia un estado al llamarlo
         { 
           if(!this.puzzleComplete)
           {
@@ -86,15 +88,15 @@ export default class GameZone extends Phaser.Scene {
               this.callPuzzle();
             }
   
-            this.sceneMoment++;
+            this.sceneMoment++; // Para que la siguiente llamada sea diferente
           }           
          
         }
 
-        callDialogue () {
+        callDialogue () { // spawn imagen del cuadro
          
           console.log("cuadro");        
-         let box = this.add.image(this.cameras.main.width / 2, 500, 'box');  
+          let box = this.add.image(this.cameras.main.width / 2, 500, 'box');  
           box.setScale(this.scale/1.35).setScrollFactor(0);
 
           box.setInteractive();  
@@ -104,7 +106,7 @@ export default class GameZone extends Phaser.Scene {
         * 
         * @param {*} metodoParaEscribirTexto 
         */
-       callInfo(sentence)
+       callInfo(sentence) // Crea texto
        {
         console.log("info");        
         var textConfig={fontSize:'25px',color:'#000000',fontFamily: 'Arial'};       
@@ -112,9 +114,9 @@ export default class GameZone extends Phaser.Scene {
         
        }
 
-       callPuzzle()
-       {         
-         this.scene.start('puzzleScene');
+       callPuzzle() // Evento final : llama al puzle
+       {         // Llamada a la otra escena
+         this.scene.start('puzzleScene'); // El nombre de la clase y del identificador de la escena, pueden no ser el mismo
        }
 
    
