@@ -1,6 +1,7 @@
 
 import GameZone from './GameScene.js';
 import Puzzle from './PuzzleScene.js';
+//import escenaMenu from './game/escenaMenu.js'
 
 let config = {
   type: Phaser.AUTO,

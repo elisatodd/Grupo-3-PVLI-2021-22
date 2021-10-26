@@ -7,7 +7,7 @@ export default class Puzzle extends Phaser.Scene {
   constructor() {
     // Nombre de la escena para el SceneManager
     super({ key: 'puzzleScene' });
-    console.log("puzleIniciado");
+   
   }
 
   // Métodos init, preload, create, update

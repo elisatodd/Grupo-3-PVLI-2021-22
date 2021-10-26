@@ -7,11 +7,7 @@
     _wallpaper;
     
 
-    constructor(wallpaper) {
-
-        //asignación del wallpaper a la escena
-        this._wallpaper = wallpaper;
-
+    constructor() {
       // Nombre de la escena para el SceneManager, es deci, al cargar la escena desde algún lado debes usar este nombre
       super({ key: 'escena' });       
       {
@@ -19,31 +15,32 @@
       
     }
 
-    preload() {
-        //carga el archivo de wallpaper
-       this.loadWallpaper();
-      }
-    
-
-    loadWallpaper()
+    loadImage(name, rute)
     {
-        this.load.image('wallpaper', this._wallpaper);
+        this.load.image(name, rute);
     }
 
-    create()
+    spawnWallpaper(name)
     {
-        this.assignScale();
+        let container = this.add.image(this.cameras.main.width / 2, this.cameras.main.height / 2, name);
+        this.assignScale(container);       
+        return container;
+    }
 
-       _wallpaper = this.add.image(this.cameras.main.width / 2, this.cameras.main.height / 2, 'wallpaper');
-       _wallpaper.setScale(this.scale).setScrollFactor(0);
-            
+    spawnImage(name, position, scaleProportion)
+    {
+        let container = this.add.image(position.x, position.y, name);
+         container.setScale(this.scale/scaleProportion).setScrollFactor(0);
+         return container;
+
     }
 
 
-    assignScale()
+    assignScale(container)
     {
-        let scaleX = this.cameras.main.width / wallpaper.width;
-        let scaleY = this.cameras.main.height / wallpaper.height;
+        let scaleX = this.cameras.main.width / container.width;
+        let scaleY = this.cameras.main.height / container.height;
         this.scale = Math.max(scaleX, scaleY);
     }
+    
 }
