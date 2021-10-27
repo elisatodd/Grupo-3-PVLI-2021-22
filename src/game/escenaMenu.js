@@ -27,12 +27,23 @@ export default class escenaMenu extends escena {
 
   create() {
     this._wallpaper = this.spawnWallpaper('wallpaper');
-    let setScale = {x: this.cameras.main.width / 2, y: this.cameras.main.height / 2}
-      let logo = this.spawnImage('logo', setScale, 2);
+    let setPosition = {x: this.cameras.main.width / 2, y: this.cameras.main.height / 2}
+    let logo = this.addBottom('logo', setPosition, 2, this.metodExample);
   }
 
-  addBottom(position, image, text) {
+  addBottom(nameImage, position, scaleProportion, functionality) {
 
+    let container = super.loadImage(nameImage, position, scaleProportion);    
+    container.setInteractive();
+    container.on('pointerdown', () => functionality);
+
+    return container;
+
+  }
+
+  metodExample()
+  {
+    console.log("llamado el botón");
   }
 }
 
