@@ -1,7 +1,8 @@
 
 import GameZone from './GameScene.js';
 import Puzzle from './PuzzleScene.js';
-import escenaMenu from './game/escenaMenu.js'
+import EscenaMenu from './game/escenaMenu.js';
+import EscenaJuego from './game/escenaJuego.js';
 
 let config = {
   type: Phaser.AUTO,
@@ -12,7 +13,7 @@ let config = {
     // mode: Phaser.Scale.FIT,  
     autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
 },
-  scene: [escenaMenu, GameZone, Puzzle] // Escenas que requiere el juego
+  scene: [GameZone, Puzzle] // Escenas que requiere el juego
   };
 
 

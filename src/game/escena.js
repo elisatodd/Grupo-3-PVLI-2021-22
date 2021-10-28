@@ -2,14 +2,14 @@
  * Intentando hacer una escena
  * @extends Phaser.Scene
  */
- export default class escena extends Phaser.Scene {
+ export default class Escena extends Phaser.Scene {
 
     _wallpaper;
     
 
     constructor() {
       // Nombre de la escena para el SceneManager, es deci, al cargar la escena desde algún lado debes usar este nombre
-      super({ key: 'escena' });       
+      super({ key: 'Escena' });       
       {
       }; 
       

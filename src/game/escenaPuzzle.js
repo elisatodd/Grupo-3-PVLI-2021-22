@@ -1,14 +1,14 @@
 /**
  * Intentando hacer una escena
- * @extends escenaMenu
+ * @extends EscenaMenu
  */
- import escenaMenu from './escenaMenu'
+ import EscenaMenu from './escenaMenu.js'
 
- export default class escenaPuzzle extends escenaMenu {
+ export default class EscenaPuzzle extends EscenaMenu {
    constructor() {
  
  
-     super({ key: 'puzzleScene' });
+     super({ key: 'PuzzleScene' });
      {
      };
  
