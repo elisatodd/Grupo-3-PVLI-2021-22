@@ -2,52 +2,66 @@
  * Intentando hacer una escena
  * @extends escena
  */
- import escena from './escena.js'
+ import Escena from './escena.js'
 
- export default class escenaJuego extends escena {
+ export default class EscenaJuego extends Escena {
  
-  characters = [];
-  objects = [];
+    characters = [];
+    objects = [];
  
    constructor() {
  
  
-     super({ key: 'menuScene' });
+     super({ key: 'GameScene' });
      {
      };
  
    }
 
-   AddObject(object)
+   /*create()
    {
-        objects = objects.push(object);
+       let object = function prueba(){console.log("objeto");};
+       
+    for(let i = 0; i < 3; i++)
+    {
+        this.AddObject(object);
+    }
+
+    this.CreateObjects([true, false, true]);
+       
+   }*/
+
+   AddObject(object)
+   {       
+        this.objects.push(object);
    }
 
    AddCharacter(character)
    {
-       characters = this.characters.push(character);
+       this.characters = 
+       this.characters.push(character);
    }
 
    //actives es un array donde se ven que objectos siguen estado activados, recogido del gameManager
-   CreateObjects(actives)
+   CreateCharacters(actives)
    {
        let i = 0;
     for (let character of this.characters) {
         if(actives[i] == true)
         {
-            //como se cree el personaje segun sus atributos
+            //character.prueba;
         }    
         i++;   
       }
    }
 
-   CreateCharacters(actives)
+   CreateObjects(actives)
    {
     let i = 0;
     for (let object of this.objects) {
         if(actives[i] == true)
         {
-            //como se cree el personaje segun sus atributos
+            //object();
         }  
         i++;
       }
