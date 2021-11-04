@@ -3,6 +3,7 @@ import GameZone from './GameScene.js';
 import Puzzle from './PuzzleScene.js';
 import EscenaMenu from './game/escenaMenu.js';
 import EscenaJuego from './game/escenaJuego.js';
+import Puzzle1 from './game/puzzlePrueba.js';
 
 let config = {
   type: Phaser.AUTO,

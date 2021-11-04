@@ -5,8 +5,7 @@
  export default class Escena extends Phaser.Scene {
 
     _wallpaper;
-    
-
+  
     constructor() {
       // Nombre de la escena para el SceneManager, es deci, al cargar la escena desde algún lado debes usar este nombre
       super({ key: 'Escena' });       
@@ -27,10 +26,11 @@
         return container;
     }
 
-    spawnImage(name, position, scaleProportion)
+    spawnImage(name, position, aling, scaleProportion)
     {
         let container = this.add.image(position.x, position.y, name);
-         container.setScale(this.scale/scaleProportion).setScrollFactor(0);        
+         container.setScale(this.scale/scaleProportion).setScrollFactor(0);  
+         //container.setOrigin(aling.x, aling.y);   
          return container;
 
     }

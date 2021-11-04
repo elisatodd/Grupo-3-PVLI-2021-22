@@ -18,14 +18,14 @@ export default class EscenaMenu extends Escena {
   }
 
 
-  preload() {
+  /*preload() {
     //carga el archivo de wallpaper
     this.loadImage('wallpaper', '../assets/images/pueblo.jpg');
     this.loadImage('logo', '../arte/Logokiwi.png');
 
   }
 
- /* create() {
+ create() {
     this._wallpaper = this.spawnWallpaper('wallpaper');
     let setPosition = {x: this.cameras.main.width / 2, y: this.cameras.main.height / 2}
     let logo = this.addBottom('logo', setPosition, 2, this.metodExample);
@@ -35,11 +35,11 @@ export default class EscenaMenu extends Escena {
     console.log("llamado el botón");
   }*/
 
-  addBottom(nameImage, position, scaleProportion, functionality) {
-
-    let container = super.spawnImage(nameImage, position, scaleProportion);    
+  addBottom(info) {
+    //debemos usar estos nombres al crear el objeto
+    let container = super.spawnImage(info.name, info.position, info.align, info.scaleProportion);    
     container.setInteractive();
-    container.on('pointerdown', () =>  this.metodExample());
+    container.on('pointerdown', () =>  info.functionality());
 
     return container;
 

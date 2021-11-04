@@ -13,6 +13,7 @@
      };
  
    }
-}
-//método virtual
+   //método virtual
 ResolvePuzzle()
+{}
+}

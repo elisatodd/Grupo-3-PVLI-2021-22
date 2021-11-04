@@ -49,7 +49,7 @@
     for (let character of this.characters) {
         if(actives[i] == true)
         {
-            //character.prueba;
+            //character();
         }    
         i++;   
       }
