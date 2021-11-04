@@ -2,7 +2,7 @@
  * Intentando hacer una escena
  * @extends EscenaPuzzle
  */
-import EscenaPuzzle from './escenaPuzzle.js'
+import EscenaPuzzle from '../escenaPuzzle.js'
 
  export default class Puzzle1 extends EscenaPuzzle {
    constructor() {

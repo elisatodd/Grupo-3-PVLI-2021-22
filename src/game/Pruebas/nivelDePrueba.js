@@ -3,7 +3,7 @@
  * @extends EscenaMenu
  *
  */
-import EscenaJuego from './escenaJuego'
+import EscenaJuego from '../escenaJuego'
 
  export default class Zona1 extends EscenaJuego {
    constructor() {
