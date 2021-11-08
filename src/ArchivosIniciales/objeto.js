@@ -72,7 +72,7 @@ export default class OBJETO{
     this.add.text(this.cameras.main.width/3.5, 480, "HOLA SOY UN GIBON", textConfig);
   }
 
-  /*uitarDialogo()
+  /*quitarDialogo()
   {
     box.destroy();
   }*/

@@ -5,7 +5,8 @@
  export default class Escena extends Phaser.Scene {
 
     _wallpaper;
-  
+    GameManager = new GAMEMANAGER(); // Referencia al GM
+
     constructor() {
       // Nombre de la escena para el SceneManager, es deci, al cargar la escena desde algún lado debes usar este nombre
       super({ key: 'Escena' });       

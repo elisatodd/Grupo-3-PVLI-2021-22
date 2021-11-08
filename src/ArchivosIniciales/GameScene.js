@@ -25,7 +25,7 @@ export default class GameZone extends Phaser.Scene {
     puzzleComplete = false;
     imgprueba;
     objetoprueba;
-    
+    GameManager = new GAMEMANAGER();
     
 
 
@@ -68,7 +68,7 @@ export default class GameZone extends Phaser.Scene {
         character.on('pointerdown', this.callEvents, this);
 
         // PRUEBAS
-        let GameManager = new GAMEMANAGER();
+        
 
         this.objetoprueba = new OBJETO('spritedeprueba', 400, 400, 1, "gibbon", "imgpru");
         

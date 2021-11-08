@@ -1,14 +1,16 @@
 export default class GAMEMANAGER extends Phaser.Scene{
 
+    // Contenedores de GameObjects
+    inventario = []; // Array que guarda los objetos que se han recolectado
+    objetosEnInventario = 0;
+
     constructor(){
 
         super({ key: 'GameManager' });
         {
         };
 
-        console.log("prueba de la clase GameManager");  
-        let objetosEnInventario = 0;
-        let arrayInventario;
+        console.log("prueba de la clase GameManager");
     }
 
 
@@ -18,9 +20,11 @@ export default class GAMEMANAGER extends Phaser.Scene{
         imagen.destroy();
 
         escena.moverAlInventario(700, 400, 1.8);
-        
-        //objetosEnInventario++;
-        //arrayInventario.push(refObjeto);
+        escena.RemoveObject(dirImagen);
+
+
+        objetosEnInventario++;
+        inventario.push(dirImagen); // Por ahora el array Inventario va a guardar la dirección de la imagen del objeto
 
     }
 
