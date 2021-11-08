@@ -6,6 +6,19 @@ import GAMEMANAGER from "./gameManager.js";
  * Intentando hacer una escena
  * @extends Phaser.Scene
  */
+
+ /*const config = {
+  physics: {
+      default: 'arcade', // elegir motor
+      arcade: { // propiedades del motor
+          gravity: { y: 300 },
+          debug: false // true para ver info
+      }
+  },
+};
+const game = new Phaser.Game(config);
+*/
+
 export default class GameZone extends Phaser.Scene {
 
     sceneMoment = 0;
@@ -13,6 +26,8 @@ export default class GameZone extends Phaser.Scene {
     imgprueba;
     objetoprueba;
     
+    
+
 
     constructor() {
       // Nombre de la escena para el SceneManager, es deci, al cargar la escena desde algún lado debes usar este nombre
@@ -56,6 +71,7 @@ export default class GameZone extends Phaser.Scene {
         let GameManager = new GAMEMANAGER();
 
         this.objetoprueba = new OBJETO('spritedeprueba', 400, 400, 1, "gibbon", "imgpru");
+        
         this.imgprueba = this.add.image(this.objetoprueba.damePosicion().x, this.objetoprueba.damePosicion().y, this.objetoprueba.dameImagen()); 
         this.imgprueba.setScale(this.scale/this.objetoprueba.dameEscala()).setScrollFactor(0);
         //this.objetoprueba.guardarEscena(this);
@@ -63,11 +79,17 @@ export default class GameZone extends Phaser.Scene {
         //this.objetoprueba.guardarTexto("HOLAA");
         this.imgprueba.on('pointerdown', this.objetoprueba.cargarDialogo, this);
 
+        //this.imgprueba = this.physics.add.image(100, 450, 'spritedeprueba');
+
+
         
         console.log(data);
         if(data === '0'|| data === '1') // Lo pasa el puzle
          this.actualiceEvents(data);
        // this.input.on('gameobjectdown', this.callDialogue, this);
+
+       //this.physics.enable('spritedeprueba', Phaser.Physics.ARCADE);
+
         }
 
         // MÉTODOS
@@ -140,9 +162,25 @@ export default class GameZone extends Phaser.Scene {
         this.imgprueba.setScale(this.scale/itemScale).setScrollFactor(0);
        }
 
-   
+       /*update() {
 
-   
-  }  
+        
+        if (this.input.mousePointer.isDown)
+        {
+           
+            this.physics.arcade.moveToPointer(this.imgprueba, 400);
+    
+           
+            if (Phaser.Rectangle.contains(imgprueba.body, this.input.x, this.input.y))
+            {
+              imgprueba.body.velocity.setTo(0, 0);
+            }
+        }
+        else
+        {
+          imgprueba.body.velocity.setTo(0, 0);
+        }*/
+    
+    }
 
   
