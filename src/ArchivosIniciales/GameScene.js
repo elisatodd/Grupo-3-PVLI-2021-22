@@ -1,4 +1,6 @@
 import Puzzle from "./PuzzleScene.js";
+import OBJETO from "./objeto.js";
+import GAMEMANAGER from "./gameManager.js";
 
 /**
  * Intentando hacer una escena
@@ -8,7 +10,8 @@ export default class GameZone extends Phaser.Scene {
 
     sceneMoment = 0;
     puzzleComplete = false;
-    
+    imgprueba;
+    objetoprueba;
     
 
     constructor() {
@@ -27,6 +30,7 @@ export default class GameZone extends Phaser.Scene {
         this.load.image('wallpaper', './assets/images/pueblo.jpg');
         this.load.image('personaje', './assets/images/chica.png');
         this.load.image('box', './assets/images/box.png');
+        this.load.image('spritedeprueba', './assets/images/spritedeprueba.png');
       }
       
     create(data) { // "start"
@@ -47,6 +51,16 @@ export default class GameZone extends Phaser.Scene {
         character.setInteractive();
         // Cuando se hará el evento, al método al que llamas, y donde está
         character.on('pointerdown', this.callEvents, this);
+
+        // PRUEBAS
+        let GameManager = new GAMEMANAGER();
+
+        this.objetoprueba = new OBJETO('spritedeprueba', 400, 400, 1, "gibbon", "imgpru");
+        this.imgprueba = this.add.image(this.objetoprueba.damePosicion().x, this.objetoprueba.damePosicion().y, this.objetoprueba.dameImagen()); 
+        this.imgprueba.setScale(this.scale/this.objetoprueba.dameEscala()).setScrollFactor(0);
+        //this.objetoprueba.guardarEscena(this);
+        this.imgprueba.setInteractive();
+        this.imgprueba.on('pointerdown', this.objetoprueba.recogerObjeto, this);
 
         
         console.log(data);
@@ -117,6 +131,12 @@ export default class GameZone extends Phaser.Scene {
        callPuzzle() // Evento final : llama al puzle
        {         // Llamada a la otra escena
          this.scene.start('puzzleScene'); // El nombre de la clase y del identificador de la escena, pueden no ser el mismo
+       }
+
+       moverAlInventario(xPosition, yPosition, itemScale){ // Pone un objeto de esta escena en el inventario
+        // Las posiciones dependen de cuantos objetos haya en el inventario
+        this.imgprueba = this.add.image(xPosition, yPosition, this.objetoprueba.dameImagen()); 
+        this.imgprueba.setScale(this.scale/itemScale).setScrollFactor(0);
        }
 
    
