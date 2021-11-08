@@ -52,5 +52,16 @@ export default class OBJETO{
     return clicada;
   }
 
+  cargarDialogo(texto)
+  {
+    this.load.image('box', './assets/images/box.png');
+
+    let box = this.add.image(this.cameras.main.width / 2, 500, 'box');  
+    box.setScale(this.scale/1.35).setScrollFactor(0);
+    var textConfig={fontSize:'25px',color:'#000000',fontFamily: 'Arial'};       
+    this.add.text(this.cameras.main.width/3.5, 480, texto, textConfig);
+  }
+
+
 }
 
