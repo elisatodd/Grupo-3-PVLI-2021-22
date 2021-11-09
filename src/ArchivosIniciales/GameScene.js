@@ -53,7 +53,8 @@ export default class GameZone extends Phaser.Scene {
         this.load.image('spritedeprueba', './assets/images/caja.png');
         this.load.image('spritedeprueba2', './assets/images/pez.png');
         this.load.image('spritedeprueba3', './assets/images/flor.png');
-
+        //cargo una flecha
+        this.load.image('flecha1','./assets/images/flecha.png');
       }
       
     create(data) { // "start"
@@ -88,19 +89,19 @@ export default class GameZone extends Phaser.Scene {
         this.imgprueba2 = this.add.image(this.objetoprueba2.damePosicion().x, this.objetoprueba2.damePosicion().y, this.objetoprueba2.dameImagen()); 
         this.imgprueba2.setScale(this.scale/this.objetoprueba2.dameEscala()).setScrollFactor(0);
 
-        
         this.imgprueba3 = this.add.image(this.objetoprueba3.damePosicion().x, this.objetoprueba3.damePosicion().y, this.objetoprueba3.dameImagen()); 
         this.imgprueba3.setScale(this.scale/this.objetoprueba3.dameEscala()).setScrollFactor(0);
-
         this.objetoprueba.guardarEscena(this);
         this.objetoprueba2.guardarEscena(this);
-
         this.objetoprueba3.guardarTexto("HAS RECOGIDO LA FLOR");
         this.imgprueba3.setInteractive();
-
         this.imgprueba3.on('pointerdown',this.objetoprueba3.cargarDialogo, this);
-
-
+        //Prueba con la flecha
+        this.flechaPrueba= new OBJETO('flecha1',700,350,5,"flecha","flechaPru");
+        this.imgFlecha=this.add.image(this.flechaPrueba.damePosicion().x, this.flechaPrueba.damePosicion().y, this.flechaPrueba.dameImagen());
+        this.imgFlecha.setScale(this.scale/this.flechaPrueba.dameEscala()).setScrollFactor(0);
+        //esto no se muy bien para que es
+        this.imgFlecha.setInteractive();
         this.imgprueba.setInteractive();
         this.imgprueba2.setInteractive();
         

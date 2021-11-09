@@ -28,6 +28,10 @@ export default class GAMEMANAGER extends Phaser.Scene{
         this.inventario.push(dirImagen); // Por ahora el array Inventario va a guardar la dirección de la imagen del objeto
 
     }
+    //Método que cambia de escena
+    changeScene(escena, nFlecha){
+        
+    }
 
 
 
