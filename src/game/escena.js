@@ -15,9 +15,9 @@
       
     }
 
-    loadImage(name, rute)
+    loadImage(info)
     {
-        this.load.image(name, rute);
+        this.load.image(info.name, info.rute);
     }
 
     spawnWallpaper(name)
