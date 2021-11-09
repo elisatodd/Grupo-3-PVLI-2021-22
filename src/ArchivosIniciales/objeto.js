@@ -12,19 +12,19 @@ export default class OBJETO{
     escena = null;
     //texto = "  ";
 
-  constructor(sprite, x, y, esc, func, nombre){ // necesitaría el sprite, y su posicion inicial, ESCALA, nombre de la funcion a la que llama dentro del GM
+  constructor(sprite, x, y, esc, func, nom){ // necesitaría el sprite, y su posicion inicial, ESCALA, nombre de la funcion a la que llama dentro del GM
     console.log("prueba de la clase objetoooo: " + sprite);  
     
     this.dirImagen = sprite;
     this.pos = {x,y};
     this.escala = esc;
     this.metodo = func;
-
+    this.nombre = nom;
     
   }
   
   dameImagen(){ // Devuelve la dirección de la imagen del objeto
-    // console.log(this.dirImagen);
+    //console.log(this.dirImagen);
     return this.dirImagen;
   }
 
@@ -39,14 +39,19 @@ export default class OBJETO{
   dameFuncion(){ // funcion que pasa en el GM cuando se clickee
     return this.metodo;
   }
+  
+  dameNombre(){
+    return this.nombre;
+  }
 
   guardarEscena(e){ // No es necesaria
     this.escena = e;
   }
 
-  recogerObjeto() { // Lo manda al inventario
+  recogerObjeto(imgprueba, objetoprueba) { // Lo manda al inventario
     //clicada = true;
-    this.objetoprueba.GameManager.moveImage(this, this.imgprueba, this.objetoprueba.dirImagen);
+    // NO FUNCIONA this.GameManager.moveImage(this, this.buscarObjeto(this.nombre), this.buscarObjeto(this.nombre).dirImagen);
+    this.GameManager.moveImage(this.escena, imgprueba, objetoprueba.dirImagen);
   }
 
   esClicada(){

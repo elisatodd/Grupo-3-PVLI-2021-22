@@ -44,5 +44,4 @@
         let scaleY = this.cameras.main.height / container.height;
         this.scale = Math.max(scaleX, scaleY);
     }
-    
 }

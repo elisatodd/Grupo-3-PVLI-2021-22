@@ -74,8 +74,8 @@ export default class GameZone extends Phaser.Scene {
         // PRUEBAS
         
 
-        this.objetoprueba = new OBJETO('spritedeprueba', 400, 400, 3, "caja", "imgpru");
-        this.objetoprueba2 = new OBJETO('spritedeprueba2', 600, 500, 5, "pez", "imgpru2");
+        this.objetoprueba = new OBJETO('spritedeprueba', 400, 400, 3, "caja", 'imgprueba');
+        this.objetoprueba2 = new OBJETO('spritedeprueba2', 600, 500, 5, "pez", 'imgprueba2');
 
         this.imgprueba = this.add.image(this.objetoprueba.damePosicion().x, this.objetoprueba.damePosicion().y, this.objetoprueba.dameImagen()); 
         this.imgprueba.setScale(this.scale/this.objetoprueba.dameEscala()).setScrollFactor(0);
@@ -83,12 +83,18 @@ export default class GameZone extends Phaser.Scene {
         this.imgprueba2 = this.add.image(this.objetoprueba2.damePosicion().x, this.objetoprueba2.damePosicion().y, this.objetoprueba2.dameImagen()); 
         this.imgprueba2.setScale(this.scale/this.objetoprueba2.dameEscala()).setScrollFactor(0);
 
-        //this.objetoprueba.guardarEscena(this);
+        this.objetoprueba.guardarEscena(this);
+        this.objetoprueba2.guardarEscena(this);
+
         this.imgprueba.setInteractive();
         this.imgprueba2.setInteractive();
         //this.objetoprueba.guardarTexto("HOLAA");
-        this.imgprueba.on('pointerdown', this.objetoprueba.recogerObjeto, this);
-        this.imgprueba2.on('pointerdown', this.objetoprueba2.recogerObjeto, this);
+        this.imgprueba.on('pointerdown', function(f){
+          this.objetoprueba.recogerObjeto(this.imgprueba, this.objetoprueba);
+        }, this);
+        this.imgprueba2.on('pointerdown', function(f){
+          this.objetoprueba.recogerObjeto(this.imgprueba, this.objetoprueba);
+        }, this);
 
         //this.imgprueba = this.physics.add.image(100, 450, 'spritedeprueba');
 
@@ -172,6 +178,24 @@ export default class GameZone extends Phaser.Scene {
         this.imgprueba = this.add.image(xPosition, yPosition, this.objetoprueba.dameImagen()); 
         this.imgprueba.setScale(this.scale/itemScale).setScrollFactor(0);
        }
+
+       buscarObjeto(name){ // EN REALIDAD HABRÍA QUE HACER UN FOR RECORRIENDO EL ARRAY DE OBJETOS
+        if (this.objetoprueba.dameNombre() == name){
+          return this.objetoprueba.dameNombre();
+        }else{
+          return this.objetoprueba2.dameNombre();
+        }
+      }
+       
+        buscarObjeto(name){ // EN REALIDAD HABRÍA QUE HACER UN FOR RECORRIENDO EL ARRAY DE OBJETOS
+          
+          if (this.objetoprueba.dameNombre() == name){
+            return this.objetoprueba.dameNombre();
+          }else{
+            return this.objetoprueba2.dameNombre();
+          }
+        }
+
 
        /*update() {
 

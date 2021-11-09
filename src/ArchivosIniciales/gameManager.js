@@ -21,11 +21,11 @@ export default class GAMEMANAGER extends Phaser.Scene{
 
         // La altura a la que se coloca el objeto va aumentando con la cantidad de objetos en el imventario
         escena.moverAlInventario(725, 100 + (this.objetosEnInventario*75), 5);
-        escena.RemoveObject(dirImagen);
+       //escena.RemoveObject(dirImagen);
 
 
-        objetosEnInventario++;
-        inventario.push(dirImagen); // Por ahora el array Inventario va a guardar la dirección de la imagen del objeto
+        this.objetosEnInventario++;
+        this.inventario.push(dirImagen); // Por ahora el array Inventario va a guardar la dirección de la imagen del objeto
 
     }
 
