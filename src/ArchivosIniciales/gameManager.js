@@ -14,15 +14,14 @@ export default class GAMEMANAGER extends Phaser.Scene{
     }
 
 
-    moveImage(escena, imagen, dirImagen){ // sirve para, cuando recojas un objeto, se mueva al inventario
+    moveImage(escena, imagen, dirImagen, escala){ // sirve para, cuando recojas un objeto, se mueva al inventario
         
         console.log(dirImagen);
         imagen.destroy();
 
         // La altura a la que se coloca el objeto va aumentando con la cantidad de objetos en el imventario
-        escena.moverAlInventario(725, 100 + (this.objetosEnInventario*75), 5);
+        escena.moverAlInventario(this.objetosEnInventario, dirImagen, 725, 100 + (this.objetosEnInventario*100), escala*2 );
        //escena.RemoveObject(dirImagen);
-
 
         this.objetosEnInventario++;
         this.inventario.push(dirImagen); // Por ahora el array Inventario va a guardar la dirección de la imagen del objeto

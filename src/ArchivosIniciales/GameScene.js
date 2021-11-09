@@ -93,8 +93,8 @@ export default class GameZone extends Phaser.Scene {
         this.imgprueba.on('pointerdown', function(f){
           this.objetoprueba.recogerObjeto(this.imgprueba, this.objetoprueba);
         }, this);
-        this.imgprueba2.on('pointerdown', function(f){
-          this.objetoprueba.recogerObjeto(this.imgprueba, this.objetoprueba);
+        this.imgprueba2.on('pointerdown', function(a){
+          this.objetoprueba2.recogerObjeto(this.imgprueba2, this.objetoprueba2);
         }, this);
 
         //this.imgprueba = this.physics.add.image(100, 450, 'spritedeprueba');
@@ -174,10 +174,10 @@ export default class GameZone extends Phaser.Scene {
          this.scene.start('puzzleScene'); // El nombre de la clase y del identificador de la escena, pueden no ser el mismo
        }
 
-       moverAlInventario(xPosition, yPosition, itemScale){ // Pone un objeto de esta escena en el inventario
+       moverAlInventario(posInv, obj, xPosition, yPosition, itemScale){ // Pone un objeto de esta escena en el inventario
         // Las posiciones dependen de cuantos objetos haya en el inventario
-        this.imgprueba = this.add.image(xPosition, yPosition, this.objetoprueba.dameImagen()); 
-        this.imgprueba.setScale(this.scale/itemScale).setScrollFactor(0);
+        let inv1 = this.add.image(xPosition, yPosition, obj); 
+        inv1.setScale(this.scale/itemScale).setScrollFactor(0);
        }
 
        buscarObjeto(name){ // EN REALIDAD HABRÍA QUE HACER UN FOR RECORRIENDO EL ARRAY DE OBJETOS

@@ -5,10 +5,6 @@ import GAMEMANAGER from './gameManager.js';
 let texto = "  ";
 
 export default class OBJETO{
-
- 
-
-  GameManager = new GAMEMANAGER();
  
     clicada = false;
     escena = null;
@@ -50,10 +46,10 @@ export default class OBJETO{
     this.escena = e;
   }
 
-  recogerObjeto(imgprueba, objetoprueba) { // Lo manda al inventario
+  recogerObjeto(img, obj) { // Lo manda al inventario
     //clicada = true;
     // NO FUNCIONA this.GameManager.moveImage(this, this.buscarObjeto(this.nombre), this.buscarObjeto(this.nombre).dirImagen);
-    this.GameManager.moveImage(this.escena, imgprueba, objetoprueba.dirImagen);
+    this.escena.GameManager.moveImage(this.escena, img, obj.dirImagen, this.escala);
   }
 
   esClicada(){
