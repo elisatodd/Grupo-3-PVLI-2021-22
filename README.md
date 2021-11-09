@@ -36,7 +36,7 @@ La otra pieza clave de la jugabilidad son los puzzles, que se encontrarán distr
 
 <h3>Vista general del juego</h3>
 <p>Así se verá una partida de The Right Man.</p>
-  <img src="images/PartidaTipica.jpg" width="615"> 
+  <img src="arte/PartidaTipica.jpg" width="615"> 
 <p>Imágenes sacadas de la franquicia de juegos "El Profesor Layton".</p>
 
 <h3>Relato breve y parcial de una partida típica</h3>
@@ -69,7 +69,7 @@ La otra pieza clave de la jugabilidad son los puzzles, que se encontrarán distr
 <li>Clicar en la solución correcta: para este tipo de puzles tendremos que clicar con el puntero del ratón en la solución del puzle que creamos correcta. Las opciones se mostrarán en la pantalla. Los puzles que se resolverán con esta mecánica son Alarma por el Expreso, Inocencia y Juventud y El Juego de los Espejos.</li>
 <li>Arrastrar con el puntero: para este tipo de puzles tendremos que arrastrar los diferentes elementos que se nos indique en cada uno de los puzles para poder superarlos. Los puzles que se resolverán con esta mecánica son Banderines de Vértigo y Topoz.</li>
     
- <img src="images/tipos_puzzles.png" width="725">   
+ <img src="arte/tipos_puzzles.png" width="725">   
 </ul>
 
 <h4>Controles</h4>
@@ -93,7 +93,7 @@ Del jugador se espera que desarrolle una estrategia basada en observar bien las 
 <p>Es de esperar que el jugador promedio necesite jugar más de una vez para conseguir ganar con el final perfecto. Esto se conseguirá ajustando el tiempo límite para que el jugador tenga que administrar bien el tiempo, y ser rápido en la observación de los escenarios. Con cada vez que juegue se dará cuenta de algunos aspectos del juego de los que no se había percatado en su partida anterior, avanzando así y pudiendo superar el juego completo en dos o tres partidas de media.</p>
 
 
-<img src="images/dinámica_partida.png" width="725">
+<img src="arte/dinámica_partida.png" width="725">
 
 <p>En el juego hay diferentes puzles cada uno con una dinámica única que deberemos completar para poder avanzar en el juego. Estos puzles son:</p>
 <ul>
@@ -117,7 +117,7 @@ Del jugador se espera que desarrolle una estrategia basada en observar bien las 
 <li>Pajarita: se entregará al policia en el bosque.</li>
 <li>Caja de cartón: se entregará al campesino en el bosque.</li>
 </ul>
-<img src="images/puzles_objetos.png" width="900">
+<img src="arte/puzles_objetos.png" width="900">
 
 
 <h3>Estética</h3>   
@@ -126,13 +126,13 @@ Del jugador se espera que desarrolle una estrategia basada en observar bien las 
 <p>Los diferentes escenarios constarán de fondos simples que establecerán la ambientación de un antiguo pueblo inglés. Los objetos que se encuentren por las habitaciones, y no tengan relevancia con la trama, mantendrán la simpleza, acentuando sólo los elementos necesarios para el uso correcto e intuitivo por parte del jugador; evitando así la sobrecarga visual en el escenario.</p>
 <p>En la misma línea los personajes que se presenten ante el jugador serán sencillos, dando predilección por elementos característicos (bigotes, sombreros, barbas, vestimenta…) sobre el detalle elevado; manteniendo la concordancia y dando estímulos visuales al jugador.</p>
 
-<img src="images/paleton.png" width="225">
+<img src="arte/paleton.png" width="225">
 
 
 <h2>Menús y modos de juego</h2>
 <p>El juego poseerá 3 menús:</p>
 
-<img src="images/menus.png" width="750">
+<img src="arte/menus.png" width="750">
 
 <ul>
 <li>Menú portada: el menú que se encontrará el jugador al entrar al juego y siempre que salga de partida. Tendrá el botón de inicio de partida y servirá como puente para entrar al juego como tal. También mostrará el mayor porcentaje de credibilidad que el jugador haya conseguido en la sesión de juego.</li>
@@ -164,7 +164,7 @@ Del jugador se espera que desarrolle una estrategia basada en observar bien las 
 <h2>Contenido</h2>
 <p>El juego consta de 10 habitaciones en las habrá difrerentes puzles y enigmas a descifrar.</p>
 
-<img src="images/zones.png" width="1000">
+<img src="arte/zones.png" width="1000">
 
 <h3>Historia</h3>
 <p>Se ha encontrado el cadáver de Grace Bergman, hija del Alcalde de la ciudad, en trágicas condiciones. Donald Calthrop es el principal acusado, ya que mantenían una relación sentimental y fue el último en verla con vida, durante la feria del pueblo. El alcalde acusa a Donald sin cuestionarlo, ya que creía que trataba mal a la víctima. Llega una carta a casa de Donald, es el principal sospechoso. Tiene un día para demostrar su inocencia y encontrar simpatizantes entre el jurado popular. </p>
