@@ -87,9 +87,9 @@ export default class GameZone extends Phaser.Scene {
         this.imgprueba2.setScale(this.scale/this.objetoprueba2.dameEscala()).setScrollFactor(0);
 
         //Prueba con la flecha
-        this.flechaPrueba= new OBJETO('flecha1',600,400,10,"flecha","flechaPru");
+        this.flechaPrueba= new OBJETO('flecha1',700,350,5,"flecha","flechaPru");
         this.imgFlecha=this.add.image(this.flechaPrueba.damePosicion().x, this.flechaPrueba.damePosicion().y, this.flechaPrueba.dameImagen());
-        this.imgFlecha.setScale(0.25);
+        this.imgFlecha.setScale(this.scale/this.flechaPrueba.dameEscala()).setScrollFactor(0);
 
         //esto no se muy bien para que es
         this.imgFlecha.setInteractive();
