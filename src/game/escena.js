@@ -30,9 +30,10 @@
     spawnImage(name, position, aling, scaleProportion)
     {
         let container = this.add.image(position.x, position.y, name);
-         container.setScale(this.scale/scaleProportion).setScrollFactor(0);  
-         //container.setOrigin(aling.x, aling.y);   
-         return container;
+        container.setScale(this.scale/scaleProportion).setScrollFactor(0);  
+        //container.setOrigin(aling.x, aling.y);   
+
+        return container;
 
     }
 

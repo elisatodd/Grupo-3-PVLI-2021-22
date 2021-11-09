@@ -19,12 +19,15 @@ import GAMEMANAGER from "./gameManager.js";
 const game = new Phaser.Game(config);
 */
 
+// USAMOS ESTA ESCENA PARA HACER PRUEBAS
 export default class GameZone extends Phaser.Scene {
 
     sceneMoment = 0;
     puzzleComplete = false;
     imgprueba;
+    imgprueba2;
     objetoprueba;
+    objetoprueba2;
     GameManager = new GAMEMANAGER();
     
 
@@ -45,7 +48,8 @@ export default class GameZone extends Phaser.Scene {
         this.load.image('wallpaper', './assets/images/pueblo.jpg');
         this.load.image('personaje', './assets/images/chica.png');
         this.load.image('box', './assets/images/box.png');
-        this.load.image('spritedeprueba', './assets/images/spritedeprueba.png');
+        this.load.image('spritedeprueba', './assets/images/caja.png');
+        this.load.image('spritedeprueba2', './assets/images/pez.png');
       }
       
     create(data) { // "start"
@@ -70,14 +74,21 @@ export default class GameZone extends Phaser.Scene {
         // PRUEBAS
         
 
-        this.objetoprueba = new OBJETO('spritedeprueba', 400, 400, 1, "gibbon", "imgpru");
-        
+        this.objetoprueba = new OBJETO('spritedeprueba', 400, 400, 3, "caja", "imgpru");
+        this.objetoprueba2 = new OBJETO('spritedeprueba2', 600, 500, 5, "pez", "imgpru2");
+
         this.imgprueba = this.add.image(this.objetoprueba.damePosicion().x, this.objetoprueba.damePosicion().y, this.objetoprueba.dameImagen()); 
         this.imgprueba.setScale(this.scale/this.objetoprueba.dameEscala()).setScrollFactor(0);
+
+        this.imgprueba2 = this.add.image(this.objetoprueba2.damePosicion().x, this.objetoprueba2.damePosicion().y, this.objetoprueba2.dameImagen()); 
+        this.imgprueba2.setScale(this.scale/this.objetoprueba2.dameEscala()).setScrollFactor(0);
+
         //this.objetoprueba.guardarEscena(this);
         this.imgprueba.setInteractive();
+        this.imgprueba2.setInteractive();
         //this.objetoprueba.guardarTexto("HOLAA");
-        this.imgprueba.on('pointerdown', this.objetoprueba.cargarDialogo, this);
+        this.imgprueba.on('pointerdown', this.objetoprueba.recogerObjeto, this);
+        this.imgprueba2.on('pointerdown', this.objetoprueba2.recogerObjeto, this);
 
         //this.imgprueba = this.physics.add.image(100, 450, 'spritedeprueba');
 

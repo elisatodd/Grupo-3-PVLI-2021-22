@@ -24,7 +24,7 @@ export default class OBJETO{
   }
   
   dameImagen(){ // Devuelve la dirección de la imagen del objeto
-    console.log(this.dirImagen);
+    // console.log(this.dirImagen);
     return this.dirImagen;
   }
 
