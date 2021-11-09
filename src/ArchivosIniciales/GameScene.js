@@ -88,6 +88,7 @@ export default class GameZone extends Phaser.Scene {
 
         this.imgprueba.setInteractive();
         this.imgprueba2.setInteractive();
+        
         //this.objetoprueba.guardarTexto("HOLAA");
         this.imgprueba.on('pointerdown', function(f){
           this.objetoprueba.recogerObjeto(this.imgprueba, this.objetoprueba);

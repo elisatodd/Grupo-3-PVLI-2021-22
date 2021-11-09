@@ -2,15 +2,17 @@ import GameZone from './GameScene.js';
 import Puzzle from './PuzzleScene.js';
 import GAMEMANAGER from './gameManager.js';
 
+let texto = "  ";
 
 export default class OBJETO{
 
  
+
   GameManager = new GAMEMANAGER();
  
     clicada = false;
     escena = null;
-    //texto = "  ";
+    
 
   constructor(sprite, x, y, esc, func, nom){ // necesitaría el sprite, y su posicion inicial, ESCALA, nombre de la funcion a la que llama dentro del GM
     console.log("prueba de la clase objetoooo: " + sprite);  
@@ -59,11 +61,11 @@ export default class OBJETO{
   }
 
 
-  /*guardarTexto(text)
+  guardarTexto(text)
   {
     texto = text;
   }
-*/
+
 
   cargarDialogo()
   {
@@ -74,13 +76,13 @@ export default class OBJETO{
     //this.box.setInteractive();
     //this.box.on('pointerdown', this.quitarDialogo, this);
     var textConfig={fontSize:'25px',color:'#000000',fontFamily: 'Arial'};       
-    this.add.text(this.cameras.main.width/3.5, 480, "HOLA SOY UN GIBON", textConfig);
+    this.add.text(this.cameras.main.width/3.5, 480, texto, textConfig);
   }
 
-  /*quitarDialogo()
+  quitarDialogo()
   {
-    box.destroy();
-  }*/
+    this.box.destroy();
+  }
 
 
 }
