@@ -62,7 +62,6 @@ import EscenaPuzzle from '../escenaPuzzle.js'
       ,
       scene : this
     }
-   
 
    preload()
    {
@@ -72,6 +71,7 @@ import EscenaPuzzle from '../escenaPuzzle.js'
      super.loadImage('win', '../assets/sprites/winLogo.png');
      super.loadImage('lose', '../assets/sprites/loseLogo.png');
    }
+   
 
    create()
    {
