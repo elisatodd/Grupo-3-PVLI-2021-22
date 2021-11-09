@@ -187,15 +187,6 @@ export default class GameZone extends Phaser.Scene {
           return this.objetoprueba2.dameNombre();
         }
       }
-       
-        buscarObjeto(name){ // EN REALIDAD HABRÍA QUE HACER UN FOR RECORRIENDO EL ARRAY DE OBJETOS
-          
-          if (this.objetoprueba.dameNombre() == name){
-            return this.objetoprueba.dameNombre();
-          }else{
-            return this.objetoprueba2.dameNombre();
-          }
-        }
 
 
        /*update() {

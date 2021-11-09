@@ -69,12 +69,19 @@
       }
    }
 
-   // Dibuja un objeto de esta escena en el inventario, lo llama el GM
-   MoverAlInventario(xPosition, yPosition, itemScale){ 
+   moverAlInventario(posInv, obj, xPosition, yPosition, itemScale){ // Pone un objeto de esta escena en el inventario
     // Las posiciones dependen de cuantos objetos haya en el inventario
-    this.imgprueba = this.add.image(xPosition, yPosition, this.objetoprueba.dameImagen()); 
-    this.imgprueba.setScale(this.scale/itemScale).setScrollFactor(0);
+    let inv1 = this.add.image(xPosition, yPosition, obj); 
+    inv1.setScale(this.scale/itemScale).setScrollFactor(0);
    }
+
+   buscarObjeto(name){ // UN FOR RECORRIENDO EL ARRAY DE OBJETOS HASTA QUE ENCUENTRA EL NOMBRE
+    for (i = 0 ; i < this.objects.length ; ++i){
+        if (objects[i].dameNombre() == name ){
+            return objects[i].dameNombre();
+        }
+    }
+  }
 
    // El GM llama a este método cuando se pasa un objeto al inventario, para que desaparezca de la escena
    RemoveObject(obj){
