@@ -50,6 +50,9 @@ export default class GameZone extends Phaser.Scene {
         this.load.image('box', './assets/images/box.png');
         this.load.image('spritedeprueba', './assets/images/caja.png');
         this.load.image('spritedeprueba2', './assets/images/pez.png');
+
+        //cargo una flecha
+        this.load.image('flecha1','./assets/images/flecha.png');
       }
       
     create(data) { // "start"
@@ -82,6 +85,15 @@ export default class GameZone extends Phaser.Scene {
 
         this.imgprueba2 = this.add.image(this.objetoprueba2.damePosicion().x, this.objetoprueba2.damePosicion().y, this.objetoprueba2.dameImagen()); 
         this.imgprueba2.setScale(this.scale/this.objetoprueba2.dameEscala()).setScrollFactor(0);
+
+        //Prueba con la flecha
+        this.flechaPrueba= new OBJETO('flecha1',600,400,10,"flecha","flechaPru");
+        this.imgFlecha=this.add.image(this.flechaPrueba.damePosicion().x, this.flechaPrueba.damePosicion().y, this.flechaPrueba.dameImagen());
+        this.imgFlecha.setScale(0.25);
+
+        //esto no se muy bien para que es
+        this.imgFlecha.setInteractive();
+
 
         //this.objetoprueba.guardarEscena(this);
         this.imgprueba.setInteractive();
