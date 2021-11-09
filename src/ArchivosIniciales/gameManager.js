@@ -23,6 +23,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
         escena.moverAlInventario(this.objetosEnInventario, dirImagen, 725, 100 + (this.objetosEnInventario*100), escala*2 );
        //escena.RemoveObject(dirImagen); -> ACTIVAR ESTO CUANDO USEMOS LAS ESCENAS DE VERDAD
 
+       
         this.objetosEnInventario++;
         this.inventario.push(dirImagen); // Por ahora el array Inventario va a guardar la dirección de la imagen del objeto
 

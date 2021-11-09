@@ -7,17 +7,7 @@ import GAMEMANAGER from "./gameManager.js";
  * @extends Phaser.Scene
  */
 
- /*const config = {
-  physics: {
-      default: 'arcade', // elegir motor
-      arcade: { // propiedades del motor
-          gravity: { y: 300 },
-          debug: false // true para ver info
-      }
-  },
-};
-const game = new Phaser.Game(config);
-*/
+
 
 // USAMOS ESTA ESCENA PARA HACER PRUEBAS
 export default class GameZone extends Phaser.Scene {
@@ -26,9 +16,12 @@ export default class GameZone extends Phaser.Scene {
     puzzleComplete = false;
     imgprueba;
     imgprueba2;
+    imgprueba3;
     objetoprueba;
     objetoprueba2;
+    objetoprueba3;
     GameManager = new GAMEMANAGER();
+    
     
 
 
@@ -36,20 +29,31 @@ export default class GameZone extends Phaser.Scene {
       // Nombre de la escena para el SceneManager, es deci, al cargar la escena desde algún lado debes usar este nombre
       super({ key: 'gameScene' });       // Siempre hay que llamar al super para sobreescribir la escena
       {
-      }; 
+        /*const config = {
+          physics: {
+              default: 'arcade', // elegir motor
+              arcade: { // propiedades del motor
+                  gravity: { y: 300 },
+                  debug: false // true para ver info
+              }
+          },
+        };
+        const game = new Phaser.Game(config);
+        */
+      };
+       
       
     }
-
-    
-    
-  
     // Métodos init, preload, create, update
     preload() { // Cargas todo lo que vayas a usar
+        
         this.load.image('wallpaper', './assets/images/pueblo.jpg');
         this.load.image('personaje', './assets/images/chica.png');
         this.load.image('box', './assets/images/box.png');
         this.load.image('spritedeprueba', './assets/images/caja.png');
         this.load.image('spritedeprueba2', './assets/images/pez.png');
+        this.load.image('spritedeprueba3', './assets/images/flor.png');
+
       }
       
     create(data) { // "start"
@@ -76,6 +80,7 @@ export default class GameZone extends Phaser.Scene {
 
         this.objetoprueba = new OBJETO('spritedeprueba', 400, 400, 3, "caja", 'imgprueba');
         this.objetoprueba2 = new OBJETO('spritedeprueba2', 600, 500, 5, "pez", 'imgprueba2');
+        this.objetoprueba3 = new OBJETO('spritedeprueba3', 400, 500, 5, "flor", 'imgprueba3');
 
         this.imgprueba = this.add.image(this.objetoprueba.damePosicion().x, this.objetoprueba.damePosicion().y, this.objetoprueba.dameImagen()); 
         this.imgprueba.setScale(this.scale/this.objetoprueba.dameEscala()).setScrollFactor(0);
@@ -83,8 +88,18 @@ export default class GameZone extends Phaser.Scene {
         this.imgprueba2 = this.add.image(this.objetoprueba2.damePosicion().x, this.objetoprueba2.damePosicion().y, this.objetoprueba2.dameImagen()); 
         this.imgprueba2.setScale(this.scale/this.objetoprueba2.dameEscala()).setScrollFactor(0);
 
+        
+        this.imgprueba3 = this.add.image(this.objetoprueba3.damePosicion().x, this.objetoprueba3.damePosicion().y, this.objetoprueba3.dameImagen()); 
+        this.imgprueba3.setScale(this.scale/this.objetoprueba3.dameEscala()).setScrollFactor(0);
+
         this.objetoprueba.guardarEscena(this);
         this.objetoprueba2.guardarEscena(this);
+
+        this.objetoprueba3.guardarTexto("HAS RECOGIDO LA FLOR");
+        this.imgprueba3.setInteractive();
+
+        this.imgprueba3.on('pointerdown',this.objetoprueba3.cargarDialogo, this);
+
 
         this.imgprueba.setInteractive();
         this.imgprueba2.setInteractive();
@@ -97,9 +112,6 @@ export default class GameZone extends Phaser.Scene {
           this.objetoprueba2.recogerObjeto(this.imgprueba2, this.objetoprueba2);
         }, this);
 
-        //this.imgprueba = this.physics.add.image(100, 450, 'spritedeprueba');
-
-
         
         console.log(data);
         if(data === '0'|| data === '1') // Lo pasa el puzle
@@ -107,6 +119,7 @@ export default class GameZone extends Phaser.Scene {
        // this.input.on('gameobjectdown', this.callDialogue, this);
 
        //this.physics.enable('spritedeprueba', Phaser.Physics.ARCADE);
+      //this.imgprueba = this.physics.add.image(100, 450, 'spritedeprueba');
 
         }
 
@@ -190,8 +203,6 @@ export default class GameZone extends Phaser.Scene {
 
 
        /*update() {
-
-        
         if (this.input.mousePointer.isDown)
         {
            
@@ -206,8 +217,9 @@ export default class GameZone extends Phaser.Scene {
         else
         {
           imgprueba.body.velocity.setTo(0, 0);
-        }*/
+        }
     
-    }
+    }*/
+  }
 
   

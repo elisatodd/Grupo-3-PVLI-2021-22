@@ -3,6 +3,7 @@ import Puzzle from './PuzzleScene.js';
 import GAMEMANAGER from './gameManager.js';
 
 let texto = "  ";
+let box;
 
 export default class OBJETO{
  
@@ -67,17 +68,26 @@ export default class OBJETO{
   {
     this.load.image('box', './assets/images/box.png');
 
-    let box = this.add.image(this.cameras.main.width / 2, 500, 'box');  
-    box.setScale(this.scale/1.35).setScrollFactor(0);
-    //this.box.setInteractive();
-    //this.box.on('pointerdown', this.quitarDialogo, this);
-    var textConfig={fontSize:'25px',color:'#000000',fontFamily: 'Arial'};       
-    this.add.text(this.cameras.main.width/3.5, 480, texto, textConfig);
+    this.box = this.add.image(this.cameras.main.width / 2, 500, 'box');  
+    this.box.setScale(this.scale/1.35).setScrollFactor(0);
+   
+    //var textConfig={fontSize:'25px',color:'#000000',fontFamily: 'Arial'};  
+    //this.add.text(this.cameras.main.width/3.5, 480, texto, textConfig);
+
+    let text = this.add.text(this.cameras.main.width/3.5, 480, texto, 
+      { fontSize:'25px',color:'#000000',fontFamily: 'Arial'});
+
+    this.box.setInteractive();
+    this.box.on('pointerdown', function(f){
+      this.objetoprueba.quitarDialogo(this.box, this.text);
+    }, this);
+    
   }
 
-  quitarDialogo()
+  quitarDialogo(img, texto)
   {
-    this.box.destroy();
+    img.destroy();
+    //texto.destroy();
   }
 
 
