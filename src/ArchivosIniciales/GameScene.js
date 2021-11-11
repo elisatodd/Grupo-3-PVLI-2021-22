@@ -101,20 +101,11 @@ export default class GameZone extends Phaser.Scene {
         this.flechaDerecha= new OBJETO('flecha1',700,350,5,"flecha","flechaPru");
         this.imgFlechaDch=this.add.image(this.flechaDerecha.damePosicion().x, this.flechaDerecha.damePosicion().y, this.flechaDerecha.dameImagen());
         this.imgFlechaDch.setScale(this.scale/this.flechaDerecha.dameEscala()).setScrollFactor(0);
-        this.flechaDerecha.guardarTexto("LE HAS DADO A LA FLECHA");
+
         this.imgFlechaDch.setInteractive();
-        this.imgFlechaDch.on('pointerdown',this.changeScene, this);
+        this.imgFlechaDch.on('pointerdown',this.GameManager.changeScene, this);
         
-        //Eventos de la flecha
-       // this.flechaDerecha.on('pointerdown', this.changeScene, this);
-        //this.imgFlechaDch.on('pointerdown',GameManager.changeScene(), this);
-
-        // this.imgFlechaDch.on('pointerdown', function(f){
-        //   this.flechaDerecha.recogerObjeto(this.imgprueba, this.objetoprueba);
-        // }, this);
-
-       //this.imgFlechaDch.on('pointerdown', this.changeScene(), this);
-
+        
         this.imgprueba.setInteractive();
         this.imgprueba2.setInteractive();
         
@@ -215,13 +206,7 @@ export default class GameZone extends Phaser.Scene {
           return this.objetoprueba2.dameNombre();
         }
       }
-          //A ver si aquí va lo de la flecha
-          //Método que cambia de escena
-        changeScene()
-         {
-        this.scene.start('puzzleScene');
-        }
-
+        
 
        /*update() {
         if (this.input.mousePointer.isDown)
