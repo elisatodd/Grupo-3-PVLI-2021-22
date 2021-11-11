@@ -103,7 +103,7 @@ export default class GameZone extends Phaser.Scene {
         this.imgFlechaDch.setScale(this.scale/this.flechaDerecha.dameEscala()).setScrollFactor(0);
         this.flechaDerecha.guardarTexto("LE HAS DADO A LA FLECHA");
         this.imgFlechaDch.setInteractive();
-        this.imgFlechaDch.on('pointerdown',this.flechaDerecha.cargarDialogo, this);
+        this.imgFlechaDch.on('pointerdown',this.changeScene, this);
         
         //Eventos de la flecha
        // this.flechaDerecha.on('pointerdown', this.changeScene, this);
