@@ -53,7 +53,6 @@ export default class GameZone extends Phaser.Scene {
         this.load.image('spritedeprueba', './assets/images/caja.png');
         this.load.image('spritedeprueba2', './assets/images/pez.png');
         this.load.image('spritedeprueba3', './assets/images/flor.png');
-        //cargo una flecha
         this.load.image('flecha1','./assets/images/flecha.png');
       }
       
@@ -96,19 +95,33 @@ export default class GameZone extends Phaser.Scene {
         this.objetoprueba3.guardarTexto("HAS RECOGIDO LA FLOR");
         this.imgprueba3.setInteractive();
         this.imgprueba3.on('pointerdown',this.objetoprueba3.cargarDialogo, this);
+
+
         //Prueba con la flecha
-        this.flechaPrueba= new OBJETO('flecha1',700,350,5,"flecha","flechaPru");
-        this.imgFlecha=this.add.image(this.flechaPrueba.damePosicion().x, this.flechaPrueba.damePosicion().y, this.flechaPrueba.dameImagen());
-        this.imgFlecha.setScale(this.scale/this.flechaPrueba.dameEscala()).setScrollFactor(0);
-        //esto no se muy bien para que es
-        this.imgFlecha.setInteractive();
+        this.flechaDerecha= new OBJETO('flecha1',700,350,5,"flecha","flechaPru");
+        this.imgFlechaDch=this.add.image(this.flechaDerecha.damePosicion().x, this.flechaDerecha.damePosicion().y, this.flechaDerecha.dameImagen());
+        this.imgFlechaDch.setScale(this.scale/this.flechaDerecha.dameEscala()).setScrollFactor(0);
+        this.flechaDerecha.guardarTexto("LE HAS DADO A LA FLECHA");
+        this.imgFlechaDch.setInteractive();
+        this.imgFlechaDch.on('pointerdown',this.flechaDerecha.cargarDialogo, this);
+        
+        //Eventos de la flecha
+       // this.flechaDerecha.on('pointerdown', this.changeScene, this);
+        //this.imgFlechaDch.on('pointerdown',GameManager.changeScene(), this);
+
+        // this.imgFlechaDch.on('pointerdown', function(f){
+        //   this.flechaDerecha.recogerObjeto(this.imgprueba, this.objetoprueba);
+        // }, this);
+
+       //this.imgFlechaDch.on('pointerdown', this.changeScene(), this);
+
         this.imgprueba.setInteractive();
         this.imgprueba2.setInteractive();
         
         //this.objetoprueba.guardarTexto("HOLAA");
-        this.imgprueba.on('pointerdown', function(f){
-          this.objetoprueba.recogerObjeto(this.imgprueba, this.objetoprueba);
-        }, this);
+        // this.imgprueba.on('pointerdown', function(f){
+        //   this.objetoprueba.recogerObjeto(this.imgprueba, this.objetoprueba);
+        // }, this);
         this.imgprueba2.on('pointerdown', function(a){
           this.objetoprueba2.recogerObjeto(this.imgprueba2, this.objetoprueba2);
         }, this);
@@ -138,6 +151,7 @@ export default class GameZone extends Phaser.Scene {
           else
           this.callInfo("El enigma debe de ser resuelto");
         }
+    
 
         callEvents() // Cambia un estado al llamarlo
         { 
@@ -201,6 +215,12 @@ export default class GameZone extends Phaser.Scene {
           return this.objetoprueba2.dameNombre();
         }
       }
+          //A ver si aquí va lo de la flecha
+          //Método que cambia de escena
+        changeScene()
+         {
+        this.scene.start('puzzleScene');
+        }
 
 
        /*update() {

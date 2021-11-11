@@ -22,6 +22,7 @@ export default class OBJETO{
     
   }
   
+  
   dameImagen(){ // Devuelve la dirección de la imagen del objeto
     //console.log(this.dirImagen);
     return this.dirImagen;
@@ -89,6 +90,7 @@ export default class OBJETO{
     img.destroy();
     umpa.destroy();
   }
+
 
 
 }

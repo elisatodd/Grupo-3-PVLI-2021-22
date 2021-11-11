@@ -4,6 +4,14 @@ export default class GAMEMANAGER extends Phaser.Scene{
     inventario = []; // Array que guarda los objetos que se han recolectado
     objetosEnInventario = 0;
 
+    /*{
+        x,6,4,5
+        10,8,3,x
+        9,7,1,2
+    }*/
+    //¿?¿?¿?¿?¿?¿?¿?¿??¿?¿?¿?¿?¿?
+   //escenas = [3,4];//Matriz con las escenas
+
     constructor(){
 
         super({ key: 'GameManager' });
@@ -28,10 +36,11 @@ export default class GAMEMANAGER extends Phaser.Scene{
         this.inventario.push(dirImagen); // Por ahora el array Inventario va a guardar la dirección de la imagen del objeto
 
     }
-    //Método que cambia de escena
-    changeScene(escena, nFlecha){
-        
-    }
+    // //Método que cambia de escena
+    // changeScene()
+    // {
+    //     this.Scene.start('puzzleScene');
+    // }
 
 
 
