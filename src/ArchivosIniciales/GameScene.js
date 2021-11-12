@@ -22,21 +22,6 @@ export default class GameZone extends Phaser.Scene {
     objetoprueba2;
     objetoprueba3;
     GameManager = new GAMEMANAGER();
-    
-
-    /*const config = {
-          physics: {
-              default: 'arcade', // elegir motor
-              arcade: { // propiedades del motor
-                  gravity: { y: 300 }, (no lo necesito en verdad)
-                  debug: false // true para ver info (ni esto)
-              }
-          },
-        };
-        const game = new Phaser.Game(config);
-        */
-
-
     constructor() {
       // Nombre de la escena para el SceneManager, es deci, al cargar la escena desde algún lado debes usar este nombre
       super({ key: 'gameScene' });       // Siempre hay que llamar al super para sobreescribir la escena
@@ -97,9 +82,11 @@ export default class GameZone extends Phaser.Scene {
         this.imgprueba3.setScale(this.scale/this.objetoprueba3.dameEscala()).setScrollFactor(0);
         this.objetoprueba.guardarEscena(this);
         this.objetoprueba2.guardarEscena(this);
-        this.objetoprueba3.guardarTexto("HAS RECOGIDO LA FLOR");
-        this.imgprueba3.setInteractive();
-        this.imgprueba3.on('pointerdown',this.objetoprueba3.cargarDialogo, this);
+        //this.objetoprueba3.guardarTexto("HAS RECOGIDO LA FLOR");
+        //this.imgprueba3.setInteractive();
+        //this.imgprueba3.on('pointerdown',this.objetoprueba3.cargarDialogo, this);
+
+    
 
 
         //Coloco las flechas
@@ -146,7 +133,8 @@ export default class GameZone extends Phaser.Scene {
         
         this.imgprueba.setInteractive();
         this.imgprueba2.setInteractive();
-        
+        this.imgprueba3.setInteractive();
+
         //this.objetoprueba.guardarTexto("HOLAA");
          this.imgprueba.on('pointerdown', function(f){
            this.objetoprueba.recogerObjeto(this.imgprueba, this.objetoprueba);
@@ -160,11 +148,6 @@ export default class GameZone extends Phaser.Scene {
         if(data === '0'|| data === '1') // Lo pasa el puzle
          this.actualiceEvents(data);
        // this.input.on('gameobjectdown', this.callDialogue, this);
-
-
-       //Intentos de crear fisicas (da error en los dos)
-       //this.physics.enable('spritedeprueba', Phaser.Physics.ARCADE);
-      //this.imgprueba = this.physics.add.image(100, 450, 'spritedeprueba');
 
         }
 
@@ -246,29 +229,27 @@ export default class GameZone extends Phaser.Scene {
           return this.objetoprueba2.dameNombre();
         }
       }
-        
 
+      startdrag(pointer)
+      {
+        this.input.off('pointerdown', this.startdrag, this);
+        this.input.on('pointermove', this.dodrag, this);
+        this.input.on('pointerup',this.stopdrag,this);
+      }
 
-      //Intento de que la imagen se mueva (se crea otra pantalla lol)
+      dodrag(pointer)
+      {
+        this.objetoprueba3.x = pointer.x;
+        this.objetoprueba3.y = pointer.y;
 
-       /*update() {
-        if (this.input.mousePointer.isDown)
-        {
-           
-            this.physics.arcade.moveToPointer(this.imgprueba, 400);
-    
-           
-            if (Phaser.Rectangle.contains(imgprueba.body, this.input.x, this.input.y))
-            {
-              imgprueba.body.velocity.setTo(0, 0);
-            }
-        }
-        else
-        {
-          imgprueba.body.velocity.setTo(0, 0);
-        }
-    
-    }*/
+      }
+
+      stopdrag()
+      {
+        this.input.on('pointerdown', this.startdrag, this);
+        this.input.off('pointermove', this.dodrag, this);
+        this.input.off('pointerup',this.stopdrag,this);
+      }
   }
 
   
