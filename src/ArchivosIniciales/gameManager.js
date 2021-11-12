@@ -1,3 +1,6 @@
+
+import EscenaCasa from "../game/casa.js"
+
 export default class GAMEMANAGER extends Phaser.Scene{
 
     // Contenedores de GameObjects

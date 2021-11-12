@@ -17,19 +17,28 @@
      };
  
    }
+   preload() { // Cargas las flechas que son comunes a todas las escenas de juego
+     
+    this.load.image('flechaDcha','./assets/images/flechaDcha.png');
+    this.load.image('flechaIzq','./assets/images/flechaIzq.png');
+    this.load.image('flechaAbj','./assets/images/flechaAbj.png');
+    this.load.image('flechaArr','./assets/images/flechaArr.png');
+  }
 
-   /*create()
+   create()
    {
-       let object = function prueba(){console.log("objeto");};
+    //    let object = function prueba(){console.log("objeto");};
        
-    for(let i = 0; i < 3; i++)
-    {
-        this.AddObject(object);
-    }
+    // for(let i = 0; i < 3; i++)
+    // {
+    //     this.AddObject(object);
+    // }
 
-    this.CreateObjects([true, false, true]);
+    // this.CreateObjects([true, false, true]);
+
+    
        
-   }*/
+   }
 
    AddObject(object)
    {       
