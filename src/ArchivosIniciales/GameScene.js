@@ -22,24 +22,25 @@ export default class GameZone extends Phaser.Scene {
     objetoprueba3;
     GameManager = new GAMEMANAGER();
     
-    
+
+    /*const config = {
+          physics: {
+              default: 'arcade', // elegir motor
+              arcade: { // propiedades del motor
+                  gravity: { y: 300 }, (no lo necesito en verdad)
+                  debug: false // true para ver info (ni esto)
+              }
+          },
+        };
+        const game = new Phaser.Game(config);
+        */
 
 
     constructor() {
       // Nombre de la escena para el SceneManager, es deci, al cargar la escena desde algún lado debes usar este nombre
       super({ key: 'gameScene' });       // Siempre hay que llamar al super para sobreescribir la escena
       {
-        /*const config = {
-          physics: {
-              default: 'arcade', // elegir motor
-              arcade: { // propiedades del motor
-                  gravity: { y: 300 },
-                  debug: false // true para ver info
-              }
-          },
-        };
-        const game = new Phaser.Game(config);
-        */
+        
       };
        
       
@@ -156,6 +157,8 @@ export default class GameZone extends Phaser.Scene {
          this.actualiceEvents(data);
        // this.input.on('gameobjectdown', this.callDialogue, this);
 
+
+       //Intentos de crear fisicas (da error en los dos)
        //this.physics.enable('spritedeprueba', Phaser.Physics.ARCADE);
       //this.imgprueba = this.physics.add.image(100, 450, 'spritedeprueba');
 
@@ -240,6 +243,9 @@ export default class GameZone extends Phaser.Scene {
         }
       }
         
+
+
+      //Intento de que la imagen se mueva (se crea otra pantalla lol)
 
        /*update() {
         if (this.input.mousePointer.isDown)
