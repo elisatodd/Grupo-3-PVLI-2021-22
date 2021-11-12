@@ -1,3 +1,6 @@
+
+import EscenaCasa from "../game/casa.js"
+
 export default class GAMEMANAGER extends Phaser.Scene{
 
     // Contenedores de GameObjects
@@ -38,9 +41,10 @@ export default class GAMEMANAGER extends Phaser.Scene{
     }
     //A ver si aquí va lo de la flecha
     //Método que cambia de escena
-    changeScene()
+    changeScene(posFlecha, escena)
+    //Aquí tengo que meter las condiciones para que el cambio de escena dependa de la flecha y la escena
     {
-        this.scene.start('puzzleScene');
+        this.scene.start('casa');
     }
  
 
