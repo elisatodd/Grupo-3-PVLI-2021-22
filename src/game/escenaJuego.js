@@ -11,12 +11,12 @@
  
    constructor() {
  
- 
-     super({ key: 'GameScene' });
-     {
-     };
+    super({ key: 'GameScene' });
+    {
+    };
  
    }
+   
    preload() { // Cargas las flechas que son comunes a todas las escenas de juego
      
     this.load.image('flechaDcha','./assets/images/flechaDcha.png');

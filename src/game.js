@@ -5,6 +5,7 @@ import PuzzleInput from './game/puzzleInput.js';
 import EscenaMenu from './game/escenaMenu.js';
 import EscenaJuego from './game/escenaJuego.js';
 import Puzzle1 from './game/Pruebas/puzzlePrueba.js';
+import Casa from './game/GameScenes/casa.js'
 
 
 let config = {
@@ -16,7 +17,7 @@ let config = {
     // mode: Phaser.Scale.FIT,  
     autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
 },
-  scene: [GameZone, Puzzle] // Escenas que requiere el juego
+  scene: [GameZone, Puzzle, Casa] // Escenas que requiere el juego
   };
 
 

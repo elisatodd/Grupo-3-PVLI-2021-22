@@ -12,8 +12,7 @@ export default class OBJETO{
     
 
   constructor(sprite, x, y, esc, func, nom){ // necesitaría el sprite, y su posicion inicial, ESCALA, nombre de la funcion a la que llama dentro del GM
-    console.log("prueba de la clase objetoooo: " + sprite);  
-    
+       
     this.dirImagen = sprite;
     this.pos = {x,y};
     this.escala = esc;

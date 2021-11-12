@@ -1,4 +1,5 @@
 import Puzzle from "./PuzzleScene.js";
+import Casa from "../game/GameScenes/casa.js"
 import OBJETO from "./objeto.js";
 import GAMEMANAGER from "./gameManager.js";
 
@@ -137,7 +138,10 @@ export default class GameZone extends Phaser.Scene {
 
 
 
-        this.imgFlechaDch.on('pointerdown',this.GameManager.changeScene, this);
+        this.imgFlechaDch.on('pointerdown',function (f){
+          this.GameManager.changeScene(null, null, this);
+          //this.scene.start('casa');
+        }, this);
         
         
         this.imgprueba.setInteractive();
