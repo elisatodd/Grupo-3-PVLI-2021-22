@@ -42,7 +42,6 @@
         //Coloco las flechas
         //Derecha
         this.flechaDerecha= new OBJETO('flechaDcha',750,this.cameras.main.height / 2, 10,"flechaDcha",'imgFlechaDch');
-        console.log("Funciona por favor");
         this.imgFlechaDch=this.add.image(this.flechaDerecha.damePosicion().x, this.flechaDerecha.damePosicion().y, this.flechaDerecha.dameImagen());
         this.imgFlechaDch.setScale(this.scale/this.flechaDerecha.dameEscala()).setScrollFactor(0);
         this.flechaDerecha.guardarEscena(this);
@@ -73,6 +72,23 @@
 
 
         this.imgFlechaArr.setInteractive();
+
+        this.imgFlechaDch.on('pointerdown',function (f){
+            this.GameManager.changeScene('Dcha', null, this);
+            //this.scene.start('casa');
+          }, this);
+          this.imgFlechaIzq.on('pointerdown',function (f){
+            this.GameManager.changeScene('Izq', null, this);
+            //this.scene.start('casa');
+          }, this);
+          this.imgFlechaArr.on('pointerdown',function (f){
+            this.GameManager.changeScene('Arr', null, this);
+            //this.scene.start('casa');
+          }, this);
+          this.imgFlechaAbj.on('pointerdown',function (f){
+            this.GameManager.changeScene('Abj', null, this);
+            //this.scene.start('casa');
+          }, this);
     }
 
 }
