@@ -21,6 +21,9 @@ export default class GameZone extends Phaser.Scene {
     objetoprueba;
     objetoprueba2;
     objetoprueba3;
+    iniposx;
+    iniposy;
+    objmove;
     GameManager = new GAMEMANAGER();
     constructor() {
       // Nombre de la escena para el SceneManager, es deci, al cargar la escena desde algún lado debes usar este nombre
@@ -83,7 +86,17 @@ export default class GameZone extends Phaser.Scene {
         this.objetoprueba.guardarEscena(this);
         this.objetoprueba2.guardarEscena(this);
         //this.objetoprueba3.guardarTexto("HAS RECOGIDO LA FLOR");
-        //this.imgprueba3.setInteractive();
+
+
+        this.imgprueba3.setInteractive();
+        this.imgprueba3.on('pointerdown', function(f){
+          this.objectmove(this.imgprueba3);
+        }, this);
+
+        this.imgprueba3.on('pointerdown', this.startdrag, this);
+
+
+
         //this.imgprueba3.on('pointerdown',this.objetoprueba3.cargarDialogo, this);
 
     
@@ -230,8 +243,11 @@ export default class GameZone extends Phaser.Scene {
         }
       }
 
-      startdrag(pointer)
+      startdrag(pointer, obj)
       {
+        this.iniposx = this.objmove.x;
+        this.iniposy = this.objmove.y;
+
         this.input.off('pointerdown', this.startdrag, this);
         this.input.on('pointermove', this.dodrag, this);
         this.input.on('pointerup',this.stopdrag,this);
@@ -239,8 +255,8 @@ export default class GameZone extends Phaser.Scene {
 
       dodrag(pointer)
       {
-        this.objetoprueba3.x = pointer.x;
-        this.objetoprueba3.y = pointer.y;
+        this.objmove.x = pointer.x;
+        this.objmove.y = pointer.y;
 
       }
 
@@ -249,6 +265,16 @@ export default class GameZone extends Phaser.Scene {
         this.input.on('pointerdown', this.startdrag, this);
         this.input.off('pointermove', this.dodrag, this);
         this.input.off('pointerup',this.stopdrag,this);
+
+        this.objmove.x = this.iniposx;
+        this.objmove.y  = this.iniposy;
+
+        this.objectmove(null);
+      }
+
+      objectmove(obj)
+      {
+          this.objmove = obj;
       }
   }
 
