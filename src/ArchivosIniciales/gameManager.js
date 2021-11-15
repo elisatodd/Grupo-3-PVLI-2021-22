@@ -9,6 +9,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
     escenas=[,];
 
     //Necesito una matriz de salas, en la que hay posiciones que no tienen salas y entonces no son accesibles
+    //
 
     constructor(){
 
