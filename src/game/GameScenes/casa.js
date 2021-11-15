@@ -23,7 +23,7 @@
         this.load.image('flechaIzq','./assets/images/flechaIzq.png');
         this.load.image('flechaAbj','./assets/images/flechaAbj.png');
         this.load.image('flechaArr','./assets/images/flechaArr.png');
-      this.load.image('wallpaper', './assets/images/pueblo.jpg');
+        this.load.image('wallpaper', './assets/images/pueblo.jpg');
         //this.load.image('fondoEscena','./assets/images/fondoPocho.jpg');
     }
 

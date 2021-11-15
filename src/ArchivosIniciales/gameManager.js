@@ -94,15 +94,13 @@ export default class GAMEMANAGER extends Phaser.Scene{
         this.inventario.push(dirImagen); // Por ahora el array Inventario va a guardar la dirección de la imagen del objeto
         this.saveObject();
         this.showElements();
-        
-
     }
     //A ver si aquí va lo de la flecha
     //Método que cambia de escena
     changeScene(posFlecha, escenaFin, escenaIni)
     //Aquí tengo que meter las condiciones para que el cambio de escena dependa de la flecha y la escena
     {
-        escenaIni.scene.start(escenaFin);
+        escenaIni.scene.start('casa');
     }
 
 
