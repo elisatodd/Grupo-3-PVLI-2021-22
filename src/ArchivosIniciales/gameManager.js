@@ -9,28 +9,39 @@ export default class GAMEMANAGER extends Phaser.Scene{
     //variable donde se almacena que datos han sido usados
     //Raúl
     inventarioID = [];
+    //referencia a game
+    game = '';
 
     objetosEnInventario = 0;
     escenas=[,];
 
+
     //Necesito una matriz de salas, en la que hay posiciones que no tienen salas y entonces no son accesibles
     //
 
-    constructor(){
+    constructor(game){
 
         super({ key: 'GameManager' });
         {
         };
-
+        
+        this.game = game;
         console.log("prueba de la clase GameManager");
 
+      
+    }
+
+    preload()
+    {
         this.loadElements();
+        this.showElements();
     }
 
     loadElements()
     {
         //cargamos los elementos almacenados
-        if(this.game['inventario'] !== undefined)
+        
+        if('inventario' in this.game)
         {
             this.inventario = this.game['inventario'].inventario;
             this.inventarioID = this.game['inventario'].inventarioID;
@@ -53,7 +64,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
         //codigo a explicar sobre almacenamiento de datos(Raúl)
         
         //id del objeto en el inventario(a implementar) se pasa a true pues esta recogido
-        this.inventarioID[i] = true;
+        //this.inventarioID[i] = true;
 
         //se actualiza el inventario global con estos datos
          this.game['inventario'] = { 
@@ -61,6 +72,12 @@ export default class GAMEMANAGER extends Phaser.Scene{
              inventarioID: this.inventarioID };
         
         
+    }
+
+    //método que muestra que funciona la acción del almacenar datos
+    showElements()
+    {
+        console.log(this.game['inventario'].inventario[0]);
     }
 
     moveImage(escena, imagen, dirImagen, escala){ // sirve para, cuando recojas un objeto, se mueva al inventario
@@ -75,7 +92,8 @@ export default class GAMEMANAGER extends Phaser.Scene{
        
         this.objetosEnInventario++;
         this.inventario.push(dirImagen); // Por ahora el array Inventario va a guardar la dirección de la imagen del objeto
-
+        this.saveObject();
+        this.showElements();
         
 
     }

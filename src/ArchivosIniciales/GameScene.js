@@ -24,7 +24,7 @@ export default class GameZone extends Phaser.Scene {
     iniposx;
     iniposy;
     objmove;
-    GameManager = new GAMEMANAGER();
+    GameManager;
     constructor() {
       // Nombre de la escena para el SceneManager, es deci, al cargar la escena desde algún lado debes usar este nombre
       super({ key: 'gameScene' });       // Siempre hay que llamar al super para sobreescribir la escena
@@ -32,11 +32,15 @@ export default class GameZone extends Phaser.Scene {
         
       };
        
+     
       
     }
     // Métodos init, preload, create, update
     preload() { // Cargas todo lo que vayas a usar
         
+      this.GameManager = new GAMEMANAGER(this.game);
+      this.GameManager.loadElements();
+
         this.load.image('wallpaper', './assets/images/pueblo.jpg');
         this.load.image('personaje', './assets/images/chica.png');
         this.load.image('box', './assets/images/box.png');

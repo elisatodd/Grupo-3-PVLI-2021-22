@@ -5,9 +5,10 @@ import PuzzleInput from './game/puzzleInput.js';
 import EscenaMenu from './game/escenaMenu.js';
 import EscenaJuego from './game/escenaJuego.js';
 import Puzzle1 from './game/Pruebas/puzzlePrueba.js';
+import Casa from './game/GameScenes/casa.js'
+
 import Datos1 from'./game/Pruebas/pasoDeDatos1.js';
 import Datos2 from'./game/Pruebas/pasoDeDatos2.js';
-import Casa from './game/GameScenes/casa.js'
 
 
 let config = {
