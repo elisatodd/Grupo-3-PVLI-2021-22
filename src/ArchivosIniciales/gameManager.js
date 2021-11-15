@@ -6,14 +6,9 @@ export default class GAMEMANAGER extends Phaser.Scene{
     // Contenedores de GameObjects
     inventario = []; // Array que guarda los objetos que se han recolectado
     objetosEnInventario = 0;
+    escenas=[,];
 
-    /*{
-        x,6,4,5
-        10,8,3,x
-        9,7,1,2
-    }*/
-    //¿?¿?¿?¿?¿?¿?¿?¿??¿?¿?¿?¿?¿?
-   //escenas = [3,4];//Matriz con las escenas
+    //Necesito una matriz de salas, en la que hay posiciones que no tienen salas y entonces no son accesibles
 
     constructor(){
 
@@ -44,15 +39,22 @@ export default class GAMEMANAGER extends Phaser.Scene{
     changeScene(posFlecha, escenaFin, escenaIni)
     //Aquí tengo que meter las condiciones para que el cambio de escena dependa de la flecha y la escena
     {
-        escenaIni.scene.start('casa');
+        escenaIni.scene.start(escenaFin);
     }
- 
 
 
+    // //Método para ver que escena va a continuación
+    // nextScene(escena, posFlecha)
+    // {
+    //     if(posFlecha=='dcha')
 
-
-
-
-
-
+    // }
 }
+
+
+
+
+
+
+
+
