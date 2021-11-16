@@ -81,18 +81,15 @@ export default class OBJETO{
 
     this.box.setInteractive();
     this.box.on('pointerdown', function(f){
-      this.escena.obj.quitarDialogo(this.box, text);
+      this.obj.quitarDialogo(this.box, text);
     }, this);
-    
+
+    //this.box.on('pointerdown',text.destroy, this);
   }
 
-  quitarDialogo(img, umpa)
+  quitarDialogo(img, dialogo)
   {
     img.destroy();
-    umpa.destroy();
+    dialogo.destroy();
   }
-
-
-
 }
-
