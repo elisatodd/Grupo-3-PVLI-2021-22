@@ -66,7 +66,7 @@ export default class OBJETO{
 
   cargarDialogo()
   {
-    this.load.image('box', './assets/images/box.png');
+    this.escena.load.image('box', './assets/images/box.png');
 
     this.box = this.add.image(this.cameras.main.width / 2, 500, 'box');  
     this.box.setScale(this.scale/1.35).setScrollFactor(0);
