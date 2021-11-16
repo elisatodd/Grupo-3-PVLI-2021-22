@@ -119,10 +119,11 @@ import EscenaJuego from '../escenaJuego.js';
       this.objects[0].recogerObjeto(this.objectsImg[0], this.objects[0]);
     }, this);
 
+
     this.characters[0].guardarTexto("He perdido a mi gato :( miau");
     this.charactersImg[0].setInteractive();
     this.charactersImg[0].on('pointerdown', function (f){
-      this.characters[0].cargarDialogo();
+      this.characters[0].cargarDialogo(this.charactersImg[0]);
     }, this)
     // LO IDEAL ES HACER UN FOR PARA LO DE ARRIBA
     // let j;

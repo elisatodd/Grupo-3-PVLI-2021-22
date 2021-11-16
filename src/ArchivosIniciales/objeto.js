@@ -1,6 +1,8 @@
 import GameZone from './GameScene.js';
 import Puzzle from './PuzzleScene.js';
 import GAMEMANAGER from './gameManager.js';
+import Casa from '../game/GameScenes/calle.js';
+
 
 let texto = "  ";
 let box;
@@ -64,22 +66,22 @@ export default class OBJETO{
   }
 
 
-  cargarDialogo()
+  cargarDialogo(obj)
   {
     this.escena.load.image('box', './assets/images/box.png');
 
-    this.box = this.add.image(this.cameras.main.width / 2, 500, 'box');  
-    this.box.setScale(this.scale/1.35).setScrollFactor(0);
+    this.box = this.escena.add.image(this.escena.cameras.main.width / 2, 500, 'box');  
+    this.box.setScale(this.escena.scale/1.35).setScrollFactor(0);
    
     //var textConfig={fontSize:'25px',color:'#000000',fontFamily: 'Arial'};  
     //this.add.text(this.cameras.main.width/3.5, 480, texto, textConfig);
 
-    let text = this.add.text(this.cameras.main.width/3.5, 480, texto, 
+    let text = this.escena.add.text(this.escena.cameras.main.width/3.5, 480, texto, 
       { fontSize:'25px',color:'#000000',fontFamily: 'Arial'});
 
     this.box.setInteractive();
     this.box.on('pointerdown', function(f){
-      this.objetoprueba.quitarDialogo(this.box, text);
+      this.escena.obj.quitarDialogo(this.box, text);
     }, this);
     
   }
