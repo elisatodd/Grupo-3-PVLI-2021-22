@@ -45,4 +45,14 @@
         let scaleY = this.cameras.main.height / container.height;
         this.scale = Math.max(scaleX, scaleY);
     }
+
+    addBottom(info) {
+        //debemos usar estos nombres al crear el objeto
+        let container = spawnImage(info.name, info.position, info.align, info.scaleProportion);    
+        container.setInteractive();
+        container.on('pointerdown', () =>  info.functionality());
+    
+        return container;
+    
+      }
 }

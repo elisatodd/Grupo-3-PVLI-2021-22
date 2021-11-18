@@ -4,6 +4,7 @@
  */
 import Escena from './escena.js'
 
+//en desuso
 export default class EscenaMenu extends Escena {
 
 
@@ -35,15 +36,7 @@ export default class EscenaMenu extends Escena {
     console.log("llamado el botón");
   }*/
 
-  addBottom(info) {
-    //debemos usar estos nombres al crear el objeto
-    let container = super.spawnImage(info.name, info.position, info.align, info.scaleProportion);    
-    container.setInteractive();
-    container.on('pointerdown', () =>  info.functionality());
-
-    return container;
-
-  }
+  
 
   
 }
