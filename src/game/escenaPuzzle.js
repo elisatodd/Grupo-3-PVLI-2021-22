@@ -1,10 +1,10 @@
 /**
  * Intentando hacer una escena
- * @extends EscenaMenu
+ * @extends Escena
  */
- import EscenaMenu from './escenaMenu.js'
+ import Escena from './escena'
 
- export default class EscenaPuzzle extends EscenaMenu {
+ export default class EscenaPuzzle extends Escena {
    constructor() {
  
  
