@@ -1,8 +1,8 @@
 import Puzzle from "./PuzzleScene.js";
-import Casa from "../game/GameScenes/casa.js"
+import Casa from "../game/GameScenes/casa.js";
 import OBJETO from "./objeto.js";
 import GAMEMANAGER from "./gameManager.js";
-
+import Plaza from "../game/GameScenes/plaza.js";
 /**
  * Intentando hacer una escena
  * @extends Phaser.Scene
@@ -54,6 +54,7 @@ export default class GameZone extends Phaser.Scene {
       }
       
     create(data) { // "start"
+        this.add.scene(plaza);
         //Pongo el fondo
         let wallpaper = this.add.image(this.cameras.main.width / 2, this.cameras.main.height / 2, 'wallpaper');
 

@@ -1,10 +1,9 @@
 /**
  * Escena de la plaza
- * @extends escenaJuego
+ * @extends EscenaJuego
  */
- import EscenaJuego from '../escenaJuego.js'; 
- import OBJETO from "../../ArchivosIniciales/objeto.js";
- import GAMEMANAGER from "../../ArchivosIniciales/gameManager.js";
+  import OBJETO from "../Objects/objeto.js";
+  import EscenaJuego from "../escenaJuego.js";
 
   export default class Plaza extends EscenaJuego {
 

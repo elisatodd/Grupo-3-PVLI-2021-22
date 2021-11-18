@@ -1,4 +1,4 @@
-import Objeto from 'objeto.js';
+import Objeto from './objeto.js';
 
 export default class item extends Objeto{
 

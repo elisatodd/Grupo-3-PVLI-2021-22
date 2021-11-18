@@ -5,7 +5,6 @@
  import Escena from './escena.js' 
  import GAMEMANAGER from '../ArchivosIniciales/gameManager.js';
 
-
  export default class EscenaJuego extends Escena {
     gameManager;
     
