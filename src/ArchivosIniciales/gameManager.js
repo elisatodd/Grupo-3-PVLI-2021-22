@@ -103,14 +103,15 @@ export default class GAMEMANAGER extends Phaser.Scene{
         console.log(this.game['inventario'].inventario[0]);
     }
 
-    moveImage(objeto){ // sirve para, cuando recojas un objeto, se mueva al inventario
+    moveImage(escena, imagen, dirImagen, escala){ // sirve para, cuando recojas un objeto, se mueva al inventario
         
+
 
         console.log(objeto.dirImagen);
         objeto.image.destroy();
 
         // La altura a la que se coloca el objeto va aumentando con la cantidad de objetos en el imventario
-       
+        escena.moverAlInventario(this.objetosEnInventario, dirImagen, 725, 100 + (this.objetosEnInventario*100), escala*2 );
        //escena.RemoveObject(dirImagen); -> ACTIVAR ESTO CUANDO USEMOS LAS ESCENAS DE VERDAD
 
        
@@ -119,39 +120,40 @@ export default class GAMEMANAGER extends Phaser.Scene{
         this.saveObject();
         this.showElements();
     }
-
     //A ver si aquí va lo de la flecha
     //Método que cambia de escena
-    changeScene(posFlecha, escenaFin, escenaIni)
+    changeScene(posFlecha, escenaIni)
     //Aquí tengo que meter las condiciones para que el cambio de escena dependa de la flecha y la escena
     {
-        if(posFlecha=='Izq'){
+        if(posFlecha=='Izq' && this.nextScene(escenaIni,'Izq') != null){
 
             this.scene.start(this.escenas[0][1]);
         }
-        else if(posFlecha=='Dcha'){
+        else if(posFlecha=='Dcha'&& this.nextScene(escenaIni,'Dcha') != null){
 
+            this.scene.start(this.escenas[0][1]);
         }
-        else if(posFlecha=='Abj'){
+        else if(posFlecha=='Abj'&& this.nextScene(escenaIni,'Abj') != null){
 
+            this.scene.start(this.escenas[0][1]);
         }
-        else if(posFlecha=='Arr'){
+        else if(posFlecha=='Arr'&& this.nextScene(escenaIni,'Arr') != null){
 
+            this.scene.start(this.escenas[0][1]);
         }
     }
 
 
     // //Método para ver que escena va a continuación
-    // nextScene(escena, posFlecha)
-    // {
-    //     if(posFlecha=='dcha')
-
-    // }
+     nextScene(escena, posFlecha)
+     {
+        //A parte de estar en la matriz, cada escena guardará en que posición de la matriz está
+        if(posFlecha=='dcha'){
+            return escena.i+1;
+        }
+        return null;
+     }
 }
-
-
-
-
 
 
 
