@@ -1,5 +1,16 @@
 
-import EscenaCasa from "../game/GameScenes/casa.js"
+//Meto todas las escenas en el GM
+import Casa from "../game/GameScenes/casa.js"
+import Bosque from "../game/GameScenes/bosque.js"
+import Calle from "../game/GameScenes/calle.js"
+import CasaEspejo from "../game/GameScenes/casaEspejos.js"
+import CasetaFeria from "../game/GameScenes/casetaFeria.js"
+import Feria from "../game/GameScenes/feria.js"
+import Mercado from "../game/GameScenes/mercado.js"
+import Parque from "../game/GameScenes/parque.js"
+import Plaza from "../game/GameScenes/plaza.js"
+import Sombrereria from "../game/GameScenes/sombrereria.js"
+
 
 export default class GAMEMANAGER extends Phaser.Scene{
 
@@ -13,18 +24,30 @@ export default class GAMEMANAGER extends Phaser.Scene{
     game = '';
 
     objetosEnInventario = 0;
-    escenas=[,];
+    //Asigno directamente las escenas en sus posiciones en el array, con las casillas vacías correspondientes
+
+    
+    //  escenas = [null, CasaEspejo, Feria, CasetaFeria,
+    //             Parque, Sombrereria, Bosque, null,
+    //             Mercado, Calle, Plaza, Casa]
 
 
     //Necesito una matriz de salas, en la que hay posiciones que no tienen salas y entonces no son accesibles
     //
+    escenas;
 
     constructor(game){
 
         super({ key: 'GameManager' });
         {
         };
-        
+        this.escenas = 
+        [
+            [null, CasaEspejo, Feria, CasetaFeria,],
+            [Parque, Sombrereria, Bosque, null,],
+            [Mercado, Calle, Plaza, Casa]
+        ];
+       
         this.game = game;
         console.log("prueba de la clase GameManager");
 
@@ -100,7 +123,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
     changeScene(posFlecha, escenaFin, escenaIni)
     //Aquí tengo que meter las condiciones para que el cambio de escena dependa de la flecha y la escena
     {
-        escenaIni.scene.start('casa');
+        escenaIni.scene.start(this.escenas[0][1]);
     }
 
 
