@@ -4,6 +4,7 @@
  */
  import EscenaJuego from '../escenaJuego.js';
  import OBJETO from "../../ArchivosIniciales/objeto.js";
+ import GAMEMANAGER from "../../ArchivosIniciales/gameManager.js";
 
  export default class CasetaFe extends Phaser.Scene { // DEBERIA HEREDAR DE GAMESCENE EN EL FUTURO
 
@@ -19,8 +20,6 @@
     cirquenseImg;
     characters = [];
     charactersImg = [];
-    objects = [];
-    objectsImg = [];
   
     constructor(){
       // Nombre de la escena para el SceneManager
@@ -81,29 +80,15 @@
         this.GameManager.changeScene('Dcha', null, this);}, this);
       }
   
-      this.primo = new OBJETO('primo', 200, this.cameras.main.height - 200, 1, "a", 'primoImg');
-      this.primo.guardarEscena(this);
-      this.primoImg = this.add.image(this.primo.damePosicion().x, this.primo.damePosicion().y, this.primo.dameImagen());
-      this.primoImg.setScale(this.scale/this.primo.dameEscala()).setScrollFactor(0);
+      this.cirquense = new OBJETO('cirquense', 200, this.cameras.main.height - 200, 1, "a", 'cirquenseImg');
+      this.cirquense.guardarEscena(this);
+      this.cirquenseImg = this.add.image(this.cirquense.damePosicion().x, this.cirquense.damePosicion().y, this.cirquense.dameImagen());
+      this.cirquenseImg.setScale(this.scale/this.cirquense.dameEscala()).setScrollFactor(0);
   
-      this.characters = [this.primo];
-      this.charactersImg = [this.primoImg];
+      this.characters = [this.cirquense];
+      this.charactersImg = [this.cirquenseImg];
   
-      this.flor = new OBJETO('flor', 550, this.cameras.main.height - 70, 7.5, "a", 'florImg');
-      this.flor.guardarEscena(this);
-      this.florImg = this.add.image(this.flor.damePosicion().x, this.flor.damePosicion().y, this.flor.dameImagen());
-      this.florImg.setScale(this.scale/this.flor.dameEscala()).setScrollFactor(0);
-  
-      this.objects = [this.flor];
-      this.objectsImg = [this.florImg];
-  
-      this.objectsImg[0].setInteractive();
-      this.objectsImg[0].on('pointerdown', function (f){
-        this.objects[0].recogerObjeto(this.objectsImg[0], this.objects[0]);
-      }, this);
-  
-  
-      this.characters[0].guardarTexto("He perdido a mi gato :( miau");
+      this.characters[0].guardarTexto("Ayudame a que todo salga bien!");
       this.charactersImg[0].setInteractive();
       this.charactersImg[0].on('pointerdown', function (f){
         this.characters[0].cargarDialogo(this.charactersImg[0]);
