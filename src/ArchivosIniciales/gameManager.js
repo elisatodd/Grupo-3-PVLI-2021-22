@@ -103,13 +103,14 @@ export default class GAMEMANAGER extends Phaser.Scene{
         console.log(this.game['inventario'].inventario[0]);
     }
 
-    moveImage(escena, imagen, dirImagen, escala){ // sirve para, cuando recojas un objeto, se mueva al inventario
+    moveImage(objeto){ // sirve para, cuando recojas un objeto, se mueva al inventario
         
+
         console.log(dirImagen);
-        imagen.destroy();
+        objeto.image.destroy();
 
         // La altura a la que se coloca el objeto va aumentando con la cantidad de objetos en el imventario
-        escena.moverAlInventario(this.objetosEnInventario, dirImagen, 725, 100 + (this.objetosEnInventario*100), escala*2 );
+       
        //escena.RemoveObject(dirImagen); -> ACTIVAR ESTO CUANDO USEMOS LAS ESCENAS DE VERDAD
 
        
@@ -118,6 +119,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
         this.saveObject();
         this.showElements();
     }
+
     //A ver si aquí va lo de la flecha
     //Método que cambia de escena
     changeScene(posFlecha, escenaFin, escenaIni)
@@ -134,6 +136,10 @@ export default class GAMEMANAGER extends Phaser.Scene{
 
     // }
 }
+
+
+
+
 
 
 
