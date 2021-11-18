@@ -1,15 +1,16 @@
 
+//no se necesitan todas las escenas en el game manager, si no solo los nombres
 //Meto todas las escenas en el GM
-import Casa from "../game/GameScenes/casa.js"
-import Bosque from "../game/GameScenes/bosque.js"
-import Calle from "../game/GameScenes/calle.js"
-import CasaEspejo from "../game/GameScenes/casaEspejos.js"
-import CasetaFeria from "../game/GameScenes/casetaFeria.js"
-import Feria from "../game/GameScenes/feria.js"
-import Mercado from "../game/GameScenes/mercado.js"
-import Parque from "../game/GameScenes/parque.js"
-import Plaza from "../game/GameScenes/plaza.js"
-import Sombrereria from "../game/GameScenes/sombrereria.js"
+// import Casa from "../game/GameScenes/casa.js"
+// import Bosque from "../game/GameScenes/bosque.js"
+// import Calle from "../game/GameScenes/calle.js"
+// import CasaEspejo from "../game/GameScenes/casaEspejos.js"
+// import CasetaFeria from "../game/GameScenes/casetaFeria.js"
+// import Feria from "../game/GameScenes/feria.js"
+// import Mercado from "../game/GameScenes/mercado.js"
+// import Parque from "../game/GameScenes/parque.js"
+// import Plaza from "../game/GameScenes/plaza.js"
+// import Sombrereria from "../game/GameScenes/sombrereria.js"
 
 
 export default class GAMEMANAGER extends Phaser.Scene{
@@ -41,12 +42,12 @@ export default class GAMEMANAGER extends Phaser.Scene{
         super({ key: 'GameManager' });
         {
         };
-        this.escenas = 
-        [
-            [null, CasaEspejo, Feria, CasetaFeria,],
-            [Parque, Sombrereria, Bosque, null,],
-            [Mercado, Calle, Plaza, Casa]
-        ];
+        // this.escenas = 
+        // [
+        //     [null, CasaEspejo, Feria, CasetaFeria,],
+        //     [Parque, Sombrereria, Bosque, null,],
+        //     [Mercado, Calle, Plaza, Casa]
+        // ];
        
         this.game = game;
         console.log("prueba de la clase GameManager");

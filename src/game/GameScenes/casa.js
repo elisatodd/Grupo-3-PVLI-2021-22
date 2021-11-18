@@ -9,7 +9,7 @@
 
  export default class Casa extends Phaser.Scene { // DEBERIA HEREDAR DE GAMESCENE EN EL FUTURO
 
-  GameManager;
+  
   //determinan que flechas hay que dibujar en la escena
 
 

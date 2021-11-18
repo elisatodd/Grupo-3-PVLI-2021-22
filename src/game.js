@@ -13,6 +13,7 @@ import Datos1 from'./game/Pruebas/pasoDeDatos1.js';
 import Datos2 from'./game/Pruebas/pasoDeDatos2.js';
 
 
+
 let config = {
   type: Phaser.AUTO,
   // Configuracion del cuadro de juego
