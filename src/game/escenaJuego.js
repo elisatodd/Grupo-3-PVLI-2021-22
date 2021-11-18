@@ -16,7 +16,6 @@
     escenIzq = false;
     escenDcha = false;
  
-    gameManager;
    constructor() {
         super({ key: 'GameScene' });
         {
@@ -52,6 +51,7 @@
    {       
         this.objects.push(object);
         // Cuando se añade un objeto, se debe definir qué pasa al clicarlo
+        this.object.setInteractive();
         this.object.on('pointerdown', this.object.recogerObjeto, this);
    }
 

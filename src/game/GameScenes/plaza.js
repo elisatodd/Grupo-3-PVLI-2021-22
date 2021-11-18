@@ -3,40 +3,44 @@
  * @extends EscenaJuego
  */
 
- import EscenaJuego from "../escenaJuego.js";
+  import EscenaJuego from "../escenaJuego.js";
   import OBJETO from "../Objects/objeto.js";
  
-
   export default class Plaza extends EscenaJuego {
 
     escenIzq = true;
 
-    policia =  new OBJETO('./assets/images/policia.png', 400, this.cameras.main.height - 300, 1, "cargarDialogo", 'policia', this); // Más tarde desaparecerá
-    moneda = new OBJETO('./assets/images/moneda.png', 200, this.cameras.main.height - 70, 14, "moverAlInventario", 'moneda', this);
-    cafeteria = new OBJETO('./assets/images/cafeteria.png', 600, this.cameras.main.height - 200, 3, "cargarDialogo", 'cafeteria', this); // Primero estará cerrada
-
-  
     constructor(){
       // Nombre de la escena para el SceneManager
       super({ key: 'plaza' });
       {
       };
+
     }
   
     preload(){
 
-      this.GameManager.loadElements();
+      //this.GameManager.loadElements();
 
+      this.AddCharacter(new OBJETO('./assets/images/policia.png', 400, this.cameras.main.height - 300, 1, "cargarDialogo", 'policia', this)); // Más tarde desaparecerá
+      this.AddObject(new OBJETO('./assets/images/moneda.png', 200, this.cameras.main.height - 70, 14, "moverAlInventario", 'moneda', this));
+      this.AddObject(new OBJETO('./assets/images/cafeteria.png', 600, this.cameras.main.height - 200, 3, "cargarDialogo", 'cafeteria', this)); // Primero estará cerrada
+
+      for (let i = 0; i < this.objects.length ; i++){
+        this.loadImage(this.objects[i]);
+      }
+      for (let i = 0; i < this.characters.length ; i++){
+        this.loadImage(this.characters[i]);
+      }
       //Carga de las flechas, personajes, fondos y los objetos
-      this.loadImage(this.policia);
-      this.load.image('flechaDcha','./assets/images/flechaDcha.png');
-      this.load.image('flechaIzq','./assets/images/flechaIzq.png');
-      this.load.image('flechaArr','./assets/images/flechaArr.png');
-      this.load.image('wallpaper', './assets/images/pueblo.jpg');
-      this.load.image('moneda', './assets/images/moneda.png');
-      this.load.image('policia', './assets/images/policia.png');
-      this.load.image('cafeteria','./assets/images/cafeteria.png');
-  
+      //this.loadImage(this.policia);
+      // this.load.image('flechaDcha','./assets/images/flechaDcha.png');
+      // this.load.image('flechaIzq','./assets/images/flechaIzq.png');
+      // this.load.image('flechaArr','./assets/images/flechaArr.png');
+      // this.load.image('wallpaper', './assets/images/pueblo.jpg');
+      // this.load.image('moneda', './assets/images/moneda.png');
+      // this.load.image('policia', './assets/images/policia.png');
+      // this.load.image('cafeteria','./assets/images/cafeteria.png');
     }
   
     create(){
