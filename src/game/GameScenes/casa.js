@@ -41,7 +41,7 @@ preload(){
     //Carga de las flechas y el fondo
     this.load.image('flechaIzq','./assets/images/flechaIzq.png');
     this.load.image('wallpaper', './assets/images/pueblo.jpg');
-    this.load.image('sombrero', './assets/images/sobrero.png');
+    this.load.image('sombrero', './assets/images/sombrero.png');
     this.load.image('carta', './asstes/images/carta.png');
     this.load.image('primo', './asstes/images/primo.png');
   }
@@ -83,21 +83,30 @@ preload(){
     this.characters = [this.primo];
     this.charactersImg = [this.primoImg];
 
-    this.flor = new OBJETO('flor', 550, this.cameras.main.height - 70, 7.5, "a", 'florImg');
-    this.flor.guardarEscena(this);
-    this.florImg = this.add.image(this.flor.damePosicion().x, this.flor.damePosicion().y, this.flor.dameImagen());
-    this.florImg.setScale(this.scale/this.flor.dameEscala()).setScrollFactor(0);
+    this.carta = new OBJETO('carta', 550, this.cameras.main.height - 70, 7.5, "a", 'cartaImg');
+    this.carta.guardarEscena(this);
+    this.cartaImg = this.add.image(this.carta.damePosicion().x, this.carta.damePosicion().y, this.carta.dameImagen());
+    this.cartaImg.setScale(this.scale/this.carta.dameEscala()).setScrollFactor(0);
 
-    this.objects = [this.flor];
-    this.objectsImg = [this.florImg];
+    this.sombrero = new OBJETO('sombrero', 550, this.cameras.main.height - 70, 7.5, "a", 'sombreroImg');
+    this.sombrero.guardarEscena(this);
+    this.sombreroImg = this.add.image(this.sombrero.damePosicion().x, this.sombrero.damePosicion().y, this.sombrero.dameImagen());
+    this.sombreroImg.setScale(this.scale/this.sombrero.dameEscala()).setScrollFactor(0);
+
+    this.objects = [this.carta, this.sombrero];
+    this.objectsImg = [this.cartaImg, this.sombreroImg];
 
     this.objectsImg[0].setInteractive();
     this.objectsImg[0].on('pointerdown', function (f){
       this.objects[0].recogerObjeto(this.objectsImg[0], this.objects[0]);
     }, this);
+    this.objectsImg[1].setInteractive();
+    this.objectsImg[1].on('pointerdown', function (f){
+      this.objects[1].recogerObjeto(this.objectsImg[1], this.objects[1]);
+    }, this);
 
 
-    this.characters[0].guardarTexto("He perdido a mi gato :( miau");
+    this.characters[0].guardarTexto("Ayúdame con este problema querido primo.");
     this.charactersImg[0].setInteractive();
     this.charactersImg[0].on('pointerdown', function (f){
       this.characters[0].cargarDialogo(this.charactersImg[0]);

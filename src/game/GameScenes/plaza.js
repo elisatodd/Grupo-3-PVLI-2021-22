@@ -2,11 +2,11 @@
  * Escena de la plaza
  * @extends escenaJuego
  */
- import Escena from '../escenaJuego.js'; 
+ import EscenaJuego from '../escenaJuego.js'; 
  import OBJETO from "../../ArchivosIniciales/objeto.js";
  import GAMEMANAGER from "../../ArchivosIniciales/gameManager.js";
 
- export default class Plaza extends Phaser.Scene {
+ export default class Plaza extends EscenaJuego {
     GameManager;
 
     escenArriba = true;
@@ -15,7 +15,7 @@
     escenDcha = true;
 
     policia; // Más tarde desaparecerá
-    policiaImg;
+    policiaImg = {name: 'poli', rute: './assets/images/policia.png' };
     moneda;
     monedaImg;
     cafeteria; // Primero estará cerrada
@@ -26,26 +26,26 @@
     objectsImg = [];
   
     constructor(){
-        // Nombre de la escena para el SceneManager
-        super({ key: 'plaza' });
-        {
-  
-        };
+      // Nombre de la escena para el SceneManager
+      super({ key: 'plaza' });
+      {
+      };
     }
   
     preload(){
 
-        this.GameManager = new GAMEMANAGER(this.game);
-        this.GameManager.loadElements();
-  
-        //Carga de las flechas, personajes, fondos y los objetos
-        this.load.image('flechaDcha','./assets/images/flechaDcha.png');
-        this.load.image('flechaIzq','./assets/images/flechaIzq.png');
-        this.load.image('flechaArr','./assets/images/flechaArr.png');
-        this.load.image('wallpaper', './assets/images/pueblo.jpg');
-        this.load.image('moneda', './assets/images/moneda.png');
-        this.load.image('policia', './assets/images/policia.png');
-        this.load.image('cafeteria','./assets/images/cafeteria.png');
+      this.GameManager = new GAMEMANAGER(this.game);
+      this.GameManager.loadElements();
+
+      //Carga de las flechas, personajes, fondos y los objetos
+      this.loadImage(this.policiaImg);
+      this.load.image('flechaDcha','./assets/images/flechaDcha.png');
+      this.load.image('flechaIzq','./assets/images/flechaIzq.png');
+      this.load.image('flechaArr','./assets/images/flechaArr.png');
+      this.load.image('wallpaper', './assets/images/pueblo.jpg');
+      this.load.image('moneda', './assets/images/moneda.png');
+      this.load.image('policia', './assets/images/policia.png');
+      this.load.image('cafeteria','./assets/images/cafeteria.png');
   
     }
   
