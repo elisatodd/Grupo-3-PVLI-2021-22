@@ -106,7 +106,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
     moveImage(objeto){ // sirve para, cuando recojas un objeto, se mueva al inventario
         
 
-        console.log(dirImagen);
+        console.log(objeto.dirImagen);
         objeto.image.destroy();
 
         // La altura a la que se coloca el objeto va aumentando con la cantidad de objetos en el imventario
