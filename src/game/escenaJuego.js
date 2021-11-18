@@ -2,12 +2,9 @@
  * Intentando hacer una escena
  * @extends escena
  */
- import Escena from './escena.js'
-<<<<<<< Updated upstream
+ import Escena from './escena.js' 
  import GAMEMANAGER from '../ArchivosIniciales/gameManager.js';
-=======
- import GameManager from '../ArchivosIniciales/gameManager.js'
->>>>>>> Stashed changes
+
 
  export default class EscenaJuego extends Escena {
     gameManager;
@@ -22,21 +19,12 @@
  
     gameManager;
    constructor() {
-<<<<<<< Updated upstream
- 
-    super({ key: 'GameScene' });
-    {
-    };
-    this.gameManager = new GAMEMANAGER();
-=======
-        
         super({ key: 'GameScene' });
         {
         };
-        this.gameManager = new GameManager;
-    
->>>>>>> Stashed changes
-   }
+        this.gameManager = new GAMEMANAGER();
+    }
+
    
    preload() { // Cargas las flechas que son comunes a todas las escenas de juego
      
