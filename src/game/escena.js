@@ -18,7 +18,7 @@
 
     loadImage(info)
     {
-        this.load.image(info.name, info.rute);
+        this.load.image(info.name, info.route);
     }
 
     spawnWallpaper(name)
@@ -28,7 +28,7 @@
         return container;
     }
 
-    spawnImage(name, position, aling, scaleProportion)
+    spawnImage(name, position, scaleProportion)
     {
         let container = this.add.image(position.x, position.y, name);
         container.setScale(this.scale/scaleProportion).setScrollFactor(0);  
