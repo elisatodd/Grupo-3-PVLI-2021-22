@@ -14,6 +14,11 @@ import EscenaJuego from '../escenaJuego.js';
 
   GameManager;
 
+  escenArriba = true;
+  escenAbajo = false;
+  escenIzq = true;
+  escenDcha = true;
+
   mujerGato;
   mujerImg;
   flor;
@@ -24,26 +29,26 @@ import EscenaJuego from '../escenaJuego.js';
   objectsImg = [];
 
   constructor(){
-      // Nombre de la escena para el SceneManager
-      super({ key: 'calle' });
-      {
+    // Nombre de la escena para el SceneManager
+    super({ key: 'calle' });
+    {
 
-      };
+    };
   }
 
   preload(){
-      console.log("Escena creada");
+    console.log("Escena creada");
 
-      this.GameManager = new GAMEMANAGER(this.game);
-      this.GameManager.loadElements();
+    this.GameManager = new GAMEMANAGER(this.game);
+    this.GameManager.loadElements();
 
-      //Carga de las flechas, personajes, fondos y los objetos
-      this.load.image('flechaDcha','./assets/images/flechaDcha.png');
-      this.load.image('flechaIzq','./assets/images/flechaIzq.png');
-      this.load.image('flechaArr','./assets/images/flechaArr.png');
-      this.load.image('wallpaper', './assets/images/pueblo.jpg');
-      this.load.image('flor', './assets/images/flor.png');
-      this.load.image('mujerGato', './assets/images/mujerGato.png');
+    //Carga de las flechas, personajes, fondos y los objetos
+    this.load.image('flechaDcha','./assets/images/flechaDcha.png');
+    this.load.image('flechaIzq','./assets/images/flechaIzq.png');
+    this.load.image('flechaArr','./assets/images/flechaArr.png');
+    this.load.image('wallpaper', './assets/images/pueblo.jpg');
+    this.load.image('flor', './assets/images/flor.png');
+    this.load.image('mujerGato', './assets/images/mujerGato.png');
 
   }
 
