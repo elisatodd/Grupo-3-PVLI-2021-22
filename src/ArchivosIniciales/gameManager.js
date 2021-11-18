@@ -125,7 +125,19 @@ export default class GAMEMANAGER extends Phaser.Scene{
     changeScene(posFlecha, escenaFin, escenaIni)
     //Aquí tengo que meter las condiciones para que el cambio de escena dependa de la flecha y la escena
     {
-        escenaIni.scene.start(this.escenas[0][1]);
+        if(posFlecha=='Izq'){
+
+            this.scene.start(this.escenas[0][1]);
+        }
+        else if(posFlecha=='Dcha'){
+
+        }
+        else if(posFlecha=='Abj'){
+
+        }
+        else if(posFlecha=='Arr'){
+
+        }
     }
 
 
