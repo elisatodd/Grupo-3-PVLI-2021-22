@@ -3,18 +3,25 @@
  * @extends escena
  */
  import Escena from './escena.js'
+ import GAMEMANAGER from '../ArchivosIniciales/gameManager.js';
 
  export default class EscenaJuego extends Escena {
  
     characters = [];
     objects = [];
+
+    escenArriba = false;
+    escenAbajo = false;
+    escenIzq = false;
+    escenDcha = false;
  
+    gameManager;
    constructor() {
  
     super({ key: 'GameScene' });
     {
     };
- 
+    this.gameManager = new GAMEMANAGER();
    }
    
    preload() { // Cargas las flechas que son comunes a todas las escenas de juego

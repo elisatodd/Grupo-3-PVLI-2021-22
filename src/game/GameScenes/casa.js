@@ -11,21 +11,18 @@
 
   GameManager;
   //determinan que flechas hay que dibujar en la escena
-  escenArriba = false;
-  escenAbajo = false;
-  escenIzq = true;
-  escenDcha = false;
+
 
   primo;
-  primoImg;
+  
   carta;
-  cartaImg;
+ 
   sombrero;
-  sombreroImg;
+  
   characters = [];
-  charactersImg = [];
+  
   objects = [];
-  objectsImg = [];
+  
 
   constructor(){
     // Nombre de la escena para el SceneManager
