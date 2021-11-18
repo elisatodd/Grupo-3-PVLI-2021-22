@@ -6,24 +6,14 @@
  import OBJETO from "../../ArchivosIniciales/objeto.js";
  import GAMEMANAGER from "../../ArchivosIniciales/gameManager.js";
 
- export default class Plaza extends EscenaJuego {
-    GameManager;
+  export default class Plaza extends EscenaJuego {
 
-    escenArriba = true;
-    escenAbajo = false;
     escenIzq = true;
-    escenDcha = true;
 
-    policia; // Más tarde desaparecerá
-    policiaImg = {name: 'poli', rute: './assets/images/policia.png' };
-    moneda;
-    monedaImg;
-    cafeteria; // Primero estará cerrada
-    cafeteriaImg;
-    characters = [];
-    charactersImg = [];
-    objects = [];
-    objectsImg = [];
+    policia =  new OBJETO('./assets/images/policia.png', 400, this.cameras.main.height - 300, 1, "cargarDialogo", 'policia', this); // Más tarde desaparecerá
+    moneda = new OBJETO('./assets/images/moneda.png', 200, this.cameras.main.height - 70, 14, "moverAlInventario", 'moneda', this);
+    cafeteria = new OBJETO('./assets/images/cafeteria.png', 600, this.cameras.main.height - 200, 3, "cargarDialogo", 'cafeteria', this); // Primero estará cerrada
+
   
     constructor(){
       // Nombre de la escena para el SceneManager
@@ -34,11 +24,10 @@
   
     preload(){
 
-      this.GameManager = new GAMEMANAGER(this.game);
       this.GameManager.loadElements();
 
       //Carga de las flechas, personajes, fondos y los objetos
-      this.loadImage(this.policiaImg);
+      this.loadImage(this.policia);
       this.load.image('flechaDcha','./assets/images/flechaDcha.png');
       this.load.image('flechaIzq','./assets/images/flechaIzq.png');
       this.load.image('flechaArr','./assets/images/flechaArr.png');

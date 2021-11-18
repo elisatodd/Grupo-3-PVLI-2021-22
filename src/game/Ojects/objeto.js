@@ -12,17 +12,20 @@ export default class OBJETO{
   functionality;
   name;
 
-  constructor(sprite, x, y, esc, func, nom, e){
+  constructor(sprite, x, y, esc, nom, e){
        
     this.route = sprite;
     this.pos = {x,y};
     this.scaleProportion = esc;
-    this.functionality = func;
     this.name = nom;
     this.escena = e;
     
   }
   
+  assignFunctionality(func){
+    this.functionality = func;
+  }
+
   llamaGM(){
     this.escena.GameManager.metodo();
   }

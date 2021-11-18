@@ -103,15 +103,19 @@ export default class GAMEMANAGER extends Phaser.Scene{
         console.log(this.game['inventario'].inventario[0]);
     }
 
-    moveImage(escena, imagen, dirImagen, escala){ // sirve para, cuando recojas un objeto, se mueva al inventario
+    moveImage(objeto){ // sirve para, cuando recojas un objeto, se mueva al inventario
         
 
+<<<<<<< Updated upstream
 
         console.log(objeto.dirImagen);
+=======
+        console.log(dirImagen);
+>>>>>>> Stashed changes
         objeto.image.destroy();
 
         // La altura a la que se coloca el objeto va aumentando con la cantidad de objetos en el imventario
-        escena.moverAlInventario(this.objetosEnInventario, dirImagen, 725, 100 + (this.objetosEnInventario*100), escala*2 );
+       
        //escena.RemoveObject(dirImagen); -> ACTIVAR ESTO CUANDO USEMOS LAS ESCENAS DE VERDAD
 
        
