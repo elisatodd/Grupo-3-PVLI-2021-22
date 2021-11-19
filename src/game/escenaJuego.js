@@ -3,6 +3,7 @@
  * @extends escena
  */
  import Escena from './escena.js' 
+ import OBJETO from "./Objects/objeto.js";
  import GAMEMANAGER from '../ArchivosIniciales/gameManager.js';
 
  export default class EscenaJuego extends Escena {
@@ -11,10 +12,7 @@
     characters = [];
     objects = [];
 
-    arrowLeft = false;
-    arrowRight = false;
-    arrowDown = false;    
-    arrowUp = false;
+    arrows = [arrowLeft = false, arrowRight = false, arrowDown = false, arrowUp = false];
  
    constructor() {
         super({ key: 'GameScene' });
@@ -26,16 +24,28 @@
    
    preload() { // Cargas las flechas que son comunes a todas las escenas de juego
      
-    this.load.image('flechaDcha','./assets/images/flechaDcha.png');
-    this.load.image('flechaIzq','./assets/images/flechaIzq.png');
-    this.load.image('flechaAbj','./assets/images/flechaAbj.png');
-    this.load.image('flechaArr','./assets/images/flechaArr.png');
+    this.loadObjects(this.arrows);
   }
 
    createArrows()
    {
     
-       
+    for(let i = 0; i < this.arrows.length; i++)
+    if(arrows[i]) 
+    {
+        switch(i)
+        {
+            case 0:
+                arrows[i] = new OBJETO('./assets/images/moneda.png', 200, this.cameras.main.height - 70, 14, 'moneda', this)
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+        }
+    }
    }
 
 

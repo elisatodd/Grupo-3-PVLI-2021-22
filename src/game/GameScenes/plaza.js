@@ -4,7 +4,10 @@
  */
 
   import EscenaJuego from "../escenaJuego.js";
-  import OBJETO from "../Objects/objeto.js";
+
+//preguntar guille si se puede quitar de algua manera
+import OBJETO from "../Objects/objeto.js";
+ 
  
   export default class Plaza extends EscenaJuego {
 
