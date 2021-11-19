@@ -1,16 +1,19 @@
 
-let texto = "  ";
-let box;
+
 
 export default class OBJETO{
  
-  clicada = false;
-  escena;
+  clicked = false;
+  scene;
   route;
   pos;
   scaleProportion;
   functionality;
   name;
+  image;
+
+  text = "  ";
+  box;
 
   constructor(sprite, x, y, esc, nom, e){
        
@@ -18,7 +21,7 @@ export default class OBJETO{
     this.pos = {x,y};
     this.scaleProportion = esc;
     this.name = nom;
-    this.escena = e;
+    this.scene = e;
     
   }
   
@@ -27,7 +30,7 @@ export default class OBJETO{
   }
 
   llamaGM(){
-    this.escena.GameManager.metodo();
+    this.scene.GameManager.metodo();
   }
 
 
@@ -58,7 +61,7 @@ export default class OBJETO{
   recogerObjeto(img, obj) { // Lo manda al inventario
     //clicada = true;
     // NO FUNCIONA this.GameManager.moveImage(this, this.buscarObjeto(this.nombre), this.buscarObjeto(this.nombre).dirImagen);
-    this.escena.GameManager.moveImage(this.escena, img, obj.dirImagen, this.escala);
+    this.scene.GameManager.moveImage(this.scene, img, obj.dirImagen, this.escala);
   }
 
   esClicada(){
@@ -74,15 +77,15 @@ export default class OBJETO{
 
   cargarDialogo(obj)
   {
-    this.escena.load.image('box', './assets/images/box.png');
+    this.scene.load.image('box', './assets/images/box.png');
 
-    this.box = this.escena.add.image(this.escena.cameras.main.width / 2, 500, 'box');  
-    this.box.setScale(this.escena.scale/1.35).setScrollFactor(0);
+    this.box = this.scene.add.image(this.scene.cameras.main.width / 2, 500, 'box');  
+    this.box.setScale(this.scene.scale/1.35).setScrollFactor(0);
    
     //var textConfig={fontSize:'25px',color:'#000000',fontFamily: 'Arial'};  
     //this.add.text(this.cameras.main.width/3.5, 480, texto, textConfig);
 
-    let text = this.escena.add.text(this.escena.cameras.main.width/3.5, 480, texto, 
+    let text = this.scene.add.text(this.scene.cameras.main.width/3.5, 480, texto, 
       { fontSize:'25px',color:'#000000',fontFamily: 'Arial'});
 
     this.box.setInteractive();
