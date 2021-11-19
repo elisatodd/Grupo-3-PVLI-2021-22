@@ -51,8 +51,8 @@
    {       
         this.objects.push(object);
         // Cuando se añade un objeto, se debe definir qué pasa al clicarlo
-        this.object.image.setInteractive();
-        this.object.image.on('pointerdown', this.object.recogerObjeto, this);
+        this.object.setInteractive();
+        this.object.on('pointerdown', this.object.recogerObjeto, this);
    }
 
    AddCharacter(character)
