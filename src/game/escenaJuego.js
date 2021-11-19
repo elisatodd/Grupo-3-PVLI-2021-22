@@ -11,10 +11,10 @@
     characters = [];
     objects = [];
 
-    escenArriba = false;
-    escenAbajo = false;
-    escenIzq = false;
-    escenDcha = false;
+    arrowLeft = false;
+    arrowRight = false;
+    arrowDown = false;    
+    arrowUp = false;
  
    constructor() {
         super({ key: 'GameScene' });
@@ -32,32 +32,34 @@
     this.load.image('flechaArr','./assets/images/flechaArr.png');
   }
 
-   create()
+   createArrows()
    {
-    //    let object = function prueba(){console.log("objeto");};
-       
-    // for(let i = 0; i < 3; i++)
-    // {
-    //     this.AddObject(object);
-    // }
-
-    // this.CreateObjects([true, false, true]);
-
     
        
    }
 
+
+   loadObjects(container)
+   {
+         for(let i = 0; i < container.length; i++)
+            this.loadImage(container[i]);
+   }
+
+   spawnObjects(container)
+   {
+         for(let i = 0; i < container.length; i++)
+            this.addBottom(container[i]);
+   }
+
+
    AddObject(object)
    {       
         this.objects.push(object);
-        // Cuando se añade un objeto, se debe definir qué pasa al clicarlo
-        this.object.setInteractive();
-        this.object.on('pointerdown', this.object.recogerObjeto, this);
+      
    }
 
    AddCharacter(character)
    {
-       this.characters = 
        this.characters.push(character);
    }
 

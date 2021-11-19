@@ -21,24 +21,21 @@
         this.load.image(info.name, info.route);
     }
 
-    spawnWallpaper(name)
+    spawnWallpaper(info)
     {
-        let container = this.add.image(this.cameras.main.width / 2, this.cameras.main.height / 2, name);
+        let container = this.add.image(this.cameras.main.width / 2, this.cameras.main.height / 2, info.name);
         this.assignScale(container);       
         return container;
     }
 
-    spawnImage(name, position, scaleProportion)
+    spawnImage(info)
     {
-        let container = this.add.image(position.x, position.y, name);
-        container.setScale(this.scale/scaleProportion).setScrollFactor(0);  
-        //container.setOrigin(aling.x, aling.y);   
-
-        return container;
-
+        info.image = this.add.image(info.pos.x, info.pos.y, info.name);
+        info.image.setScale(this.scale/info.scaleProportion).setScrollFactor(0);  
+        
     }
 
-
+//hay que pasarle el wallpaper que debe ser una imagen
     assignScale(container)
     {
         let scaleX = this.cameras.main.width / container.width;
@@ -46,13 +43,12 @@
         this.scale = Math.max(scaleX, scaleY);
     }
 
+    //añadir funcionalidad
     addBottom(info) {
         //debemos usar estos nombres al crear el objeto
-        let container = spawnImage(info.name, info.position, info.align, info.scaleProportion);    
-        container.setInteractive();
-        container.on('pointerdown', () =>  info.functionality());
-    
-        return container;
-    
+        this.spawnImage(info);    
+        info.image.setInteractive();
+        info.image.on('pointerdown', () =>  info.functionality());    
+      
       }
 }
