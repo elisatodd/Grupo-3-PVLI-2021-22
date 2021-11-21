@@ -33,6 +33,7 @@ import OBJETO from "../Objects/objeto.js";
 
       this.loadObjects(this.objects);
 
+
       this.createArrows();
       this.loadArrows();
 
@@ -50,6 +51,8 @@ import OBJETO from "../Objects/objeto.js";
      
       this.spawnObjects(this.objects);
 
+      this.assignObjects(this.objects);
+      
       this.spawnArrows();
 
       console.log("Escena Plaza");

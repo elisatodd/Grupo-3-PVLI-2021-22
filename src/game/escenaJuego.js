@@ -22,9 +22,8 @@
 
    
    preload() { // Cargas las flechas que son comunes a todas las escenas de juego
-     
-    this.loadObjects(this.arrows);
-  }
+        this.loadObjects(this.arrows);
+   }
 
 
 
@@ -34,6 +33,13 @@
         for(let i = 0; i < container.length; i++)
             this.loadImage(container[i]);
    }
+
+   assignObjects(container){
+        for(let i = 0; i < container.length; i++)
+            container[i].assignFunctionality('moveToInventary');
+   }
+
+
 
    spawnObjects(container)
    {

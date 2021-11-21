@@ -17,7 +17,7 @@ export default class OBJETO{
 
   constructor(sprite, x, y, esc, nom, e){
        
-    this.route = sprite;
+    this.route = sprite; 
     this.pos = {x,y};
     this.scaleProportion = esc;
     this.name = nom;
@@ -27,6 +27,10 @@ export default class OBJETO{
   
   assignFunctionality(func){
     this.functionality = func;
+    this.image.setInteractive();
+    this.image.on('pointerdown', function(f){
+      GameManager.functionality;
+    }, this);
   }
 
   llamaGM(){
