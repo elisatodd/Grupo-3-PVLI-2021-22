@@ -33,8 +33,8 @@ import OBJETO from "../Objects/objeto.js";
 
       this.loadObjects(this.objects);
 
-      
-      
+      this.createArrows();
+      this.loadArrows();
 
       
      
@@ -49,6 +49,8 @@ import OBJETO from "../Objects/objeto.js";
       this._wallpaper = this.spawnWallpaper(this._wallpaper);
      
       this.spawnObjects(this.objects);
+
+      this.spawnArrows();
 
       console.log("Escena Plaza");
       

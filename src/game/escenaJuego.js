@@ -12,7 +12,6 @@
     characters = [];
     objects = [];
 
-    arrows = [arrowLeft = false, arrowRight = false, arrowDown = false, arrowUp = false];
  
    constructor() {
         super({ key: 'GameScene' });
@@ -27,37 +26,18 @@
     this.loadObjects(this.arrows);
   }
 
-   createArrows()
-   {
-    
-    for(let i = 0; i < this.arrows.length; i++)
-    if(arrows[i]) 
-    {
-        switch(i)
-        {
-            case 0:
-                arrows[i] = new OBJETO('./assets/images/moneda.png', 200, this.cameras.main.height - 70, 14, 'moneda', this)
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-        }
-    }
-   }
+
 
 
    loadObjects(container)
    {
-         for(let i = 0; i < container.length; i++)
+        for(let i = 0; i < container.length; i++)
             this.loadImage(container[i]);
    }
 
    spawnObjects(container)
    {
-         for(let i = 0; i < container.length; i++)
+        for(let i = 0; i < container.length; i++)
             this.addBottom(container[i]);
    }
 
