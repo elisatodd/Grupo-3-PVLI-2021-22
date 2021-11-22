@@ -4,14 +4,10 @@
  */
 
   import EscenaJuego from "../escenaJuego.js";
-
-//preguntar guille si se puede quitar de algua manera
-import OBJETO from "../Objects/objeto.js";
- 
+  //preguntar guille si se puede quitar de algua manera
+  import OBJETO from "../Objects/objeto.js";
  
   export default class Plaza extends EscenaJuego {
-
-    escenIzq = true;
 
     constructor(){
       // Nombre de la escena para el SceneManager
@@ -19,7 +15,7 @@ import OBJETO from "../Objects/objeto.js";
       {
       };
 
-      
+      this.arrows = [true, true, false, true];
 
     }
   
@@ -37,12 +33,6 @@ import OBJETO from "../Objects/objeto.js";
       this.createArrows();
       this.loadArrows();
 
-      
-     
-
-      //this.AddCharacter(new OBJETO('./assets/images/policia.png', 400, this.cameras.main.height - 300, 1, "cargarDialogo", 'policia', this)); // Más tarde desaparecerá
-      
-
     }
   
     create(){
@@ -56,11 +46,6 @@ import OBJETO from "../Objects/objeto.js";
       this.spawnArrows();
 
       console.log("Escena Plaza");
-      
-  
-      //lo escala a esta        
-    
-        
     }
   
     moverAlInventario(posInv, obj, xPosition, yPosition, itemScale){ // Pone un objeto de esta escena en el inventario
