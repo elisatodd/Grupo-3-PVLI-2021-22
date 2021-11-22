@@ -2,12 +2,11 @@
  * Escena de la casa
  * @extends Phaser.Scene
  */
- import EscenaJuego from '../escenaJuego.js';
- import Plaza from './plaza.js';
- import OBJETO from "../../ArchivosIniciales/objeto.js"; 
- import GAMEMANAGER from "../../ArchivosIniciales/gameManager.js";
 
- export default class Casa extends Phaser.Scene { // DEBERIA HEREDAR DE GAMESCENE EN EL FUTURO
+ import EscenaJuego from "../escenaJuego.js"
+ import OBJETO from "../../ArchivosIniciales/objeto.js"; 
+
+ export default class Casa extends EscenaJuego { // DEBERIA HEREDAR DE GAMESCENE EN EL FUTURO
 
   
   //determinan que flechas hay que dibujar en la escena

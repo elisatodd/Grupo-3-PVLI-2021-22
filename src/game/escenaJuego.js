@@ -25,9 +25,6 @@
         this.loadObjects(this.arrows);
    }
 
-
-
-
    loadObjects(container)
    {
         for(let i = 0; i < container.length; i++)
@@ -38,9 +35,7 @@
         for(let i = 0; i < container.length; i++)
             container[i].assignFunctionality('moveToInventary');
    }
-
-
-
+   
    spawnObjects(container)
    {
         for(let i = 0; i < container.length; i++)
