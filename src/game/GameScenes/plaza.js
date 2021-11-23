@@ -28,7 +28,7 @@
       this.AddObject(new OBJETO('./assets/images/cafeteria.png', 600, this.cameras.main.height - 200, 3, 'cafeteria', this)); // Primero estará cerrada
 
       this.loadObjects(this.objects);
-
+      this.loadObjects(this.characters);
 
       this.createArrows();
       this.loadArrows();
@@ -40,7 +40,7 @@
       this._wallpaper = this.spawnWallpaper(this._wallpaper);
      
       this.spawnObjects(this.objects);
-
+      this.spawnObjects(this.characters);
       this.assignObjects(this.objects);
       
       this.spawnArrows();

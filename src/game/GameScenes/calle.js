@@ -23,6 +23,7 @@
     this.AddObject(new OBJETO('./assets/images/flor.png', 200, this.cameras.main.height - 70,  7.5, 'flor', this));
     this.AddCharacter(new OBJETO('./assets/images/mujerGato.png', 200, this.cameras.main.height - 200, 1, 'mujer', this));
     this.loadObjects(this.objects);
+    this.loadObjects(this.characters);
 
     this.createArrows();
     this.loadArrows();
@@ -33,7 +34,7 @@
     this._wallpaper = this.spawnWallpaper(this._wallpaper);
      
     this.spawnObjects(this.objects);
-
+    this.spawnObjects(this.characters);
     this.assignObjects(this.objects);
     
     this.spawnArrows();

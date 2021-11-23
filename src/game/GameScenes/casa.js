@@ -25,7 +25,7 @@
       this.AddObject(new OBJETO('./assets/images/carta.png', 550, this.cameras.main.height - 70, 7.5, 'carta', this));
       this.AddObject(new OBJETO('./assets/images/sombrero.png', 550, this.cameras.main.height - 70, 7.5, 'sombrero', this));
       this.loadObjects(this.objects);
-
+      this.loadObjects(this.characters);
 
       this.createArrows();
       this.loadArrows();
@@ -35,7 +35,7 @@
       this._wallpaper = this.spawnWallpaper(this._wallpaper);
       
       this.spawnObjects(this.objects);
-
+      this.spawnObjects(this.characters);
       this.assignObjects(this.objects);
       
       this.spawnArrows();
