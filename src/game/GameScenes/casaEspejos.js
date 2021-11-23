@@ -3,7 +3,7 @@
  * @extends EscenaJuego
  */
  import EscenaJuego from '../escenaJuego.js';
- import OBJETO from "../../ArchivosIniciales/objeto.js";
+ import OBJETO from "../Objects/objeto.js";
 
  export default class CasaEsp extends EscenaJuego { // DEBERIA HEREDAR DE GAMESCENE EN EL FUTURO
 

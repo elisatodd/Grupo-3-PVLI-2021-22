@@ -70,7 +70,7 @@
 
    assignObjects(container){
         for(let i = 0; i < container.length; i++)
-            container[i].assignFunctionality('moveToInventary');
+            this.objects[i].assignFunctionality('moveToInventary');
    }
    
    spawnObjects(container)

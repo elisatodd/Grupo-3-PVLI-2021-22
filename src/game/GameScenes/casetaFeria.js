@@ -3,8 +3,7 @@
  * @extends Phaser.Scene
  */
  import EscenaJuego from '../escenaJuego.js';
- import OBJETO from "../../ArchivosIniciales/objeto.js";
- import GAMEMANAGER from "../../ArchivosIniciales/gameManager.js";
+ import OBJETO from "../Objects/objeto.js";
 
   export default class CasetaFe extends EscenaJuego {
     constructor(){

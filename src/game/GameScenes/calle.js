@@ -2,7 +2,7 @@
  * Escena de la calle
  * @extends Phaser.Scene
  */
- import OBJETO from "../../ArchivosIniciales/objeto.js";
+ import OBJETO from "../Objects/objeto.js";
  import EscenaJuego from '../escenaJuego.js';
  
  export default class Calle extends EscenaJuego {

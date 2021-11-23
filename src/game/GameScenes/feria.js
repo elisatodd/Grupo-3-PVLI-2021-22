@@ -2,8 +2,8 @@
  * Escena de la feria
  * @extends EscenaJuego
  */
- import EscenaJuego from '../escenaJuego.js';
- import OBJETO from "../../ArchivosIniciales/objeto.js";
+ import EscenaJuego from '../escenaJuego.js';  
+ import OBJETO from "../Objects/objeto.js";
 
  export default class Feria extends EscenaJuego {
 

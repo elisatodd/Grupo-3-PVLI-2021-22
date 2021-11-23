@@ -4,7 +4,7 @@
  */
 
  import EscenaJuego from "../escenaJuego.js"
- import OBJETO from "../../ArchivosIniciales/objeto.js"; 
+ import OBJETO from "../Objects/objeto.js"; 
 
   export default class Casa extends EscenaJuego {  
 
@@ -22,9 +22,9 @@
       this._wallpaper = {name: 'casa', route: './assets/images/pueblo.jpg'};
       this.loadImage(this._wallpaper);
 
-      this.AddCharacter(new OBJETO('./assets/images/primo.png', 200, this.cameras.main.height - 200, 1, 'primo', this));
-      this.AddObject(new OBJETO('./assets/images/carta.png', 550, this.cameras.main.height - 70, 7.5, 'carta', this));
-      this.AddObject(new OBJETO('./assets/images/sombrero.png', 550, this.cameras.main.height - 70, 7.5, 'sombrero', this));
+      this.AddCharacter(new OBJETO('./assets/images/primo.png', 600, this.cameras.main.height - 250, 2.15, 'primo', this));
+      this.AddObject(new OBJETO('./assets/images/carta.png', 150, this.cameras.main.height - 70, 7.5, 'carta', this));
+      this.AddObject(new OBJETO('./assets/images/sombrero.png', 250, this.cameras.main.height - 400, 6, 'sombrero', this));
       this.loadObjects(this.objects);
       this.loadObjects(this.characters);
 

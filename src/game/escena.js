@@ -6,7 +6,7 @@
  export default class Escena extends Phaser.Scene {
 
     _wallpaper;
-    //GameManager = new GAMEMANAGER(); // Referencia al GM
+    // GameManager = new GAMEMANAGER(); // Referencia al GM
 
     arrowLeft;
     arrowRight;
@@ -44,7 +44,7 @@
         
     }
 
-//hay que pasarle el wallpaper que debe ser una imagen
+    //hay que pasarle el wallpaper que debe ser una imagen
     assignScale(container)
     {
         let scaleX = this.cameras.main.width / container.width;
@@ -59,5 +59,5 @@
         info.image.setInteractive();
         info.image.on('pointerdown', () =>  info.functionality());    
       
-      }
+    }
 }

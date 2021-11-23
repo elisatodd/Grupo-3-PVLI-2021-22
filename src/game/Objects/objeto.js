@@ -1,6 +1,3 @@
-
-
-
 export default class OBJETO{
  
   clicked = false;
@@ -25,7 +22,7 @@ export default class OBJETO{
     
   }
   
-  assignFunctionality(func){
+  assignFunctionality(func) {
     this.functionality = func;
     this.image.setInteractive();
     this.image.on('pointerdown', function(f){
