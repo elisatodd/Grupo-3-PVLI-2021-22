@@ -11,10 +11,11 @@
 
     constructor(){
       // Nombre de la escena para el SceneManager
-      super({ key: 'plaza' });
+      super({ key: 'plaza' }); 
       {
+        
       };
-
+      console.log("Escena Plaza");
       this.arrows = [true, true, false, true];
 
     }

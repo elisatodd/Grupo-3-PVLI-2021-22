@@ -12,8 +12,9 @@
       // Nombre de la escena para el SceneManager
       super({ key: 'casa' });
       {
-
+      
       };
+      console.log("Escena Casa");
       this.arrows = [true, false, false, false];
     }
 
