@@ -3,10 +3,12 @@
  * @extends Phaser.Scene
  */
  
+ import GAMEMANAGER from '../ArchivosIniciales/gameManager.js';
  export default class Escena extends Phaser.Scene {
 
     _wallpaper;
-    // GameManager = new GAMEMANAGER(); // Referencia al GM
+    
+    gameManager;
 
     arrowLeft;
     arrowRight;
@@ -20,6 +22,7 @@
       {
          
       }; 
+      this.gameManager = new GAMEMANAGER();
      
     }
 
@@ -57,7 +60,11 @@
         //debemos usar estos nombres al crear el objeto
         this.spawnImage(info);    
         info.image.setInteractive();
-        info.image.on('pointerdown', () =>  info.functionality());    
+        info.image.on('pointerdown', function (f){
+            let s = info.functionality;
+            let scene = info.scene;
+            scene.gameManager[s]();
+        } );    
       
     }
 }

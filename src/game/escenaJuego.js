@@ -4,10 +4,8 @@
  */
  import Escena from './escena.js' 
  import OBJETO from "./Objects/objeto.js";
- import GAMEMANAGER from '../ArchivosIniciales/gameManager.js';
 
  export default class EscenaJuego extends Escena {
-    gameManager;
     
     characters = [];
     objects = [];
@@ -17,7 +15,6 @@
         super(data);
         {
         };
-        this.gameManager = new GAMEMANAGER();
     }
 
     createArrows()
@@ -68,9 +65,9 @@
             this.loadImage(container[i]);
    }
 
-   assignObjects(container){
+   assignObjects(container, funct){
         for(let i = 0; i < container.length; i++)
-            this.objects[i].assignFunctionality('moveToInventary');
+            this.objects[i].assignFunctionality(funct);
    }
    
    spawnObjects(container)

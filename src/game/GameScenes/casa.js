@@ -14,7 +14,6 @@
       {
       
       };
-      console.log("Escena Casa");
       this.arrows = [true, false, false, false];
     }
 
@@ -35,9 +34,9 @@
     create(){
       this._wallpaper = this.spawnWallpaper(this._wallpaper);
       
+      this.assignObjects(this.objects, 'testing'); // ASSIGN FIRST
       this.spawnObjects(this.objects);
       this.spawnObjects(this.characters);
-      this.assignObjects(this.objects);
       
       this.spawnArrows();
 

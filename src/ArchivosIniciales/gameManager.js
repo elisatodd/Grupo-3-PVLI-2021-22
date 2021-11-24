@@ -50,7 +50,6 @@ export default class GAMEMANAGER extends Phaser.Scene{
         // ];
        
         this.game = game;
-        console.log("prueba de la clase GameManager");
 
       
     }
@@ -61,6 +60,9 @@ export default class GAMEMANAGER extends Phaser.Scene{
         this.showElements();
     }
 
+    testing(){
+        console.log("probando asignar funciones");
+    }
     loadElements()
     {
         //cargamos los elementos almacenados

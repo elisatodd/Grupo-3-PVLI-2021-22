@@ -1,3 +1,4 @@
+
 export default class OBJETO{
  
   clicked = false;
@@ -19,15 +20,10 @@ export default class OBJETO{
     this.scaleProportion = esc;
     this.name = nom;
     this.scene = e;
-    
   }
   
   assignFunctionality(func) {
     this.functionality = func;
-    this.image.setInteractive();
-    this.image.on('pointerdown', function(f){
-      GameManager.functionality;
-    }, this);
   }
 
   llamaGM(){
