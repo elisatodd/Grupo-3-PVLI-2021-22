@@ -108,21 +108,23 @@ export default class GAMEMANAGER extends Phaser.Scene{
     }
 
     moveToInventory(obj){ // mete el obj en el inventario: se debe guardar entre escenas y además controlar que no se cargue en la escena x de nuevo
-        
+        this.itemsInInventory++;
+        this.inventario.push(obj);
+        //this.saveObject();
+        //this.showElements();
+
+
         // La altura a la que se coloca el objeto va aumentando con la cantidad de objetos en el inventario
        
        // escena.RemoveObject(dirImagen); -> ACTIVAR ESTO CUANDO USEMOS LAS ESCENAS DE VERDAD
         obj.scene.moveToInv(obj);
        
-        this.itemsInInventory++;
-        this.inventario.push(obj);
-        //this.saveObject();
-        //this.showElements();
+
     }
 
     getInventoryPosition(){
         // El primer dígito es para el tamaño del objeto y el segundo para la separación entre objetos
-        return (this.itemsInInventory * 80 + 50);
+        return ((this.itemsInInventory-1) * 80 + 50);
     }
 
     //A ver si aquí va lo de la flecha
