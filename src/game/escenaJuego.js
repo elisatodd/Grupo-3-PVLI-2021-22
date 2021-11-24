@@ -20,6 +20,7 @@
     createArrows()
     {
         for(let i = 0; i < this.arrows.length; i++){
+            this.arrowsDirs[i] = this.arrows[i];
             if(this.arrows[i]) 
             {
                 switch(i)

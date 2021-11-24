@@ -14,7 +14,7 @@
       {
       
       };
-      this.arrows = [true, false, false, false];
+      this.arrows = ['plaza', false, false, false];
     }
 
     preload(){

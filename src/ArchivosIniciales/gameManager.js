@@ -17,7 +17,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
     
     escenas = [null, 'casaEspejos', 'feria', 'casetaFeria',
                 'parque', 'sombrereria', 'bosque', null,
-                'mercado', 'calle', 'plaza', 'casa'];
+                'mercado', 'calle', 'plaza', 'Casa'];
 
 
     //Necesito una matriz de salas, en la que hay posiciones que no tienen salas y entonces no son accesibles
@@ -110,30 +110,31 @@ export default class GAMEMANAGER extends Phaser.Scene{
 
     //A ver si aquí va lo de la flecha
     //Método que cambia de escena
-    changeScene(scene, direction)
+    changeScene(iniScene, direction)
     //Aquí tengo que meter las condiciones para que el cambio de escena dependa de la flecha y la escena
     {
         console.log("changing scene...");
 
-        let scenePosition = this.escenas.indexOf(scene.key);
+        let scenePosition = this.escenas.indexOf(iniScene.arrowsDirs[0]);
+        let nextScene = scenePosition;
         if(direction==='left'){
-
-            scene.scene.start(this.escenas[scenePosition-1]);
+            nextScene -= 1;
+            //iniScene.scene.start(this.escenas[scenePosition-1]);
         }
         else if(direction==='right'){
 
-            scene.scene.start(this.escenas[scenePosition+1]);
+            iniScene.scene.start(this.escenas[scenePosition+1]);
         }
-        else if(dierction==='up'){
+        else if(direction==='up'){
 
-            scene.scene.start(this.escenas[scenePosition+4]);
+            iniScene.scene.start(this.escenas[scenePosition+4]);
         }
         else if(direction==='down'){
 
-            scene.scene.start(this.escenas[scenePosition-4]);
+            iniScene.scene.start(this.escenas[scenePosition-4]);
         }
 
-        scene.scene.start(this.escenas[10]);
+        iniScene.scene.start(this.escenas[nextScene]);
         //this.scene.start('plaza');
     }
 

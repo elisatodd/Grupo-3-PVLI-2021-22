@@ -15,7 +15,8 @@
     arrowDown;
     arrowUp;
     arrows = [this.arrowLeft = false, this.arrowRight = false, this.arrowDown = false, this.arrowUp = false];
-
+    arrowsDirs = [false,false,false,false];
+    
     constructor(data) {
       // Nombre de la escena para el SceneManager, es deci, al cargar la escena desde algún lado debes usar este nombre
       super(data);       
