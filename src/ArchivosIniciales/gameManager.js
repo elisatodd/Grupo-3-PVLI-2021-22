@@ -1,17 +1,5 @@
 
 //no se necesitan todas las escenas en el game manager, si no solo los nombres
-//Meto todas las escenas en el GM
-// import Casa from "../game/GameScenes/casa.js"
-// import Bosque from "../game/GameScenes/bosque.js"
-// import Calle from "../game/GameScenes/calle.js"
-// import CasaEspejo from "../game/GameScenes/casaEspejos.js"
-// import CasetaFeria from "../game/GameScenes/casetaFeria.js"
-// import Feria from "../game/GameScenes/feria.js"
-// import Mercado from "../game/GameScenes/mercado.js"
-// import Parque from "../game/GameScenes/parque.js"
-// import Plaza from "../game/GameScenes/plaza.js"
-// import Sombrereria from "../game/GameScenes/sombrereria.js"
-
 
 export default class GAMEMANAGER extends Phaser.Scene{
 
@@ -28,9 +16,9 @@ export default class GAMEMANAGER extends Phaser.Scene{
     //Asigno directamente las escenas en sus posiciones en el array, con las casillas vacías correspondientes
 
     
-    //  escenas = [null, CasaEspejo, Feria, CasetaFeria,
-    //             Parque, Sombrereria, Bosque, null,
-    //             Mercado, Calle, Plaza, Casa]
+    escenas = [null, 'casaEspejos', 'feria', 'casetaFeria',
+                'parque', 'sombrereria', 'bosque', null,
+                'mercado', 'calle', 'plaza', 'casa']
 
 
     //Necesito una matriz de salas, en la que hay posiciones que no tienen salas y entonces no son accesibles
@@ -42,12 +30,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
         super({ key: 'GameManager' });
         {
         };
-        // this.escenas = 
-        // [
-        //     [null, CasaEspejo, Feria, CasetaFeria,],
-        //     [Parque, Sombrereria, Bosque, null,],
-        //     [Mercado, Calle, Plaza, Casa]
-        // ];
+        
        
         this.game = game;
 
@@ -129,40 +112,33 @@ export default class GAMEMANAGER extends Phaser.Scene{
 
     //A ver si aquí va lo de la flecha
     //Método que cambia de escena
-    changeScene(direction)
+    changeScene(scenePosition, direction)
     //Aquí tengo que meter las condiciones para que el cambio de escena dependa de la flecha y la escena
     {
         console.log("changing scene...");
         
-        this.scene.start('plaza');
-        if(posFlecha=='Izq' && this.nextScene(escenaIni,'Izq') != null){
+        this.scene.start(this.escenas[11]);
+        //this.scene.start('plaza');
+        if(direction=='Izq'){
 
-            this.scene.start(this.escenas[0][1]);
+            this.scene.start(this.escenas[scenePosition-1]);
         }
-        else if(posFlecha=='Dcha'&& this.nextScene(escenaIni,'Dcha') != null){
+        else if(direction=='Dcha'){
 
-            this.scene.start(this.escenas[0][1]);
+            this.scene.start(this.escenas[scenePosition+1]);
         }
-        else if(posFlecha=='Abj'&& this.nextScene(escenaIni,'Abj') != null){
+        else if(dierction=='Abj'){
 
-            this.scene.start(this.escenas[0][1]);
+            this.scene.start(this.escenas[scenePosition+4]);
         }
-        else if(posFlecha=='Arr'&& this.nextScene(escenaIni,'Arr') != null){
+        else if(direction=='Arr'){
 
-            this.scene.start(this.escenas[0][1]);
+            this.scene.start(this.escenas[scenePosition-4]);
         }
     }
 
 
-    // //Método para ver que escena va a continuación
-    nextScene(escena, posFlecha)
-    {
-        //A parte de estar en la matriz, cada escena guardará en que posición de la matriz está
-        if(posFlecha=='dcha'){
-            return escena.i+1;
-        }
-        return null;
-    }
+    
 }
 
 
