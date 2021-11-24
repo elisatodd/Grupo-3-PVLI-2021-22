@@ -15,9 +15,11 @@ export default class GAMEMANAGER extends Phaser.Scene{
     //Asigno directamente las escenas en sus posiciones en el array, con las casillas vacías correspondientes
 
     
-    escenas = [null, 'casaEspejos', 'feria', 'casetaFeria',
+    escenas = [
+                null, 'casaEspejos', 'feria', 'casetaFeria',
                 'parque', 'sombrereria', 'bosque', null,
-                'mercado', 'calle', 'plaza', 'Casa'];
+                'mercado', 'calle', 'plaza', 'casa'
+            ];
 
 
     //Necesito una matriz de salas, en la que hay posiciones que no tienen salas y entonces no son accesibles
@@ -115,26 +117,38 @@ export default class GAMEMANAGER extends Phaser.Scene{
     {
         console.log("changing scene...");
 
-        let scenePosition = this.escenas.indexOf(iniScene.arrowsDirs[0]);
-        let nextScene = scenePosition;
-        if(direction==='left'){
-            nextScene -= 1;
-            //iniScene.scene.start(this.escenas[scenePosition-1]);
-        }
-        else if(direction==='right'){
-
-            iniScene.scene.start(this.escenas[scenePosition+1]);
-        }
-        else if(direction==='up'){
-
-            iniScene.scene.start(this.escenas[scenePosition+4]);
-        }
-        else if(direction==='down'){
-
-            iniScene.scene.start(this.escenas[scenePosition-4]);
+        let scenePosition;
+        switch(direction){
+            case 'left':
+                scenePosition = this.escenas.indexOf(iniScene.arrowsDirs[0]);
+                break;
+            case 'right':
+                scenePosition = this.escenas.indexOf(iniScene.arrowsDirs[1]);
+                break;
+            case 'up':
+                scenePosition = this.escenas.indexOf(iniScene.arrowsDirs[3]);
+                break;
+            case 'down':
+                scenePosition = this.escenas.indexOf(iniScene.arrowsDirs[2]);
+                break;
         }
 
-        iniScene.scene.start(this.escenas[nextScene]);
+        // let nextScene = scenePosition;
+        // if(direction==='left'){
+        //     nextScene -= 1;
+        // }
+        // else if(direction==='right'){
+        //     nextScene += 1;
+        // }
+        // else if(direction==='up'){
+        //     nextScene -= 4;
+        // }
+        // else if(direction==='down'){
+        //     nextScene += 4;
+        // }
+
+        let next = this.escenas[scenePosition];
+        iniScene.scene.start(next);
         //this.scene.start('plaza');
     }
 

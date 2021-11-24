@@ -15,8 +15,8 @@
       {
         
       };
-      console.log("Escena Plaza");
       this.arrows = [true, true, false, true];
+      this.arrowsDirs = ['calle', 'casa', false, 'bosque'];
 
     }
   
@@ -40,11 +40,13 @@
       
       this._wallpaper = this.spawnWallpaper(this._wallpaper);
      
-      this.spawnObjects(this.objects);
-      this.spawnObjects(this.characters);
-      this.assignObjects(this.objects);
-      
+      this.assignArrows();
       this.spawnArrows();
+
+      this.assignObjects(this.objects, 'moveToInventory'); // ASSIGN FIRST
+      this.spawnObjects(this.objects);
+      this.assignObjects(this.characters, 'cargarDialogo');
+      this.spawnObjects(this.characters);
 
       console.log("Escena Plaza");
     }

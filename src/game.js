@@ -23,7 +23,7 @@ let config = {
     // mode: Phaser.Scale.FIT,  
     autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
   },
-  scene: [Casa, Plaza]//, Calle, Puzzle] // Escenas que requiere el juego
+  scene: [Casa, Plaza, Calle]//, Calle, Puzzle] // Escenas que requiere el juego
   };
 
 
