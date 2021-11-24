@@ -63,6 +63,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
     testing(){
         console.log("probando asignar funciones");
     }
+
     loadElements()
     {
         //cargamos los elementos almacenados
@@ -123,9 +124,12 @@ export default class GAMEMANAGER extends Phaser.Scene{
     }
     //A ver si aquí va lo de la flecha
     //Método que cambia de escena
-    changeScene(posFlecha, escenaIni)
+    changeScene(direction)
     //Aquí tengo que meter las condiciones para que el cambio de escena dependa de la flecha y la escena
     {
+        console.log("changing scene...");
+        
+        this.scene.start('plaza');
         if(posFlecha=='Izq' && this.nextScene(escenaIni,'Izq') != null){
 
             this.scene.start(this.escenas[0][1]);

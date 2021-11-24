@@ -67,4 +67,16 @@
         } );    
       
     }
+
+    addBottomArrows(info) {
+        //debemos usar estos nombres al crear el objeto
+        this.spawnImage(info);    
+        info.image.setInteractive();
+        info.image.on('pointerdown', function (f){
+            let scene = info.scene;
+            let dir = info.direction;
+            scene.gameManager.changeScene(dir);
+        } );    
+      
+    }
 }

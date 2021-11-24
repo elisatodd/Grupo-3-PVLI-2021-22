@@ -51,7 +51,7 @@
     spawnArrows(){
         for(let i = 0; i < this.arrows.length; i++)
             if (this.arrows[i] != false)
-                this.addBottom(this.arrows[i]);
+                this.addBottomArrows(this.arrows[i]);
     }
 
    
@@ -69,6 +69,32 @@
         for(let i = 0; i < container.length; i++)
             this.objects[i].assignFunctionality(funct);
    }
+
+   assignArrows(){
+        for(let i = 0; i < this.arrows.length; i++){
+            let dir;
+            if (this.arrows[i] != false){
+                switch(i)
+                {
+                    case 0:
+                        dir = 'left';
+                        break;
+                    case 1:
+                        dir = 'right';
+                        break;
+                    case 2:
+                        dir = 'down';
+                        break;
+                    case 3:
+                        dir = 'up';
+                        break;
+                }
+                this.arrows[i].assignFunctionality('changeScene');
+                this.arrows[i].assignDir(dir);
+        
+            }
+        }
+    }
    
    spawnObjects(container)
    {

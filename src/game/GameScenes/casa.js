@@ -34,12 +34,14 @@
     create(){
       this._wallpaper = this.spawnWallpaper(this._wallpaper);
       
-      this.assignObjects(this.objects, 'testing'); // ASSIGN FIRST
-      this.spawnObjects(this.objects);
-      this.spawnObjects(this.characters);
-      
+      this.assignArrows();
       this.spawnArrows();
 
+      this.assignObjects(this.objects, 'testing'); // ASSIGN FIRST
+      this.spawnObjects(this.objects);
+      this.assignObjects(this.characters, 'cargarDialogo');
+      this.spawnObjects(this.characters);
+      
       console.log("Escena Casa");
     }
 

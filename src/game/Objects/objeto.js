@@ -9,6 +9,7 @@ export default class OBJETO{
   functionality;
   name;
   image;
+  direction; // a donde señala la flecha
 
   text = "  ";
   box;
@@ -26,6 +27,10 @@ export default class OBJETO{
     this.functionality = func;
   }
 
+  assignDir(d){
+    this.direction = d;
+  }
+  
   llamaGM(){
     this.scene.GameManager.metodo();
   }
