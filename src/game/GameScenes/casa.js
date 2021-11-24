@@ -37,7 +37,7 @@
       this.assignArrows();
       this.spawnArrows();
 
-      this.assignObjects(this.objects, 'testing'); // ASSIGN FIRST
+      this.assignObjects(this.objects, 'moveToInventory'); // ASSIGN FIRST
       this.spawnObjects(this.objects);
       this.assignObjects(this.characters, 'cargarDialogo');
       this.spawnObjects(this.characters);
@@ -45,4 +45,11 @@
       console.log("Escena Casa");
     }
 
+    moveToInv(obj){
+      obj.image.destroy();
+      let x = 725;
+      let y = this.gameManager.getInventoryPosition();
+      obj.pos = {x, y};
+      this.spawnObjects([obj]);
+    }
   }

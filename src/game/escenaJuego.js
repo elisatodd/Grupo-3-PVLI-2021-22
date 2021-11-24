@@ -67,7 +67,7 @@
 
    assignObjects(container, funct){
         for(let i = 0; i < container.length; i++)
-            this.objects[i].assignFunctionality(funct);
+            container[i].assignFunctionality(funct);
    }
 
    assignArrows(){

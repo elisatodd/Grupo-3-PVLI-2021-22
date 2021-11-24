@@ -63,7 +63,7 @@
         info.image.on('pointerdown', function (f){
             let s = info.functionality;
             let scene = info.scene;
-            scene.gameManager[s]();
+            scene.gameManager[s](info);
         } );    
       
     }
