@@ -1,4 +1,3 @@
-
 //no se necesitan todas las escenas en el game manager, si no solo los nombres
 
 export default class GAMEMANAGER extends Phaser.Scene{
@@ -18,12 +17,11 @@ export default class GAMEMANAGER extends Phaser.Scene{
     
     escenas = [null, 'casaEspejos', 'feria', 'casetaFeria',
                 'parque', 'sombrereria', 'bosque', null,
-                'mercado', 'calle', 'plaza', 'casa']
+                'mercado', 'calle', 'plaza', 'casa'];
 
 
     //Necesito una matriz de salas, en la que hay posiciones que no tienen salas y entonces no son accesibles
     //
-    escenas;
 
     constructor(game){
 
@@ -112,29 +110,31 @@ export default class GAMEMANAGER extends Phaser.Scene{
 
     //A ver si aquí va lo de la flecha
     //Método que cambia de escena
-    changeScene(scenePosition, direction)
+    changeScene(scene, direction)
     //Aquí tengo que meter las condiciones para que el cambio de escena dependa de la flecha y la escena
     {
         console.log("changing scene...");
-        
-        this.scene.start(this.escenas[11]);
+
+        let scenePosition = this.escenas.indexOf(scene.key);
+        if(direction==='left'){
+
+            scene.scene.start(this.escenas[scenePosition-1]);
+        }
+        else if(direction==='right'){
+
+            scene.scene.start(this.escenas[scenePosition+1]);
+        }
+        else if(dierction==='up'){
+
+            scene.scene.start(this.escenas[scenePosition+4]);
+        }
+        else if(direction==='down'){
+
+            scene.scene.start(this.escenas[scenePosition-4]);
+        }
+
+        scene.scene.start(this.escenas[10]);
         //this.scene.start('plaza');
-        if(direction=='Izq'){
-
-            this.scene.start(this.escenas[scenePosition-1]);
-        }
-        else if(direction=='Dcha'){
-
-            this.scene.start(this.escenas[scenePosition+1]);
-        }
-        else if(dierction=='Abj'){
-
-            this.scene.start(this.escenas[scenePosition+4]);
-        }
-        else if(direction=='Arr'){
-
-            this.scene.start(this.escenas[scenePosition-4]);
-        }
     }
 
 

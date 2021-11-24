@@ -75,7 +75,7 @@
         info.image.on('pointerdown', function (f){
             let scene = info.scene;
             let dir = info.direction;
-            scene.gameManager.changeScene(dir);
+            scene.gameManager.changeScene(scene, dir);
         } );    
       
     }
