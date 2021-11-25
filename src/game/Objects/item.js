@@ -72,4 +72,4 @@ export default class item extends Objeto{
 
     }
    
-}
+  }
