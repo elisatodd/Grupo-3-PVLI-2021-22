@@ -25,12 +25,12 @@
    
    preload(){
 
-     this._wallpaper = {name: 'sombrereria', route: './assets/images/sombrereria.jpg'};
+     this._wallpaper = {name: 'sombrereria', route: './assets/images/pueblo.jpg'};
      this.loadImage(this._wallpaper);
      
       if (this.first){
-        this.AddCharacter(new NPC('./assets/images/clienta.png', 200, this.cameras.main.height - 200, 0.5, 'clienta', this));
-        this.AddCharacter(new NPC('./assets/images/vendedora.png', 505, this.cameras.main.height - 200, 1, 'vendedora', this));
+        this.AddCharacter(new NPC('./assets/images/clienta.png', 200, this.cameras.main.height - 200, 1, 'clienta', this));
+        this.AddCharacter(new NPC('./assets/images/vendedora.png', 505, this.cameras.main.height - 200, 2, 'vendedora', this));
       }
 
      this.loadObjects(this.objects);

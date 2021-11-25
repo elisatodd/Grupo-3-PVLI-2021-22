@@ -24,7 +24,7 @@
  
   preload(){
 
-    this._wallpaper = {name: 'parque', route: './assets/images/parque.jpg'};
+    this._wallpaper = {name: 'parque', route: './assets/images/pueblo.jpg'};
     this.loadImage(this._wallpaper);
 
     if (this.first){

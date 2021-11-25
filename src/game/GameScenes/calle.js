@@ -25,7 +25,7 @@
     this.loadImage(this._wallpaper);
 
     if (this.first){
-      this.AddObject(new Item('./assets/images/flor.png', 500, this.cameras.main.height - 70,  7.5, 'flor', this));
+      this.AddObject(new Item('./assets/images/flor.png', 500, this.cameras.main.height - 70, 8, 'flor', this));
       this.AddCharacter(new NPC('./assets/images/mujerGato.png', 200, this.cameras.main.height - 200, 1, 'mujer', this));
     }
 

@@ -22,11 +22,11 @@
     }
     
     preload(){
-        this._wallpaper = {name: 'espejos ', route: './assets/images/carpadecirco.jpg'};
+        this._wallpaper = {name: 'espejos ', route: './assets/images/pueblo.jpg'};
         this.loadImage(this._wallpaper);
 
         if (this.first){
-            this.AddCharacter(new NPC('./assets/images/excentrico.png', 200, this.cameras.main.height - 200, 7, 'excentrico', this));
+            this.AddCharacter(new NPC('./assets/images/excentrico.png', 200, this.cameras.main.height - 200, 2.5, 'excentrico', this));
         }
         this.loadObjects(this.characters);
 

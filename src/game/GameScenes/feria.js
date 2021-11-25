@@ -19,12 +19,12 @@
     }
 
     preload(){
-        this._wallpaper = {name: 'feria ', route: './assets/images/carpadecirco.jpg'};
+        this._wallpaper = {name: 'feria ', route: './assets/images/pueblo.jpg'};
         this.loadImage(this._wallpaper);
 
         if (this.first){
 
-        this.AddCharacter(new NPC('./assets/images/cirquense.jpg', 200, this.cameras.main.height - 200, 7, 'cirquense', this));
+        this.AddCharacter(new NPC('./assets/images/cirquense.jpg', 200, this.cameras.main.height - 200, 2.5, 'cirquense', this));
         }
         this.loadObjects(this.characters);
 

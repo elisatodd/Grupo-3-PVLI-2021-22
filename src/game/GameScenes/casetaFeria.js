@@ -20,12 +20,12 @@
     }
   
     preload(){
-      this._wallpaper = {name: 'caseta ', route: './assets/images/carpadecirco.jpg'};
+      this._wallpaper = {name: 'caseta ', route: './assets/images/pueblo.jpg'};
       this.loadImage(this._wallpaper);
 
       if (this.first){
-        this.AddCharacter(new NPC('./assets/images/ninio.png', 550, this.cameras.main.height - 300, 6, 'ninio', this));
-        this.AddCharacter(new NPC('./assets/images/forzudo.png', 250, this.cameras.main.height - 200, 7, 'forzudo', this));
+        this.AddCharacter(new NPC('./assets/images/ninio.png', 550, this.cameras.main.height - 300, 3, 'ninio', this));
+        this.AddCharacter(new NPC('./assets/images/forzudo.png', 250, this.cameras.main.height - 200, 2.5, 'forzudo', this));
         this.loadObjects(this.characters);
       }
 
