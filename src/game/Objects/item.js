@@ -7,6 +7,7 @@ export default class item extends Objeto{
 
     iniposx;
     iniposy;
+    canDrag = false;
 
     constructor(sprite, x, y, esc, nom, e, make){
 
@@ -38,9 +39,8 @@ export default class item extends Objeto{
     
     startdrag()
     {
-
-      this.iniposx = this.x;
-      this.iniposy = this.y;
+      this.iniposx = this.pos.x;
+      this.iniposy = this.pos.y;
 
       this.scene.input.off('pointerdown', this.startdrag, this);
       this.scene.input.on('pointermove', this.dodrag, this);
@@ -52,24 +52,30 @@ export default class item extends Objeto{
 
     dodrag(pointer)
     {
-      let x = this.pointer.x;
-      let y = this.pointer.y;
+        
+        let x = this.pointer.x;
+        let y = this.pointer.y;
 
-      this.pos = {x, y};
+        this.pos = {x, y};
 
-      this.scene.spawnObjects([this]);
-      console.log("B "+ this.pos.x);
+        this.image.destroy();
+        this.scene.spawnObjects([this]);
+        console.log("B "+ this.pos.x);
 
+      
     }
 
-    stopdrag(obj)
+    stopdrag()
     {
-      this.scene.input.on('pointerdown', this.startdrag, this);
       this.scene.input.off('pointermove', this.dodrag, this);
       this.scene.input.off('pointerup',this.stopdrag,this);
 
-      obj.x = this.iniposx;
-      obj.y = this.iniposy;
+      let x = this.iniposx;
+      let y = this.iniposy;
+      this.pos = {x, y};
+
+      this.image.destroy();
+      this.scene.spawnObjects([this]);
 
       console.log("C");
 
