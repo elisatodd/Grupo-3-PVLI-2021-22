@@ -46,16 +46,20 @@
 
    create(){
     this._wallpaper = this.spawnWallpaper(this._wallpaper);
-     
+
+    this.createGameManager(this.game, this);
+    this.gameManager.loadElements();
+
     this.assignArrows();
     this.spawnArrows();
 
-
     if (this.first){
-        this.assignObjects(this.objects, 'moveToInventory'); // ASSIGN FIRST
-    this.assignObjects(this.characters, 'cargarDialogo');
-    this.assignArrows();
-    
+
+      this.assignObjects(this.objects, 'moveToInventory'); // ASSIGN FIRST
+      this.assignObjects(this.characters, 'cargarDialogo');
+      
+      this.first = false;
+      
     }
     this.spawnObjects(this.objects);
     this.spawnObjects(this.characters);

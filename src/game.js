@@ -31,7 +31,7 @@ let config = {
     // mode: Phaser.Scale.FIT,  
     autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
   },
-  scene: [Telefono, Casa, Plaza, Calle, Bosque, Feria, CasetaFeria, CasaEspejos, Sombrereria, Mercado, Parque] // Escenas que requiere el juego
+  scene: [ Casa, Plaza, Calle, Bosque, Feria, CasetaFeria, CasaEspejos, Sombrereria, Mercado, Parque] // Escenas que requiere el juego
   };
 
 

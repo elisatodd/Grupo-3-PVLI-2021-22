@@ -10,50 +10,52 @@
  export default class Parque extends EscenaJuego {
 
   first = true;
-   constructor(){
-     // Nombre de la escena para el SceneManager
-     super({ key: 'parque' });
-     {
-     };
 
-     this.arrows = [false, false, true, false];
-     this.arrowsDirs = [false, false, 'mercado', false];
+  constructor(){
+    // Nombre de la escena para el SceneManager
+    super({ key: 'parque' });
+    {
+    };
 
-   }
+    this.arrows = [false, false, true, false];
+    this.arrowsDirs = [false, false, 'mercado', false];
+
+  }
  
-   preload(){
+  preload(){
 
-     this._wallpaper = {name: 'parque', route: './assets/images/parque.jpg'};
-     this.loadImage(this._wallpaper);
+    this._wallpaper = {name: 'parque', route: './assets/images/parque.jpg'};
+    this.loadImage(this._wallpaper);
 
+    if (this.first){
+    this.AddCharacter(new NPC('./assets/images/enamorado.png', 200, this.cameras.main.height - 200, 2.5, 'enamorado', this));
+    this.AddObject(new Item('./assets/images/caja.png', 600, this.cameras.main.height - 200, 5, 'caja', this)); 
+    }
+    this.loadObjects(this.objects);
+    this.loadObjects(this.characters);
 
+    this.createArrows();
+    this.loadArrows();
 
-      if (this.first){
-      this.AddCharacter(new NPC('./assets/images/enamorado.png', 200, this.cameras.main.height - 200, 2.5, 'enamorado', this));
-     this.AddObject(new Item('./assets/images/caja.png', 600, this.cameras.main.height - 200, 5, 'caja', this)); 
-      }
-
-      
-     this.loadObjects(this.objects);
-     this.loadObjects(this.characters);
-
-     this.createArrows();
-     this.loadArrows();
-
-   }
+  }
 
    create(){
    
     this._wallpaper = this.spawnWallpaper(this._wallpaper);
-     
+
+    this.createGameManager(this.game, this);
+    this.gameManager.loadElements();
+
     this.assignArrows();
     this.spawnArrows();
 
-
     if (this.first){
-    this.assignObjects(this.objects, 'moveToInventory'); // ASSIGN FIRST
-        this.assignObjects(this.characters, 'cargarDialogo');
-        this.assignArrows();
+
+      this.assignObjects(this.objects, 'moveToInventory'); // ASSIGN FIRST
+      this.assignObjects(this.characters, 'cargarDialogo');
+      
+      this.first = false;
+      
     }
     this.spawnObjects(this.objects);
     this.spawnObjects(this.characters);
