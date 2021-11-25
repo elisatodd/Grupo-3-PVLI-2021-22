@@ -36,11 +36,11 @@ export default class item extends Objeto{
     }
 
     
-    startdrag(obj)
+    startdrag()
     {
 
-      this.iniposx = obj.x;
-      this.iniposy = obj.y;
+      this.iniposx = this.x;
+      this.iniposy = this.y;
 
       this.scene.input.off('pointerdown', this.startdrag, this);
       this.scene.input.on('pointermove', this.dodrag, this);
@@ -50,12 +50,15 @@ export default class item extends Objeto{
 
     }
 
-    dodrag(pointer, obj)
+    dodrag(pointer)
     {
-      obj.x = this.pointer.x;
-      obj.y = this.pointer.y;
+      let x = this.pointer.x;
+      let y = this.pointer.y;
 
-      console.log("B");
+      this.pos = {x, y};
+
+      this.scene.spawnObjects([this]);
+      console.log("B "+ this.pos.x);
 
     }
 

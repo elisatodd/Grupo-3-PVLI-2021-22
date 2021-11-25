@@ -111,7 +111,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
 
     drag(obj)
     {
-        obj.startdrag(obj);
+        obj.startdrag();
     }
 
     getInventoryPosition(){
