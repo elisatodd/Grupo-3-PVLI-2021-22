@@ -7,6 +7,8 @@
  import NPC from "../Objects/NPC.js";
  
  export default class Calle extends EscenaJuego {
+  
+  first = true;
 
   constructor(){
     // Nombre de la escena para el SceneManager
@@ -22,26 +24,37 @@
     this._wallpaper = {name: 'plaza', route: './assets/images/pueblo.jpg'};
     this.loadImage(this._wallpaper);
 
-    this.AddObject(new Item('./assets/images/flor.png', 500, this.cameras.main.height - 70,  7.5, 'flor', this));
-    this.AddCharacter(new NPC('./assets/images/mujerGato.png', 200, this.cameras.main.height - 200, 1, 'mujer', this));
+    if (this.first){
+      this.AddObject(new Item('./assets/images/flor.png', 500, this.cameras.main.height - 70,  7.5, 'flor', this));
+      this.AddCharacter(new NPC('./assets/images/mujerGato.png', 200, this.cameras.main.height - 200, 1, 'mujer', this));
+    }
+
     this.loadObjects(this.objects);
     this.loadObjects(this.characters);
 
     this.createArrows();
     this.loadArrows();
-    console.log("Escena creada");
   }
 
   create(){
     
     this._wallpaper = this.spawnWallpaper(this._wallpaper);
      
+    this.createGameManager(this.game, this);
+    this.gameManager.loadElements();
+    
     this.assignArrows();
     this.spawnArrows();
 
-    this.assignObjects(this.objects, 'moveToInventory'); // ASSIGN FIRST
+    if (this.first){
+
+      this.assignObjects(this.objects, 'moveToInventory');
+      this.assignObjects(this.characters, 'cargarDialogo');
+      
+      this.first = false;
+
+    }
     this.spawnObjects(this.objects);
-    this.assignObjects(this.characters, 'cargarDialogo');
     this.spawnObjects(this.characters);
 
     console.log("Escena Calle");

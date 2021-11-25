@@ -10,6 +10,7 @@
   export default class Casa extends EscenaJuego {  
 
     first = true;
+
     constructor(){
       // Nombre de la escena para el SceneManager
       super({ key: 'casa' });
@@ -50,11 +51,11 @@
 
       if (this.first){
 
-        this.assignObjects(this.objects, 'moveToInventory'); // ASSIGN FIRST
+        this.assignObjects(this.objects, 'moveToInventory');
         this.assignObjects(this.characters, 'cargarDialogo');
         
         this.first = false;
-        
+
       }
       this.spawnObjects(this.objects);
       this.spawnObjects(this.characters);

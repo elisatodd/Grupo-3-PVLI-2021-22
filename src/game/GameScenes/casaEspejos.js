@@ -8,6 +8,8 @@
   
 
  export default class CasaEsp extends EscenaJuego { // DEBERIA HEREDAR DE GAMESCENE EN EL FUTURO
+    
+    first = true;
 
     constructor(){
         // Nombre de la escena para el SceneManager
@@ -23,7 +25,9 @@
         this._wallpaper = {name: 'espejos ', route: './assets/images/carpadecirco.jpg'};
         this.loadImage(this._wallpaper);
 
-        this.AddCharacter(new NPC('./assets/images/excentrico.png', 200, this.cameras.main.height - 200, 7, 'excentrico', this));
+        if (this.first){
+            this.AddCharacter(new NPC('./assets/images/excentrico.png', 200, this.cameras.main.height - 200, 7, 'excentrico', this));
+        }
         this.loadObjects(this.characters);
 
         this.createArrows();
@@ -32,12 +36,18 @@
     
     create(){
         this._wallpaper = this.spawnWallpaper(this._wallpaper);
-         
+
+        this.createGameManager(this.game, this);
+        this.gameManager.loadElements();
+        
         this.assignArrows();
         this.spawnArrows();
-
+  
+        if (this.first){
+          this.assignObjects(this.characters, 'cargarDialogo');
+          this.first = false;
+        }
         this.spawnObjects(this.characters);
-        this.assignObjects(this.characters);
     
         console.log("Escena Espejos");
     }
