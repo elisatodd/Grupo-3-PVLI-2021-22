@@ -101,8 +101,12 @@ export default class GAMEMANAGER extends Phaser.Scene{
        
        // escena.RemoveObject(dirImagen); -> ACTIVAR ESTO CUANDO USEMOS LAS ESCENAS DE VERDAD
         obj.scene.moveToInv(obj);
-       
+    }
 
+
+    drag(obj)
+    {
+        obj.scene.startdrag(pointer, obj);
     }
 
     getInventoryPosition(){

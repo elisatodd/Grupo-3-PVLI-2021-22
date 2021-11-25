@@ -6,6 +6,7 @@
   import EscenaJuego from "../escenaJuego.js";
   //preguntar guille si se puede quitar de algua manera
   import OBJETO from "../Objects/objeto.js";
+
  
   export default class Plaza extends EscenaJuego {
 
@@ -64,5 +65,43 @@
       let y = this.gameManager.getInventoryPosition();
       obj.pos = {x, y};
       this.spawnObjects([obj]);
+      obj.assignFunctionality('drag');
     }
+
+/*
+    startdrag(pointer, obj)
+    {
+      this.iniposx = this.objmove.x;
+      this.iniposy = this.objmove.y;
+
+      this.input.off('pointerdown', this.startdrag, this);
+      this.input.on('pointermove', this.dodrag, this);
+      this.input.on('pointerup',this.stopdrag,this);
+    }
+
+    dodrag(pointer)
+    {
+      this.objmove.x = pointer.x;
+      this.objmove.y = pointer.y;
+
+    }
+
+    stopdrag()
+    {
+      this.input.on('pointerdown', this.startdrag, this);
+      this.input.off('pointermove', this.dodrag, this);
+      this.input.off('pointerup',this.stopdrag,this);
+
+      this.objmove.x = this.iniposx;
+      this.objmove.y  = this.iniposy;
+
+      this.objectmove(null);
+    }
+
+    objectmove(obj)
+    {
+      this.objmove = obj;
+    }
+
+*/
   }

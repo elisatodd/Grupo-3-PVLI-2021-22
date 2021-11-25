@@ -70,6 +70,8 @@
             container[i].assignFunctionality(funct);
    }
 
+   
+
    assignArrows(){
         for(let i = 0; i < this.arrows.length; i++){
             let dir;

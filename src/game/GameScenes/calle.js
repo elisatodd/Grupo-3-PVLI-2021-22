@@ -32,23 +32,36 @@
   }
 
   create(){
+    
     this._wallpaper = this.spawnWallpaper(this._wallpaper);
-
+     
     this.assignArrows();
     this.spawnArrows();
 
+    this.assignObjects(this.objects, 'moveToInventory'); // ASSIGN FIRST
     this.spawnObjects(this.objects);
+    this.assignObjects(this.characters, 'cargarDialogo');
     this.spawnObjects(this.characters);
-    this.assignObjects(this.objects);
-    this.assignObjects(this.characters);
 
     console.log("Escena Calle");
   }
 
+
+  /*
   moverAlInventario(posInv, obj, xPosition, yPosition, itemScale){ // Pone un objeto de esta escena en el inventario
     // Las posiciones dependen de cuantos objetos haya en el inventario
     let inv1 = this.add.image(xPosition, yPosition, obj); 
     inv1.setScale(this.scale/itemScale).setScrollFactor(0);
   }
+*/
+
+moveToInv(obj){
+  obj.image.destroy();
+  let x = 725;
+  let y = this.gameManager.getInventoryPosition();
+  obj.pos = {x, y};
+  this.spawnObjects([obj]);
+  obj.assignFunctionality('drag');
+}
 
 }
