@@ -24,7 +24,7 @@
 
         if (this.first){
 
-        this.AddCharacter(new NPC('./assets/images/cirquense.jpg', 200, this.cameras.main.height - 200, 2.5, 'cirquense', this));
+        this.AddCharacter(new NPC('./assets/images/cirquense.jpg', 200, this.cameras.main.height - 200, 2.5, 'cirquense', this, null, "Ayuda todo se ha estropeado", "Me has salvado gracias" ));
         }
         this.loadObjects(this.characters);
 

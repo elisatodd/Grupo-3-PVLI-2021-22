@@ -25,8 +25,8 @@
         this.loadImage(this._wallpaper);
 
         if (this.first){
-            this.AddCharacter(new NPC('./assets/images/policia.png', 200, this.cameras.main.height - 200, 1, 'policia', this));
-            this.AddCharacter(new NPC('./assets/images/campesino.png', 200, this.cameras.main.height - 200, 1, 'campesino', this));
+            this.AddCharacter(new NPC('./assets/images/policia.png', 550, this.cameras.main.height - 200, 1, 'policia', this,  null, "ALTO AHÍ, inspección", "Gracias justo lo que buscaba" ));
+            this.AddCharacter(new NPC('./assets/images/campesino.png', 200, this.cameras.main.height - 200, 1, 'campesino', this,  null, "Se rompio la carreta", "Gracias justo lo que buscaba" ));
             this.AddObject(new Item('./assets/images/pajarita.png', 550, this.cameras.main.height - 70, 10, 'pajarita', this));
         }
 

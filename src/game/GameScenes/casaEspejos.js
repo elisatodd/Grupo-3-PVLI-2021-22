@@ -26,7 +26,7 @@
         this.loadImage(this._wallpaper);
 
         if (this.first){
-            this.AddCharacter(new NPC('./assets/images/excentrico.png', 200, this.cameras.main.height - 200, 2.5, 'excentrico', this));
+            this.AddCharacter(new NPC('./assets/images/excentrico.png', 200, this.cameras.main.height - 200, 2.5, 'excentrico', this, null, "Resuelve mi acertijo", "Eres muy listo" ));
         }
         this.loadObjects(this.characters);
 

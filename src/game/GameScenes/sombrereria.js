@@ -29,8 +29,8 @@
      this.loadImage(this._wallpaper);
      
       if (this.first){
-        this.AddCharacter(new NPC('./assets/images/clienta.png', 200, this.cameras.main.height - 200, 1, 'clienta', this));
-        this.AddCharacter(new NPC('./assets/images/vendedora.png', 505, this.cameras.main.height - 200, 2, 'vendedora', this));
+        this.AddCharacter(new NPC('./assets/images/clienta.png', 200, this.cameras.main.height - 200, 1, 'clienta', this, null, "Necesito un nuevo sombrero", "Muchisimas gracias"));
+        this.AddCharacter(new NPC('./assets/images/vendedora.png', 505, this.cameras.main.height - 200, 2, 'vendedora', this, null, "No te creo", "Ahora si"));
       }
 
      this.loadObjects(this.objects);

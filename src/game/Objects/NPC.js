@@ -7,11 +7,17 @@ export default class NPC extends Objeto{
     texto = "";
     solved = false;
     box;
+    puzzle = null;
+    first;
+    second;
 
-    constructor(sprite, x, y, esc, nom, e){
+    constructor(sprite, x, y, esc, nom, e, puz, f, l){
 
         super(sprite, x, y, esc, nom, e);
         this.functionality = this.moverAlInventario;
+        this.puzzle = puz;
+        this.first = f;
+        this.last = l;
     }
 
 
@@ -25,8 +31,6 @@ export default class NPC extends Objeto{
 
   loadDialogue()
   {
-    
-
     this.box = this.scene.add.image(this.scene.cameras.main.width / 2, 500, 'box');  
     this.box.setScale(this.scene.scale/1.35).setScrollFactor(0);
 
@@ -44,9 +48,9 @@ export default class NPC extends Objeto{
     img.destroy();
     dialogue.destroy();
 
-    if (!this.solved)
+    if (!this.solved && this.puzzle != null)
     {
-      this.scene.scene.start('telefono');
+      this.scene.scene.start(this.puzzle);
       this.solved = true;
     }
       
