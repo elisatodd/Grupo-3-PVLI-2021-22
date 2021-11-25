@@ -110,13 +110,14 @@ export default class GAMEMANAGER extends Phaser.Scene{
         return ((this.itemsInInventory-1) * 80 + 50);
     }
 
-    //A ver si aquí va lo de la flecha
+    cargarDialogo(){
+        console.log("Soy un NPC");
+    }
+
     //Método que cambia de escena
     changeScene(iniScene, direction)
     //Aquí tengo que meter las condiciones para que el cambio de escena dependa de la flecha y la escena
     {
-        console.log("changing scene...");
-
         let scenePosition;
         switch(direction){
             case 'left':

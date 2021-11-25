@@ -14,13 +14,14 @@
 
     };
     this.arrows = [true, true, false, true];
+    this.arrowsDirs = ['mercado', 'plaza', false, 'sombrereria'];
   }
 
   preload(){
     this._wallpaper = {name: 'plaza', route: './assets/images/pueblo.jpg'};
     this.loadImage(this._wallpaper);
 
-    this.AddObject(new OBJETO('./assets/images/flor.png', 200, this.cameras.main.height - 70,  7.5, 'flor', this));
+    this.AddObject(new OBJETO('./assets/images/flor.png', 500, this.cameras.main.height - 70,  7.5, 'flor', this));
     this.AddCharacter(new OBJETO('./assets/images/mujerGato.png', 200, this.cameras.main.height - 200, 1, 'mujer', this));
     this.loadObjects(this.objects);
     this.loadObjects(this.characters);
@@ -32,12 +33,14 @@
 
   create(){
     this._wallpaper = this.spawnWallpaper(this._wallpaper);
-     
+
+    this.assignArrows();
+    this.spawnArrows();
+
     this.spawnObjects(this.objects);
     this.spawnObjects(this.characters);
     this.assignObjects(this.objects);
-    
-    this.spawnArrows();
+    this.assignObjects(this.characters);
 
     console.log("Escena Calle");
   }

@@ -16,6 +16,7 @@
      };
 
      this.arrows = [false, false, true, false];
+     this.arrowsDirs = [false, false, 'calle', false];
 
    }
  
@@ -26,8 +27,10 @@
      this._wallpaper = {name: 'sombrereria', route: './assets/images/sombrereria.jpg'};
      this.loadImage(this._wallpaper);
 
-     this.AddCharacter(new OBJETO('./assets/images/clienta.png', 200, this.cameras.main.height - 200, 1, 'clienta', this));
-     this.AddCharacter(new OBJETO('./assets/images/vendedora.png', 200, this.cameras.main.height - 200, 1, 'vendedora', this));
+     this.AddCharacter(new OBJETO('./assets/images/clienta.png', 200, this.cameras.main.height - 200, 0.5, 'clienta', this));
+     this.AddCharacter(new OBJETO('./assets/images/vendedora.png', 505, this.cameras.main.height - 200, 1, 'vendedora', this));
+     this.loadObjects(this.objects);
+     this.loadObjects(this.characters);
 
      this.createArrows();
      this.loadArrows();
@@ -40,13 +43,11 @@
    create(){
     this._wallpaper = this.spawnWallpaper(this._wallpaper);
     
+    this.assignArrows();
+    this.spawnArrows();
     //this.spawnObjects(this.objects);
 
     this.spawnObjects(this.characters);
-
-    //this.assignObjects(this.objects);
-    
-    this.spawnArrows();
 
     console.log("Escena Sombrereria");
   }

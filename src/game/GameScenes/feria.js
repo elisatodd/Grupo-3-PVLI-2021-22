@@ -14,13 +14,14 @@
 
         };
         this.arrows = [true, true, true, false];
+        this.arrowsDirs = ['casaEspejos', 'casetaFeria', 'bosque', false];
     }
 
     preload(){
         this._wallpaper = {name: 'feria ', route: './assets/images/carpadecirco.jpg'};
         this.loadImage(this._wallpaper);
 
-        this.AddCharacter(new OBJETO('./assets/images/cirquense.png', 200, this.cameras.main.height - 200, 1, 'cirquense', this));
+        this.AddCharacter(new OBJETO('./assets/images/cirquense.jpg', 200, this.cameras.main.height - 200, 7, 'cirquense', this));
         this.loadObjects(this.characters);
 
         this.createArrows();
@@ -30,11 +31,12 @@
     create(){
         this._wallpaper = this.spawnWallpaper(this._wallpaper);
          
+        this.assignArrows();
+        this.spawnArrows();
+
         this.spawnObjects(this.objects);
         this.spawnObjects(this.characters);
         this.assignObjects(this.objects);
-        
-        this.spawnArrows();
     
         console.log("Escena Feria");
     }

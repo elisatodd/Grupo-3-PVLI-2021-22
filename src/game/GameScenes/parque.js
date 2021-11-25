@@ -16,6 +16,7 @@
      };
 
      this.arrows = [false, false, true, false];
+     this.arrowsDirs = [false, false, 'mercado', false];
 
    }
  
@@ -24,9 +25,11 @@
      this._wallpaper = {name: 'parque', route: './assets/images/parque.jpg'};
      this.loadImage(this._wallpaper);
 
-     this.AddCharacter(new OBJETO('./assets/images/enamorado.png', 200, this.cameras.main.height - 200, 1, 'enamorado', this));
-     this.AddObject(new OBJETO('./assets/images/caja.png', 600, this.cameras.main.height - 200, 3, 'caja', this)); 
-     
+     this.AddCharacter(new OBJETO('./assets/images/enamorado.png', 200, this.cameras.main.height - 200, 2.5, 'enamorado', this));
+     this.AddObject(new OBJETO('./assets/images/caja.png', 600, this.cameras.main.height - 200, 5, 'caja', this)); 
+     this.loadObjects(this.objects);
+     this.loadObjects(this.characters);
+
      this.createArrows();
      this.loadArrows();
 
@@ -34,14 +37,14 @@
 
    create(){
     this._wallpaper = this.spawnWallpaper(this._wallpaper);
-    
-    this.spawnObjects(this.objects);
 
-    this.spawnObjects(this.characters);
-
-    this.assignObjects(this.objects);
-    
+    this.assignArrows();
     this.spawnArrows();
+
+    this.spawnObjects(this.objects);
+    this.spawnObjects(this.characters);
+    this.assignObjects(this.objects);
+    this.assignObjects(this.characters);
 
     console.log("Escena Parque");
   }
