@@ -18,5 +18,14 @@ export default class item extends Objeto{
         
     }
 
+    
+    moveToInv(obj){
+        obj.image.destroy();
+        let x = 725;
+        let y = this.gameManager.getInventoryPosition();
+        obj.pos = {x, y};
+        this.spawnObjects([obj]);
+      }
+
 
 }
