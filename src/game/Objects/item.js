@@ -4,8 +4,9 @@ export default class item extends Objeto{
 
     isClicked = false;
     pointer = this.scene.input.activePointer;
-    objmove;
 
+    iniposx;
+    iniposy;
 
     constructor(sprite, x, y, esc, nom, e, make){
 
@@ -35,37 +36,37 @@ export default class item extends Objeto{
     startdrag(obj)
     {
 
-      this.objectmove(obj);
-
-      this.iniposx = this.objmove.x;
-      this.iniposy = this.objmove.y;
+      this.iniposx = obj.x;
+      this.iniposy = obj.y;
 
       this.scene.input.off('pointerdown', this.startdrag, this);
       this.scene.input.on('pointermove', this.dodrag, this);
       this.scene.input.on('pointerup',this.stopdrag,this);
+
+      console.log("A");
+
     }
 
-    dodrag(pointer)
+    dodrag(pointer, obj)
     {
-      this.objmove.x = this.pointer.x;
-      this.objmove.y = this.pointer.y;
+      obj.x = this.pointer.x;
+      obj.y = this.pointer.y;
+
+      console.log("B");
+
     }
 
-    stopdrag()
+    stopdrag(obj)
     {
       this.scene.input.on('pointerdown', this.startdrag, this);
       this.scene.input.off('pointermove', this.dodrag, this);
       this.scene.input.off('pointerup',this.stopdrag,this);
 
-      this.objmove.x = this.iniposx;
-      this.objmove.y = this.iniposy;
+      obj.x = this.iniposx;
+      obj.y = this.iniposy;
 
-      this.objectmove(null);
+      console.log("C");
+
     }
-
-    objectmove(obj)
-    {
-        this.objmove = obj;
-    }
-
+   
 }
