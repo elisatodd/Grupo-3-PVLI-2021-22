@@ -9,6 +9,7 @@
 
  export default class Parque extends EscenaJuego {
 
+  first = true;
    constructor(){
      // Nombre de la escena para el SceneManager
      super({ key: 'parque' });
@@ -25,8 +26,14 @@
      this._wallpaper = {name: 'parque', route: './assets/images/parque.jpg'};
      this.loadImage(this._wallpaper);
 
-     this.AddCharacter(new NPC('./assets/images/enamorado.png', 200, this.cameras.main.height - 200, 2.5, 'enamorado', this));
+
+
+      if (this.first){
+      this.AddCharacter(new NPC('./assets/images/enamorado.png', 200, this.cameras.main.height - 200, 2.5, 'enamorado', this));
      this.AddObject(new Item('./assets/images/caja.png', 600, this.cameras.main.height - 200, 5, 'caja', this)); 
+      }
+
+      
      this.loadObjects(this.objects);
      this.loadObjects(this.characters);
 
@@ -42,9 +49,13 @@
     this.assignArrows();
     this.spawnArrows();
 
+
+    if (this.first){
     this.assignObjects(this.objects, 'moveToInventory'); // ASSIGN FIRST
+        this.assignObjects(this.characters, 'cargarDialogo');
+        this.assignArrows();
+    }
     this.spawnObjects(this.objects);
-    this.assignObjects(this.characters, 'cargarDialogo');
     this.spawnObjects(this.characters);
 
     console.log("Escena Parque");

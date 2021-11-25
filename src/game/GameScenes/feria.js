@@ -7,6 +7,7 @@
   import NPC from "../Objects/NPC.js";
  export default class Feria extends EscenaJuego {
 
+    first = true;
     constructor(){
         // Nombre de la escena para el SceneManager
         super({ key: 'feria' });
@@ -21,7 +22,10 @@
         this._wallpaper = {name: 'feria ', route: './assets/images/carpadecirco.jpg'};
         this.loadImage(this._wallpaper);
 
+        if (this.first){
+
         this.AddCharacter(new NPC('./assets/images/cirquense.jpg', 200, this.cameras.main.height - 200, 7, 'cirquense', this));
+        }
         this.loadObjects(this.characters);
 
         this.createArrows();
@@ -30,14 +34,23 @@
 
     create(){
         this._wallpaper = this.spawnWallpaper(this._wallpaper);
-         
-        this.assignArrows();
-        this.spawnArrows();
 
-        this.spawnObjects(this.objects);
-        this.spawnObjects(this.characters);
-        this.assignObjects(this.objects);
-    
-        console.log("Escena Feria");
+      this.createGameManager(this.game, this);
+      this.gameManager.loadElements();
+      
+      this.assignArrows();
+      this.spawnArrows();
+
+      if (this.first){
+
+        this.assignObjects(this.characters, 'cargarDialogo');
+        
+        this.first = false;
+        
+      }
+      this.spawnObjects(this.objects);
+      this.spawnObjects(this.characters);
+      
+     
     }
 }

@@ -11,6 +11,7 @@
 
  export default class Mercado extends EscenaJuego {
 
+  first = true;
    constructor(){
      // Nombre de la escena para el SceneManager
      super({ key: 'mercado' });
@@ -27,8 +28,14 @@
      this._wallpaper = {name: 'mercado', route: './assets/images/mercado.jpg'};
      this.loadImage(this._wallpaper);
 
+
+     if (this.first){
+
      this.AddCharacter(new NPC('./assets/images/carnicero.png', 200, this.cameras.main.height - 200, 0.5, 'carnicera', this));
      this.AddObject(new Item('./assets/images/pez.png', 600, this.cameras.main.height - 200, 8, 'pez', this)); 
+     }
+
+
      this.loadObjects(this.objects);
      this.loadObjects(this.characters);
  
@@ -43,21 +50,16 @@
     this.assignArrows();
     this.spawnArrows();
 
-    this.assignObjects(this.objects, 'moveToInventory'); // ASSIGN FIRST
-    this.spawnObjects(this.objects);
+
+    if (this.first){
+        this.assignObjects(this.objects, 'moveToInventory'); // ASSIGN FIRST
     this.assignObjects(this.characters, 'cargarDialogo');
+    this.assignArrows();
+    
+    }
+    this.spawnObjects(this.objects);
     this.spawnObjects(this.characters);
 
     console.log("Escena Mercado");
   }
-
-  moveToInv(obj){
-    obj.image.destroy();
-    let x = 725;
-    let y = this.gameManager.getInventoryPosition();
-    obj.pos = {x, y};
-    this.spawnObjects([obj]);
-    obj.assignFunctionality('drag');
-  }
-
 }

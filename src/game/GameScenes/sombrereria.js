@@ -9,6 +9,7 @@
 
  export default class Sombrereria extends EscenaJuego {
 
+  first = true;
    constructor(){
      // Nombre de la escena para el SceneManager
      super({ key: 'sombrereria' });
@@ -26,9 +27,13 @@
 
      this._wallpaper = {name: 'sombrereria', route: './assets/images/sombrereria.jpg'};
      this.loadImage(this._wallpaper);
+     
+     if (this.first){
 
      this.AddCharacter(new NPC('./assets/images/clienta.png', 200, this.cameras.main.height - 200, 0.5, 'clienta', this));
      this.AddCharacter(new NPC('./assets/images/vendedora.png', 505, this.cameras.main.height - 200, 1, 'vendedora', this));
+     }
+
      this.loadObjects(this.objects);
      this.loadObjects(this.characters);
 
@@ -39,14 +44,23 @@
 
    create(){
     this._wallpaper = this.spawnWallpaper(this._wallpaper);
-    
-    this.assignArrows();
-    this.spawnArrows();
-    //this.spawnObjects(this.objects);
 
-    this.spawnObjects(this.characters);
+      this.createGameManager(this.game, this);
+      this.gameManager.loadElements();
+      
+      this.assignArrows();
+      this.spawnArrows();
 
-    console.log("Escena Sombrereria");
+      if (this.first){
+        this.assignObjects(this.characters, 'cargarDialogo');
+        
+        this.first = false;
+        
+      }
+      this.spawnObjects(this.objects);
+      this.spawnObjects(this.characters);
+      
+     
   }
 
 }
