@@ -2,45 +2,84 @@
  * Intentando hacer una escena
  * @extends Phaser.Scene
  */
+ 
+ import GAMEMANAGER from '../ArchivosIniciales/gameManager.js';
  export default class Escena extends Phaser.Scene {
 
     _wallpaper;
     
+    gameManager;
 
-    constructor() {
+    arrowLeft;
+    arrowRight;
+    arrowDown;
+    arrowUp;
+    arrows = [this.arrowLeft = false, this.arrowRight = false, this.arrowDown = false, this.arrowUp = false];
+    arrowsDirs = [false,false,false,false];
+    
+    constructor(data) {
       // Nombre de la escena para el SceneManager, es deci, al cargar la escena desde algún lado debes usar este nombre
-      super({ key: 'Escena' });       
+      super(data);       
       {
+         
       }; 
-      
+    
     }
 
-    loadImage(name, rute)
+    createGameManager(game, scene)
+   {
+    this.gameManager = new GAMEMANAGER(game, scene);
+   }
+
+    loadImage(info)
     {
-        this.load.image(name, rute);
+        this.load.image(info.name, info.route);
     }
 
-    spawnWallpaper(name)
+    spawnWallpaper(info)
     {
-        let container = this.add.image(this.cameras.main.width / 2, this.cameras.main.height / 2, name);
+        let container = this.add.image(this.cameras.main.width / 2, this.cameras.main.height / 2, info.name);
         this.assignScale(container);       
         return container;
     }
 
-    spawnImage(name, position, scaleProportion)
+    spawnImage(info)
     {
-        let container = this.add.image(position.x, position.y, name);
-         container.setScale(this.scale/scaleProportion).setScrollFactor(0);        
-         return container;
-
+        info.image = this.add.image(info.pos.x, info.pos.y, info.name);
+        info.image.setScale(this.scale/info.scaleProportion).setScrollFactor(0);  
+        
     }
 
-
+    //hay que pasarle el wallpaper que debe ser una imagen
     assignScale(container)
     {
         let scaleX = this.cameras.main.width / container.width;
         let scaleY = this.cameras.main.height / container.height;
         this.scale = Math.max(scaleX, scaleY);
     }
-    
+
+    //añadir funcionalidad
+    addBottom(info) {
+        //debemos usar estos nombres al crear el objeto
+        this.spawnImage(info);    
+        info.image.setInteractive();
+        info.image.on('pointerdown', function (f){
+            let s = info.functionality;
+            let scene = info.scene;
+            scene.gameManager[s](info);
+        } );    
+      
+    }
+
+    addBottomArrows(info) {
+        //debemos usar estos nombres al crear el objeto
+        this.spawnImage(info);    
+        info.image.setInteractive();
+        info.image.on('pointerdown', function (f){
+            let scene = info.scene;
+            let dir = info.direction;
+            scene.gameManager.changeScene(scene, dir);
+        } );    
+      
+    }
 }
