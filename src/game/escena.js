@@ -23,11 +23,13 @@
       {
          
       }; 
-      this.gameManager = new GAMEMANAGER();
-     
+    
     }
 
-   
+    createGameManager(game, scene)
+   {
+    this.gameManager = new GAMEMANAGER(game, scene);
+   }
 
     loadImage(info)
     {

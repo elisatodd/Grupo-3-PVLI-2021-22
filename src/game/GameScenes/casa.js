@@ -34,7 +34,12 @@
     }
 
     create(){
+    
+      console.log("Escena Casa");
       this._wallpaper = this.spawnWallpaper(this._wallpaper);
+
+      this.createGameManager(this.game, this);
+      this.gameManager.loadElements();
       
       this.assignArrows();
       this.spawnArrows();
@@ -44,8 +49,9 @@
       this.assignObjects(this.characters, 'cargarDialogo');
       this.spawnObjects(this.characters);
       
-      console.log("Escena Casa");
+     
     }
 
+    
 
   }

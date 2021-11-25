@@ -23,7 +23,8 @@ export default class item extends Objeto{
     }
 
     
-    moveToInv(){
+    moveToInv(scene){
+      if(scene !== undefined)this.scene = scene;
         this.image.destroy();
         let x = 725;
         let y = this.scene.gameManager.getInventoryPosition();

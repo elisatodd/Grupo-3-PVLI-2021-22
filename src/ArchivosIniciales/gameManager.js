@@ -10,7 +10,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
     inventarioID = [];
     //referencia a game
     game = '';
-
+    scene = '';
   
     itemsInInventory = 0;
     //Asigno directamente las escenas en sus posiciones en el array, con las casillas vacías correspondientes
@@ -26,7 +26,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
     //Necesito una matriz de salas, en la que hay posiciones que no tienen salas y entonces no son accesibles
     //
 
-    constructor(game){
+    constructor(game, scene){
 
         super({ key: 'GameManager' });
         {
@@ -34,7 +34,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
         
        
         this.game = game;
-
+        this.scene = scene;
       
     }
 
@@ -50,37 +50,41 @@ export default class GAMEMANAGER extends Phaser.Scene{
 
     loadElements()
     {
-        //cargamos los elementos almacenados
         
         if('inventario' in this.game)
         {
             this.inventario = this.game['inventario'].inventario;
             this.inventarioID = this.game['inventario'].inventarioID;
             
+            this.scene.spawnObjects(this.inventario);
             //bucle que recorre el inventario
-            for(let i = 0; i < this.inventarioID.length; i++)
+            for(let i = 0; i < this.inventario.length; i++)
             {
-                if(this.inventarioID === true)
-                {
+               // if(this.inventarioID === true)
+                //{
                     //coloca la escena en el inventario
-                    escena.moverAlInventario(this.objetosEnInventario, inventario[i].dirImagen, 725, 100 + (this.objetosEnInventario*100), escala*2 );
-                    this.objetosEnInventario++;
-                }
+                    this.itemsInInventory++;
+                    this.inventario[i].moveToInv(this.scene);
+                   
+                //}
             }
+            this.showElements();
         }
     }
 
     saveObject()
     {
-        //codigo a explicar sobre almacenamiento de datos(Raúl)
+         //codigo a explicar sobre almacenamiento de datos(Raúl)
         
         //id del objeto en el inventario(a implementar) se pasa a true pues esta recogido
         //this.inventarioID[i] = true;
 
         //se actualiza el inventario global con estos datos
-         this.game['inventario'] = { 
-             inventario: this.inventario,
-             inventarioID: this.inventarioID };
+        this.game['inventario'] = { 
+            inventario: this.inventario,
+            inventarioID: this.inventarioID };
+       
+            this.showElements();
         
         
     }
@@ -88,13 +92,13 @@ export default class GAMEMANAGER extends Phaser.Scene{
     //método que muestra que funciona la acción del almacenar datos
     showElements()
     {
-        console.log(this.game['inventario'].inventario[0]);
+        console.log(this.game['inventario'].inventario.length);
     }
 
     moveToInventory(obj){ // mete el obj en el inventario: se debe guardar entre escenas y además controlar que no se cargue en la escena x de nuevo
         this.itemsInInventory++;
         this.inventario.push(obj);
-        //this.saveObject();
+        this.saveObject();
         //this.showElements();
 
 
