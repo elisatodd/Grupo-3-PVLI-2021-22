@@ -27,7 +27,9 @@ export default class item extends Objeto{
     moveToInv(scene){
 
       if(scene !== undefined)this.scene = scene;
-      
+        
+        this.scene.objects = this.scene.objects.filter(item => item !== this);
+
         this.image.destroy();
         let x = 725;
         let y = this.scene.gameManager.getInventoryPosition();
@@ -52,17 +54,14 @@ export default class item extends Objeto{
 
     dodrag(pointer)
     {
-        
-        let x = this.pointer.x;
-        let y = this.pointer.y;
+      let x = this.pointer.x;
+      let y = this.pointer.y;
 
-        this.pos = {x, y};
+      this.pos = {x, y};
 
-        this.image.destroy();
-        this.scene.spawnObjects([this]);
-        console.log("B "+ this.pos.x);
-
-      
+      this.image.destroy();
+      this.scene.spawnObjects([this]);
+      console.log("B "+ this.pos.x);
     }
 
     stopdrag()

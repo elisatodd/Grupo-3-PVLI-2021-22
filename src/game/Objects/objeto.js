@@ -22,7 +22,7 @@ export default class OBJETO{
     this.name = nom;
     this.scene = e;
   }
-  
+
   assignFunctionality(func) {
     this.functionality = func;
   }

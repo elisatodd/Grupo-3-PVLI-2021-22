@@ -9,6 +9,7 @@
 
   export default class Casa extends EscenaJuego {  
 
+    first = true;
     constructor(){
       // Nombre de la escena para el SceneManager
       super({ key: 'casa' });
@@ -23,9 +24,12 @@
       this._wallpaper = {name: 'casa', route: './assets/images/pueblo.jpg'};
       this.loadImage(this._wallpaper);
 
-      this.AddCharacter(new NPC('./assets/images/primo.png', 600, this.cameras.main.height - 250, 2.15, 'primo', this, true));
-      this.AddObject(new Item('./assets/images/carta.png', 150, this.cameras.main.height - 70, 7.5, 'carta', this, true));
-      this.AddObject(new Item('./assets/images/sombrero.png', 250, this.cameras.main.height - 400, 6, 'sombrero', this));
+      if (this.first){
+
+        this.AddCharacter(new NPC('./assets/images/primo.png', 600, this.cameras.main.height - 250, 2.15, 'primo', this));
+        this.AddObject(new Item('./assets/images/carta.png', 150, this.cameras.main.height - 70, 7.5, 'carta', this));
+        this.AddObject(new Item('./assets/images/sombrero.png', 250, this.cameras.main.height - 400, 6, 'sombrero', this));
+      }
       this.loadObjects(this.objects);
       this.loadObjects(this.characters);
 
@@ -44,9 +48,15 @@
       this.assignArrows();
       this.spawnArrows();
 
-      this.assignObjects(this.objects, 'moveToInventory'); // ASSIGN FIRST
+      if (this.first){
+
+        this.assignObjects(this.objects, 'moveToInventory'); // ASSIGN FIRST
+        this.assignObjects(this.characters, 'cargarDialogo');
+        
+        this.first = false;
+        
+      }
       this.spawnObjects(this.objects);
-      this.assignObjects(this.characters, 'cargarDialogo');
       this.spawnObjects(this.characters);
       
      
