@@ -122,7 +122,9 @@ export default class GAMEMANAGER extends Phaser.Scene{
     cargarDialogo(npc){
         console.log("Soy un NPC");
 
-        npc.saveText("Ayudame a conseguir este número");
+        if (!npc.solved)
+        npc.saveText("Ayudame a conseguir \n este número");
+        else npc.saveText("Gracias por haberme \n ayudado primo");
     }
 
 

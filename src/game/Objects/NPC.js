@@ -5,7 +5,7 @@ export default class NPC extends Objeto{
     isClicked = false;
     objective = false;
     texto = "";
-
+solved = false;
     box;
 
     constructor(sprite, x, y, esc, nom, e){
@@ -44,8 +44,12 @@ export default class NPC extends Objeto{
     img.destroy();
     dialogue.destroy();
 
-    this.scene.scene.start('telefono');
-
+    if (!this.solved)
+    {
+      this.scene.scene.start('telefono');
+      this.solved = true;
+    }
+      
   }
   
 }
