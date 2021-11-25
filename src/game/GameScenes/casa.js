@@ -25,6 +25,9 @@
       this._wallpaper = {name: 'casa', route: './assets/images/pueblo.jpg'};
       this.loadImage(this._wallpaper);
 
+      this.load.image('box', '../../../assets/images/box.png');
+
+
       if (this.first){
 
         this.AddCharacter(new NPC('./assets/images/primo.png', 600, this.cameras.main.height - 250, 2.15, 'primo', this));

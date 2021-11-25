@@ -121,8 +121,11 @@ export default class GAMEMANAGER extends Phaser.Scene{
 
     cargarDialogo(npc){
         console.log("Soy un NPC");
-        npc.scene.scene.start('telefono');
+
+        npc.saveText("Ayudame a conseguir este número");
     }
+
+
 
     //Método que cambia de escena
     changeScene(iniScene, direction)

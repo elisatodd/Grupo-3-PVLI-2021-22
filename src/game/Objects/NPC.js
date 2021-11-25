@@ -3,6 +3,10 @@ import Objeto from './objeto.js';
 export default class NPC extends Objeto{
 
     isClicked = false;
+    objective = false;
+    texto = "";
+
+    box;
 
     constructor(sprite, x, y, esc, nom, e){
 
@@ -12,33 +16,36 @@ export default class NPC extends Objeto{
 
 
     
-  guardarTexto(text)
+  saveText(text)
   {
-    texto = text;
-    this.cargarDialogo(obj);
+    this.texto = text;
+    this.loadDialogue();
   }
 
 
-  cargarDialogo(obj)
+  loadDialogue()
   {
-    this.escena.load.image('box', '.../assest/images/box.png');
+    
 
-    this.box = this.escena.add.image(this.escena.cameras.main.width / 2, 500, 'box');  
-    this.box.setScale(this.escena.scale/1.35).setScrollFactor(0);
+    this.box = this.scene.add.image(this.scene.cameras.main.width / 2, 500, 'box');  
+    this.box.setScale(this.scene.scale/1.35).setScrollFactor(0);
 
-    let text = this.escena.add.text(this.escena.cameras.main.width/3.5, 480, texto, 
+    let text = this.scene.add.text(this.scene.cameras.main.width/3.5, 480, this.texto, 
       { fontSize:'25px',color:'#000000',fontFamily: 'Arial'});
 
     this.box.setInteractive();
     this.box.on('pointerdown', function(f){
-      this.obj.quitarDialogo(this.box, text);
+      this.destroyDialogue(this.box, text);
     }, this);
   }
 
-  quitarDialogo(img, dialogo)
+  destroyDialogue(img, dialogue)
   {
     img.destroy();
-    dialogo.destroy();
+    dialogue.destroy();
+
+    this.scene.scene.start('telefono');
+
   }
   
 }
