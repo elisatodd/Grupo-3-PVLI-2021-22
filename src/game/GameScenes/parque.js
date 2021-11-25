@@ -4,8 +4,8 @@
  */
 
  import EscenaJuego from "../escenaJuego.js";
-
- import OBJETO from "../Objects/objeto.js";
+ import Item from "../Objects/item.js";
+  import NPC from "../Objects/NPC.js";
 
  export default class Parque extends EscenaJuego {
 
@@ -25,8 +25,8 @@
      this._wallpaper = {name: 'parque', route: './assets/images/parque.jpg'};
      this.loadImage(this._wallpaper);
 
-     this.AddCharacter(new OBJETO('./assets/images/enamorado.png', 200, this.cameras.main.height - 200, 2.5, 'enamorado', this));
-     this.AddObject(new OBJETO('./assets/images/caja.png', 600, this.cameras.main.height - 200, 5, 'caja', this)); 
+     this.AddCharacter(new NPC('./assets/images/enamorado.png', 200, this.cameras.main.height - 200, 2.5, 'enamorado', this));
+     this.AddObject(new Item('./assets/images/caja.png', 600, this.cameras.main.height - 200, 5, 'caja', this)); 
      this.loadObjects(this.objects);
      this.loadObjects(this.characters);
 
@@ -48,15 +48,5 @@
     this.spawnObjects(this.characters);
 
     console.log("Escena Parque");
-  }
-
-
-  moveToInv(obj){
-    obj.image.destroy();
-    let x = 725;
-    let y = this.gameManager.getInventoryPosition();
-    obj.pos = {x, y};
-    this.spawnObjects([obj]);
-    obj.assignFunctionality('drag');
   }
 }

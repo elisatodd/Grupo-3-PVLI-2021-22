@@ -3,7 +3,9 @@
  * @extends EscenaJuego
  */
  import EscenaJuego from '../escenaJuego.js';
- import OBJETO from "../Objects/objeto.js";
+ import Item from "../Objects/item.js";
+  import NPC from "../Objects/NPC.js";
+  
 
  export default class CasaEsp extends EscenaJuego { // DEBERIA HEREDAR DE GAMESCENE EN EL FUTURO
 
@@ -21,7 +23,7 @@
         this._wallpaper = {name: 'espejos ', route: './assets/images/carpadecirco.jpg'};
         this.loadImage(this._wallpaper);
 
-        this.AddCharacter(new OBJETO('./assets/images/excentrico.png', 200, this.cameras.main.height - 200, 7, 'excentrico', this));
+        this.AddCharacter(new NPC('./assets/images/excentrico.png', 200, this.cameras.main.height - 200, 7, 'excentrico', this));
         this.loadObjects(this.characters);
 
         this.createArrows();

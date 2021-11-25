@@ -4,8 +4,8 @@
  */
 
  import EscenaJuego from "../escenaJuego.js";
-
- import OBJETO from "../Objects/objeto.js";
+ import Item from "../Objects/item.js";
+  import NPC from "../Objects/NPC.js";
 
  export default class Sombrereria extends EscenaJuego {
 
@@ -27,8 +27,8 @@
      this._wallpaper = {name: 'sombrereria', route: './assets/images/sombrereria.jpg'};
      this.loadImage(this._wallpaper);
 
-     this.AddCharacter(new OBJETO('./assets/images/clienta.png', 200, this.cameras.main.height - 200, 0.5, 'clienta', this));
-     this.AddCharacter(new OBJETO('./assets/images/vendedora.png', 505, this.cameras.main.height - 200, 1, 'vendedora', this));
+     this.AddCharacter(new NPC('./assets/images/clienta.png', 200, this.cameras.main.height - 200, 0.5, 'clienta', this));
+     this.AddCharacter(new NPC('./assets/images/vendedora.png', 505, this.cameras.main.height - 200, 1, 'vendedora', this));
      this.loadObjects(this.objects);
      this.loadObjects(this.characters);
 
@@ -36,9 +36,6 @@
      this.loadArrows();
 
    }
-
-
-
 
    create(){
     this._wallpaper = this.spawnWallpaper(this._wallpaper);

@@ -101,7 +101,11 @@
    spawnObjects(container)
    {
         for(let i = 0; i < container.length; i++)
-            this.addBottom(container[i]);
+        {
+            
+        this.addBottom(container[i]);
+            
+        }
    }
 
 

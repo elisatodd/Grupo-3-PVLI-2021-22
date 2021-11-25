@@ -3,7 +3,8 @@
  * @extends Phaser.Scene
  */
  import EscenaJuego from '../escenaJuego.js';
- import OBJETO from "../Objects/objeto.js";
+ import Item from "../Objects/item.js";
+ import NPC from "../Objects/NPC.js";
 
  export default class Bosque extends EscenaJuego { // DEBERIA HEREDAR DE GAMESCENE EN EL FUTURO
 
@@ -21,9 +22,9 @@
         this._wallpaper = {name: 'bosque ', route: './assets/images/pueblo.jpg'};
         this.loadImage(this._wallpaper);
 
-        this.AddCharacter(new OBJETO('./assets/images/policia.png', 200, this.cameras.main.height - 200, 1, 'policia', this));
-        this.AddCharacter(new OBJETO('./assets/images/campesino.png', 200, this.cameras.main.height - 200, 1, 'campesino', this));
-        this.AddObject(new OBJETO('./assets/images/pajarita.png', 550, this.cameras.main.height - 70, 10, 'pajarita', this));
+        this.AddCharacter(new NPC('./assets/images/policia.png', 200, this.cameras.main.height - 200, 1, 'policia', this));
+        this.AddCharacter(new NPC('./assets/images/campesino.png', 200, this.cameras.main.height - 200, 1, 'campesino', this));
+        this.AddObject(new Item('./assets/images/pajarita.png', 550, this.cameras.main.height - 70, 10, 'pajarita', this));
         
         this.loadObjects(this.objects);
         this.loadObjects(this.characters);
@@ -46,11 +47,4 @@
         console.log("Escena Bosque");
     }
 
-    moveToInv(obj){
-        obj.image.destroy();
-        let x = 725;
-        let y = this.gameManager.getInventoryPosition();
-        obj.pos = {x, y};
-        this.spawnObjects([obj]);
-      }
 }

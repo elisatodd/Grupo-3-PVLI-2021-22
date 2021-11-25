@@ -4,7 +4,8 @@
  */
 
  import EscenaJuego from "../escenaJuego.js"
- import OBJETO from "../Objects/objeto.js"; 
+ import Item from "../Objects/item.js";
+  import NPC from "../Objects/NPC.js";
 
   export default class Casa extends EscenaJuego {  
 
@@ -22,9 +23,9 @@
       this._wallpaper = {name: 'casa', route: './assets/images/pueblo.jpg'};
       this.loadImage(this._wallpaper);
 
-      this.AddCharacter(new OBJETO('./assets/images/primo.png', 600, this.cameras.main.height - 250, 2.15, 'primo', this));
-      this.AddObject(new OBJETO('./assets/images/carta.png', 150, this.cameras.main.height - 70, 7.5, 'carta', this));
-      this.AddObject(new OBJETO('./assets/images/sombrero.png', 250, this.cameras.main.height - 400, 6, 'sombrero', this));
+      this.AddCharacter(new NPC('./assets/images/primo.png', 600, this.cameras.main.height - 250, 2.15, 'primo', this, true));
+      this.AddObject(new Item('./assets/images/carta.png', 150, this.cameras.main.height - 70, 7.5, 'carta', this, true));
+      this.AddObject(new Item('./assets/images/sombrero.png', 250, this.cameras.main.height - 400, 6, 'sombrero', this));
       this.loadObjects(this.objects);
       this.loadObjects(this.characters);
 
@@ -46,11 +47,5 @@
       console.log("Escena Casa");
     }
 
-    moveToInv(obj){
-      obj.image.destroy();
-      let x = 725;
-      let y = this.gameManager.getInventoryPosition();
-      obj.pos = {x, y};
-      this.spawnObjects([obj]);
-    }
+
   }

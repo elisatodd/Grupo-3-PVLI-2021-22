@@ -11,6 +11,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
     //referencia a game
     game = '';
 
+  
     itemsInInventory = 0;
     //Asigno directamente las escenas en sus posiciones en el array, con las casillas vacías correspondientes
 
@@ -100,13 +101,13 @@ export default class GAMEMANAGER extends Phaser.Scene{
         // La altura a la que se coloca el objeto va aumentando con la cantidad de objetos en el inventario
        
        // escena.RemoveObject(dirImagen); -> ACTIVAR ESTO CUANDO USEMOS LAS ESCENAS DE VERDAD
-        obj.scene.moveToInv(obj);
+        obj.moveToInv();
     }
 
 
     drag(obj)
     {
-        obj.scene.startdrag(pointer, obj);
+        obj.startdrag(obj);
     }
 
     getInventoryPosition(){

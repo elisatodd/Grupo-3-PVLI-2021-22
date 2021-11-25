@@ -3,8 +3,8 @@
  * @extends EscenaJuego
  */
  import EscenaJuego from '../escenaJuego.js';  
- import OBJETO from "../Objects/objeto.js";
-
+ import Item from "../Objects/item.js";
+  import NPC from "../Objects/NPC.js";
  export default class Feria extends EscenaJuego {
 
     constructor(){
@@ -21,7 +21,7 @@
         this._wallpaper = {name: 'feria ', route: './assets/images/carpadecirco.jpg'};
         this.loadImage(this._wallpaper);
 
-        this.AddCharacter(new OBJETO('./assets/images/cirquense.jpg', 200, this.cameras.main.height - 200, 7, 'cirquense', this));
+        this.AddCharacter(new NPC('./assets/images/cirquense.jpg', 200, this.cameras.main.height - 200, 7, 'cirquense', this));
         this.loadObjects(this.characters);
 
         this.createArrows();

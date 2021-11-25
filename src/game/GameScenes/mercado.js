@@ -5,7 +5,9 @@
 
  import EscenaJuego from "../escenaJuego.js";
 
- import OBJETO from "../Objects/objeto.js";
+ import Item from "../Objects/item.js";
+  import NPC from "../Objects/NPC.js"; 
+
 
  export default class Mercado extends EscenaJuego {
 
@@ -25,8 +27,8 @@
      this._wallpaper = {name: 'mercado', route: './assets/images/mercado.jpg'};
      this.loadImage(this._wallpaper);
 
-     this.AddCharacter(new OBJETO('./assets/images/carnicero.png', 200, this.cameras.main.height - 200, 0.5, 'carnicera', this));
-     this.AddObject(new OBJETO('./assets/images/pez.png', 600, this.cameras.main.height - 200, 8, 'pez', this)); 
+     this.AddCharacter(new NPC('./assets/images/carnicero.png', 200, this.cameras.main.height - 200, 0.5, 'carnicera', this));
+     this.AddObject(new Item('./assets/images/pez.png', 600, this.cameras.main.height - 200, 8, 'pez', this)); 
      this.loadObjects(this.objects);
      this.loadObjects(this.characters);
  
