@@ -5,6 +5,9 @@
  import Escena from './escena.js'
 
  export default class EscenaPuzzle extends Escena {
+
+  sceneToLoad = '';
+
    constructor() {
  
  
@@ -16,4 +19,9 @@
    //método virtual
 ResolvePuzzle()
 {}
+
+LoadScene()
+{
+this.scene.start(this.sceneToLoad);
+}
 }
