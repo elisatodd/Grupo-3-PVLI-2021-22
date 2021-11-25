@@ -14,13 +14,14 @@
 
         };
         this.arrows = [false, true, false, false];
+        this.arrowsDirs = [false, 'feria', false, false];
     }
     
     preload(){
         this._wallpaper = {name: 'espejos ', route: './assets/images/carpadecirco.jpg'};
         this.loadImage(this._wallpaper);
 
-        this.AddCharacter(new OBJETO('./assets/images/excentrico.png', 200, this.cameras.main.height - 200, 1, 'excentrico', this));
+        this.AddCharacter(new OBJETO('./assets/images/excentrico.png', 200, this.cameras.main.height - 200, 7, 'excentrico', this));
         this.loadObjects(this.characters);
 
         this.createArrows();
@@ -30,10 +31,11 @@
     create(){
         this._wallpaper = this.spawnWallpaper(this._wallpaper);
          
-        this.spawnObjects(this.characters);
-        this.assignObjects(this.objects);
-        
+        this.assignArrows();
         this.spawnArrows();
+
+        this.spawnObjects(this.characters);
+        this.assignObjects(this.characters);
     
         console.log("Escena Espejos");
     }

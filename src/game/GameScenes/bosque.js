@@ -14,6 +14,7 @@
 
         };
         this.arrows = [false, false, true, true];
+        this.arrowsDirs = [false, false, 'plaza', 'feria'];
     }
 
     preload(){
@@ -22,7 +23,7 @@
 
         this.AddCharacter(new OBJETO('./assets/images/policia.png', 200, this.cameras.main.height - 200, 1, 'policia', this));
         this.AddCharacter(new OBJETO('./assets/images/campesino.png', 200, this.cameras.main.height - 200, 1, 'campesino', this));
-        this.AddObject(new OBJETO('./assets/images/pajarita.png', 550, this.cameras.main.height - 70, 7.5, 'pajarita', this));
+        this.AddObject(new OBJETO('./assets/images/pajarita.png', 550, this.cameras.main.height - 70, 10, 'pajarita', this));
         this.loadObjects(this.objects);
         this.loadObjects(this.characters);
 
@@ -33,12 +34,21 @@
     create(){
         this._wallpaper = this.spawnWallpaper(this._wallpaper);
          
+        this.assignArrows();
+        this.spawnArrows();
+
         this.spawnObjects(this.objects);
         this.spawnObjects(this.characters);
         this.assignObjects(this.objects);
-        
-        this.spawnArrows();
     
         console.log("Escena Bosque");
     }
+
+    moveToInv(obj){
+        obj.image.destroy();
+        let x = 725;
+        let y = this.gameManager.getInventoryPosition();
+        obj.pos = {x, y};
+        this.spawnObjects([obj]);
+      }
 }
