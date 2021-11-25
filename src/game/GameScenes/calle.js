@@ -49,7 +49,7 @@
     if (this.first){
 
       this.assignObjects(this.objects, 'moveToInventory');
-      this.assignObjects(this.characters, 'cargarDialogo');
+      this.assignObjects(this.characters, 'cargarDialogo2');
       
       this.first = false;
 

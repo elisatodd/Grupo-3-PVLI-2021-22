@@ -5,7 +5,7 @@ export default class NPC extends Objeto{
     isClicked = false;
     objective = false;
     texto = "";
-solved = false;
+    solved = false;
     box;
 
     constructor(sprite, x, y, esc, nom, e){

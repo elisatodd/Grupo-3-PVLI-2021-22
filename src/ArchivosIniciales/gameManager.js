@@ -127,6 +127,13 @@ export default class GAMEMANAGER extends Phaser.Scene{
         else npc.saveText("Gracias por haberme \n ayudado primo");
     }
 
+    cargarDialogo2(npc){
+
+        if (!npc.solved)
+        npc.saveText("DAME UN PESCADO YA!");
+        else npc.saveText("Gracias por haberme \n ayudado primo");
+    }
+
 
 
     //Método que cambia de escena
