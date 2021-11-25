@@ -27,7 +27,6 @@
 
       this.load.image('box', '../../../assets/images/box.png');
 
-
       if (this.first){
 
         this.AddCharacter(new NPC('./assets/images/primo.png', 600, this.cameras.main.height - 250, 2.15, 'primo', this, 'telefono'," Ayudame a conseguir \n este número", " Gracias por haberme \n ayudado primo"));
