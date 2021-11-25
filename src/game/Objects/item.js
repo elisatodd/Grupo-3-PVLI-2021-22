@@ -28,14 +28,14 @@ export default class item extends Objeto{
 
       if(scene !== undefined)this.scene = scene;
         
-        this.scene.objects = this.scene.objects.filter(item => item !== this);
+      this.scene.objects = this.scene.objects.filter(item => item !== this);
 
-        this.image.destroy();
-        let x = 725;
-        let y = this.scene.gameManager.getInventoryPosition();
-        this.pos = {x, y};
-        this.scene.spawnObjects([this]);
-        this.functionality = 'drag';
+      this.image.destroy();
+      let x = 725;
+      let y = this.scene.gameManager.getInventoryPosition();
+      this.pos = {x, y};
+      this.scene.spawnObjects([this]);
+      this.functionality = 'drag';
     }
 
     

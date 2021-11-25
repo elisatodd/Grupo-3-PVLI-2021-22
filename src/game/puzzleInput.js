@@ -13,10 +13,10 @@
     
    
 
-   constructor() {
+   constructor(data) {
  
  
-     super({ key: 'inputPuzzle' });
+     super(data);
      {
      };
 

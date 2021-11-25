@@ -8,20 +8,17 @@
 
   sceneToLoad = '';
 
-   constructor() {
- 
- 
-     super({ key: 'PuzzleScene' });
-     {
-     };
- 
-   }
-   //método virtual
-ResolvePuzzle()
-{}
+    constructor(data) {
+      super(data);
+      {
+      };
+    }
+    //método virtual
+    ResolvePuzzle()
+    {}
 
-LoadScene()
-{
-this.scene.start(this.sceneToLoad);
-}
-}
+    LoadScene()
+    {
+      this.scene.start(this.sceneToLoad);
+    }
+  }

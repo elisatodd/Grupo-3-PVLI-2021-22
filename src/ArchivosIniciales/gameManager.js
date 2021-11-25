@@ -119,8 +119,9 @@ export default class GAMEMANAGER extends Phaser.Scene{
         return ((this.itemsInInventory-1) * 80 + 50);
     }
 
-    cargarDialogo(){
+    cargarDialogo(npc){
         console.log("Soy un NPC");
+        npc.scene.scene.start('telefono');
     }
 
     //Método que cambia de escena
