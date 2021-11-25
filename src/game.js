@@ -19,7 +19,7 @@ import Parque from './game/GameScenes/parque.js';
 
 import Datos1 from'./game/Pruebas/pasoDeDatos1.js';
 import Datos2 from'./game/Pruebas/pasoDeDatos2.js';
-
+import Telefono from './game/PuzzleScenes/telefono.js';
 
 
 let config = {
@@ -31,7 +31,7 @@ let config = {
     // mode: Phaser.Scale.FIT,  
     autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
   },
-  scene: [Casa, Plaza, Calle, Bosque, Feria, CasetaFeria, CasaEspejos, Sombrereria, Mercado, Parque] // Escenas que requiere el juego
+  scene: [Telefono, Casa, Plaza, Calle, Bosque, Feria, CasetaFeria, CasaEspejos, Sombrereria, Mercado, Parque] // Escenas que requiere el juego
   };
 
 

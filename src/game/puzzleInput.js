@@ -6,9 +6,11 @@
 
  export default class PuzzleInput extends EscenaPuzzle {
 
-    solution = 'abcd';
+    solution = '';
     currentInput = '';
 
+    actionWin = '';
+    
    
 
    constructor() {
@@ -38,19 +40,23 @@ CheckInput()
 if(this.currentInput.length === this.solution.length)
 {
     if(this.ResolvePuzzle())
-    console.log("aciertito");
-    //función que deba de realizar
+    {
+        console.log("aciertito");
+        //función que deba de realizar
+        this.actionWin();
+    }
+   
     else this.currentInput = '';
 }
 }
 
-CreateTextEnter(pos, scene)
+CreateTextEnter(pos, scene, textInput)
 {
     //material sacado de: https://phaser.io/examples/v3/view/input/keyboard/text-entry
 
-    this.add.text(pos.x, pos.y, 'The key is:', { font: '32px Courier', fill: '#ffffff' });
+    this.add.text(pos.x, pos.y, textInput, { font: '32px Courier', fill: '#000000' });
 
-    var textEntry = this.add.text(pos.x, pos.y+50, '', { font: '32px Courier', fill: '#ffff00' });
+    var textEntry = this.add.text(pos.x, pos.y+50, '', { font: '32px Courier', fill: '#000000' });
 
     this.input.keyboard.on('keydown', function (event) {
 
