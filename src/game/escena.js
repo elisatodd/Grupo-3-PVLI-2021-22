@@ -18,7 +18,6 @@
     arrowsDirs = [false,false,false,false];
     
     constructor(data) {
-      // Nombre de la escena para el SceneManager, es deci, al cargar la escena desde algún lado debes usar este nombre
       super(data);       
       {
          
@@ -28,7 +27,7 @@
 
     createGameManager(game, scene)
    {
-    this.gameManager = new GAMEMANAGER(game, scene);
+        this.gameManager = new GAMEMANAGER(game, scene);
    }
 
     loadImage(info)
@@ -47,7 +46,6 @@
     {
         info.image = this.add.image(info.pos.x, info.pos.y, info.name);
         info.image.setScale(this.scale/info.scaleProportion).setScrollFactor(0);  
-        
     }
 
     //hay que pasarle el wallpaper que debe ser una imagen
@@ -67,8 +65,7 @@
             let s = info.functionality;
             let scene = info.scene;
             scene.gameManager[s](info);
-        } );    
-      
+        } );   
     }
 
     addBottomArrows(info) {
@@ -80,6 +77,5 @@
             let dir = info.direction;
             scene.gameManager.changeScene(scene, dir);
         } );    
-      
     }
 }
