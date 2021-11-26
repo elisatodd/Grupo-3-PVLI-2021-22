@@ -18,10 +18,12 @@ export default class NPC extends Objeto{
         this.puzzle = puz;
         this.first = f;
         this.last = l;
+        
     }
 
 
-    
+  
+  
   saveText(text)
   {
     this.texto = text;

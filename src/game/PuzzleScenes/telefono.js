@@ -9,6 +9,7 @@ export default class Telefono extends PuzzleInput {
 
     super({ key: 'telefono' });
     {
+      console.log("telefono");
     };
 
    

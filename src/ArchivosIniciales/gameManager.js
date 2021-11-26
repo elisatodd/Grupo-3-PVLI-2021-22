@@ -7,12 +7,13 @@ export default class GAMEMANAGER extends Phaser.Scene{
 
     //variable donde se almacena que datos han sido usados
     //Raúl
-    inventarioID = [];
+   
     //referencia a game
     game = '';
     scene = '';
   
     itemsInInventory = 0;
+   
     //Asigno directamente las escenas en sus posiciones en el array, con las casillas vacías correspondientes
 
     
@@ -128,13 +129,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
             npc.saveText(npc.last);
     }
 
-    cargarDialogo2(npc){
-
-        if (!npc.solved)
-        npc.saveText("DAME UN PESCADO YA!");
-        else npc.saveText("Gracias por haberme \n ayudado primo");
-    }
-
+  
 
 
     //Método que cambia de escena
@@ -176,6 +171,37 @@ export default class GAMEMANAGER extends Phaser.Scene{
         //this.scene.start('plaza');
     }
 
+
+    checkObjects(id)
+    {
+        for(let i = 0; i < this.scene.characters.length; i++)
+        {
+            if(this.scene.characters[i].itemName !== undefined && this.scene.characters[i].itemName  === id)
+            {
+                this.deleteItem(id);
+                this.scene.characters[i].solved = true;
+                return true;
+            }
+             
+        } 
+
+        return false;
+    }
+
+
+    deleteItem(itemName)
+    {
+     
+      for(let i = 0;i < this.inventario.length; i++)
+      {
+          if(this.inventario[i].name  === itemName)
+          {     
+             this.inventario.splice(this.inventario[i]);            
+          }
+             
+      } 
+      
+    }
 
     
 }
