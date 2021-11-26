@@ -25,12 +25,12 @@
       this._wallpaper = {name: 'casa', route: './assets/images/pueblo.jpg'};
       this.loadImage(this._wallpaper);
 
-      this.load.image('box', '../../../assets/images/box.png');
+      this.load.image('box', './assets/images/box.png');
 
       if (this.first){
 
         this.AddCharacter(new NPC('./assets/images/primo.png', 600, this.cameras.main.height - 250, 2.15, 'primo', this, 'telefono'," Ayudame a conseguir \n este número", " Gracias por haberme \n ayudado primo"));
-        this.AddObject(new Item('./assets/images/carta.png', 150, this.cameras.main.height - 70, 7.5, 'carta', this));
+        this.AddObject(new Item('./assets/images/Carta.png', 150, this.cameras.main.height - 70, 7.5, 'carta', this));
         this.AddObject(new Item('./assets/images/sombrero.png', 250, this.cameras.main.height - 400, 6, 'sombrero', this));
       }
       this.loadObjects(this.objects);
