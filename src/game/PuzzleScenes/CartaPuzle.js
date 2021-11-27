@@ -2,7 +2,7 @@ import PuzzleInput from '../puzzleInput.js'
 
 export default class CartaPuzle extends PuzzleInput {
 
-    texto = {name: 'cartaNovia', route: './assets/images/puzzles/LaCarta.jpg', pos:{x : 400,y : 250}, image : '', scaleProportion : 0.9};
+    carta = {name: 'cartaNovia', route: './assets/images/puzzles/LaCarta.jpg', pos:{x : 400,y : 250}, image : '', scaleProportion : 0.9};
 
   constructor() {
 
@@ -23,14 +23,14 @@ export default class CartaPuzle extends PuzzleInput {
 
     this._wallpaper = {name: 'cartaPuzle', route: './assets/images/puzzles/telefonoWallpaper.jpg'};
     this.loadImage(this._wallpaper);
-    this.loadImage(this.texto);
+    this.loadImage(this.carta);
     
   }
   create()
   {
-      //this.add.image(500, 500, this.texto.name)
+      
       this.spawnWallpaper(this._wallpaper);
-      this.spawnImage(this.texto);
+      this.spawnImage(this.carta);
     this.CreateTextEnter({x:0, y:500}, this, '¿Cuál es mensaje?');
   }
 

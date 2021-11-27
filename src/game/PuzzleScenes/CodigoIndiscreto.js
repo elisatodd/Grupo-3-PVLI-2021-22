@@ -28,7 +28,7 @@ export default class CodigoIndscreto extends PuzzleInput {
   }
   create()
   {
-      this.add.image(500, 500, this.carta.name)
+      //this.add.image(500, 500, this.carta.name)
       this.spawnWallpaper(this._wallpaper);
       this.spawnImage(this.carta);
     this.CreateTextEnter({x:0, y:500}, this, '¿Cuál es código?');
