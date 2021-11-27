@@ -2,28 +2,25 @@ import Objeto from './objeto.js';
 
 export default class NPC extends Objeto{
 
-    isClicked = false;
-    objective = false;
-    texto = "";
-    solved = false;
-    box;
-    puzzle = null;
-    first;
-    second;
+  isClicked = false;
+  objective = false;
+  texto = "";
+  solved = false;
+  box;
+  puzzle = null;
+  first;
+  second;
 
-    constructor(sprite, x, y, esc, nom, e, puz, f, l){
+  constructor(sprite, x, y, esc, nom, e, puz, f, l){
 
-        super(sprite, x, y, esc, nom, e);
-        this.functionality = this.moverAlInventario;
-        this.puzzle = puz;
-        this.first = f;
-        this.last = l;
-        
-    }
+    super(sprite, x, y, esc, nom, e);
+    this.functionality = this.moverAlInventario;
+    this.puzzle = puz;
+    this.first = f;
+    this.last = l;
+      
+  }
 
-
-  
-  
   saveText(text)
   {
     this.texto = text;

@@ -134,7 +134,6 @@ export default class GAMEMANAGER extends Phaser.Scene{
 
     //Método que cambia de escena
     changeScene(iniScene, direction)
-    //Aquí tengo que meter las condiciones para que el cambio de escena dependa de la flecha y la escena
     {
         let scenePosition;
         switch(direction){
@@ -152,37 +151,34 @@ export default class GAMEMANAGER extends Phaser.Scene{
                 break;
         }
 
-        // let nextScene = scenePosition;
-        // if(direction==='left'){
-        //     nextScene -= 1;
-        // }
-        // else if(direction==='right'){
-        //     nextScene += 1;
-        // }
-        // else if(direction==='up'){
-        //     nextScene -= 4;
-        // }
-        // else if(direction==='down'){
-        //     nextScene += 4;
-        // }
-
         let next = this.escenas[scenePosition];
         iniScene.scene.start(next);
-        //this.scene.start('plaza');
     }
 
+
+    // Sacado de la doc. de phaser: https://phaser.io/examples/v2/sprites/overlap-without-physics
+    checkOverlap(spriteA, spriteB) {
+
+        var boundsA = spriteA.getBounds();
+        var boundsB = spriteB.getBounds();
+    
+        return Phaser.Rectangle.intersects(boundsA, boundsB);
+    
+    }
 
     checkObjects(id)
     {
         for(let i = 0; i < this.scene.characters.length; i++)
         {
-            if(this.scene.characters[i].itemName !== undefined && this.scene.characters[i].itemName  === id)
+            if(this.scene.characters[i].itemName !== undefined && this.scene.characters[i].itemName  === id.name)
             {
-                this.deleteItem(id);
-                this.scene.characters[i].solved = true;
-                return true;
+                if (this.checkOverlap(this.scene.characters[i].image, id.image)){
+
+                    this.deleteItem(id.name);
+                    this.scene.characters[i].solved = true;
+                    return true;
+                }
             }
-             
         } 
 
         return false;
@@ -191,16 +187,13 @@ export default class GAMEMANAGER extends Phaser.Scene{
 
     deleteItem(itemName)
     {
-     
-      for(let i = 0;i < this.inventario.length; i++)
-      {
-          if(this.inventario[i].name  === itemName)
-          {     
-             this.inventario.splice(this.inventario[i]);            
-          }
-             
-      } 
-      
+        for(let i = 0;i < this.inventario.length; i++)
+        {
+            if(this.inventario[i].name  === itemName)
+            {     
+                this.inventario.splice(this.inventario[i]);            
+            }
+        } 
     }
 
     

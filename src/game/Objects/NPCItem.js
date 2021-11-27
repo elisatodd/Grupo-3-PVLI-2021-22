@@ -9,7 +9,6 @@ export default class NPCItem extends NPC{
     {
         super(sprite, x, y, esc, nom, e, puz, f, l);
         this.itemName = itemName;
-       
     }
 
 

@@ -68,9 +68,6 @@ export default class item extends Objeto{
 
     stopdrag()
     {
-
-      
-
       this.scene.input.off('pointermove', this.dodrag, this);
       this.scene.input.off('pointerup',this.stopdrag,this);
 
@@ -80,10 +77,9 @@ export default class item extends Objeto{
 
       this.image.destroy();
 
-      if(!this.scene.gameManager.checkObjects(this.name))
+      if(!this.scene.gameManager.checkObjects(this))
       {
         this.scene.spawnObjects([this]);
-        
       }
      
 
