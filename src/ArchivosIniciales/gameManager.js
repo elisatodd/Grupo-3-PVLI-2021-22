@@ -160,12 +160,12 @@ export default class GAMEMANAGER extends Phaser.Scene{
                             // https://phaser.io/examples/v3/view/geom/intersects/get-rectangle-intersection
     checkOverlap(spriteA, spriteB) {
 
-        var boundsA = spriteA.getBounds();
-        var boundsB = spriteB.getBounds();
-        var intersection = Phaser.Geom.Intersects.GetRectangleIntersection(boundsA, boundsB);
+        let boundsA = spriteA.getBounds();
+        let boundsB = spriteB.getBounds();
+        let intersection = Phaser.Geom.Intersects.GetRectangleIntersection(boundsA, boundsB);
         return !(intersection.width === 0 && intersection.height === 0);
     }
-
+    
     checkObjects(id)
     {
         for(let i = 0; i < this.scene.characters.length; i++)
