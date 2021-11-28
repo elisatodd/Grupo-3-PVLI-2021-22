@@ -3,7 +3,7 @@ import PuzzleInput from '../puzzleInput.js'
 
 export default class NumerosRasgados extends PuzzleInput {
 
-    carta = {name: 'palomitas', route: './assets/images/puzzles/telefono.jpg', pos:{x : 600,y : 300}, image : '', scaleProportion : 0.9};
+    carta = {name: 'rasgados', route: './assets/images/puzzles/telefono.jpg', pos:{x : 600,y : 300}, image : '', scaleProportion : 0.9};
 
   constructor() {
 
