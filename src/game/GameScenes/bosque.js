@@ -1,13 +1,13 @@
 /**
  * Escena del bosque
- * @extends Phaser.Scene
+ * @extends EscenaJuego
  */
  import EscenaJuego from '../escenaJuego.js';
  import Item from "../Objects/item.js";
  import NPC from "../Objects/NPC.js";
  import NPCItem from "../Objects/NPCItem.js";
 
- export default class Bosque extends EscenaJuego { // DEBERIA HEREDAR DE GAMESCENE EN EL FUTURO
+ export default class Bosque extends EscenaJuego {
     
     first = true;
 

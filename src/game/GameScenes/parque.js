@@ -29,7 +29,7 @@
     this.loadImage(this._wallpaper);
 
     if (this.first){
-      this.AddCharacter(new NPC('./assets/images/spritedeprueba.png', 100, this.cameras.main.height - 200, 2.5, 'candado', this, null, "Parece que este candado tiene un puzle...", "¡Lo he resuelto!" ));
+      this.AddCharacter(new NPC('./assets/images/candado.png', 100, this.cameras.main.height - 200, 2.5, 'candado', this, null, "Parece que este candado tiene un puzle...", "¡Lo he resuelto!" ));
       this.AddCharacter(new NPCItem('./assets/images/enamorado.png', 200, this.cameras.main.height - 200, 2.5, 'enamorado', this, null, "Necesito algo para mi amada", "Gracias justo lo que buscaba", 'flor' ));
       this.AddObject(new Item('./assets/images/caja.png', 600, this.cameras.main.height - 200, 5, 'caja', this)); 
     }
