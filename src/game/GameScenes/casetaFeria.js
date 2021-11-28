@@ -25,8 +25,8 @@
       this.loadImage(this._wallpaper);
 
       if (this.first){
-        this.AddCharacter(new NPCItem('./assets/images/ninio.png', 550, this.cameras.main.height - 300, 3, 'ninio', this, null, "No tengo dinero :(", "Gracias!! jeje", 'moneda' ));
-        this.AddCharacter(new NPC('./assets/images/forzudo.png', 250, this.cameras.main.height - 200, 2.5, 'forzudo', this,  null, "Soy muy fuerte pero no muy listo \n ¿me ayudas?", "Gracias era muy dificil para mi" ));
+        this.AddCharacter(new NPCItem('./assets/images/ninofinal.png', 550, this.cameras.main.height - 300, 3, 'ninio', this, null, "No tengo dinero :(", "Gracias!! jeje", 'moneda' ));
+        this.AddCharacter(new NPC('./assets/images/forzudofinal.png', 250, this.cameras.main.height - 200, 2.5, 'forzudo', this,  null, "Soy muy fuerte pero no muy listo \n ¿me ayudas?", "Gracias era muy dificil para mi" ));
         this.loadObjects(this.characters);
       }
 

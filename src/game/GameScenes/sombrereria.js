@@ -28,8 +28,8 @@
      this.loadImage(this._wallpaper);
      
       if (this.first){
-        this.AddCharacter(new NPCItem('./assets/images/clienta.png', 200, this.cameras.main.height - 200, 1, 'clienta', this, null, "Necesito un nuevo sombrero", "Muchisimas gracias", 'sombrero'));
-        this.AddCharacter(new NPCItem('./assets/images/vendedora.png', 505, this.cameras.main.height - 200, 2, 'vendedora', this, 'cartaPuzle', "No te creo", "Ahora si", 'carta'));
+        this.AddCharacter(new NPCItem('./assets/images/clientafinal.png', 200, this.cameras.main.height - 200, 1, 'clienta', this, null, "Necesito un nuevo sombrero", "Muchisimas gracias", 'sombrero'));
+        this.AddCharacter(new NPCItem('./assets/images/duenafinal.png', 505, this.cameras.main.height - 200, 2, 'vendedora', this, 'cartaPuzle', "No te creo", "Ahora si", 'carta'));
       }
 
      this.loadObjects(this.objects);
