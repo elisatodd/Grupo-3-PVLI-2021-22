@@ -102,7 +102,6 @@ export default class GAMEMANAGER extends Phaser.Scene{
         this.saveObject();
         //this.showElements();
 
-
         // La altura a la que se coloca el objeto va aumentando con la cantidad de objetos en el inventario
        
        // escena.RemoveObject(dirImagen); -> ACTIVAR ESTO CUANDO USEMOS LAS ESCENAS DE VERDAD
@@ -156,14 +155,15 @@ export default class GAMEMANAGER extends Phaser.Scene{
     }
 
 
-    // Sacado de la doc. de phaser: https://phaser.io/examples/v2/sprites/overlap-without-physics
+    
+    // Usando la doc. de phaser: https://phaser.io/examples/v2/sprites/overlap-without-physics y 
+                            // https://phaser.io/examples/v3/view/geom/intersects/get-rectangle-intersection
     checkOverlap(spriteA, spriteB) {
 
         var boundsA = spriteA.getBounds();
         var boundsB = spriteB.getBounds();
-    
-        return Phaser.Rectangle.intersects(boundsA, boundsB);
-    
+        var intersection = Phaser.Geom.Intersects.GetRectangleIntersection(boundsA, boundsB);
+        return !(intersection.width === 0 && intersection.height === 0);
     }
 
     checkObjects(id)
@@ -191,7 +191,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
         {
             if(this.inventario[i].name  === itemName)
             {     
-                this.inventario.splice(this.inventario[i]);            
+                this.inventario.splice(i, 1);            
             }
         } 
     }

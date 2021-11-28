@@ -5,6 +5,7 @@
  import EscenaJuego from '../escenaJuego.js';
  import Item from "../Objects/item.js";
  import NPC from "../Objects/NPC.js";
+ import NPCItem from "../Objects/NPCItem.js";
 
  export default class Bosque extends EscenaJuego { // DEBERIA HEREDAR DE GAMESCENE EN EL FUTURO
     
@@ -25,8 +26,8 @@
         this.loadImage(this._wallpaper);
 
         if (this.first){
-            this.AddCharacter(new NPC('./assets/images/policia.png', 550, this.cameras.main.height - 200, 1, 'policia', this,  null, "ALTO AHÍ, inspección", "Gracias justo lo que buscaba" ));
-            this.AddCharacter(new NPC('./assets/images/campesino.png', 200, this.cameras.main.height - 200, 1, 'campesino', this,  null, "Se rompio la carreta", "Gracias justo lo que buscaba" ));
+            this.AddCharacter(new NPCItem('./assets/images/policia.png', 550, this.cameras.main.height - 200, 1, 'policia', this,  null, "ALTO AHÍ, inspección", "Interesante evidencia...", 'pajarita' ));
+            this.AddCharacter(new NPCItem('./assets/images/campesino.png', 200, this.cameras.main.height - 200, 1, 'campesino', this,  null, "Se rompio la carreta", "Gracias justo lo que buscaba", 'caja' ));
             this.AddObject(new Item('./assets/images/pajarita.png', 550, this.cameras.main.height - 70, 10, 'pajarita', this));
         }
 
