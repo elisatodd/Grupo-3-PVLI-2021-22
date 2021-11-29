@@ -49,6 +49,10 @@ export default class GAMEMANAGER extends Phaser.Scene{
         console.log("probando asignar funciones");
     }
 
+    startGame(info){
+        info.scene.start('plaza');
+    }
+
     loadElements()
     {
         
