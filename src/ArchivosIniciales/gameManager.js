@@ -50,7 +50,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
     }
 
     startGame(info){
-        info.scene.start('plaza');
+        info.scene.scene.start('plaza');
     }
 
     loadElements()

@@ -20,8 +20,6 @@ export default class EscenaMenu extends Escena {
 
   }
 
-  preload(){
-  }
   /*preload() {
     //carga el archivo de wallpaper
     this.loadImage('wallpaper', '../assets/images/pueblo.jpg');

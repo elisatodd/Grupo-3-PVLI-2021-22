@@ -12,7 +12,7 @@
 
     constructor(){
         // Nombre de la escena para el SceneManager
-        super({ key: 'MenuPrincipal' });
+        super({ key: 'menuPrincipal' });
         {
 
         };
@@ -30,13 +30,15 @@
     }
 
     create(){        
+        
+        this.createGameManager(this.game, this);
+        console.log(this.gameManager);
+
         this._wallpaper = this.spawnWallpaper(this._wallpaper);
         this.playButton.image = this.spawnImage(this.playButton);
-        this.playButton.scene = this.scene;
+        this.playButton.scene = this;
         this.playButton.assignFunctionality('startGame');
 
-        this.createGameManager(this.game, this);
-        this.gameManager.loadElements();
         
         if (this.first){
             this.addBottom(this.playButton);
