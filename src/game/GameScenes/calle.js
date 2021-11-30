@@ -28,7 +28,7 @@
 
     if (this.first){
       this.AddObject(new Item('./assets/images/flor.png', 500, this.cameras.main.height - 70, 8, 'flor', this));
-      this.AddCharacter(new NPCItem('./assets/images/senorafinal.png', 200, this.cameras.main.height - 200, 1, 'mujer', this, null, "Dame un pescado", "Gracias, te quiero", 'pez'));
+      this.AddCharacter(new NPCItem('./assets/images/senorafinal.png', 200, this.cameras.main.height - 200, 3, 'mujer', this, null, "Dame un pescado", "Gracias, te quiero", 'pez'));
     }
 
     this.loadObjects(this.objects);

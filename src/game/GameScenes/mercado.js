@@ -31,7 +31,7 @@
 
      if (this.first){
 
-      this.AddCharacter(new NPC('./assets/images/carnicerofinal.png', 200, this.cameras.main.height - 200, 0.5, 'carnicera', this, null, "¿Quieres comprar algo?", ""));
+      this.AddCharacter(new NPC('./assets/images/carnicerofinal.png', 200, this.cameras.main.height - 200, 3, 'carnicera', this, null, "¿Quieres comprar algo?", ""));
       this.AddObject(new Item('./assets/images/pez.png', 600, this.cameras.main.height - 200, 8, 'pez', this)); 
      }
 
