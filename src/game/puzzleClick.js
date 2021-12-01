@@ -8,8 +8,8 @@
 
     scene;
 
-    winImage = {name: 'winImage', route: '', pos = {x:0, y:0}, scaleProportion: 5, LoadScene};
-    loseImage = {name: 'lossImage', route: '', pos = {x:0, y:0}, scaleProportion: 5, LoadScene};
+    winImage = {name: 'winImage', route: './assets/images/puzzles/win.png', pos = {x:0, y:0}, scaleProportion: 5, LoadScene};
+    loseImage = {name: 'lossImage', route: './assets/images/puzzles/lose.png', pos = {x:0, y:0}, scaleProportion: 5, LoadScene};
 
    constructor(data) {
  
@@ -21,8 +21,8 @@
    }
 
    //pruebas
-   option1 = {name: 'zone1', route: '', pos = {x:0, y:250}, scaleProportion: 5, Win};
-   option2 = {name: 'zone2', route: '', pos = {x:500, y:250}, scaleProportion: 5, Lose};
+   option1 = {name: 'zone1', route: './assets/images/puzzles/redButton.png', pos = {x:0, y:250}, scaleProportion: 5, Win};
+   option2 = {name: 'zone2', route: './assets/images/puzzles/blueButton.png', pos = {x:500, y:250}, scaleProportion: 5, Lose};
 
    //
 
