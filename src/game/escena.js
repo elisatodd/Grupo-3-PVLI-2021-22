@@ -68,7 +68,7 @@
         } );   
     }
 
-    addSpecialBotton(info)
+    addSpecialButton(info)
     {
         this.spawnImage(info);   
         info.image.setInteractive();

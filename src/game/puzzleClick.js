@@ -5,11 +5,13 @@
  import EscenaPuzzle from './escenaPuzzle.js'
 
  export default class PuzzleClick extends EscenaPuzzle {
+    
+    puzzle = this;
+    sceneGame;
+    
 
-    scene;
-
-    winImage = {name: 'winImage', route: './assets/images/puzzles/win.png', pos = {x:0, y:0}, scaleProportion: 5, LoadScene};
-    loseImage = {name: 'lossImage', route: './assets/images/puzzles/lose.png', pos = {x:0, y:0}, scaleProportion: 5, LoadScene};
+    winImage = {name: 'winImage', route: './assets/images/puzzles/win.png', pos : {x : 400, y : 300}, scaleProportion: 20, functionality : this.LoadScene};
+    loseImage = {name: 'lossImage', route: './assets/images/puzzles/lose.png', pos : {x:400, y:300}, scaleProportion: 20, functionality : this.LoadScene};
 
    constructor(data) {
  
@@ -21,8 +23,8 @@
    }
 
    //pruebas
-   option1 = {name: 'zone1', route: './assets/images/puzzles/redButton.png', pos = {x:0, y:250}, scaleProportion: 5, Win};
-   option2 = {name: 'zone2', route: './assets/images/puzzles/blueButton.png', pos = {x:500, y:250}, scaleProportion: 5, Lose};
+   option1 = {name: 'zone1', route: './assets/images/puzzles/redButton.png', pos : {x:200, y:250}, scaleProportion: 100, functionality : this.Win};
+   option2 = {name: 'zone2', route: './assets/images/puzzles/blueButton.png', pos : {x:600, y:250}, scaleProportion: 100, functionality : this.Lose};
 
    //
 
@@ -30,6 +32,8 @@
 //a la hora de hacer el create en las escenas heredadas añadir un super para que se cargen ambos recursos
 preload()
 {
+    this._wallpaper = {name: 'cartaPuzle', route: './assets/images/puzzles/telefonoWallpaper.jpg'};
+
     this.loadImage(this.winImage);
     this.loadImage(this.loseImage);
 
@@ -39,31 +43,36 @@ preload()
 
 create()
 {
-   this.spawnImage(this.option1);
-   this.spawnImage(thuis.option2);
+
+    this.spawnWallpaper(this._wallpaper);
+
+   this.addSpecialButton(this.option1);
+   this.addSpecialButton(this.option2);
 }
 
 
 //key de la escena donde se inciia el puzle
 AssignScene(scene)
 {
-    this.scene = scene;
+    this.sceneGame = scene;
 }
 
 LoadScene()
 {
     //se le pueden pasar valores para cambiar al personaje
-    this.scene.start(scene);
+    this.scene.start(sceneGame);
 }
 
 Win()
 {
-    this.spawnImage(this.winImage);
+    this.scene.spawnWallpaper(this.scene._wallpaper);
+    this.scene.addSpecialButton(this.scene.winImage);
 }
 
 Lose()
 {
-    this.spawnImage(this.loseImage);
+    this.scene.spawnWallpaper(this.scene._wallpaper);
+    this.scene.addSpecialButton(this.scene.loseImage);
 }
 
    
