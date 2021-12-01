@@ -68,6 +68,13 @@
         } );   
     }
 
+    addSpecialBotton(info)
+    {
+        this.spawnImage(info);   
+        info.image.setInteractive();
+        info.image.on('pointerdown', info.functionality);
+    }
+
     addBottomArrows(info) {
         //debemos usar estos nombres al crear el objeto
         this.spawnImage(info);    
