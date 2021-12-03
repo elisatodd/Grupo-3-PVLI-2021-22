@@ -54,7 +54,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
     }
 
 
-    pause(){
+    pause(info){
         info.scene.scene.start('menupausa');
     }
 

@@ -36,12 +36,12 @@
       if (this.first){
       this.AddObject(new Item('./assets/images/moneda.png', 200, this.cameras.main.height - 70, 14, 'moneda', this));
       this.AddCharacter(new NPC('./assets/images/cafeteria.png', 600, this.cameras.main.height - 200, 3, 'cafeteria', this, null, " Está cerrado.", "Abierto")); // Primero estará cerrada
-      this.pause = new OBJETO('./assets/images/botonpausa.png', 600, 600, 2, 'pause', this);
+      this.pause = new OBJETO('./assets/images/botonpausa.png', 50, 50, 8, 'pause', this);
     }
 
       this.loadObjects(this.objects);
       this.loadObjects(this.characters);
-      this.loadImage(this.pause);
+      this.loadObjects([this.pause]);
 
 
       this.createArrows();
@@ -71,7 +71,7 @@
       }
       this.spawnObjects(this.objects);
       this.spawnObjects(this.characters);
-      
+      this.spawnObjects([this.pause]);
      
     }
   }
