@@ -10,8 +10,8 @@
     sceneGame;
     
 
-    winImage = {name: 'winImage', route: './assets/images/puzzles/win.png', pos : {x : 400, y : 300}, scaleProportion: 20, functionality : this.LoadScene};
-    loseImage = {name: 'lossImage', route: './assets/images/puzzles/lose.png', pos : {x:400, y:300}, scaleProportion: 20, functionality : this.LoadScene};
+    winImage = {name: 'winImage', route: './assets/images/puzzles/win.png', pos : {x : 400, y : 300}, scaleProportion: 1, functionality : this.LoadScene};
+    loseImage = {name: 'lossImage', route: './assets/images/puzzles/lose.png', pos : {x:400, y:300}, scaleProportion: 1, functionality : this.LoadScene};
 
    constructor(data) {
  
@@ -23,8 +23,8 @@
    }
 
    //pruebas
-   option1 = {name: 'zone1', route: './assets/images/puzzles/redButton.png', pos : {x:200, y:250}, scaleProportion: 100, functionality : this.Win};
-   option2 = {name: 'zone2', route: './assets/images/puzzles/blueButton.png', pos : {x:600, y:250}, scaleProportion: 100, functionality : this.Lose};
+   option1 = {name: 'zone1', route: './assets/images/puzzles/redButton.png', pos : {x:200, y:250}, scaleProportion: 10, functionality : this.Win};
+   option2 = {name: 'zone2', route: './assets/images/puzzles/blueButton.png', pos : {x:600, y:250}, scaleProportion: 10, functionality : this.Lose};
 
    //
 
@@ -33,6 +33,7 @@
 preload()
 {
     this._wallpaper = {name: 'cartaPuzle', route: './assets/images/puzzles/telefonoWallpaper.jpg'};
+    this.loadImage(this._wallpaper);
 
     this.loadImage(this.winImage);
     this.loadImage(this.loseImage);
