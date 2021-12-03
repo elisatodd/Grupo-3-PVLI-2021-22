@@ -13,10 +13,9 @@ export default class GAMEMANAGER extends Phaser.Scene{
     scene = '';
   
     itemsInInventory = 0;
-   
-    //Asigno directamente las escenas en sus posiciones en el array, con las casillas vacías correspondientes
-
     
+    //Necesito una matriz de salas, en la que hay posiciones que no tienen salas y entonces no son accesibles
+    //Asigno directamente las escenas en sus posiciones en el array, con las casillas vacías correspondientes
     escenas = [
                 null, 'casaEspejos', 'feria', 'casetaFeria',
                 'parque', 'sombrereria', 'bosque', null,
@@ -24,8 +23,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
             ];
 
 
-    //Necesito una matriz de salas, en la que hay posiciones que no tienen salas y entonces no son accesibles
-    //
+
 
     constructor(game, scene){
 
@@ -53,8 +51,11 @@ export default class GAMEMANAGER extends Phaser.Scene{
         info.scene.scene.start('plaza');
     }
 
+    showHighScore(info){
 
-    pause(info){
+    }
+
+    pause(){
         info.scene.scene.start('menupausa');
     }
 

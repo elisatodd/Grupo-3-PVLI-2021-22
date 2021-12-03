@@ -9,6 +9,7 @@
     
     first = true;
     playButton;
+    hsButton;
 
     constructor(){
         // Nombre de la escena para el SceneManager
@@ -23,10 +24,12 @@
         this.loadImage(this._wallpaper);
 
         if (this.first){
-            this.playButton = new Object('./assets/images/playbutton.png', 400, 300, 2, 'play', this);
+            this.playButton = new Object('./assets/images/playbutton.png', this.cameras.main.width/2, this.cameras.main.height/2 - 50, 2, 'play', this);
+            this.hsButton = new Object('./assets/images/hsbutton.png', this.cameras.main.width/2, this.cameras.main.height/2 + 110, 2, 'highscore', this);
         }
 
         this.loadImage(this.playButton);
+        this.loadImage(this.hsButton);
     }
 
     create(){        
@@ -35,13 +38,12 @@
         console.log(this.gameManager);
 
         this._wallpaper = this.spawnWallpaper(this._wallpaper);
-        this.playButton.image = this.spawnImage(this.playButton);
-        this.playButton.scene = this;
         this.playButton.assignFunctionality('startGame');
+        this.hsButton.assignFunctionality('showHighScore');
 
-        
         if (this.first){
             this.addBottom(this.playButton);
+            this.addBottom(this.hsButton);
             this.first = false;
         }
     }
