@@ -20,16 +20,20 @@ import MenuPrincipal from './game/MenuScenes/menuprincipal.js';
 //import MenuPausa from './game/MenuScenes/menupausa';
 
 
-import Datos1 from'./game/Pruebas/pasoDeDatos1.js';
-import Datos2 from'./game/Pruebas/pasoDeDatos2.js';
-import puzzleClick from './game/puzzleClick.js';
+//import Datos1 from'./game/Pruebas/pasoDeDatos1.js';
+//import Datos2 from'./game/Pruebas/pasoDeDatos2.js';
+
 
 
 import NumerosRasgados from './game/PuzzleScenes/NumerosRasgados.js';
 import CodigoIndscreto from './game/PuzzleScenes/CodigoIndiscreto.js';
 import CartaPuzle from './game/PuzzleScenes/CartaPuzle.js';
-import PuzzleClick from './game/puzzleClick.js';
 
+
+//import PuzzleClick from './game/puzzleClick.js';
+
+
+import PuzzleBanderines from './game/puzzleBanderines.js'
 
 let config = {
   type: Phaser.AUTO,
@@ -40,7 +44,7 @@ let config = {
     // mode: Phaser.Scale.FIT,  
     autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
   },
-  scene: [MenuPrincipal, Casa, Plaza, Calle, Bosque, Feria, CasetaFeria, CasaEspejos, Sombrereria, Mercado, Parque, NumerosRasgados, CodigoIndscreto,CartaPuzle] // Escenas que requiere el juego
+  scene: [PuzzleBanderines, MenuPrincipal, Casa, Plaza, Calle, Bosque, Feria, CasetaFeria, CasaEspejos, Sombrereria, Mercado, Parque, NumerosRasgados, CodigoIndscreto,CartaPuzle] // Escenas que requiere el juego
   };
 
 
