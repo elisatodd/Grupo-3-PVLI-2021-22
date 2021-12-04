@@ -5,9 +5,13 @@
  import EscenaJuego from '../escenaJuego.js';  
  import Item from "../Objects/item.js";
   import NPC from "../Objects/NPC.js";
+  import OBJETO from "../Objects/objeto.js";
+
+
  export default class Feria extends EscenaJuego {
 
     first = true;
+    pause;
     constructor(){
         // Nombre de la escena para el SceneManager
         super({ key: 'feria' });
@@ -25,8 +29,12 @@
         if (this.first){
 
         this.AddCharacter(new NPC('./assets/images/circensefinal.jpg', 200, this.cameras.main.height - 200, 2.5, 'cirquense', this, 'codigoIndiscreto', "Ayuda todo se ha estropeado", "Me has salvado gracias" ));
-        }
+        this.pause = new OBJETO('./assets/images/botonpausa.png', 50, 50, 8, 'pause', this);
+  
+      }
         this.loadObjects(this.characters);
+        this.loadObjects([this.pause]);
+
 
         this.createArrows();
         this.loadArrows();
@@ -44,12 +52,15 @@
       if (this.first){
 
         this.assignObjects(this.characters, 'cargarDialogo');
-        
+        this.pause.assignFunctionality('pause');
+
         this.first = false;
         
       }
       this.spawnObjects(this.objects);
       this.spawnObjects(this.characters);
+      this.spawnObjects([this.pause]);
+
       
      
     }

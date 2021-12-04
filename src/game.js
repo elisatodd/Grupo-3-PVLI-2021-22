@@ -17,7 +17,7 @@ import Mercado from './game/GameScenes/mercado.js';
 import Parque from './game/GameScenes/parque.js';
 
 import MenuPrincipal from './game/MenuScenes/menuprincipal.js';
-//import MenuPausa from './game/MenuScenes/menupausa';
+import MenuPausa from './game/MenuScenes/menupausa.js';
 
 
 //import Datos1 from'./game/Pruebas/pasoDeDatos1.js';
@@ -44,7 +44,7 @@ let config = {
     // mode: Phaser.Scale.FIT,  
     autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
   },
-  scene: [PuzzleBanderines, MenuPrincipal, Casa, Plaza, Calle, Bosque, Feria, CasetaFeria, CasaEspejos, Sombrereria, Mercado, Parque, NumerosRasgados, CodigoIndscreto,CartaPuzle] // Escenas que requiere el juego
+  scene: [MenuPrincipal, Casa, Plaza, Calle, Bosque, Feria, CasetaFeria, CasaEspejos, Sombrereria, Mercado, Parque, NumerosRasgados, CodigoIndscreto,CartaPuzle, MenuPausa] // Escenas que requiere el juego
   };
 
 

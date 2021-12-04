@@ -5,11 +5,14 @@
  import EscenaJuego from '../escenaJuego.js';
  import Item from "../Objects/item.js";
   import NPC from "../Objects/NPC.js";
+  import OBJETO from "../Objects/objeto.js";
+
   
 
  export default class CasaEsp extends EscenaJuego { // DEBERIA HEREDAR DE GAMESCENE EN EL FUTURO
     
     first = true;
+    pause; 
 
     constructor(){
         // Nombre de la escena para el SceneManager
@@ -27,8 +30,13 @@
 
         if (this.first){
             this.AddCharacter(new NPC('./assets/images/excentricofinal.png', 200, this.cameras.main.height - 200, 2.5, 'excentrico', this, null, "Resuelve mi acertijo", "Eres muy listo" ));
+            this.pause = new OBJETO('./assets/images/botonpausa.png', 50, 50, 8, 'pause', this);
+
+        
         }
         this.loadObjects(this.characters);
+        this.loadObjects([this.pause]);
+
 
         this.createArrows();
         this.loadArrows();
@@ -45,9 +53,13 @@
   
         if (this.first){
           this.assignObjects(this.characters, 'cargarDialogo');
+          this.pause.assignFunctionality('pause');
+
           this.first = false;
         }
         this.spawnObjects(this.characters);
+        this.spawnObjects([this.pause]);
+
     
         console.log("Escena Espejos");
     }

@@ -8,7 +8,7 @@
  export default class MenuPausa extends EscenaMenu {
     
     first = true;
-
+    pausa;
 
     constructor(){
         // Nombre de la escena para el SceneManager
@@ -19,15 +19,28 @@
     }
 
     preload(){
-        this._wallpaper = {name: 'pause ', route: './assets/images/pueblo.jpg'};
+        this._wallpaper = {name: 'wallpaper ', route: './assets/images/pueblo.jpg'};
         this.loadImage(this._wallpaper);
 
         if (this.first){
-            this.playButton = new Object('./assets/images/playbutton.png', 400, 300, 2, 'play', this);
+            this.pausa = new Object('./assets/images/botonpausa.png', 400, 300, 2, 'returnPause', this);
         }
 
-        this.loadImage(this.playButton);
+        this.loadImage(this.pausa);
     }
 
+    create(){        
+        
+        this.createGameManager(this.game, this);
 
+        this._wallpaper = this.spawnWallpaper(this._wallpaper);
+
+        if (this.first){
+                
+            this.pausa.assignFunctionality('startGame');
+            this.addBottom(this.pausa);
+            
+            this.first = false;
+        }
+    }
  }

@@ -8,9 +8,6 @@
   import OBJETO from "../Objects/objeto.js";
   import Item from "../Objects/item.js";
   import NPC from "../Objects/NPC.js";
-
-
-
  
   export default class Plaza extends EscenaJuego {
 

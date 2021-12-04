@@ -67,8 +67,14 @@ export default class GAMEMANAGER extends Phaser.Scene{
         info.image.destroy();
     }
 
-    pause(){
-        info.scene.scene.start('menupausa');
+    pause(info){
+        info.scene.scene.start('menuPausa');
+    }
+
+    returnPause(info)
+    {
+        info.scene.scene.start(info.scene);
+
     }
 
     loadElements()

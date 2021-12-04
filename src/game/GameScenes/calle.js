@@ -7,10 +7,13 @@
 
  import NPC from "../Objects/NPC.js";
  import NPCItem from '../Objects/NPCItem.js';
+ import OBJETO from "../Objects/objeto.js";
+
  
  export default class Calle extends EscenaJuego {
   
   first = true;
+  pause;
 
   constructor(){
     // Nombre de la escena para el SceneManager
@@ -29,10 +32,14 @@
     if (this.first){
       this.AddObject(new Item('./assets/images/flor.png', 500, this.cameras.main.height - 70, 8, 'flor', this));
       this.AddCharacter(new NPCItem('./assets/images/senorafinal.png', 200, this.cameras.main.height - 200, 3, 'mujer', this, null, "Dame un pescado", "Gracias, te quiero", 'pez'));
+      this.pause = new OBJETO('./assets/images/botonpausa.png', 50, 50, 8, 'pause', this);
+
     }
 
     this.loadObjects(this.objects);
     this.loadObjects(this.characters);
+    this.loadObjects([this.pause]);
+
 
     this.createArrows();
     this.loadArrows();
@@ -54,12 +61,15 @@
 
       this.assignObjects(this.objects, 'moveToInventory');
       this.assignObjects(this.characters, 'cargarDialogo');
-      
+      this.pause.assignFunctionality('pause');
+
       this.first = false;
 
     }
     this.spawnObjects(this.objects);
     this.spawnObjects(this.characters);
+    this.spawnObjects([this.pause]);
+
 
    
     console.log("Escena Calle");
