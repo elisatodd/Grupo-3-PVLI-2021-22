@@ -73,7 +73,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
 
     returnPause(info)
     {
-        info.scene.scene.start(info.scene);
+        info.scene.scene.start(info.scene.scene);
 
     }
 

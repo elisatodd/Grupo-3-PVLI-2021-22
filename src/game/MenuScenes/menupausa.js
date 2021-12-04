@@ -22,9 +22,8 @@
         this._wallpaper = {name: 'wallpaper ', route: './assets/images/pueblo.jpg'};
         this.loadImage(this._wallpaper);
 
-        if (this.first){
             this.pausa = new Object('./assets/images/botonpausa.png', 400, 300, 2, 'returnPause', this);
-        }
+        
 
         this.loadImage(this.pausa);
     }
@@ -35,12 +34,10 @@
 
         this._wallpaper = this.spawnWallpaper(this._wallpaper);
 
-        if (this.first){
+       
                 
             this.pausa.assignFunctionality('startGame');
             this.addBottom(this.pausa);
-            
-            this.first = false;
-        }
+
     }
  }
