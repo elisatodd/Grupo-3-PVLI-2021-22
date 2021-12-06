@@ -54,9 +54,9 @@ CreateTextEnter(pos, scene, textInput)
 {
     //material sacado de: https://phaser.io/examples/v3/view/input/keyboard/text-entry
 
-    this.add.text(pos.x, pos.y, textInput, { font: '32px Courier', fill: '#000000' });
+    this.add.text(pos.x+50, pos.y+100, textInput, { font: '52px Courier', fill: '#000000' });
 
-    var textEntry = this.add.text(pos.x, pos.y+50, '', { font: '32px Courier', fill: '#000000' });
+    var textEntry = this.add.text(pos.x+70, pos.y+200, '', { font: '50px Courier', fill: '#000000' });
 
     this.input.keyboard.on('keydown', function (event) {
 

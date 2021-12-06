@@ -2,26 +2,25 @@ import Objeto from './objeto.js';
 
 export default class NPC extends Objeto{
 
-    isClicked = false;
-    objective = false;
-    texto = "";
-    solved = false;
-    box;
-    puzzle = null;
-    first;
-    second;
+  isClicked = false;
+  objective = false;
+  texto = "";
+  solved = false;
+  box;
+  puzzle = null;
+  first;
+  second;
 
-    constructor(sprite, x, y, esc, nom, e, puz, f, l){
+  constructor(sprite, x, y, esc, nom, e, puz, f, l){
 
-        super(sprite, x, y, esc, nom, e);
-        this.functionality = this.moverAlInventario;
-        this.puzzle = puz;
-        this.first = f;
-        this.last = l;
-    }
+    super(sprite, x, y, esc, nom, e);
+    this.functionality = this.moverAlInventario;
+    this.puzzle = puz;
+    this.first = f;
+    this.last = l;
+      
+  }
 
-
-    
   saveText(text)
   {
     this.texto = text;
@@ -31,11 +30,11 @@ export default class NPC extends Objeto{
 
   loadDialogue()
   {
-    this.box = this.scene.add.image(this.scene.cameras.main.width / 2, 500, 'box');  
+    this.box = this.scene.add.image(this.scene.cameras.main.width / 2.5,this.scene.cameras.main.height- 155 , 'box');  
     this.box.setScale(this.scene.scale/1.35).setScrollFactor(0);
 
-    let text = this.scene.add.text(this.scene.cameras.main.width/3.5, 480, this.texto, 
-      { fontSize:'25px',color:'#000000',fontFamily: 'Arial'});
+    let text = this.scene.add.text(this.scene.cameras.main.width/3.8 , this.scene.cameras.main.height-185, this.texto, 
+      { fontSize:'30px',color:'#000000',fontFamily: 'Arial'});
 
     this.box.setInteractive();
     this.box.on('pointerdown', function(f){

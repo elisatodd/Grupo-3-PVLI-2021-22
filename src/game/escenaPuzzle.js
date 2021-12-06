@@ -8,17 +8,18 @@
 
   sceneToLoad = '';
 
-    constructor(data) {
-      super(data);
-      {
-      };
-    }
-    //método virtual
-    ResolvePuzzle()
-    {}
-
-    LoadScene()
+  constructor(data) {
+    super(data);
     {
-      this.scene.start(this.sceneToLoad);
-    }
+    };
   }
+
+  //método virtual
+  ResolvePuzzle()
+  {}
+
+  LoadScene()
+  {
+    this.scene.start(this.sceneToLoad);
+  }
+}

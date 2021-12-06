@@ -4,20 +4,21 @@
  */
 import Escena from './escena.js'
 
+import OBJETO from "./Objects/objeto.js";
+
 //en desuso
 export default class EscenaMenu extends Escena {
 
 
 
-  constructor() {
+  constructor(data) {
 
 
-    super({ key: 'MenuScene' });
+    super(data);
     {
     };
 
   }
-
 
   /*preload() {
     //carga el archivo de wallpaper

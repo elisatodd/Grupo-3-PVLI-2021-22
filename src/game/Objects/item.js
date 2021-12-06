@@ -1,3 +1,4 @@
+import NPC from './NPC.js';
 import Objeto from './objeto.js';
 
 export default class item extends Objeto{
@@ -31,7 +32,7 @@ export default class item extends Objeto{
       this.scene.objects = this.scene.objects.filter(item => item !== this);
 
       this.image.destroy();
-      let x = 725;
+      let x = 1380;
       let y = this.scene.gameManager.getInventoryPosition();
       this.pos = {x, y};
       this.scene.spawnObjects([this]);
@@ -41,6 +42,7 @@ export default class item extends Objeto{
     
     startdrag()
     {
+      
       this.iniposx = this.pos.x;
       this.iniposy = this.pos.y;
 
@@ -74,7 +76,12 @@ export default class item extends Objeto{
       this.pos = {x, y};
 
       this.image.destroy();
-      this.scene.spawnObjects([this]);
+
+      if(!this.scene.gameManager.checkObjects(this))
+      {
+        this.scene.spawnObjects([this]);
+      }
+     
 
       console.log("C");
 

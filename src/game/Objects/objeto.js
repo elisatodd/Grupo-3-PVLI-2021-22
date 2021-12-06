@@ -35,31 +35,6 @@ export default class OBJETO{
     this.scene.GameManager.metodo();
   }
 
-
-  // dameImagen(){ // Devuelve la dirección de la imagen del objetoS
-  //   return this.route;
-  // }
-
-  // damePosicion(){  // Devuelve la posición que lleva el objeto
-  //   return this.pos;
-  // }
-  
-  // dameEscala(){ // devuelve la escala del item
-  //   return this.escala;
-  // }
-  
-  // dameFuncion(){ // funcion que pasa en el GM cuando se clickee
-  //   return this.metodo;
-  // }
-  
-  // dameNombre(){
-  //   return this.nombre;
-  // }
-
-  // guardarEscena(e){ NO NOS HACE FALTA
-  //   this.escena = e;
-  // }
-
   recogerObjeto(img, obj) { // Lo manda al inventario
     //clicada = true;
     // NO FUNCIONA this.GameManager.moveImage(this, this.buscarObjeto(this.nombre), this.buscarObjeto(this.nombre).dirImagen);
@@ -81,7 +56,7 @@ export default class OBJETO{
   {
     this.scene.load.image('box', './assets/images/box.png');
 
-    this.box = this.scene.add.image(this.scene.cameras.main.width / 2, 500, 'box');  
+    this.box = this.scene.add.image(500, 800, 'box');  
     this.box.setScale(this.scene.scale/1.35).setScrollFactor(0);
    
     //var textConfig={fontSize:'25px',color:'#000000',fontFamily: 'Arial'};  

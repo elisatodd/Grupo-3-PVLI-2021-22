@@ -7,11 +7,13 @@
 
  import Item from "../Objects/item.js";
   import NPC from "../Objects/NPC.js"; 
+  import OBJETO from "../Objects/objeto.js";
 
 
  export default class Mercado extends EscenaJuego {
 
   first = true;
+  pause;
    constructor(){
      // Nombre de la escena para el SceneManager
      super({ key: 'mercado' });
@@ -25,19 +27,23 @@
  
    preload(){
 
-     this._wallpaper = {name: 'mercado', route: './assets/images/pueblo.jpg'};
+     this._wallpaper = {name: 'mercado', route: './assets/images/fondoMercado.jpg'};
      this.loadImage(this._wallpaper);
 
 
      if (this.first){
 
-      this.AddCharacter(new NPC('./assets/images/carnicero.png', 200, this.cameras.main.height - 200, 0.5, 'carnicera', this, null, "¿Quieres comprar algo?", ""));
+      this.AddCharacter(new NPC('./assets/images/carnicero.png', 350, this.cameras.main.height - 350, 0.75, 'carnicera', this, null, "¿Quieres comprar algo?", ""));
       this.AddObject(new Item('./assets/images/pez.png', 600, this.cameras.main.height - 200, 8, 'pez', this)); 
-     }
+      this.pause = new OBJETO('./assets/images/botonpausa.png', 50, 50, 8, 'pause', this);
+ 
+    }
 
 
      this.loadObjects(this.objects);
      this.loadObjects(this.characters);
+     this.loadObjects([this.pause]);
+
  
      this.createArrows();
      this.loadArrows();
@@ -57,12 +63,15 @@
 
       this.assignObjects(this.objects, 'moveToInventory'); // ASSIGN FIRST
       this.assignObjects(this.characters, 'cargarDialogo');
-      
+      this.pause.assignFunctionality('pause');
+
       this.first = false;
       
     }
     this.spawnObjects(this.objects);
     this.spawnObjects(this.characters);
+    this.spawnObjects([this.pause]);
+
 
     console.log("Escena Mercado");
   }

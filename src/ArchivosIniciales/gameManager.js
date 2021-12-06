@@ -7,24 +7,20 @@ export default class GAMEMANAGER extends Phaser.Scene{
 
     //variable donde se almacena que datos han sido usados
     //Raúl
-    inventarioID = [];
+   
     //referencia a game
     game = '';
     scene = '';
   
     itemsInInventory = 0;
-    //Asigno directamente las escenas en sus posiciones en el array, con las casillas vacías correspondientes
-
     
-    escenas = [
-                null, 'casaEspejos', 'feria', 'casetaFeria',
-                'parque', 'sombrereria', 'bosque', null,
-                'mercado', 'calle', 'plaza', 'casa'
-            ];
-
-
     //Necesito una matriz de salas, en la que hay posiciones que no tienen salas y entonces no son accesibles
-    //
+    //Asigno directamente las escenas en sus posiciones en el array, con las casillas vacías correspondientes
+    escenas = [
+        null, 'casaEspejos', 'feria', 'casetaFeria',
+        'parque', 'sombrereria', 'bosque', null,
+        'mercado', 'calle', 'plaza', 'casa'
+    ];
 
     constructor(game, scene){
 
@@ -46,6 +42,39 @@ export default class GAMEMANAGER extends Phaser.Scene{
 
     testing(){
         console.log("probando asignar funciones");
+    }
+
+    /**
+     * @param {Object} info Objeto que da comienzo al juego al ser clicado
+     */
+    startGame(info){
+        info.scene.scene.start('plaza');
+    }
+
+    /**
+     * Muestra el tablón de puntuaciones
+     * @param {Object} info Objeto que enseña la tabla de puntuación al ser clicado
+     */
+    showHighScore(info){
+        info.scene.addBottom(info.scene.hsBoard);
+    }
+
+    /**
+     * Borra la imagen correspondiente a un objeto
+     * @param {Object} info Objeto cuya imagen se quiere borrar
+     */
+    deleteImage(info){
+        info.image.destroy();
+    }
+
+    pause(info){
+        info.scene.scene.start('menuPausa');
+    }
+
+    returnPause(info)
+    {
+        info.scene.scene.start(info.scene.scene);
+
     }
 
     loadElements()
@@ -95,20 +124,22 @@ export default class GAMEMANAGER extends Phaser.Scene{
         console.log(this.game['inventario'].inventario.length);
     }
 
-    moveToInventory(obj){ // mete el obj en el inventario: se debe guardar entre escenas y además controlar que no se cargue en la escena x de nuevo
+    /**
+     * Mete el obj en el inventario: se debe guardar entre escenas y además controlar que no se cargue en la escena x de nuevo
+     * @param {Item} obj Item que queremos poner en el inventario
+     */
+    moveToInventory(obj){ 
         this.itemsInInventory++;
         this.inventario.push(obj);
         this.saveObject();
         //this.showElements();
-
-
-        // La altura a la que se coloca el objeto va aumentando con la cantidad de objetos en el inventario
-       
-       // escena.RemoveObject(dirImagen); -> ACTIVAR ESTO CUANDO USEMOS LAS ESCENAS DE VERDAD
         obj.moveToInv();
     }
 
-
+    /**
+     * Habilita el arrastre de un objeto del inventario
+     * @param {Item} obj Item del inventario a arrastrar
+     */
     drag(obj)
     {
         obj.startdrag();
@@ -116,11 +147,14 @@ export default class GAMEMANAGER extends Phaser.Scene{
 
     getInventoryPosition(){
         // El primer dígito es para el tamaño del objeto y el segundo para la separación entre objetos
-        return ((this.itemsInInventory-1) * 80 + 50);
+        return ((this.itemsInInventory-1) * 110 + 100);
     }
-
+    /**
+     * Muestra el texto que tiene asociado un NPC
+     * @param {NPC} npc personaje clicado 
+     */
     cargarDialogo(npc){
-        console.log("Soy un NPC");
+        //console.log("Soy un NPC");
 
         if (!npc.solved)
             npc.saveText(npc.first);
@@ -128,18 +162,13 @@ export default class GAMEMANAGER extends Phaser.Scene{
             npc.saveText(npc.last);
     }
 
-    cargarDialogo2(npc){
 
-        if (!npc.solved)
-        npc.saveText("DAME UN PESCADO YA!");
-        else npc.saveText("Gracias por haberme \n ayudado primo");
-    }
-
-
-
-    //Método que cambia de escena
+    /**
+     * Cambia de escena
+     * @param {*} iniScene escena en la que se encuentra actualmente
+     * @param {*} direction direccion en la que el usuario se mueve
+     */
     changeScene(iniScene, direction)
-    //Aquí tengo que meter las condiciones para que el cambio de escena dependa de la flecha y la escena
     {
         let scenePosition;
         switch(direction){
@@ -157,25 +186,67 @@ export default class GAMEMANAGER extends Phaser.Scene{
                 break;
         }
 
-        // let nextScene = scenePosition;
-        // if(direction==='left'){
-        //     nextScene -= 1;
-        // }
-        // else if(direction==='right'){
-        //     nextScene += 1;
-        // }
-        // else if(direction==='up'){
-        //     nextScene -= 4;
-        // }
-        // else if(direction==='down'){
-        //     nextScene += 4;
-        // }
-
         let next = this.escenas[scenePosition];
         iniScene.scene.start(next);
-        //this.scene.start('plaza');
     }
 
+
+    
+   
+    /**
+     * Comprueba si dos imágenes se están superponiendo
+     * Método hecho con la ayuda de la doc. de phaser: https://phaser.io/examples/v2/sprites/overlap-without-physics y 
+     *  https://phaser.io/examples/v3/view/geom/intersects/get-rectangle-intersection
+     * @param {*} spriteA Imagen 1 
+     * @param {*} spriteB Imagen 2
+     * @returns True/False dependiendo de si hay superposicion o no
+     */
+    checkOverlap(spriteA, spriteB) {
+
+        let boundsA = spriteA.getBounds();
+        let boundsB = spriteB.getBounds();
+        let intersection = Phaser.Geom.Intersects.GetRectangleIntersection(boundsA, boundsB);
+        return !(intersection.width === 0 && intersection.height === 0);
+    }
+    
+    /**
+     * Determina si se termina una misión al arrastrar un objeto hasta un lugar
+     * Es decir, si se ha entregado el objeto correcto a la persona correcta
+     * @param {Item} id Item que se ha arrastrado hasta un punto de la pantalla
+     * @returns Devuelve true si el item id se ha colocado en el lugar correcto, false en caso contrario
+     */
+    checkObjects(id)
+    {
+        for(let i = 0; i < this.scene.characters.length; i++)
+        {
+            if(this.scene.characters[i].itemName !== undefined && this.scene.characters[i].itemName  === id.name)
+            {
+                if (this.checkOverlap(this.scene.characters[i].image, id.image)){
+
+                    this.deleteItem(id.name);
+                    this.scene.characters[i].solved = true;
+                    return true;
+                }
+            }
+        } 
+
+        return false;
+    }
+
+    /**
+     * Elimina un objeto del inventario, se llama cuando un objeto es entregado a la persona correcta
+     * @param {string} itemName nombre del item que se borra del inventario
+     */
+    deleteItem(itemName)
+    {
+        for(let i = 0;i < this.inventario.length; i++)
+        {
+            if(this.inventario[i].name  === itemName)
+            {     
+                this.inventario.splice(i, 1);            
+            }
+        } 
+    }
 
     
 }
