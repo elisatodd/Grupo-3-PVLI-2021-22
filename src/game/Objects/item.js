@@ -32,7 +32,7 @@ export default class item extends Objeto{
       this.scene.objects = this.scene.objects.filter(item => item !== this);
 
       this.image.destroy();
-      let x = 725;
+      let x = 1380;
       let y = this.scene.gameManager.getInventoryPosition();
       this.pos = {x, y};
       this.scene.spawnObjects([this]);

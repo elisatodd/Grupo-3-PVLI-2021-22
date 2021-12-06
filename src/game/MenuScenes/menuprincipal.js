@@ -21,12 +21,12 @@
     }
 
     preload(){
-        this._wallpaper = {name: 'mainmenu ', route: './assets/images/pueblo.jpg'};
+        this._wallpaper = {name: 'mainmenu ', route: './assets/images/nuevoFondo.jpg'};
         this.loadImage(this._wallpaper);
 
         if (this.first){
-            this.playButton = new Object('./assets/images/playbutton.png', this.cameras.main.width/2, this.cameras.main.height/2 - 50, 2, 'play', this);
-            this.hsButton = new Object('./assets/images/hsbutton.png', this.cameras.main.width/2, this.cameras.main.height/2 + 110, 2, 'highscore', this);
+            this.playButton = new Object('./assets/images/playbutton.png', this.cameras.main.width/2-100, this.cameras.main.height/2 - 100, 2, 'play', this);
+            this.hsButton = new Object('./assets/images/hsbutton.png', this.cameras.main.width/2-100, this.cameras.main.height/2 + 110, 2, 'highscore', this);
             this.hsBoard = new Object('./assets/images/HSBoard.png', this.cameras.main.width/2, this.cameras.main.height/2 + 110, 2, 'highscoreBoard', this);
         }
 

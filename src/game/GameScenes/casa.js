@@ -25,7 +25,7 @@
     }
 
     preload(){
-      this._wallpaper = {name: 'casa', route: './assets/images/pueblo.jpg'};
+      this._wallpaper = {name: 'casa', route: './assets/images/nuevoFondo.jpg'};
       this.loadImage(this._wallpaper);
 
       this.load.image('box', '../../../assets/images/box.png');

@@ -23,7 +23,7 @@
     }
 
     preload(){
-        this._wallpaper = {name: 'feria ', route: './assets/images/pueblo.jpg'};
+        this._wallpaper = {name: 'feria ', route: './assets/images/nuevoFondo.jpg'};
         this.loadImage(this._wallpaper);
 
         if (this.first){

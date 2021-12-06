@@ -38,8 +38,8 @@ import PuzzleBanderines from './game/puzzleBanderines.js'
 let config = {
   type: Phaser.AUTO,
   // Configuracion del cuadro de juego
-  width: 800,
-  height: 600,
+  width: 1550,
+  height: 825,
   scale: {
     // mode: Phaser.Scale.FIT,  
     autoCenter: Phaser.Scale.CENTER_HORIZONTALLY

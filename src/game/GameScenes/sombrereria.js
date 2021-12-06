@@ -28,7 +28,7 @@
  
    preload(){
 
-     this._wallpaper = {name: 'sombrereria', route: './assets/images/pueblo.jpg'};
+     this._wallpaper = {name: 'sombrereria', route: './assets/images/nuevoFondo.jpg'};
      this.loadImage(this._wallpaper);
      
       if (this.first){

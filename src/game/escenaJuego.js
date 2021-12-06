@@ -28,16 +28,16 @@
                 switch(i)
                 {
                     case 0:
-                        this.arrows[i] = new OBJETO('./assets/images/flechaIzq.png', 50, this.cameras.main.height / 2 , 10, 'arrowLeft', this)
+                        this.arrows[i] = new OBJETO('./assets/images/flechaIzq.png', 60, this.cameras.main.height / 2 , 10, 'arrowLeft', this)
                         break;
                     case 1:
-                        this.arrows[i] = new OBJETO('./assets/images/flechaDcha.png', 750, this.cameras.main.height / 2, 10, 'arrowRight', this)
+                        this.arrows[i] = new OBJETO('./assets/images/flechaDcha.png', 1150, this.cameras.main.height / 2, 10, 'arrowRight', this)
                         break;
                     case 2:
-                        this.arrows[i] = new OBJETO('./assets/images/flechaAbj.png', this.cameras.main.width / 2, 550, 10, 'arrowDown', this)
+                        this.arrows[i] = new OBJETO('./assets/images/flechaAbj.png', this.cameras.main.width / 2-150, 770, 10, 'arrowDown', this)
                         break;
                     case 3:
-                        this.arrows[i] = new OBJETO('./assets/images/flechaArr.png', this.cameras.main.width / 2, 50, 10, 'arrowUp', this)
+                        this.arrows[i] = new OBJETO('./assets/images/flechaArr.png', this.cameras.main.width / 2-150, 60, 10, 'arrowUp', this)
                         break;
                 }
             }

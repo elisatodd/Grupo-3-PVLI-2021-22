@@ -16,7 +16,7 @@
 
     constructor(){
         // Nombre de la escena para el SceneManager
-        super({ key: 'bosque' });
+        super({ key: 'bosque' }); 
         {
 
         };
@@ -25,7 +25,7 @@
     }
 
     preload(){
-        this._wallpaper = {name: 'bosque ', route: './assets/images/pueblo.jpg'};
+        this._wallpaper = {name: 'bosque ', route: './assets/images/nuevoFondo.jpg'};
         this.loadImage(this._wallpaper);
 
         if (this.first){
