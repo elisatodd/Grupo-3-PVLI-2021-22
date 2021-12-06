@@ -27,7 +27,7 @@
  
    preload(){
 
-     this._wallpaper = {name: 'mercado', route: './assets/images/nuevoFondo.jpg'};
+     this._wallpaper = {name: 'mercado', route: './assets/images/fondoMercado.jpg'};
      this.loadImage(this._wallpaper);
 
 
