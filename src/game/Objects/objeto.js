@@ -56,7 +56,7 @@ export default class OBJETO{
   {
     this.scene.load.image('box', './assets/images/box.png');
 
-    this.box = this.scene.add.image(this.scene.cameras.main.width / 2, 500, 'box');  
+    this.box = this.scene.add.image(500, 800, 'box');  
     this.box.setScale(this.scene.scale/1.35).setScrollFactor(0);
    
     //var textConfig={fontSize:'25px',color:'#000000',fontFamily: 'Arial'};  
