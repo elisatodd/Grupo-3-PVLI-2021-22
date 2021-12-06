@@ -27,7 +27,7 @@
   
     preload(){
 
-      this._wallpaper = {name: 'plaza', route: './assets/images/nuevoFondo.jpg'};
+      this._wallpaper = {name: 'plaza', route: './assets/images/fondoPlaza.jpg'};
       this.loadImage(this._wallpaper);
       
 

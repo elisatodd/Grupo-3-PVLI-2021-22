@@ -56,7 +56,7 @@ CreateTextEnter(pos, scene, textInput)
 
     this.add.text(pos.x+50, pos.y+100, textInput, { font: '52px Courier', fill: '#000000' });
 
-    var textEntry = this.add.text(pos.x+70, pos.y+200, '', { font: '50px Courier', fill: '#000000' });
+    var textEntry = this.add.text(pos.x+70  , pos.y+200, '', { font: '50px Courier', fill: '#000000' });
 
     this.input.keyboard.on('keydown', function (event) {
 
