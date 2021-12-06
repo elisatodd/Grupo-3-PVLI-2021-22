@@ -2,7 +2,7 @@ import PuzzleInput from '../puzzleInput.js'
 
 export default class CodigoIndscreto extends PuzzleInput {
 
-    carta = {name: 'nota', route: './assets/images/puzzles/fondoindiscreto.jpg', pos:{x : 400,y : 300}, image : '', scaleProportion : 0.9};
+    carta = {name: 'nota', route: './assets/images/puzzles/fondoindiscreto.jpg', pos:{x : 1000,y : 300}, image : '', scaleProportion : 0.9};
 
   constructor() {
 

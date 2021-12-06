@@ -23,12 +23,12 @@
     }
 
     preload(){
-        this._wallpaper = {name: 'feria ', route: './assets/images/nuevoFondo.jpg'};
+        this._wallpaper = {name: 'feria ', route: './assets/images/fondoCirco.jpg'};
         this.loadImage(this._wallpaper);
 
         if (this.first){
 
-        this.AddCharacter(new NPC('./assets/images/circensefinal.jpg', 200, this.cameras.main.height - 200, 2.5, 'cirquense', this, 'codigoIndiscreto', "Ayuda todo se ha estropeado", "Me has salvado gracias" ));
+        this.AddCharacter(new NPC('./assets/images/circensefinal.png', 200, this.cameras.main.height - 200, 2.5, 'cirquense', this, 'codigoIndiscreto', "Ayuda todo se ha estropeado", "Me has salvado gracias" ));
         this.pause = new OBJETO('./assets/images/botonpausa.png', 50, 50, 8, 'pause', this);
   
       }
