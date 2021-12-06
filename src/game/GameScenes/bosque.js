@@ -25,7 +25,7 @@
     }
 
     preload(){
-        this._wallpaper = {name: 'bosque ', route: './assets/images/nuevoFondo.jpg'};
+        this._wallpaper = {name: 'bosque ', route: './assets/images/fondoBosque.jpg'};
         this.loadImage(this._wallpaper);
 
         if (this.first){

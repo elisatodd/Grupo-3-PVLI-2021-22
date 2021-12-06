@@ -147,7 +147,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
 
     getInventoryPosition(){
         // El primer dígito es para el tamaño del objeto y el segundo para la separación entre objetos
-        return ((this.itemsInInventory-1) * 110 + 100);
+        return ((this.itemsInInventory-1) * 98 +180);
     }
     /**
      * Muestra el texto que tiene asociado un NPC

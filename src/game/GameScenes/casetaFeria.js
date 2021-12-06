@@ -25,7 +25,7 @@
     }
   
     preload(){
-      this._wallpaper = {name: 'caseta ', route: './assets/images/nuevoFondo.jpg'};
+      this._wallpaper = {name: 'caseta ', route: './assets/images/fondoCaseta.jpg'};
       this.loadImage(this._wallpaper);
 
       if (this.first){
