@@ -32,8 +32,8 @@
      this.loadImage(this._wallpaper);
      
       if (this.first){
-        this.AddCharacter(new NPCItem('./assets/images/clientafinal.png', 200, this.cameras.main.height - 200, 3, 'clienta', this, null, "Necesito un nuevo sombrero", "Muchisimas gracias", 'sombrero'));
-        this.AddCharacter(new NPCItem('./assets/images/duenafinal.png', 505, this.cameras.main.height - 200, 3, 'vendedora', this, 'cartaPuzle', "No te creo", "Ahora si", 'carta'));
+        this.AddCharacter(new NPCItem('./assets/images/clienta.png', 300, this.cameras.main.height - 250, 1, 'clienta', this, null, "Necesito un nuevo sombrero", "Muchisimas gracias", 'sombrero'));
+        this.AddCharacter(new NPCItem('./assets/images/vendedora.png', 900, this.cameras.main.height - 350, 1.75, 'vendedora', this, 'cartaPuzle', "No te creo", "Ahora si", 'carta'));
         this.pause = new OBJETO('./assets/images/botonpausa.png', 50, 50, 8, 'pause', this);
 
       }
@@ -69,4 +69,4 @@
 
   }
 
-}
+}3

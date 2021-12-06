@@ -30,6 +30,10 @@
       this._wallpaper = {name: 'plaza', route: './assets/images/nuevoFondo.jpg'};
       this.loadImage(this._wallpaper);
       
+
+      this.load.image('box', '../../../assets/images/box.png');
+
+
       if (this.first){
       this.AddObject(new Item('./assets/images/moneda.png', 200, this.cameras.main.height - 70, 14, 'moneda', this));
       this.AddCharacter(new NPC('./assets/images/cafeteria.png', 600, this.cameras.main.height - 200, 3, 'cafeteria', this, null, " Está cerrado.", "Abierto")); // Primero estará cerrada

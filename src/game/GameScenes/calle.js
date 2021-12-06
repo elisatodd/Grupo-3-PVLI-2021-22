@@ -30,8 +30,8 @@
     this.loadImage(this._wallpaper);
 
     if (this.first){
-      this.AddObject(new Item('./assets/images/flor.png', 500, this.cameras.main.height - 70, 8, 'flor', this));
-      this.AddCharacter(new NPCItem('./assets/images/senorafinal.png', 200, this.cameras.main.height - 200, 3, 'mujer', this, null, "Dame un pescado", "Gracias, te quiero", 'pez'));
+      this.AddObject(new Item('./assets/images/flor.png', 700, this.cameras.main.height - 70, 8, 'flor', this));
+      this.AddCharacter(new NPCItem('./assets/images/mujerGato.png', 350, this.cameras.main.height - 300, 1, 'mujer', this, null, "Dame un pescado", "Gracias, te quiero", 'pez'));
       this.pause = new OBJETO('./assets/images/botonpausa.png', 50, 50, 8, 'pause', this);
 
     }

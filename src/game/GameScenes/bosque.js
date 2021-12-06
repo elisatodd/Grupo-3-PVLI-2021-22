@@ -29,9 +29,9 @@
         this.loadImage(this._wallpaper);
 
         if (this.first){
-            this.AddCharacter(new NPCItem('./assets/images/policiafinal.png', 550, this.cameras.main.height - 200, 2, 'policia', this,  null, "ALTO AHÍ, inspección", "Interesante evidencia...", 'pajarita' ));
-            this.AddCharacter(new NPCItem('./assets/images/campesinofinal.png', 200, this.cameras.main.height - 200, 3, 'campesino', this,  null, "Se rompio la carreta", "Gracias justo lo que buscaba", 'caja' ));
-            this.AddObject(new Item('./assets/images/pajarita.png', 550, this.cameras.main.height - 70, 10, 'pajarita', this));
+            this.AddCharacter(new NPCItem('./assets/images/policia.png', 800, this.cameras.main.height - 300, 0.75, 'policia', this,  null, "ALTO AHÍ, inspección", "Interesante evidencia...", 'pajarita' ));
+            this.AddCharacter(new NPCItem('./assets/images/campesino.png', 200, this.cameras.main.height - 200, 1, 'campesino', this,  null, "Se rompio la carreta", "Gracias justo lo que buscaba", 'caja' ));
+            this.AddObject(new Item('./assets/images/pajarita.png', 1000, this.cameras.main.height - 70, 10, 'pajarita', this));
             this.pause = new OBJETO('./assets/images/botonpausa.png', 50, 50, 8, 'pause', this);
 
         }
