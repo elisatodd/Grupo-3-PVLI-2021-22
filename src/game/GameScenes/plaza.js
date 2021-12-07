@@ -13,6 +13,7 @@
 
     first = true;
     pause;
+    text;
 
     constructor(){
       // Nombre de la escena para el SceneManager
@@ -53,6 +54,7 @@
     create(){
       
       console.log("Escena Plaza");
+      this.text = this.add.text(32, 32);
       this._wallpaper = this.spawnWallpaper(this._wallpaper);
 
       this.createGameManager(this.game, this);
@@ -74,5 +76,13 @@
       this.spawnObjects(this.characters);
       this.spawnObjects([this.pause]);
      
+    }
+
+    update()
+    {
+      console.log(this.timedEvent.getProgress().toString().substr(0, 4));
+
+
+      this.text.setText('Event.progress: ' + timedEvent.getProgress().toString().substr(0, 4) + '\nEvent.repeatCount: ' + timedEvent.repeatCount);
     }
   }
