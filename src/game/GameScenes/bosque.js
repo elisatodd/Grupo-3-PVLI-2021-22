@@ -13,6 +13,7 @@
     
     first = true;
     pause;
+    timedEvent;
 
     constructor(){
         // Nombre de la escena para el SceneManager
@@ -52,6 +53,8 @@
         this.createGameManager(this.game, this);
         this.gameManager.loadElements();
         
+      this.timedEvent = this.time.addEvent({ delay: 1000, callback: endGame, callbackScope: this.gameManager, repeat: this.game['timeLeft'].time});
+      
         this.assignArrows();
         this.spawnArrows();
   

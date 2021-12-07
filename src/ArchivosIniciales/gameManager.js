@@ -48,9 +48,17 @@ export default class GAMEMANAGER extends Phaser.Scene{
      * @param {Object} info Objeto que da comienzo al juego al ser clicado
      */
     startGame(info){
+        this.saveTime(300); // le paso el tiempo que quiero que dure la partida
         info.scene.scene.start('plaza');
     }
 
+    /**
+     * Llamado cuando acabe el temporizador de la partida. Acaba el juego
+     */
+    endGame(){
+        console.log("FIN DE LA PARTIDA!");
+        this.scene.scene.start('menuPrincipal');
+    }
     /**
      * Muestra el tablón de puntuaciones
      * @param {Object} info Objeto que enseña la tabla de puntuación al ser clicado
@@ -111,11 +119,18 @@ export default class GAMEMANAGER extends Phaser.Scene{
         //se actualiza el inventario global con estos datos
         this.game['inventario'] = { 
             inventario: this.inventario,
-            inventarioID: this.inventarioID };
+            inventarioID: this.inventarioID 
+        };
        
-            this.showElements();
-        
-        
+        this.showElements();
+    }
+/**
+ * Guarda el tiempo que queda para que acabe el juego
+ * @param {Number} info tiempo restante
+ */
+    saveTime(info){
+
+        this.game['timeLeft'] = {time: info};
     }
 
     //método que muestra que funciona la acción del almacenar datos
@@ -187,6 +202,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
         }
 
         let next = this.escenas[scenePosition];
+        this.saveTime(iniScene.timedEvent.repeatCount);
         iniScene.scene.start(next);
     }
 

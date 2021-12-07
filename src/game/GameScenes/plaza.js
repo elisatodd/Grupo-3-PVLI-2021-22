@@ -13,7 +13,7 @@
 
     first = true;
     pause;
-    text;
+    timedEvent;
 
     constructor(){
       // Nombre de la escena para el SceneManager
@@ -27,6 +27,7 @@
     }
   
     preload(){
+      //this.timedEvent = this.time.addEvent({ delay: 1000, repeat: 9 });
 
       this._wallpaper = {name: 'plaza', route: './assets/images/fondoPlaza.jpg'};
       this.loadImage(this._wallpaper);
@@ -52,14 +53,14 @@
     }
   
     create(){
-      
+
       console.log("Escena Plaza");
-      this.text = this.add.text(32, 32);
       this._wallpaper = this.spawnWallpaper(this._wallpaper);
 
       this.createGameManager(this.game, this);
       this.gameManager.loadElements();
       
+      this.timedEvent = this.time.addEvent({ delay: 1000, callback: this.gameManager.endGame, callbackScope: this.gameManager, repeat: this.game['timeLeft'].time});
       this.assignArrows();
       this.spawnArrows();
 
@@ -80,9 +81,8 @@
 
     update()
     {
-      console.log(this.timedEvent.getProgress().toString().substr(0, 4));
 
+      console.log(this.timedEvent.repeatCount);
 
-      this.text.setText('Event.progress: ' + timedEvent.getProgress().toString().substr(0, 4) + '\nEvent.repeatCount: ' + timedEvent.repeatCount);
     }
   }

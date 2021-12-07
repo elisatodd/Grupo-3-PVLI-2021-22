@@ -13,6 +13,7 @@
 
     first = true;
     pause;
+    timedEvent;
 
     constructor(){
       // Nombre de la escena para el SceneManager
@@ -46,12 +47,13 @@
     }
 
     create(){
-    
       console.log("Escena Casa");
       this._wallpaper = this.spawnWallpaper(this._wallpaper);
 
       this.createGameManager(this.game, this);
       this.gameManager.loadElements();
+    
+      this.timedEvent = this.time.addEvent({ delay: 1000, callback: endGame, callbackScope: this.gameManager, repeat: this.game['timeLeft'].time});
       
       this.assignArrows();
       this.spawnArrows();

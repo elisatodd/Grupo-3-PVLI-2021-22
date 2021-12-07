@@ -51,12 +51,7 @@ let config = {
 
 new Phaser.Game(config);
 
-let timedEvent;
 
-function create ()
-{
-    timedEvent = this.time.addEvent({ delay: 1000, repeat: 9 });
-}
 
 
 
