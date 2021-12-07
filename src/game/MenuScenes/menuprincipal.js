@@ -46,10 +46,11 @@
             this.playButton.assignFunctionality('startGame');
             this.hsButton.assignFunctionality('showHighScore');
             this.hsBoard.assignFunctionality('deleteImage');
-            this.addBottom(this.playButton);
-            this.addBottom(this.hsButton);
             
             this.first = false;
         }
+        
+        this.addBottom(this.playButton);
+        this.addBottom(this.hsButton);
     }
 }

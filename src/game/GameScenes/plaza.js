@@ -60,7 +60,8 @@
       this.createGameManager(this.game, this);
       this.gameManager.loadElements();
       
-      this.timedEvent = this.time.addEvent({ delay: 1000, callback: this.gameManager.endGame, callbackScope: this.gameManager, repeat: this.game['timeLeft'].time});
+      this.timedEvent = this.time.addEvent({ delay: this.game['timeLeft'].time, callback: this.gameManager.endGame, callbackScope: this.gameManager });
+
       this.assignArrows();
       this.spawnArrows();
 
@@ -82,7 +83,7 @@
     update()
     {
 
-      console.log(this.timedEvent.repeatCount);
+      console.log(this.timedEvent.getRemainingSeconds());
 
     }
   }
