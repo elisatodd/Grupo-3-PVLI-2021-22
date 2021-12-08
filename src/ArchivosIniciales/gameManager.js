@@ -13,7 +13,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
     scene = '';
   
     itemsInInventory = 0;
-    gameDuration = 10000; // = 10 SEGUNDOS
+    gameDuration = 9000000; // = 90000 SEGUNDOS = 15 minutos
     
     //Necesito una matriz de salas, en la que hay posiciones que no tienen salas y entonces no son accesibles
     //Asigno directamente las escenas en sus posiciones en el array, con las casillas vacías correspondientes
@@ -242,7 +242,10 @@ export default class GAMEMANAGER extends Phaser.Scene{
                 if (this.checkOverlap(this.scene.characters[i].image, id.image)){
 
                     this.deleteItem(id.name);
-                    this.scene.characters[i].solved = true;
+                    if (this.scene.characters[i].esVendedora)
+                        this.scene.characters[i].cartaEntregada = true;
+                    else
+                        this.scene.characters[i].solved = true;
                     return true;
                 }
             }

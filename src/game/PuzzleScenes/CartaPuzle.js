@@ -2,7 +2,7 @@ import PuzzleInput from '../puzzleInput.js'
 
 export default class CartaPuzle extends PuzzleInput {
 
-    carta = {name: 'cartaNovia', route: './assets/images/puzzles/LaCarta.jpg', pos:{x : 400,y : 250}, image : '', scaleProportion : 0.9};
+    carta = {name: 'cartaNovia', route: './assets/images/puzzles/LaCarta.jpg', pos:{x : 1000,y : 410}, image : '', scaleProportion : 2};
 
   constructor() {
 
@@ -16,8 +16,8 @@ export default class CartaPuzle extends PuzzleInput {
 
   preload()
   {
-    this.solution = "ayuda";
-    this.textInput = "Cual es el mensaje?";
+    this.solution = "AYUDA";
+    this.textInput = "¿Cual es el mensaje oculto?";
     this.sceneToLoad = 'sombrereria';
     this.actionWin = this.LoadScene;
 
@@ -28,10 +28,13 @@ export default class CartaPuzle extends PuzzleInput {
   }
   create()
   {
+    this.createGameManager(this.game, this);
+    
+    this.timedEvent = this.time.addEvent({ delay: this.game['timeLeft'].time, callback: this.gameManager.endGame, callbackScope: this.gameManager });
       
     this.spawnWallpaper(this._wallpaper);
     this.spawnImage(this.carta);
-    this.CreateTextEnter({x:0, y:500}, this, '¿Cuál es mensaje?');
+    this.CreateTextEnter({x:50, y:100}, this, '¿Cuál es mensaje oculto?');
     
   }
 

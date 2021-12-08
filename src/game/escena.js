@@ -10,6 +10,8 @@
     
     gameManager;
 
+    timedEvent;
+    
     arrowLeft;
     arrowRight;
     arrowDown;

@@ -10,8 +10,11 @@ export default class NPC extends Objeto{
   puzzle = null;
   first;
   second;
+  // VARIABLES PARA LA VENDEDORA Y EL PUZLE DE LA CARTA -> solo se activa el puzle una vez entregada la carta
+  esVendedora = false;
+  cartaEntregada = false;
 
-  constructor(sprite, x, y, esc, nom, e, puz, f, l){
+  constructor(sprite, x, y, esc, nom, e, puz, f, l, tienePuzle){
 
     super(sprite, x, y, esc, nom, e);
     this.functionality = this.moverAlInventario;
@@ -19,6 +22,8 @@ export default class NPC extends Objeto{
     this.first = f;
     this.last = l;
       
+    this.esVendedora = tienePuzle;
+
   }
 
   saveText(text)
@@ -47,8 +52,15 @@ export default class NPC extends Objeto{
     img.destroy();
     dialogue.destroy();
 
-    if (!this.solved && this.puzzle != null)
+    if (!this.esVendedora && !this.solved && this.puzzle != null)
     {
+      this.scene.gameManager.saveTime(this.scene.timedEvent.delay - this.scene.timedEvent.getElapsed());
+      this.scene.timedEvent.remove(false); // cancelo el timer anterior
+      this.scene.scene.start(this.puzzle);
+      this.solved = true;
+    }else if (this.esVendedora && this.cartaEntregada && !this.solved){
+      this.scene.gameManager.saveTime(this.scene.timedEvent.delay - this.scene.timedEvent.getElapsed());
+      this.scene.timedEvent.remove(false); // cancelo el timer anterior
       this.scene.scene.start(this.puzzle);
       this.solved = true;
     }
