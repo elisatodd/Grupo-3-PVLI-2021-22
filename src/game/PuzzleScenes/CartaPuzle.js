@@ -29,9 +29,10 @@ export default class CartaPuzle extends PuzzleInput {
   create()
   {
       
-      this.spawnWallpaper(this._wallpaper);
-      this.spawnImage(this.carta);
+    this.spawnWallpaper(this._wallpaper);
+    this.spawnImage(this.carta);
     this.CreateTextEnter({x:0, y:500}, this, '¿Cuál es mensaje?');
+    
   }
 
 

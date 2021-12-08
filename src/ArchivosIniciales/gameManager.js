@@ -13,7 +13,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
     scene = '';
   
     itemsInInventory = 0;
-    gameDuration = 5000;
+    gameDuration = 10000; // = 10 SEGUNDOS
     
     //Necesito una matriz de salas, en la que hay posiciones que no tienen salas y entonces no son accesibles
     //Asigno directamente las escenas en sus posiciones en el array, con las casillas vacías correspondientes
@@ -49,7 +49,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
      * @param {Object} info Objeto que da comienzo al juego al ser clicado
      */
     startGame(info){
-        this.saveTime(this.gameDuration); // le paso el tiempo que quiero que dure la partida (en segundos)
+        this.saveTime(this.gameDuration); // le paso el tiempo que quiero que dure la partida
         info.scene.scene.start('plaza');
     }
 
