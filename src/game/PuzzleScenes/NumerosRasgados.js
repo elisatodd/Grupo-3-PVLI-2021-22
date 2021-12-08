@@ -31,8 +31,7 @@ export default class NumerosRasgados extends PuzzleInput {
   create()
   {
     this.createGameManager(this.game, this);
-    this.gameManager.loadElements();
-    
+
     this.timedEvent = this.time.addEvent({ delay: this.game['timeLeft'].time, callback: this.gameManager.endGame, callbackScope: this.gameManager });
 
     this.gameManager.points = this.game['gamePoints'].gamePoints;
@@ -42,13 +41,5 @@ export default class NumerosRasgados extends PuzzleInput {
     this.CreateTextEnter({x:50, y:100}, this, '¿Cuál es el número?');
   }
 
-
-    update()
-    {
-
-      console.log(this.timedEvent.getRemainingSeconds());
-
-    }
-  
 
 }

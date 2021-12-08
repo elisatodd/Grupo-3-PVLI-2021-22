@@ -17,7 +17,7 @@ export default class CodigoIndscreto extends PuzzleInput {
   preload()
   {
     this.solution = "571";
-    this.textInput = "Cual es el código?";
+    this.textInput = "¿Cual es el código secreto?";
     this.sceneToLoad = 'feria';
     this.actionWin = this.LoadScene;
 
@@ -28,9 +28,14 @@ export default class CodigoIndscreto extends PuzzleInput {
   }
   create()
   {
-      //this.add.image(500, 500, this.carta.name)
-      this.spawnWallpaper(this._wallpaper);
-      this.spawnImage(this.carta);
+    this.createGameManager(this.game, this);
+    
+    this.timedEvent = this.time.addEvent({ delay: this.game['timeLeft'].time, callback: this.gameManager.endGame, callbackScope: this.gameManager });
+    this.gameManager.points = this.game['gamePoints'].gamePoints;
+
+    //this.add.image(500, 500, this.carta.name)
+    this.spawnWallpaper(this._wallpaper);
+    this.spawnImage(this.carta);
     this.CreateTextEnter({x:0, y:500}, this, '¿Cuál es código?');
   }
 

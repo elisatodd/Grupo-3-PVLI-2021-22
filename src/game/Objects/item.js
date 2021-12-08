@@ -49,9 +49,6 @@ export default class item extends Objeto{
       this.scene.input.off('pointerdown', this.startdrag, this);
       this.scene.input.on('pointermove', this.dodrag, this);
       this.scene.input.on('pointerup',this.stopdrag,this);
-
-      console.log("A");
-
     }
 
     dodrag(pointer)
@@ -63,7 +60,6 @@ export default class item extends Objeto{
 
       this.image.destroy();
       this.scene.spawnObjects([this]);
-      console.log("B "+ this.pos.x);
     }
 
     stopdrag()
@@ -81,9 +77,7 @@ export default class item extends Objeto{
       {
         this.scene.spawnObjects([this]);
       }
-     
 
-      console.log("C");
 
     }
    

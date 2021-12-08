@@ -81,10 +81,10 @@
      
     }
 
-    update()
-    {
+    // update()
+    // {
 
-      console.log(this.timedEvent.getRemainingSeconds());
+    //   console.log(this.timedEvent.getRemainingSeconds());
 
-    }
+    // }
   }

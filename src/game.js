@@ -34,7 +34,7 @@ import CartaPuzle from './game/PuzzleScenes/CartaPuzle.js';
 
 
 import PuzzleBanderines from './game/puzzleBanderines.js'
-import PuzzleTopoz from '.game/PuzzleTopoz.js'
+import PuzzleTopoz from './game/PuzzleTopoz.js'
 
 let config = {
   type: Phaser.AUTO,
