@@ -21,6 +21,7 @@
   LoadScene()
   {
     this.gameManager.saveTime(this.timedEvent.delay - this.timedEvent.getElapsed());
+    this.gameManager.savePoints();
     this.timedEvent.remove(false); // cancelo el timer anterior
     this.scene.start(this.sceneToLoad);
   }

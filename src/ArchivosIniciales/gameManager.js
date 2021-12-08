@@ -13,7 +13,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
     scene = '';
 
     //Puntos del jugador
-    gamePoints=0;
+    points = 0;
   
     itemsInInventory = 0;
     gameDuration = 9000000; // = 90000 SEGUNDOS = 15 minutos
@@ -53,6 +53,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
      */
     startGame(info){
         this.saveTime(this.gameDuration); // le paso el tiempo que quiero que dure la partida
+        this.savePoints(0); 
         info.scene.scene.start('plaza');
 
     }
@@ -138,6 +139,12 @@ export default class GAMEMANAGER extends Phaser.Scene{
         this.game['timeLeft'] = {time: info};
     }
 
+    /**
+     * guarda la puntuación actual del jugador
+     */
+    savePoints(){
+        this.game['gamePoints'] = {gamePoints: this.points};
+    }
     //método que muestra que funciona la acción del almacenar datos
     showElements()
     {
@@ -208,7 +215,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
 
         let next = this.escenas[scenePosition];
         this.saveTime(iniScene.timedEvent.delay - iniScene.timedEvent.getElapsed());
-        this.savePoints(this.gamePoints);
+        this.savePoints();
         iniScene.timedEvent.remove(false); // cancelo el timer anterior
         iniScene.scene.start(next);
     }
@@ -251,7 +258,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
                         this.scene.characters[i].cartaEntregada = true;
                     else {
                         this.scene.characters[i].solved = true;
-                        this.addPoints(this.gamePoints);
+                        this.addPoints();
                     }
                     return true;
                 }
@@ -280,14 +287,11 @@ export default class GAMEMANAGER extends Phaser.Scene{
      * Suma puntuación cuando se le da el objeto correcto a un npc o se soluciona un puzle
      * @param {int} actualPoints los puntos que ya había acumulados
      */
-    addPoints(actualPoints){
-        this.gamePoints = actualPoints + 1;
+    addPoints(){
+        this.points++;
 
-        console.log("Puntos: " + this.gamePoints);
+        console.log("Puntos: " + this.points);
         
-    }
-    savePoints(points){
-        this.game['gamePoints'] = {gamePoints: points};
     }
 
     

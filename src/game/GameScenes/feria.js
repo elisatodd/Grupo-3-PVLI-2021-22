@@ -12,8 +12,6 @@
 
     first = true;
     pause;
-    timedEvent;
-    gamePoints;
 
     constructor(){
         // Nombre de la escena para el SceneManager
@@ -26,21 +24,21 @@
     }
 
     preload(){
-        this._wallpaper = {name: 'feria ', route: './assets/images/fondoCirco.jpg'};
-        this.loadImage(this._wallpaper);
+      this._wallpaper = {name: 'feria ', route: './assets/images/fondoCirco.jpg'};
+      this.loadImage(this._wallpaper);
 
-        if (this.first){
+      if (this.first){
 
         this.AddCharacter(new NPC('./assets/images/cirquense.jpg', 600, this.cameras.main.height - 350, 2, 'cirquense', this, 'codigoIndiscreto', "Ayuda todo se ha estropeado", "Me has salvado gracias" ));
         this.pause = new OBJETO('./assets/images/botonpausa.png', 50, 50, 8, 'pause', this);
   
       }
-        this.loadObjects(this.characters);
-        this.loadObjects([this.pause]);
+      this.loadObjects(this.characters);
+      this.loadObjects([this.pause]);
 
 
-        this.createArrows();
-        this.loadArrows();
+      this.createArrows();
+      this.loadArrows();
     }
 
     create(){
@@ -50,8 +48,9 @@
       this.gameManager.loadElements();
     
       this.timedEvent = this.time.addEvent({ delay: this.game['timeLeft'].time, callback: this.gameManager.endGame, callbackScope: this.gameManager });
-      this.gamePoints=this.time.addEvent({ delay: this.game['gamePoints'],callbackScope: this.gameManager });
-
+      
+      this.gameManager.points = this.game['gamePoints'].gamePoints;
+    
       this.assignArrows();
       this.spawnArrows();
 
