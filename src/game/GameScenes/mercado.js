@@ -14,8 +14,6 @@
 
   first = true;
   pause;
-  timedEvent;
-  gamePoints;
 
    constructor(){
      // Nombre de la escena para el SceneManager
@@ -28,40 +26,41 @@
 
    }
  
-   preload(){
+  preload(){
 
-     this._wallpaper = {name: 'mercado', route: './assets/images/fondoMercado.jpg'};
-     this.loadImage(this._wallpaper);
+    this._wallpaper = {name: 'mercado', route: './assets/images/fondoMercado.jpg'};
+    this.loadImage(this._wallpaper);
 
 
-     if (this.first){
+    if (this.first){
 
       this.AddCharacter(new NPC('./assets/images/carnicero.png', 350, this.cameras.main.height - 350, 0.75, 'carnicera', this, null, "¿Quieres comprar algo?", ""));
       this.AddObject(new Item('./assets/images/pez.png', 600, this.cameras.main.height - 200, 8, 'pez', this)); 
       this.pause = new OBJETO('./assets/images/botonpausa.png', 50, 50, 8, 'pause', this);
- 
+
     }
 
 
-     this.loadObjects(this.objects);
-     this.loadObjects(this.characters);
-     this.loadObjects([this.pause]);
+    this.loadObjects(this.objects);
+    this.loadObjects(this.characters);
+    this.loadObjects([this.pause]);
 
- 
-     this.createArrows();
-     this.loadArrows();
 
-   }
+    this.createArrows();
+    this.loadArrows();
 
-   create(){
+  }
+
+  create(){
     this._wallpaper = this.spawnWallpaper(this._wallpaper);
 
     this.createGameManager(this.game, this);
     this.gameManager.loadElements();
     
     this.timedEvent = this.time.addEvent({ delay: this.game['timeLeft'].time, callback: this.gameManager.endGame, callbackScope: this.gameManager });
-    this.gamePoints=this.time.addEvent({ delay: this.game['gamePoints'],callbackScope: this.gameManager });
-
+      
+    this.gameManager.points = this.game['gamePoints'].gamePoints;
+    
     this.assignArrows();
     this.spawnArrows();
 

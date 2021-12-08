@@ -14,8 +14,6 @@
 
   first = true;
   pause;
-  timedEvent;
-  gamePoints;
 
   constructor(){
     // Nombre de la escena para el SceneManager
@@ -49,15 +47,16 @@
 
   }
 
-   create(){
+  create(){
     this._wallpaper = this.spawnWallpaper(this._wallpaper);
 
     this.createGameManager(this.game, this);
     this.gameManager.loadElements();
     
     this.timedEvent = this.time.addEvent({ delay: this.game['timeLeft'].time, callback: this.gameManager.endGame, callbackScope: this.gameManager });
-    this.gamePoints=this.time.addEvent({ delay: this.game['gamePoints'],callbackScope: this.gameManager });
-
+      
+    this.gameManager.points = this.game['gamePoints'].gamePoints;
+    
     this.assignArrows();
     this.spawnArrows();
 
