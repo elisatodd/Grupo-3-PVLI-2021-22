@@ -15,6 +15,7 @@
   first = true;
   pause;
   timedEvent;
+  gamePoints;
 
   constructor(){
     // Nombre de la escena para el SceneManager
@@ -27,6 +28,7 @@
   }
 
   preload(){
+
     this._wallpaper = {name: 'plaza', route: './assets/images/fondoCalle.jpg'};
     this.loadImage(this._wallpaper);
 
@@ -53,7 +55,7 @@
     this.gameManager.loadElements();
     
     this.timedEvent = this.time.addEvent({ delay: this.game['timeLeft'].time, callback: this.gameManager.endGame, callbackScope: this.gameManager });
-    
+    this.gamePoints=this.time.addEvent({ delay: this.game['gamePoints'],callbackScope: this.gameManager });
     this.assignArrows();
     this.spawnArrows();
 

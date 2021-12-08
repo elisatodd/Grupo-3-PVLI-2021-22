@@ -11,6 +11,9 @@ export default class GAMEMANAGER extends Phaser.Scene{
     //referencia a game
     game = '';
     scene = '';
+
+    //Puntos del jugador
+    gamePoints=0;
   
     itemsInInventory = 0;
     gameDuration = 9000000; // = 90000 SEGUNDOS = 15 minutos
@@ -23,7 +26,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
         'mercado', 'calle', 'plaza', 'casa'
     ];
 
-    constructor(game, scene){
+    constructor(game, scene, points){
 
         super({ key: 'GameManager' });
         {
@@ -32,7 +35,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
        
         this.game = game;
         this.scene = scene;
-      
+        this.gamePoints=points;
     }
 
     preload()
@@ -51,6 +54,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
     startGame(info){
         this.saveTime(this.gameDuration); // le paso el tiempo que quiero que dure la partida
         info.scene.scene.start('plaza');
+
     }
 
     /**
@@ -204,6 +208,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
 
         let next = this.escenas[scenePosition];
         this.saveTime(iniScene.timedEvent.delay - iniScene.timedEvent.getElapsed());
+        this.savePoints(this.gamePoints);
         iniScene.timedEvent.remove(false); // cancelo el timer anterior
         iniScene.scene.start(next);
     }
@@ -244,8 +249,10 @@ export default class GAMEMANAGER extends Phaser.Scene{
                     this.deleteItem(id.name);
                     if (this.scene.characters[i].esVendedora)
                         this.scene.characters[i].cartaEntregada = true;
-                    else
+                    else {
                         this.scene.characters[i].solved = true;
+                        this.addPoints(this.gamePoints);
+                    }
                     return true;
                 }
             }
@@ -267,6 +274,20 @@ export default class GAMEMANAGER extends Phaser.Scene{
                 this.inventario.splice(i, 1);            
             }
         } 
+    }
+
+    /**
+     * Suma puntuación cuando se le da el objeto correcto a un npc o se soluciona un puzle
+     * @param {int} actualPoints los puntos que ya había acumulados
+     */
+    addPoints(actualPoints){
+        this.gamePoints = actualPoints + 1;
+
+        console.log("Puntos: " + this.gamePoints);
+        
+    }
+    savePoints(points){
+        this.game['gamePoints'] = {gamePoints: points};
     }
 
     

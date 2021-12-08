@@ -58,11 +58,16 @@ export default class NPC extends Objeto{
       this.scene.timedEvent.remove(false); // cancelo el timer anterior
       this.scene.scene.start(this.puzzle);
       this.solved = true;
+      gameManager.addPoints();
+      console.log("esto lo hago");
     }else if (this.esVendedora && this.cartaEntregada && !this.solved){
       this.scene.gameManager.saveTime(this.scene.timedEvent.delay - this.scene.timedEvent.getElapsed());
       this.scene.timedEvent.remove(false); // cancelo el timer anterior
       this.scene.scene.start(this.puzzle);
       this.solved = true;
+      gameManager.addPoints();
+      
+      console.log("esto lo hago");
     }
       
   }
