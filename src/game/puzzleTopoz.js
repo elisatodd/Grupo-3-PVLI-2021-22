@@ -13,7 +13,7 @@
     
     //base grafica que sera usada para todos
     up = { name: 'topoUp', route: './assets/images/puzzles/topoOff.png', pos : {x : "", y : ""}, scaleProportion: 2, image: ""};
-    down = { name: 'topoDown', route: './assets/images/puzzles/topoOn.png', pos : {x : "", y : ""}, scaleProportion: 2, image: ""};
+    down = { name: 'topoDown', route: './assets/images/puzzles/topoOn2.png', pos : {x : "", y : ""}, scaleProportion: 2, image: ""};
     
    //botón
     o1 = button({id: 1, pos : {x:400, y : 150}, functionality : this.Change});
