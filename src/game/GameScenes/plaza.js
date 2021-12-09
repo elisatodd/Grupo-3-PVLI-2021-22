@@ -32,7 +32,7 @@
       this.loadImage(this._wallpaper);
       
 
-      this.load.image('box', '../../../assets/images/box.png');
+      this.load.image('box', '../../../assets/images/testing.png');
 
 
       if (this.first){

@@ -12,19 +12,19 @@
  
     
     //base grafica que sera usada para todos
-    up = { name: 'topoUp', route: './assets/images/puzzles/blueButton.png', pos : {x : "", y : ""}, scaleProportion: 10, image: ""};
-    down = { name: 'topoDown', route: './assets/images/puzzles/redButton.png', pos : {x : "", y : ""}, scaleProportion: 12, image: ""};
+    up = { name: 'topoUp', route: './assets/images/puzzles/topoOff.png', pos : {x : "", y : ""}, scaleProportion: 2, image: ""};
+    down = { name: 'topoDown', route: './assets/images/puzzles/topoOn.png', pos : {x : "", y : ""}, scaleProportion: 2, image: ""};
     
    //botón
-    o1 = button({id: 1, pos : {x:200, y : 100}, functionality : this.Change});
-    o2 = button({id: 2, pos : {x:700, y : 100}, functionality : this.Change});
-    o3 = button({id: 3, pos : {x:1200, y : 100}, functionality : this.Change});
-    o4 = button({id: 4, pos : {x:200, y : 350}, functionality : this.Change});
-    o5 = button({id: 5, pos : {x:700, y : 350}, functionality : this.Change});
-    o6 = button({id: 6, pos : {x:1200, y : 350}, functionality : this.Change});
-    o7 = button({id: 7, pos : {x:200, y : 600}, functionality : this.Change});
-    o8 = button({id: 8, pos : {x:700, y : 600}, functionality : this.Change});
-    o9 = button({id: 9, pos : {x:1200, y : 600}, functionality : this.Change});
+    o1 = button({id: 1, pos : {x:400, y : 150}, functionality : this.Change});
+    o2 = button({id: 2, pos : {x:650, y : 150}, functionality : this.Change});
+    o3 = button({id: 3, pos : {x:900, y : 150}, functionality : this.Change});
+    o4 = button({id: 4, pos : {x:400, y : 400}, functionality : this.Change});
+    o5 = button({id: 5, pos : {x:650, y : 400}, functionality : this.Change});
+    o6 = button({id: 6, pos : {x:900, y : 400}, functionality : this.Change});
+    o7 = button({id: 7, pos : {x:400, y : 650}, functionality : this.Change});
+    o8 = button({id: 8, pos : {x:650, y : 650}, functionality : this.Change});
+    o9 = button({id: 9, pos : {x:900, y : 650}, functionality : this.Change});
 
 
 
@@ -62,6 +62,11 @@ preload()
 
 create()
 {
+    this.createGameManager(this.game, this);
+
+    this.timedEvent = this.time.addEvent({ delay: this.game['timeLeft'].time, callback: this.gameManager.endGame, callbackScope: this.gameManager });
+
+    this.gameManager.points = this.game['gamePoints'].gamePoints;
 
     this.spawnWallpaper(this._wallpaper);
   
