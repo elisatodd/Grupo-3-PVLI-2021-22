@@ -12,7 +12,9 @@
  export default class CasaEsp extends EscenaJuego { // DEBERIA HEREDAR DE GAMESCENE EN EL FUTURO
     
     first = true;
-    pause; 
+    pause;   
+    bpause;
+
 
     constructor(){
         // Nombre de la escena para el SceneManager
@@ -30,13 +32,12 @@
 
         if (this.first){
             this.AddCharacter(new NPC('./assets/images/excentrico.png', 600, this.cameras.main.height - 300, 2, 'excentrico', this, null, "Resuelve mi acertijo", "Eres muy listo" ));
-            this.pause = new OBJETO('./assets/images/botonpausa.png', 50, 50, 8, 'pause', this);
-
-        
+            this.bpause = new OBJETO('./assets/images/botonpausa.png', 50, 50, 8, 'pause', this);
+            this.pause = new OBJETO('./assets/images/wallpaperWeb.jpg', this.cameras.main.width/2 - 110, this.cameras.main.height/2, 1, 'text', this);
         }
         this.loadObjects(this.characters);
+        this.loadObjects([this.bpause]);
         this.loadObjects([this.pause]);
-
 
         this.createArrows();
         this.loadArrows();
@@ -57,12 +58,14 @@
   
         if (this.first){
           this.assignObjects(this.characters, 'cargarDialogo');
-          this.pause.assignFunctionality('pause');
+           
+        this.bpause.assignFunctionality('pause');
+        this.pause.assignFunctionality('deleteImage');
 
           this.first = false;
         }
         this.spawnObjects(this.characters);
-        this.spawnObjects([this.pause]);
+        this.spawnObjects([this.bpause]);
 
     
         console.log("Escena Espejos");

@@ -13,6 +13,8 @@
     
     first = true;
     pause;
+    bpause;
+
 
     constructor(){
       // Nombre de la escena para el SceneManager
@@ -31,10 +33,13 @@
       if (this.first){
         this.AddCharacter(new NPCItem('./assets/images/ninio.png', 850, this.cameras.main.height - 300, 3, 'ninio', this, null, "No tengo dinero :(", "Gracias!! jeje", 'moneda' ));
         this.AddCharacter(new NPC('./assets/images/forzudo.png', 350, this.cameras.main.height - 250, 2.5, 'forzudo', this,  null, "Soy muy fuerte pero no muy listo \n ¿me ayudas?", "Gracias era muy dificil para mi" ));
-        this.pause = new OBJETO('./assets/images/botonpausa.png', 50, 50, 8, 'pause', this);
+        this.bpause = new OBJETO('./assets/images/botonpausa.png', 50, 50, 8, 'pause', this);
+        this.pause = new OBJETO('./assets/images/wallpaperWeb.jpg', this.cameras.main.width/2 - 110, this.cameras.main.height/2, 1, 'text', this);
       }
-        this.loadObjects(this.characters);
-        this.loadObjects([this.pause]);
+        
+      this.loadObjects(this.characters);
+      this.loadObjects([this.bpause]);
+      this.loadObjects([this.pause]);
 
 
       this.createArrows();
@@ -56,12 +61,14 @@
 
       if (this.first){
         this.assignObjects(this.characters, 'cargarDialogo');
-        this.pause.assignFunctionality('pause');
+         
+        this.bpause.assignFunctionality('pause');
+        this.pause.assignFunctionality('deleteImage');
 
         this.first = false;
       }
       this.spawnObjects(this.characters);
-      this.spawnObjects([this.pause]);
+      this.spawnObjects([this.bpause]);
 
   
       console.log("Escena Caseta");
