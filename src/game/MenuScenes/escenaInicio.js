@@ -9,7 +9,8 @@ export default class EscenaInicio extends Escena {
 
     //texto que tiene que mostrar en pantalla
     texto = "El chiste del pan que habla xD";
-    
+    i=0;
+    posX=370;
     timedEvent;
     constructor(){
         // Nombre de la escena para el SceneManager
@@ -47,21 +48,33 @@ export default class EscenaInicio extends Escena {
         this._wallpaper = this.spawnWallpaper(this._wallpaper);
         this.assignText ("El chiste del pan que habla xD");
         
-        this.spawnText();
-
-        this.timedEvent=this.time.delayedCall(3000, this.spawnText(), [], this)
+        //this.spawnText();
+        
+        //this.timedEvent=new Phaser.Time.TimerEvent({delay:10});
+        //this.time.addEvent(this.timedEvent);
+        this.timedEvent = this.time.addEvent({ delay: 100, callback: this.onEvent, callbackScope: this, loop: true });
     }
-    update(){
+    //  update(){
+        //   console.log(this.i);
+        // }
+    onEvent(){
+        this.spawnText(this.texto[this.i],this.posX);
+    }
+    spawnText(letra,posX){
+            
+            this.add.text(posX, 150, letra, { fontSize:'30px',color:'#4E342E',fontFamily: 'Arial'});
+            console.log(this.posX);
+            this.i++;
+            this.posX+=10;
+       if(this.i===this.texto.length){
+          this.timedEvent.remove(false);
+       }
         
     }
     assignText(story){
         this.texto= story;
     }
-
-    spawnText(){
-        let text = this.add.text(370, 150, this.texto, 
-            { fontSize:'30px',color:'#4E342E',fontFamily: 'Arial'});
-    }
+    
 
 
     
