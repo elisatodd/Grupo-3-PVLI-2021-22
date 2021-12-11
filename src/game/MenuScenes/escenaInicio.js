@@ -8,10 +8,12 @@ import Escena from "../escena.js";
 export default class EscenaInicio extends Escena {
 
     //texto que tiene que mostrar en pantalla
-    texto = "El chiste del pan que habla xD";
+    texto = " ";
     i=0;
-    posX=370;
+    posX=350;
+    posY=120;
     timedEvent;
+    playButton;
     constructor(){
         // Nombre de la escena para el SceneManager
         super({ key: 'escenaInicio' });
@@ -24,57 +26,66 @@ export default class EscenaInicio extends Escena {
     
     preload(){
         this._wallpaper = {name: 'mainmenu ', route: './assets/images/fondoInicio.jpg'};
+        this.playButton = new Object('/assets/images/playbutton.png', this.cameras.main.width/2-100, this.cameras.main.height/2 - 100, 2, 'play', this);
         this.loadImage(this._wallpaper);
-        //this.load.script('webfont', 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js');
+        this.loadFont("initialFont", "/assets/fonts/SpaceMono-Italic.ttf");
+        //this.loadImage(this.playButton);
     }
     
     create(){        
         //No se si necesito gm en esta escena
         // //this.createGameManager(this.game, this);
 
-        //Lo de la fuente no es tan importante, eso lo hago cuando tenga el resto solucionado
-        // WebFont.load({
-        //     google: {
-        //         families: [ 'Space Mono']
-        //     },
-        //     active: function () // se llama a esta función cuando está cargada
-        //     {
-        //         let nuevoTexto = 
-        //             this.add.text(370,400, this.texto,
-        //                 { fontFamily: 'Space mono', fontSize: 80, color: '#ffffff' })
-                
-        //     }
-        // });
+        
         this._wallpaper = this.spawnWallpaper(this._wallpaper);
-        this.assignText ("El chiste del pan que habla xD");
+        this.assignText ("Estimado señor Calthrop;=Ha sido hallado el cadáver de Grace, su prometida e hija=del alcalde, "+ 
+        "en  muy trágicas condiciones.=Tras una breve deliberación hemos llegado a la conclusión=de que usted es el único posible culpable; "+ 
+        "ya que fue el=último en verla con vida.=Aunque nos pese admitirlo, puesto que usted era muy=preciado entre las gentes de este pueblo,"+
+        "debe presentarse=a juicio mañana a primera hora.=Si es inocente, tiene hasta entonces para demostrarlo=frente al jurado popular.="+
+        "En ese caso, le deseo la mayor de las suertes.="+
+        "Un cordial saludo==                      Jefatura de policía de Leytonstone"
+        );
         
-        //this.spawnText();
-        
-        //this.timedEvent=new Phaser.Time.TimerEvent({delay:10});
-        //this.time.addEvent(this.timedEvent);
-        this.timedEvent = this.time.addEvent({ delay: 100, callback: this.onEvent, callbackScope: this, loop: true });
+        this.timedEvent = this.time.addEvent({ delay: 10, callback: this.onEvent, callbackScope: this, loop: true });
+
     }
     //  update(){
         //   console.log(this.i);
         // }
     onEvent(){
-        this.spawnText(this.texto[this.i],this.posX);
+        this.spawnText(this.texto[this.i]);
     }
-    spawnText(letra,posX){
-            
-            this.add.text(posX, 150, letra, { fontSize:'30px',color:'#4E342E',fontFamily: 'Arial'});
+    spawnText(letra){
+        
+        if (letra==='='){
+            this.posY+=40;
+            this.posX=350;
+        }
+        else{
+            this.add.text(this.posX, this.posY, letra, { fontSize:'30px',color:'#4E342E',fontFamily: 'initialFont'});
+
+            this.posX+=15;
+        }
             console.log(this.posX);
             this.i++;
-            this.posX+=15;
-       if(this.i===this.texto.length){
+        if(this.i===this.texto.length){
           this.timedEvent.remove(false);
-       }
+        }
         
     }
     assignText(story){
         this.texto= story;
     }
-    
+
+    //Sacado de la documentación de clase literalmente
+    loadFont(name, url) {
+    let newFont = new FontFace(name, `url(${url})`);
+    newFont.load().then(function (loaded) {
+        document.fonts.add(loaded);
+    }).catch(function (error) {
+        return error;
+    });
+}
 
 
     
