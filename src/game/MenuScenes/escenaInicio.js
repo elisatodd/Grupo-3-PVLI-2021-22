@@ -65,7 +65,7 @@ export default class EscenaInicio extends Escena {
             this.add.text(posX, 150, letra, { fontSize:'30px',color:'#4E342E',fontFamily: 'Arial'});
             console.log(this.posX);
             this.i++;
-            this.posX+=10;
+            this.posX+=15;
        if(this.i===this.texto.length){
           this.timedEvent.remove(false);
        }
