@@ -25,8 +25,8 @@ export default class EscenaInicio extends Escena {
     
     
     preload(){
-        this._wallpaper = {name: 'mainmenu ', route: './assets/images/fondoInicio.jpg'};
-        this.playButton = new Object('/assets/images/playbutton.png', this.cameras.main.width/2-100, this.cameras.main.height/2 - 100, 2, 'play', this);
+        this._wallpaper = {name: 'initialScene', route: './assets/images/fondoInicio.jpg'};
+        this.playButton = new Object("./assets/images/playbutton.png", this.cameras.main.width/2-100, this.cameras.main.height/2 - 100, 2, 'play', this);
         this.loadImage(this._wallpaper);
         this.loadFont("initialFont", "/assets/fonts/SpaceMono-Italic.ttf");
         //this.loadImage(this.playButton);
@@ -47,11 +47,12 @@ export default class EscenaInicio extends Escena {
         );
         
         this.timedEvent = this.time.addEvent({ delay: 10, callback: this.onEvent, callbackScope: this, loop: true });
+        
+        this.playButton.assignFunctionality('startGame');
+        this.addBottom(this.playButton);
 
     }
-    //  update(){
-        //   console.log(this.i);
-        // }
+    
     onEvent(){
         this.spawnText(this.texto[this.i]);
     }
@@ -66,7 +67,6 @@ export default class EscenaInicio extends Escena {
 
             this.posX+=15;
         }
-            console.log(this.posX);
             this.i++;
         if(this.i===this.texto.length){
           this.timedEvent.remove(false);
