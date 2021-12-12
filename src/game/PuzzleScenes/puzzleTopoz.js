@@ -2,7 +2,7 @@
  * Intentando hacer una escena
  * @extends EscenaPuzzle
  */
- import EscenaPuzzle from '../escenaPuzzle.js'
+ import EscenaPuzzle from './../escenaPuzzle.js'
 
  export default class PuzzleTopoz extends EscenaPuzzle {
     
@@ -62,13 +62,8 @@ preload()
 
 create()
 {
-    this.createGameManager(this.game, this);
-
-    this.timedEvent = this.time.addEvent({ delay: this.game['timeLeft'].time, callback: this.gameManager.endGame, callbackScope: this.gameManager });
-
-    this.gameManager.points = this.game['gamePoints'].gamePoints;
-
-    this.spawnWallpaper(this._wallpaper);
+    super.create();
+   
   
     for(let n = 0; n < this.map.length; n++)
     {
@@ -114,6 +109,8 @@ ChangeObj(obj)
     
     if(this.inicialize)
     obj.right = !obj.right;
+    else   this.addSpecialButton(obj);
+
 
     console.log("objeto cambiado");
 
@@ -131,7 +128,7 @@ ChangeObj(obj)
    }
   
  
-    this.addSpecialButton(obj);
+  
 
   
 }

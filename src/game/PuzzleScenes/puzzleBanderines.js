@@ -54,8 +54,8 @@ preload()
 
 create()
 {
-
-    this.spawnWallpaper(this._wallpaper);
+    super.create();
+    
     this.addSpecialButton(this.button);
 
     for(let i = 0; i < this.bands.length; i++)

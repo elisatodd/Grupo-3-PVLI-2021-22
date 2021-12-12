@@ -27,12 +27,10 @@ export default class CartaPuzle extends PuzzleInput {
   }
   create()
   {
-    this.createGameManager(this.game, this);
-    
-    this.timedEvent = this.time.addEvent({ delay: this.game['timeLeft'].time, callback: this.gameManager.endGame, callbackScope: this.gameManager });
-    this.gameManager.points = this.game['gamePoints'].gamePoints;
-      
     this.spawnWallpaper(this._wallpaper);
+    super.create();
+   
+
     this.spawnImage(this.carta);
     this.CreateTextEnter({x:50, y:100}, this, '¿Cuál es mensaje oculto?');
     

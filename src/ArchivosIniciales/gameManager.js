@@ -101,12 +101,11 @@ export default class GAMEMANAGER extends Phaser.Scene{
      */
     loadElements()
     {
-        
-        if('inventario' in this.game)
+        let saveInventory = this.scene.registry.get('inventario');
+        if(saveInventory !== undefined)
         {
-            this.inventario = this.game['inventario'].inventario;
-            this.inventarioID = this.game['inventario'].inventarioID;
-            
+          
+            this.inventario = saveInventory;
             this.scene.spawnObjects(this.inventario);
             //bucle que recorre el inventario
             for(let i = 0; i < this.inventario.length; i++)
@@ -121,6 +120,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
             }
             this.showElements();
         }
+       
     }
 
     /**
@@ -134,32 +134,35 @@ export default class GAMEMANAGER extends Phaser.Scene{
         //this.inventarioID[i] = true;
 
         //se actualiza el inventario global con estos datos
-        this.game['inventario'] = { 
-            inventario: this.inventario,
-            inventarioID: this.inventarioID 
-        };
+
+        this.scene.registry.set('inventario', this.inventario);
+       
        
         this.showElements();
     }
-/**
- * Guarda el tiempo que queda para que acabe el juego
- * @param {Number} info tiempo restante
- */
+    /**
+    * Guarda el tiempo que queda para que acabe el juego
+    * @param {Number} info tiempo restante
+    */
     saveTime(info){
-
-        this.game['timeLeft'] = {time: info};
+        
+    // this.game['timeLeft'] = {time: info};
+  
+    this.scene.registry.set('timeLeft', info);
     }
 
     /**
-     * guarda la puntuación actual del jugador
-     */
+    * guarda la puntuación actual del jugador
+    */
     savePoints(){
-        this.game['gamePoints'] = {gamePoints: this.points};
+     //this.game['gamePoints'] = {gamePoints: this.points};
+    
+    this.scene.registry.set('gamePoints', this.points);
     }
     //método que muestra que funciona la acción del almacenar datos
     showElements()
     {
-        console.log(this.game['inventario'].inventario.length);
+        console.log(this.inventario.length);
     }
 
     /**

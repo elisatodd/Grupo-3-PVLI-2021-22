@@ -16,6 +16,13 @@
         };
     }
 
+
+    create()
+    {
+        super.create();
+        this.gameManager.loadElements();
+    }
+
     /**
     * 
     * @param 

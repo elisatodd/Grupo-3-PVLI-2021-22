@@ -45,7 +45,7 @@ preload()
 create()
 {
 
-    this.spawnWallpaper(this._wallpaper);
+    super.create();
 
    this.addSpecialButton(this.option1);
    this.addSpecialButton(this.option2);
