@@ -30,9 +30,6 @@ export default class NumerosRasgados extends PuzzleInput {
   create()
   {
     super.create();
-    
-    //this.add.image(500, 500, this.carta.name)
-    this.spawnWallpaper(this._wallpaper);
     this.spawnImage(this.carta);
     this.CreateTextEnter({x:50, y:100}, this, '¿Cuál es el número?');
   }

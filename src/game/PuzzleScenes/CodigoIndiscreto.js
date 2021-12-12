@@ -28,9 +28,6 @@ export default class CodigoIndscreto extends PuzzleInput {
   create()
   {
     super.create();
-    
-    this.add.image(500, 500, this.puzzle.name)
-    this.spawnWallpaper(this._wallpaper);
     this.spawnImage(this.puzzle);
     this.CreateTextEnter({x:0, y:25}, this, this.textInput);
   }
