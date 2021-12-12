@@ -105,6 +105,14 @@ export default class GAMEMANAGER extends Phaser.Scene{
     }
 
     /**
+     * @param {Object} info boton de vuelta al menu principal
+     */
+    returnMenu(info)
+    {
+        info.scene.scene.start('menuPrincipal');
+    }
+
+    /**
      * 
      */
     loadElements()
