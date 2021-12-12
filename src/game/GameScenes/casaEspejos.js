@@ -44,14 +44,7 @@
     }
     
     create(){
-        this._wallpaper = this.spawnWallpaper(this._wallpaper);
-
-        this.createGameManager(this.game, this);
-        this.gameManager.loadElements();
-    
-        this.timedEvent = this.time.addEvent({ delay: this.game['timeLeft'].time, callback: this.gameManager.endGame, callbackScope: this.gameManager });
-      
-        this.gameManager.points = this.game['gamePoints'].gamePoints;
+       super.create();
         
         this.assignArrows();
         this.spawnArrows();

@@ -27,6 +27,7 @@
 
 create()
 {
+    super.create();
 //this.CreateTextEnter({x:100, y:100}, this);
 }
 

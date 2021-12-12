@@ -14,6 +14,12 @@
     };
   }
 
+
+  create()
+  {
+    super.create();
+  }
+  
   //método virtual
   ResolvePuzzle()
   {}

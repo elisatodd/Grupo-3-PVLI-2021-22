@@ -27,11 +27,8 @@ export default class CodigoIndscreto extends PuzzleInput {
   }
   create()
   {
-    this.createGameManager(this.game, this);
+    super.create();
     
-    this.timedEvent = this.time.addEvent({ delay: this.game['timeLeft'].time, callback: this.gameManager.endGame, callbackScope: this.gameManager });
-    this.gameManager.points = this.game['gamePoints'].gamePoints;
-
     this.add.image(500, 500, this.puzzle.name)
     this.spawnWallpaper(this._wallpaper);
     this.spawnImage(this.puzzle);

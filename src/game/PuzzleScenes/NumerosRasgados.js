@@ -29,11 +29,8 @@ export default class NumerosRasgados extends PuzzleInput {
   }
   create()
   {
-    this.createGameManager(this.game, this);
-
-    this.timedEvent = this.time.addEvent({ delay: this.game['timeLeft'].time, callback: this.gameManager.endGame, callbackScope: this.gameManager });
-
-    this.gameManager.points = this.game['gamePoints'].gamePoints;
+    super.create();
+    
     //this.add.image(500, 500, this.carta.name)
     this.spawnWallpaper(this._wallpaper);
     this.spawnImage(this.carta);
