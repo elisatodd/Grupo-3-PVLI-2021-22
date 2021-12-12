@@ -8,7 +8,6 @@ export default class CartaPuzle extends PuzzleInput {
 
     super({ key: 'cartaPuzle' });
     {
-      console.log("CartaPuzle");
     };
 
    

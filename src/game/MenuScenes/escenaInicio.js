@@ -4,14 +4,15 @@
  */
 
 import Escena from "../escena.js";
+import Object from "../Objects/objeto.js"
 
 export default class EscenaInicio extends Escena {
 
     //texto que tiene que mostrar en pantalla
     texto = " ";
-    i=0;
-    posX=350;
-    posY=120;
+    i = 0;
+    posX = 350;
+    posY = 120;
     timedEvent;
     playButton;
     constructor(){
@@ -29,7 +30,7 @@ export default class EscenaInicio extends Escena {
         this.playButton = new Object("./assets/images/playbutton.png", this.cameras.main.width/2-100, this.cameras.main.height/2 - 100, 2, 'play', this);
         this.loadImage(this._wallpaper);
         this.loadFont("initialFont", "/assets/fonts/SpaceMono-Italic.ttf");
-        //this.loadImage(this.playButton);
+        this.loadImage(this.playButton);
     }
     
     create(){        

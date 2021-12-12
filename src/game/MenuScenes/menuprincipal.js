@@ -12,6 +12,8 @@
     hsButton;
     hsBoard;
 
+    backgroundMusic;
+
     constructor(){
         // Nombre de la escena para el SceneManager
         super({ key: 'menuPrincipal' });
@@ -23,6 +25,11 @@
     preload(){
         this._wallpaper = {name: 'mainmenu ', route: './assets/images/nuevoFondo.jpg'};
         this.loadImage(this._wallpaper);
+        this.load.audio("background", './assets/sounds/Pooka.mp3');
+        this.load.audio("winPuzzle", './assets/sounds/ganarPuzzle.wav');
+        this.load.audio("losePuzzle", './assets/sounds/perderPuzzle.wav');
+        this.load.audio("takeItem", './assets/sounds/recogerObjeto.wav');
+        this.load.audio("giveItem", './assets/sounds/ganarObjeto.wav');
 
         if (this.first){
             this.playButton = new Object('./assets/images/playbutton.png', this.cameras.main.width/2-100, this.cameras.main.height/2 - 100, 2, 'play', this);
@@ -41,16 +48,33 @@
 
         this._wallpaper = this.spawnWallpaper(this._wallpaper);
 
+        // Para que la música suene desde que se cargue la primera escena
+        if (this.sound.context.state === 'suspended') {
+            this.sound.context.resume();
+        }
+
         if (this.first){
                 
             this.playButton.assignFunctionality('startGame');
             this.hsButton.assignFunctionality('showHighScore');
             this.hsBoard.assignFunctionality('deleteImage');
             
+            const config = {
+                mute: false,
+                volume: 0.25,
+                loop: true,
+                delay: 0,
+            };
+            this.backgroundMusic = this.sound.add("background", config);
+
+            this.backgroundMusic.play();
+
             this.first = false;
         }
         
         this.addBottom(this.playButton);
         this.addBottom(this.hsButton);
     }
+
+
 }

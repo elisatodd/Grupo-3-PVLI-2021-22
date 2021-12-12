@@ -37,17 +37,25 @@ ResolvePuzzle()
 
 CheckInput()
 {
-if(this.currentInput.length === this.solution.length)
-{
-    if(this.ResolvePuzzle())
+    if(this.currentInput.length === this.solution.length && this.ResolvePuzzle())
     {
-        console.log("aciertito");
         //función que deba de realizar
         this.actionWin();
     }
-   
-    else this.currentInput = '';
-}
+    else {
+        this.currentInput = '';
+
+        // Efecto de sonido
+        const config = {
+            mute: false,
+            volume: 0.5,
+            loop: false,
+            delay: 0,
+        };
+        let sfx = this.scene.scene.sound.add("losePuzzle", config);
+        sfx.play();
+    }
+    
 }
 
 CreateTextEnter(pos, scene, textInput)

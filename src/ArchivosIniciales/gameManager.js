@@ -16,8 +16,8 @@ export default class GAMEMANAGER extends Phaser.Scene{
     points = 0;
   
     itemsInInventory = 0;
-    gameDuration = 9000000; // = 90000 SEGUNDOS = 15 minutos
-    
+    gameDuration = 90000; // = 90000 SEGUNDOS = 15 minutos
+
     //Necesito una matriz de salas, en la que hay posiciones que no tienen salas y entonces no son accesibles
     //Asigno directamente las escenas en sus posiciones en el array, con las casillas vacías correspondientes
     escenas = [
@@ -41,11 +41,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
     preload()
     {
         this.loadElements();
-        this.showElements();
-    }
-
-    testing(){
-        console.log("probando asignar funciones");
+        //this.showElements();
     }
 
     /**
@@ -65,6 +61,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
         console.log("FIN DE LA PARTIDA!");
         this.scene.scene.start('menuPrincipal');
     }
+
     /**
      * Muestra el tablón de puntuaciones
      * @param {Object} info Objeto que enseña la tabla de puntuación al ser clicado
@@ -82,13 +79,26 @@ export default class GAMEMANAGER extends Phaser.Scene{
     }
 
     /**
+     * Cancela la pausa
+     * @param {Object} info Objeto del panel de pausa
+     */
+    deletePause(info){
+        info.image.destroy();
+        info.scene.timedEvent.paused = false;
+    }
+
+    /**
      * 
      * @param {Scene} info 
      */
     pause(info){
         info.scene.addBottom(info.scene.pause);
+        info.scene.timedEvent.paused = true;
     }
 
+    /**
+     * 
+     */
     loadElements()
     {
         
@@ -113,9 +123,12 @@ export default class GAMEMANAGER extends Phaser.Scene{
         }
     }
 
+    /**
+     * 
+     */
     saveObject()
     {
-         //codigo a explicar sobre almacenamiento de datos(Raúl)
+        //codigo a explicar sobre almacenamiento de datos(Raúl)
         
         //id del objeto en el inventario(a implementar) se pasa a true pues esta recogido
         //this.inventarioID[i] = true;
@@ -157,7 +170,16 @@ export default class GAMEMANAGER extends Phaser.Scene{
         this.itemsInInventory++;
         this.inventario.push(obj);
         this.saveObject();
-        //this.showElements();
+        // Efecto de sonido
+        const config = {
+            mute: false,
+            volume: 0.5,
+            loop: false,
+            delay: 0,
+        };
+        let sfx = obj.scene.sound.add("takeItem", config);
+        sfx.play();
+
         obj.moveToInv();
     }
 
@@ -258,6 +280,17 @@ export default class GAMEMANAGER extends Phaser.Scene{
                         this.scene.characters[i].solved = true;
                         this.addPoints();
                     }
+
+                    // Efecto de sonido
+                    const config = {
+                        mute: false,
+                        volume: 0.5,
+                        loop: false,
+                        delay: 0,
+                    };
+                    let sfx = id.scene.sound.add("giveItem", config);
+                    sfx.play();
+
                     return true;
                 }
             }

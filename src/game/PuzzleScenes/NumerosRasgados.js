@@ -10,7 +10,6 @@ export default class NumerosRasgados extends PuzzleInput {
 
     super({ key: 'NumerosRasgados' });
     {
-      console.log("NumerosRasgados");
     };
 
    

@@ -28,13 +28,12 @@ import EscenaInicio from './game/MenuScenes/escenaInicio.js';
 import NumerosRasgados from './game/PuzzleScenes/NumerosRasgados.js';
 import CodigoIndscreto from './game/PuzzleScenes/CodigoIndiscreto.js';
 import CartaPuzle from './game/PuzzleScenes/CartaPuzle.js';
-
+import PuzzleBanderines from './game/PuzzleScenes/puzzleBanderines.js'
+import PuzzleTopoz from './game/PuzzleScenes/PuzzleTopoz.js'
 
 //import PuzzleClick from './game/puzzleClick.js';
 
 
-import PuzzleBanderines from './game/puzzleBanderines.js'
-import PuzzleTopoz from './game/PuzzleTopoz.js'
 
 let config = {
   type: Phaser.AUTO,
@@ -45,7 +44,7 @@ let config = {
     // mode: Phaser.Scale.FIT,  
     autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
   },
-  scene: [EscenaInicio, MenuPrincipal, Casa, Plaza, Calle, Bosque, Feria, CasetaFeria, CasaEspejos, Sombrereria, Mercado, Parque, NumerosRasgados, CodigoIndscreto, CartaPuzle, PuzzleTopoz, MenuPausa] // Escenas que requiere el juego
+  scene: [MenuPrincipal, EscenaInicio, Casa, Plaza, Calle, Bosque, Feria, CasetaFeria, CasaEspejos, Sombrereria, Mercado, Parque, NumerosRasgados, PuzzleBanderines, CodigoIndscreto, CartaPuzle, PuzzleTopoz, MenuPausa] // Escenas que requiere el juego
   };
 
 

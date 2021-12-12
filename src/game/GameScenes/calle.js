@@ -68,7 +68,7 @@
       this.assignObjects(this.characters, 'cargarDialogo');
        
       this.bpause.assignFunctionality('pause');
-      this.pause.assignFunctionality('deleteImage');
+      this.pause.assignFunctionality('deletePause');
 
       this.first = false;
 

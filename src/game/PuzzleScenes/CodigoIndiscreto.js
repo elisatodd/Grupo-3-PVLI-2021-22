@@ -8,7 +8,6 @@ export default class CodigoIndscreto extends PuzzleInput {
 
     super({ key: 'codigoIndiscreto' });
     {
-      console.log("CodigoIndscreto");
     };
 
    
