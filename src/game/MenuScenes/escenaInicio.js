@@ -27,7 +27,7 @@ export default class EscenaInicio extends Escena {
     
     preload(){
         this._wallpaper = {name: 'initialScene', route: './assets/images/fondoInicio.jpg'};
-        this.playButton = new Object("./assets/images/playbutton.png", this.cameras.main.width/2-100, this.cameras.main.height/2 - 100, 2, 'play', this);
+        playButton = new Object("./assets/images/playbutton.png", this.cameras.main.width/2-100, this.cameras.main.height/2 - 100, 2, 'play', this);
         this.loadImage(this._wallpaper);
         this.loadFont("initialFont", "/assets/fonts/SpaceMono-Italic.ttf");
         this.loadImage(this.playButton);
