@@ -1,71 +1,37 @@
 /**
  * Escena de la feria
  * @extends EscenaJuego
- */
- import EscenaJuego from '../escenaJuego.js';  
- import Item from "../Objects/item.js";
-  import NPC from "../Objects/NPC.js";
-  import OBJETO from "../Objects/objeto.js";
+*/
+import EscenaJuego from '../escenaJuego.js';  
+import Item from "../Objects/item.js";
+import NPC from "../Objects/NPC.js";
+import OBJETO from "../Objects/objeto.js";
 
 
- export default class Feria extends EscenaJuego {
+export default class Feria extends EscenaJuego {
 
-    first = true;
-    pause;
-    bpause;
+  constructor(){
+    // Nombre de la escena para el SceneManager
+    super({ key: 'feria' });
+    {
 
+    };
+    this.arrows = [true, true, true, false];
+    this.arrowsDirs = ['casaEspejos', 'casetaFeria', 'bosque', false];
+  }
 
-    constructor(){
-        // Nombre de la escena para el SceneManager
-        super({ key: 'feria' });
-        {
-
-        };
-        this.arrows = [true, true, true, false];
-        this.arrowsDirs = ['casaEspejos', 'casetaFeria', 'bosque', false];
-    }
-
-    preload(){
-      this._wallpaper = {name: 'feria ', route: './assets/images/fondoCirco.jpg'};
-      this.loadImage(this._wallpaper);
-
-      if (this.first){
-
-        this.AddCharacter(new NPC('./assets/images/cirquense.jpg', 600, this.cameras.main.height - 350, 2, 'cirquense', this, 'codigoIndiscreto', "Ayuda todo se ha estropeado", "Me has salvado gracias" ));
-        this.bpause = new OBJETO('./assets/images/botonpausa.png', 50, 50, 8, 'pause', this);
-        this.pause = new OBJETO('./assets/images/wallpaperWeb.jpg', this.cameras.main.width/2 - 110, this.cameras.main.height/2, 1, 'text', this);
-  
-      }
-      this.loadObjects(this.characters);
-      this.loadObjects([this.bpause]);
-      this.loadObjects([this.pause]);
-
-
-      this.createArrows();
-      this.loadArrows();
-    }
-
-    create(){
-     super.create();
+  preload(){
+    this._wallpaper = {name: 'feria ', route: './assets/images/fondoCirco.jpg'};
     
-      this.assignArrows();
-      this.spawnArrows();
 
-      if (this.first){
-
-        this.assignObjects(this.characters, 'cargarDialogo');
-        
-        this.bpause.assignFunctionality('pause');
-        this.pause.assignFunctionality('deletePause');
-
-        this.first = false;
-        
-      }
-      this.spawnObjects(this.objects);
-      this.spawnObjects(this.characters);
-      this.spawnObjects([this.bpause]);
-
-      
-     
+    if (this.first){
+      this.AddCharacter(new NPC('./assets/images/cirquense.jpg', 600, this.cameras.main.height - 350, 2, 'cirquense', this, 'codigoIndiscreto', "Ayuda todo se ha estropeado", "Me has salvado gracias" ));
     }
+    super.preload();
+  }
+
+  create(){
+    super.create();
+    console.log("Escena Feria");
+  }
 }
