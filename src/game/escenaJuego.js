@@ -7,6 +7,14 @@
 
  export default class EscenaJuego extends Escena {
     
+    
+    first = true;
+    
+    pause;
+    bpause;
+    bmute;
+    bunmute;
+
     characters = [];
     objects = [];
  
@@ -16,11 +24,48 @@
         };
     }
 
+    preload(){
+        if (this.first){
+            this.bmute = new OBJETO('./assets/images/botonmute.png', 130, 50, 12, 'mute', this);
+            this.bunmute = new OBJETO('./assets/images/botonunmute.png', 130, 50, 12, 'unmute', this);
+            this.bpause = new OBJETO('./assets/images/botonpausa.png', 50, 50, 12, 'pause', this);
+            this.pause = new OBJETO('./assets/images/wallpaperWeb.jpg', this.cameras.main.width/2 - 110, this.cameras.main.height/2, 1, 'text', this);
+        }
+        this.loadImage(this._wallpaper);
+
+        this.loadObjects(this.objects);
+        this.loadObjects(this.characters);
+        this.loadObjects([this.bpause, this.bmute, this.bunmute, this.pause]);
+
+        this.createArrows();
+        this.loadArrows();
+    }
 
     create()
     {
         super.create();
         this.gameManager.loadElements();
+
+        this.assignArrows();
+        this.spawnArrows();
+  
+        if (this.first){
+  
+          this.assignObjects(this.objects, 'moveToInventory'); // ASSIGN FIRST
+          this.assignObjects(this.characters, 'cargarDialogo');
+          
+          this.bmute.assignFunctionality('mute');
+          this.bunmute.assignFunctionality('mute');
+          this.bpause.assignFunctionality('pause');
+          this.pause.assignFunctionality('deletePause');
+  
+          this.first = false;
+          
+        }
+        this.spawnObjects(this.objects);
+        this.spawnObjects(this.characters);
+        this.spawnObjects([this.bpause, this.bmute]);
+       
     }
 
     /**
@@ -62,11 +107,6 @@
         for(let i = 0; i < this.arrows.length; i++)
             if (this.arrows[i] != false)
                 this.addBottomArrows(this.arrows[i]);
-    }
-
-   
-    preload() { // Cargas las flechas que son comunes a todas las escenas de juego
-        this.loadObjects(this.arrows);
     }
 
    loadObjects(container){

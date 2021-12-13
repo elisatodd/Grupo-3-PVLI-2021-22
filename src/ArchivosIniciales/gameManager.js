@@ -88,12 +88,28 @@ export default class GAMEMANAGER extends Phaser.Scene{
     }
 
     /**
-     * 
-     * @param {Scene} info 
+     * inicia la pausa
+     * @param {Object} info boton de Pausa
      */
     pause(info){
         info.scene.addBottom(info.scene.pause);
         info.scene.timedEvent.paused = true;
+    }
+
+    /**
+     * Desactiva/Activa el sonido
+     * @param {Object} info boton de mutear
+     */
+    mute(info){
+        info.scene.game.sound.mute = !info.scene.game.sound.mute;
+    }
+
+    /**
+     * @param {Object} info boton de vuelta al menu principal
+     */
+    returnMenu(info)
+    {
+        info.scene.scene.start('menuPrincipal');
     }
 
     /**

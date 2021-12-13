@@ -4,17 +4,12 @@
  */
 
   import EscenaJuego from "../escenaJuego.js";
-  //preguntar guille si se puede quitar de algua manera
   import OBJETO from "../Objects/objeto.js";
   import Item from "../Objects/item.js";
   import NPC from "../Objects/NPC.js";
  
   export default class Plaza extends EscenaJuego {
 
-    first = true;
-    pause;
-    bpause;
-    
     constructor(){
       // Nombre de la escena para el SceneManager
       super({ key: 'plaza' }); 
@@ -27,32 +22,17 @@
     }
   
     preload(){
-      //this.timedEvent = this.time.addEvent({ delay: 1000, repeat: 9 });
-
-      this._wallpaper = {name: 'plaza', route: './assets/images/fondoPlaza.jpg'};
-      this.loadImage(this._wallpaper);
       
+      this._wallpaper = {name: 'plaza', route: './assets/images/fondoPlaza.jpg'};
 
       this.load.image('box', '../../../assets/images/testing.png');
-      
-
-
+    
       if (this.first){
-      this.AddObject(new Item('./assets/images/moneda.png', 200, this.cameras.main.height - 70, 14, 'moneda', this));
-      this.AddCharacter(new NPC('./assets/images/cafeteria.png', 600, this.cameras.main.height - 200, 3, 'cafeteria', this, null, " Está cerrado.", "Abierto")); // Primero estará cerrada
-      this.bpause = new OBJETO('./assets/images/botonpausa.png', 50, 50, 8, 'pause', this);
-      this.pause = new OBJETO('./assets/images/wallpaperWeb.jpg', this.cameras.main.width/2 - 110, this.cameras.main.height/2, 1, 'text', this);
+        this.AddObject(new Item('./assets/images/moneda.png', 200, this.cameras.main.height - 70, 14, 'moneda', this));
+        this.AddCharacter(new NPC('./assets/images/cafeteria.png', 600, this.cameras.main.height - 200, 3, 'cafeteria', this, null, " Está cerrado.", "Abierto")); // Primero estará cerrada
+      } 
 
-    }
-
-      this.loadObjects(this.objects);
-      this.loadObjects(this.characters);
-      this.loadObjects([this.bpause]);
-      this.loadObjects([this.pause]);
-
-
-      this.createArrows();
-      this.loadArrows();
+      super.preload();
 
     }
   
@@ -60,25 +40,6 @@
 
       console.log("Escena Plaza");
       super.create();
-      
-      this.assignArrows();
-      this.spawnArrows();
-
-      if (this.first){
-
-        this.assignObjects(this.objects, 'moveToInventory'); // ASSIGN FIRST
-        this.assignObjects(this.characters, 'cargarDialogo');
-        
-        this.bpause.assignFunctionality('pause');
-        this.pause.assignFunctionality('deletePause');
-
-        this.first = false;
-        
-      }
-      this.spawnObjects(this.objects);
-      this.spawnObjects(this.characters);
-      this.spawnObjects([this.bpause]);
-     
     }
 
     // update()
