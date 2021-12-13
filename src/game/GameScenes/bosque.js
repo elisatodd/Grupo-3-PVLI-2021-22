@@ -24,8 +24,8 @@ export default class Bosque extends EscenaJuego {
     this._wallpaper = {name: 'bosque ', route: './assets/images/fondoBosque.jpg'};
 
     if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
-      this.AddCharacter(new NPCItem('./assets/images/policia.png', 800, this.cameras.main.height - 300, 0.75, 'policia', this,  null, "ALTO AHÍ, inspección", "Interesante evidencia...", 'pajarita' ));
-      this.AddCharacter(new NPCItem('./assets/images/campesino.png', 200, this.cameras.main.height - 200, 1, 'campesino', this,  null, "Se rompio la carreta", "Gracias justo lo que buscaba", 'caja' ));
+      this.AddCharacter(new NPCItem(Data.npc.policia, this));
+      this.AddCharacter(new NPCItem(Data.npc.campesino, this));
       this.AddObject(new Item(Data.items.pajarita, this));
     }
 

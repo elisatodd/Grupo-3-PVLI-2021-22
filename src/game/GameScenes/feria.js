@@ -5,7 +5,7 @@
 import EscenaJuego from '../escenaJuego.js';  
 import Item from "../Objects/item.js";
 import NPC from "../Objects/NPC.js";
-import OBJETO from "../Objects/objeto.js";
+import Data from "../../data.js";
 
 
 export default class Feria extends EscenaJuego {
@@ -25,7 +25,7 @@ export default class Feria extends EscenaJuego {
     
 
     if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
-      this.AddCharacter(new NPC('./assets/images/cirquense.jpg', 600, this.cameras.main.height - 350, 2, 'cirquense', this, 'codigoIndiscreto', "Ayuda todo se ha estropeado", "Me has salvado gracias" ));
+      this.AddCharacter(new NPC(Data.npc.cirquense, this));
     }
     super.preload();
   }

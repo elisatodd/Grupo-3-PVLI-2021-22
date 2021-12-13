@@ -4,6 +4,7 @@
  */
  import EscenaMenu from '../escenaMenu.js';
  import Object from "../Objects/objeto.js";
+ import Data from "../../data.js"
 
  export default class MenuPrincipal extends EscenaMenu {
 
@@ -32,9 +33,9 @@
         this.load.audio("giveItem", './assets/sounds/ganarObjeto.wav');
 
         if (this.first){
-            this.playButton = new Object('./assets/images/playbutton.png', this.cameras.main.width/2-100, this.cameras.main.height/2 - 100, 2, 'play', this);
-            this.hsButton = new Object('./assets/images/hsbutton.png', this.cameras.main.width/2-100, this.cameras.main.height/2 + 110, 2, 'highscore', this);
-            this.hsBoard = new Object('./assets/images/HSBoard.png', this.cameras.main.width/2, this.cameras.main.height/2 + 110, 2, 'highscoreBoard', this);
+            this.playButton = new Object(Data.buttons.playButton, this);
+            this.hsButton = new Object(Data.buttons.hsButton, this);
+            this.hsBoard = new Object(Data.buttons.hsPannel, this);
         }
 
         this.loadImage(this.hsBoard);

@@ -5,6 +5,7 @@
 
 import Escena from "../escena.js";
 import Object from "../Objects/objeto.js"
+import Data from "../../data.js"
 
 export default class EscenaInicio extends Escena {
 
@@ -27,7 +28,7 @@ export default class EscenaInicio extends Escena {
     
     preload(){
         this._wallpaper = {name: 'initialScene', route: './assets/images/fondoInicio.jpg'};
-        this.playButton = new Object("./assets/images/playbutton.png", this.cameras.main.width-200, this.cameras.main.height-150, 3, 'play', this);
+        this.playButton = new Object(Data.buttons.secondaryPlayButton, this);
         this.loadImage(this._wallpaper);
         this.loadFont("initialFont", "/assets/fonts/SpaceMono-Italic.ttf");
         this.loadImage(this.playButton);

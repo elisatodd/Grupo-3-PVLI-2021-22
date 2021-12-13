@@ -25,7 +25,7 @@ export default class Calle extends EscenaJuego {
 
     if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
       this.AddObject(new Item( Data.items.flor, this));
-      this.AddCharacter(new NPCItem('./assets/images/mujerGato.png', 350, this.cameras.main.height - 300, 1, 'mujer', this, null, "Dame un pescado", "Gracias, te quiero", 'pez'));
+      this.AddCharacter(new NPCItem(Data.npc.mujerGato,this));
     }
 
     super.preload();

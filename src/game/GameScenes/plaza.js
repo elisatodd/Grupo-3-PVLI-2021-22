@@ -27,7 +27,7 @@ export default class Plaza extends EscenaJuego {
   
     if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
       this.AddObject(new Item(Data.items.moneda, this));
-      this.AddCharacter(new NPC('./assets/images/cafeteria.png', 750, this.cameras.main.height - 350, 1.5, 'cafeteria', this, null, " Está cerrado.", "Abierto")); // Primero estará cerrada
+      this.AddCharacter(new NPC(Data.npc.cafeteria, this)); // Primero estará cerrada
     } 
 
     super.preload();

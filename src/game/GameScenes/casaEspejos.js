@@ -2,12 +2,9 @@
  * Escena de la casa de los espejos
  * @extends EscenaJuego
 */
+import Data from '../../data.js';
 import EscenaJuego from '../escenaJuego.js';
-import Item from "../Objects/item.js";
 import NPC from "../Objects/NPC.js";
-import OBJETO from "../Objects/objeto.js";
-
-  
 
 export default class CasaEsp extends EscenaJuego { // DEBERIA HEREDAR DE GAMESCENE EN EL FUTURO
   constructor(){
@@ -23,7 +20,7 @@ export default class CasaEsp extends EscenaJuego { // DEBERIA HEREDAR DE GAMESCE
     this._wallpaper = {name: 'espejos ', route: './assets/images/nuevoFondo.jpg'};
 
     if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
-      this.AddCharacter(new NPC('./assets/images/excentrico.png', 600, this.cameras.main.height - 300, 2, 'excentrico', this, null, "Resuelve mi acertijo", "Eres muy listo" ));
+      this.AddCharacter(new NPC(Data.npc.excentrico, this));
     }
     super.preload();
   }

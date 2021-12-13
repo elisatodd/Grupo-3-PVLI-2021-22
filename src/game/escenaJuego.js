@@ -2,8 +2,9 @@
  * Intentando hacer una escena
  * @extends escena
  */
- import Escena from './escena.js' 
+ import Escena from "./escena.js";
  import OBJETO from "./Objects/objeto.js";
+ import Data from "../data.js";
 
  export default class EscenaJuego extends Escena {
     
@@ -26,10 +27,10 @@
 
     preload(){        
         if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
-            this.bmute = new OBJETO('./assets/images/botonmute.png', 130, 50, 12, 'mute', this);
-            this.bunmute = new OBJETO('./assets/images/botonunmute.png', 130, 50, 12, 'unmute', this);
-            this.bpause = new OBJETO('./assets/images/botonpausa.png', 50, 50, 12, 'pause', this);
-            this.pause = new OBJETO('./assets/images/wallpaperWeb.jpg', this.cameras.main.width/2 - 110, this.cameras.main.height/2, 1, 'text', this);
+            this.bmute = new OBJETO(Data.buttons.buttonMute, this);
+            this.bunmute = new OBJETO(Data.buttons.buttonUnMute, this);
+            this.bpause = new OBJETO(Data.buttons.buttonPause, this);
+            this.pause = new OBJETO(Data.buttons.pausePannel, this);
         }
         this.loadImage(this._wallpaper);
 
@@ -77,16 +78,16 @@
                 switch(i)
                 {
                     case 0:
-                        this.arrows[i] = new OBJETO('./assets/images/flechaIzq.png', 60, this.cameras.main.height / 2 , 10, 'arrowLeft', this)
+                        this.arrows[i] = new OBJETO(Data.arrows.left, this)
                         break;
                     case 1:
-                        this.arrows[i] = new OBJETO('./assets/images/flechaDcha.png', 1150, this.cameras.main.height / 2, 10, 'arrowRight', this)
+                        this.arrows[i] = new OBJETO(Data.arrows.rigth, this)
                         break;
                     case 2:
-                        this.arrows[i] = new OBJETO('./assets/images/flechaAbj.png', this.cameras.main.width / 2-150, 770, 10, 'arrowDown', this)
+                        this.arrows[i] = new OBJETO(Data.arrows.down, this)
                         break;
                     case 3:
-                        this.arrows[i] = new OBJETO('./assets/images/flechaArr.png', this.cameras.main.width / 2-150, 60, 10, 'arrowUp', this)
+                        this.arrows[i] = new OBJETO(Data.arrows.up, this)
                         break;
                 }
             }

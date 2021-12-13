@@ -18,7 +18,7 @@ export default class item extends Objeto{
     constructor(newItem, scene){
       super(newItem, scene);
       //los items tienen como funcionalidad colocarse en el inventario siempre
-      this.functionality = this.moverAlInventario;
+      this.functionality = 'moveToInventory';
     }
 
     moverAlInventario(){

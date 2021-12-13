@@ -3,11 +3,9 @@
  * @extends EscenaJuego
  */
 
- import EscenaJuego from "../escenaJuego.js";
- import Item from "../Objects/item.js";
-  import NPC from "../Objects/NPC.js";
-  import NPCItem from "../Objects/NPCItem.js";
-  import OBJETO from "../Objects/objeto.js";
+import EscenaJuego from "../escenaJuego.js";
+import NPCItem from "../Objects/NPCItem.js";
+import Data from "../../data.js";
 
 
  export default class Sombrereria extends EscenaJuego {
@@ -28,8 +26,8 @@
     this._wallpaper = {name: 'sombrereria', route: './assets/images/nuevoFondo.jpg'};
     
     if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
-      this.AddCharacter(new NPCItem('./assets/images/clienta.png', 300, this.cameras.main.height - 250, 1, 'clienta', this, null, "Necesito un nuevo sombrero", "Muchisimas gracias", 'sombrero'));
-      this.AddCharacter(new NPCItem('./assets/images/vendedora.png', 900, this.cameras.main.height - 350, 1.75, 'vendedora', this, 'cartaPuzle', "No te creo", "Ahora si", 'carta', true));
+      this.AddCharacter(new NPCItem(Data.npc.clienta, this));
+      this.AddCharacter(new NPCItem(Data.npc.vendedora, this));
     }
 
     super.preload();

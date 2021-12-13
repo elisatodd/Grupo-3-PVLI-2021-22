@@ -21,12 +21,10 @@ export default class NPC extends Objeto{
     this.puzzle = npc.puzzle;
     this.first = npc.first;
     this.last = npc.last;
-    
+    this.esVendedora = npc.esVendedora;
+
     // Los NPC siempre tienen la función de cargar diálogo
     this.functionality = 'cargarDialogo';
-
-    this.esVendedora = tienePuzle;
-
   }
 
   saveText(text)
