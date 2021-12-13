@@ -23,9 +23,10 @@
    }
 
    //pruebas
-   option1 = {name: 'zone1', route: './assets/images/puzzles/redButton.png', pos : {x:200, y:250}, scaleProportion: 10, functionality : this.Win};
-   option2 = {name: 'zone2', route: './assets/images/puzzles/blueButton.png', pos : {x:600, y:250}, scaleProportion: 10, functionality : this.Lose};
-
+   option1 = {name: 'zone1', route: './assets/images/puzzles/opcionA.png', pos : {x:200, y:250}, scaleProportion: 10, functionality : this.Win};
+   option2 = {name: 'zone2', route: './assets/images/puzzles/opcionB.png', pos : {x:400, y:250}, scaleProportion: 10, functionality : this.Lose};
+   option3 = {name: 'zone3', route: './assets/images/puzzles/opcionC.png', pos : {x:600, y:250}, scaleProportion: 10, functionality : this.Lose};
+   option4 = {name: 'zone4', route: './assets/images/puzzles/opcionD.png', pos : {x:800, y:250}, scaleProportion: 10, functionality : this.Lose};
    //
 
 

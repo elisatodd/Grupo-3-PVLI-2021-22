@@ -30,6 +30,7 @@ import CodigoIndscreto from './game/PuzzleScenes/CodigoIndiscreto.js';
 import CartaPuzle from './game/PuzzleScenes/CartaPuzle.js';
 import PuzzleBanderines from './game/PuzzleScenes/puzzleBanderines.js'
 import PuzzleTopoz from './game/PuzzleScenes/PuzzleTopoz.js'
+import PuzzleCarniceria from './game/PuzzleScenes/puzzleCarniceria.js'
 
 //import PuzzleClick from './game/puzzleClick.js';
 
@@ -44,7 +45,7 @@ let config = {
     // mode: Phaser.Scale.FIT,  
     autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
   },
-  scene: [MenuPrincipal,EscenaInicio,  Casa, Plaza, Calle, Bosque, Feria, CasetaFeria, CasaEspejos, Sombrereria, Mercado, Parque, NumerosRasgados, PuzzleBanderines, CodigoIndscreto, CartaPuzle, PuzzleTopoz, MenuPausa] // Escenas que requiere el juego
+  scene: [PuzzleCarniceria,MenuPrincipal,EscenaInicio,  Casa, Plaza, Calle, Bosque, Feria, CasetaFeria, CasaEspejos, Sombrereria, Mercado, Parque, NumerosRasgados, PuzzleBanderines, CodigoIndscreto, CartaPuzle, PuzzleTopoz, MenuPausa] // Escenas que requiere el juego
   };
 
 
