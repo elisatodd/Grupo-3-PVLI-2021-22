@@ -53,6 +53,17 @@ export default class GAMEMANAGER extends Phaser.Scene{
         info.scene.scene.start('plaza');
 
     }
+    /**
+     * Da comienzo a la escena de introducción
+     */
+    startIntroduction(info){
+        info.scene.scene.start('escenaInicio')
+    }
+
+
+    changeFirst(){
+
+    }
 
     /**
      * Llamado cuando acabe el temporizador de la partida. Acaba el juego
@@ -231,7 +242,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
 
     /**
      * Cambia de escena
-     * @param {*} iniScene escena en la que se encuentra actualmente
+     * @param {Scene} iniScene escena en la que se encuentra actualmente
      * @param {*} direction direccion en la que el usuario se mueve
      */
     changeScene(iniScene, direction)

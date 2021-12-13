@@ -55,7 +55,7 @@
 
         if (this.first){
                 
-            this.playButton.assignFunctionality('startGame');
+            this.playButton.assignFunctionality('startIntroduction');
             this.hsButton.assignFunctionality('showHighScore');
             this.hsBoard.assignFunctionality('deleteImage');
             
