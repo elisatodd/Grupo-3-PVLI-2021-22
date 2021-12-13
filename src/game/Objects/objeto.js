@@ -14,12 +14,18 @@ export default class OBJETO{
   text = "  ";
   box;
 
-  constructor(sprite, x, y, esc, nom, e){
-       
-    this.route = sprite; 
-    this.pos = {x,y};
-    this.scaleProportion = esc;
-    this.name = nom;
+  /**
+   * 
+   * @param {Data} object Conjunto de info. del objeto obtenida de data.js
+   * @param {Scene} e escena en la que está el objeto
+   */
+  constructor(object, e){
+    this.route = object.sprite; 
+    let x = object.x;
+    let y = object.y;
+    this.pos = {x, y};
+    this.scaleProportion = object.scale;
+    this.name = object.name;
     this.scene = e;
   }
 

@@ -6,7 +6,7 @@
 import EscenaJuego from "../escenaJuego.js"
 import Item from "../Objects/item.js";
 import NPC from "../Objects/NPC.js";
-import OBJETO from "../Objects/objeto.js";
+import Data from "../../data.js";
 
 
 export default class Casa extends EscenaJuego {  
@@ -26,9 +26,9 @@ export default class Casa extends EscenaJuego {
 
     if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
 
-      this.AddCharacter(new NPC('./assets/images/primo.png', 600, this.cameras.main.height - 250, 2, 'primo', this, 'NumerosRasgados'," Ayudame a conseguir \n este número", " Gracias por haberme \n ayudado primo"));
-      this.AddObject(new Item('./assets/images/Carta.png', 1050, this.cameras.main.height - 70, 7.5, 'carta', this));
-      this.AddObject(new Item('./assets/images/sombrero.png', 250, this.cameras.main.height - 450, 6, 'sombrero', this));
+      this.AddCharacter(new NPC(Data.npc.primo, this));
+      this.AddObject(new Item(Data.items.sombrero, this));
+      this.AddObject(new Item(Data.items.carta, this));
     }
     super.preload();
   }

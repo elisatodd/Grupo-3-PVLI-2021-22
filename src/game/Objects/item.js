@@ -10,17 +10,22 @@ export default class item extends Objeto{
     iniposy;
     canDrag = false;
 
-    constructor(sprite, x, y, esc, nom, e, make){
-
-        super(sprite, x, y, esc, nom, e);
-        this.functionality = this.moverAlInventario;
+    /**
+     * 
+     * @param {Data} newItem Datos del objeto que se quiere crear, obtenidos de Data.js
+     * @param {Escena} scene Escena en la que se va a encontrar el objeto
+     */
+    constructor(newItem, scene){
+      super(newItem, scene);
+      //los items tienen como funcionalidad colocarse en el inventario siempre
+      this.functionality = this.moverAlInventario;
     }
 
     moverAlInventario(){
-        this.e.gameManager.moverAlInventario(this);
-        this.e.moverAlInventario(this.e.gameManager.objetosEnInventario, dirImagen, 725, 100 + (this.e.gameManager.objetosEnInventario*100), escala*2 );
+      this.e.gameManager.moverAlInventario(this);
+      this.e.moverAlInventario(this.e.gameManager.objetosEnInventario, dirImagen, 725, 100 + (this.e.gameManager.objetosEnInventario*100), escala*2 );
 
-        //Cambiar funcionalidad a arrastrar
+      //Cambiar funcionalidad a arrastrar
         
     }
 

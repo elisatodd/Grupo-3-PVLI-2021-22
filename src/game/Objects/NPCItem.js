@@ -2,15 +2,17 @@ import NPC from './NPC.js';
 
 export default class NPCItem extends NPC{
 
+    // Item que recibe este NPC
     itemName = '';
 
-    constructor(sprite, x, y, esc, nom, e, puz, f, l, itemName, tienePuzle)
+    /**
+     * 
+     * @param {Data} npc info, del NPC que creamos, sacada de data.js
+     * @param {Scene} scene escena en la que se crea este NPC
+     */
+    constructor(npc, scene)
     {
-        super(sprite, x, y, esc, nom, e, puz, f, l, tienePuzle);
-        this.itemName = itemName;
+        super(npc, scene);
+        this.itemName = npc.item;
     }
-
-
-
-
 }

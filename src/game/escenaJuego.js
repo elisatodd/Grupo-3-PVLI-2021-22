@@ -41,8 +41,7 @@
         this.loadArrows();
     }
 
-    create()
-    {
+    create(){
         super.create();
         this.gameManager.loadElements();
 
@@ -51,10 +50,7 @@
         
         let scenesIni = this.registry.get('scenesIni');
         if (scenesIni.indexOf(this.scene.key) !== -1){
-  
-          this.assignObjects(this.objects, 'moveToInventory'); // ASSIGN FIRST
-          this.assignObjects(this.characters, 'cargarDialogo');
-          
+            
           this.bmute.assignFunctionality('mute');
           this.bunmute.assignFunctionality('mute');
           this.bpause.assignFunctionality('pause');
@@ -74,8 +70,7 @@
     * 
     * @param 
     */
-    createArrows()
-    {
+    createArrows(){
         for(let i = 0; i < this.arrows.length; i++){
             if(this.arrows[i]) 
             {
@@ -154,19 +149,16 @@
     }
 
 
-   AddObject(object)
-    {       
+   AddObject(object){       
         this.objects.push(object);
     }
 
-   AddCharacter(character)
-    {
+   AddCharacter(character){
        this.characters.push(character);
     }
 
    //actives es un array donde se ven que objectos siguen estado activados, recogido del gameManager
-   CreateCharacters(actives)
-   {
+   CreateCharacters(actives){
         let i = 0;
         for (let character of this.characters) {
             if(actives[i] == true)
@@ -177,8 +169,7 @@
         }
    }
 
-   CreateObjects(actives)
-   {
+   CreateObjects(actives){
         let i = 0;
         for (let object of this.objects) {
             if(actives[i] == true)

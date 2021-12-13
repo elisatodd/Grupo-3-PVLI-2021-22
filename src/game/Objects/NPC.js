@@ -14,14 +14,17 @@ export default class NPC extends Objeto{
   esVendedora = false;
   cartaEntregada = false;
 
-  constructor(sprite, x, y, esc, nom, e, puz, f, l, tienePuzle){
+  constructor(npc, scene){
 
-    super(sprite, x, y, esc, nom, e);
-    this.functionality = this.moverAlInventario;
-    this.puzzle = puz;
-    this.first = f;
-    this.last = l;
-      
+    super(npc, scene);
+
+    this.puzzle = npc.puzzle;
+    this.first = npc.first;
+    this.last = npc.last;
+    
+    // Los NPC siempre tienen la función de cargar diálogo
+    this.functionality = 'cargarDialogo';
+
     this.esVendedora = tienePuzle;
 
   }

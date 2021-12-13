@@ -6,7 +6,7 @@
 import EscenaJuego from "../escenaJuego.js";
 import Item from "../Objects/item.js";
 import NPC from "../Objects/NPC.js"; 
-import OBJETO from "../Objects/objeto.js";
+import Data from "../../data.js";
 
 
 export default class Mercado extends EscenaJuego {
@@ -28,7 +28,7 @@ export default class Mercado extends EscenaJuego {
   
     if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
       this.AddCharacter(new NPC('./assets/images/carnicero.png', 350, this.cameras.main.height - 350, 0.75, 'carnicera', this, null, "¿Quieres comprar algo?", ""));
-      this.AddObject(new Item('./assets/images/pez.png', 600, this.cameras.main.height - 200, 8, 'pez', this)); 
+      this.AddObject(new Item(Data.items.pez, this)); 
     }
 
     super.preload();
