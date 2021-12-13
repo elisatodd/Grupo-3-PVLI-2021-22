@@ -53,24 +53,36 @@ create()
 }
 
 
-//key de la escena donde se inciia el puzle
+/**
+ * Asignación de la escena ligada a este puzle para poder ser cargada a la finalización de este
+ * @param {string} scene: variable con el nombre de la escena
+ */
 AssignScene(scene)
 {
     this.sceneGame = scene;
 }
 
+/**
+ * Carga de la escena de juego asociada al puzle
+ */
 LoadScene()
 {
     //se le pueden pasar valores para cambiar al personaje
     this.scene.start(sceneGame);
 }
 
+/**
+ * Muestra la imagen asociada a solucionar del puzle como botón, dando feedback y permitiendo salir al jugador de la escena
+ */
 Win()
 {
     this.scene.spawnWallpaper(this.scene._wallpaper);
     this.scene.addSpecialButton(this.scene.winImage);
 }
 
+/**
+ * Muestra el botón asociado a fallar la solución del puzle como botón, dando feedback y permitiendo salir al jugador de la escena
+ */
 Lose()
 {
     this.scene.spawnWallpaper(this.scene._wallpaper);

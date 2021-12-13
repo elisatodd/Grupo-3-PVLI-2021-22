@@ -77,7 +77,10 @@ create()
  
 }
 
-
+/**
+ * Cambia todos los topos afectados por la zona según donde se haya clickeado, mostrando la cara contraria a la actual en ellos,
+ * y comrpobando si todos los topos volteados, y el puzle, resuelto.
+ */
 Change()
 {
     let pos = {x : this.x, y : this.y};
@@ -104,6 +107,12 @@ Change()
 
 }
 
+/**
+ * Voltea al topo, y en caso de ser la primera vez, 
+ * le añade el botón para que pueda ser modificado
+ * por el jugador.
+ * @param {Topo} obj el topo que debe ser mvolteado
+ */
 ChangeObj(obj)
 {
     
@@ -133,6 +142,13 @@ ChangeObj(obj)
   
 }
 
+//?decimos para que
+/**
+ * Obtiene la posición del topo específico dentro del array bidimensional para 
+ * poder modificar los que estan en su misma fila y columna
+ * @param {int} id el identificador del topo para poder ser reconocido
+ * @returns devuelve el pair v1,v2 con su posición
+ */
 GetArrayPos(id)
 {
     for(let n = 0; n < this.map.length; n++)
@@ -149,6 +165,11 @@ GetArrayPos(id)
   
 }
 
+/**
+ * Devuelve el topo según la posición seleccionada
+ * @param {pair: x,y} pos 
+ * @returns el objeto "topo" 
+ */
 GetObj(pos)
 {
     for(let n = 0; n < this.map.length; n++)
@@ -165,6 +186,10 @@ GetObj(pos)
    
 }
 
+/**
+ * Comprueba si todos los topos están dados la vuelta, 
+ * y en caso correcto, da por concluido el puzle
+ */
 CheckPuzzle()
 {
   let allDown = true;
@@ -188,6 +213,12 @@ CheckPuzzle()
 
 }
 
+/**
+ * Se le da a los diferentes topos las propiedades comunes para todos 
+ * con las que completar su funcionamiento
+ * @param {boton} obj 
+ * @returns el objeto con los valores dados
+ */
 function button(obj) {
 
     const template = 
