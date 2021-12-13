@@ -27,7 +27,7 @@ export default class EscenaInicio extends Escena {
     
     preload(){
         this._wallpaper = {name: 'initialScene', route: './assets/images/fondoInicio.jpg'};
-        playButton = new Object("./assets/images/playbutton.png", this.cameras.main.width/2-100, this.cameras.main.height/2 - 100, 2, 'play', this);
+        this.playButton = new Object("./assets/images/playbutton.png", this.cameras.main.width-200, this.cameras.main.height-150, 3, 'play', this);
         this.loadImage(this._wallpaper);
         this.loadFont("initialFont", "/assets/fonts/SpaceMono-Italic.ttf");
         this.loadImage(this.playButton);
@@ -35,8 +35,8 @@ export default class EscenaInicio extends Escena {
     
     create(){        
         //No se si necesito gm en esta escena
-        // //this.createGameManager(this.game, this);
-
+        this.createGameManager(this.game, this);
+        
         
         this._wallpaper = this.spawnWallpaper(this._wallpaper);
         this.assignText ("Estimado señor Calthrop;=Ha sido hallado el cadáver de Grace, su prometida e hija=del alcalde, "+ 
@@ -58,7 +58,7 @@ export default class EscenaInicio extends Escena {
         this.spawnText(this.texto[this.i]);
     }
     spawnText(letra){
-        
+        //Salto de linea
         if (letra==='='){
             this.posY+=40;
             this.posX=350;
