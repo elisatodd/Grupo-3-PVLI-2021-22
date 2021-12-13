@@ -50,6 +50,9 @@ export default class GAMEMANAGER extends Phaser.Scene{
     startGame(info){
         this.saveTime(this.gameDuration); // le paso el tiempo que quiero que dure la partida
         this.savePoints(0); 
+
+        this.scene.registry.set('scenesIni', this.escenas);      
+        
         info.scene.scene.start('plaza');
 
     }

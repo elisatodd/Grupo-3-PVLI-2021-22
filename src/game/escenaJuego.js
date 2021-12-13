@@ -24,8 +24,8 @@
         };
     }
 
-    preload(){
-        if (this.first){
+    preload(){        
+        if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
             this.bmute = new OBJETO('./assets/images/botonmute.png', 130, 50, 12, 'mute', this);
             this.bunmute = new OBJETO('./assets/images/botonunmute.png', 130, 50, 12, 'unmute', this);
             this.bpause = new OBJETO('./assets/images/botonpausa.png', 50, 50, 12, 'pause', this);
@@ -48,8 +48,9 @@
 
         this.assignArrows();
         this.spawnArrows();
-  
-        if (this.first){
+        
+        let scenesIni = this.registry.get('scenesIni');
+        if (scenesIni.indexOf(this.scene.key) !== -1){
   
           this.assignObjects(this.objects, 'moveToInventory'); // ASSIGN FIRST
           this.assignObjects(this.characters, 'cargarDialogo');
@@ -59,7 +60,8 @@
           this.bpause.assignFunctionality('pause');
           this.pause.assignFunctionality('deletePause');
   
-          this.first = false;
+          scenesIni[scenesIni.indexOf(this.scene.key)] = null;
+          this.registry.set('scenesIni', scenesIni);
           
         }
         this.spawnObjects(this.objects);

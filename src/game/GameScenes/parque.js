@@ -26,7 +26,7 @@ export default class Parque extends EscenaJuego {
   preload(){
     this._wallpaper = {name: 'parque', route: './assets/images/fondoParque.jpg'};
 
-    if (this.first){
+    if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
       this.AddCharacter(new NPC('./assets/images/candado.png', 100, this.cameras.main.height - 200, 4, 'candado', this, null, "Parece que este candado tiene un puzle...", "¡Lo he resuelto!" ));
       this.AddCharacter(new NPCItem('./assets/images/enamorado.png', 1000, this.cameras.main.height - 250, 2.5, 'enamorado', this, null, "Necesito algo para mi amada", "Gracias justo lo que buscaba", 'flor' ));
       this.AddObject(new Item('./assets/images/caja.png', 600, this.cameras.main.height - 200, 5, 'caja', this)); 

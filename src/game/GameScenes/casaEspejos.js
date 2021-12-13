@@ -22,7 +22,7 @@ export default class CasaEsp extends EscenaJuego { // DEBERIA HEREDAR DE GAMESCE
   preload(){
     this._wallpaper = {name: 'espejos ', route: './assets/images/nuevoFondo.jpg'};
 
-    if (this.first){
+    if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
       this.AddCharacter(new NPC('./assets/images/excentrico.png', 600, this.cameras.main.height - 300, 2, 'excentrico', this, null, "Resuelve mi acertijo", "Eres muy listo" ));
     }
     super.preload();

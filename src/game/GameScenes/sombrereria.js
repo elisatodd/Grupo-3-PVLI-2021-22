@@ -27,7 +27,7 @@
 
     this._wallpaper = {name: 'sombrereria', route: './assets/images/nuevoFondo.jpg'};
     
-    if (this.first){
+    if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
       this.AddCharacter(new NPCItem('./assets/images/clienta.png', 300, this.cameras.main.height - 250, 1, 'clienta', this, null, "Necesito un nuevo sombrero", "Muchisimas gracias", 'sombrero'));
       this.AddCharacter(new NPCItem('./assets/images/vendedora.png', 900, this.cameras.main.height - 350, 1.75, 'vendedora', this, 'cartaPuzle', "No te creo", "Ahora si", 'carta', true));
     }

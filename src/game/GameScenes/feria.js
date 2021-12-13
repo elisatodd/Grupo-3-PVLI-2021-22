@@ -24,7 +24,7 @@ export default class Feria extends EscenaJuego {
     this._wallpaper = {name: 'feria ', route: './assets/images/fondoCirco.jpg'};
     
 
-    if (this.first){
+    if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
       this.AddCharacter(new NPC('./assets/images/cirquense.jpg', 600, this.cameras.main.height - 350, 2, 'cirquense', this, 'codigoIndiscreto', "Ayuda todo se ha estropeado", "Me has salvado gracias" ));
     }
     super.preload();

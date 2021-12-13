@@ -23,7 +23,7 @@ export default class CasetaFeria extends EscenaJuego {
   preload(){
     this._wallpaper = {name: 'caseta ', route: './assets/images/fondoCaseta.jpg'};
 
-    if (this.first){
+    if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
       this.AddCharacter(new NPCItem('./assets/images/ninio.png', 850, this.cameras.main.height - 300, 3, 'ninio', this, null, "No tengo dinero :(", "Gracias!! jeje", 'moneda' ));
       this.AddCharacter(new NPC('./assets/images/forzudo.png', 350, this.cameras.main.height - 250, 2.5, 'forzudo', this,  null, "Soy muy fuerte pero no muy listo \n ¿me ayudas?", "Gracias era muy dificil para mi" ));
     }

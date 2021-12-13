@@ -24,7 +24,7 @@ export default class Casa extends EscenaJuego {
   preload(){
     this._wallpaper = {name: 'casa', route: './assets/images/fondoCasa.jpg'};
 
-    if (this.first){
+    if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
 
       this.AddCharacter(new NPC('./assets/images/primo.png', 600, this.cameras.main.height - 250, 2, 'primo', this, 'NumerosRasgados'," Ayudame a conseguir \n este número", " Gracias por haberme \n ayudado primo"));
       this.AddObject(new Item('./assets/images/Carta.png', 1050, this.cameras.main.height - 70, 7.5, 'carta', this));
