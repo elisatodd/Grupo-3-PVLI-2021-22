@@ -53,6 +53,12 @@ export default class GAMEMANAGER extends Phaser.Scene{
         info.scene.scene.start('plaza');
 
     }
+    /**
+     * Da comienzo a la escena de introducción
+     */
+    startIntroduction(info){
+        info.scene.scene.start('escenaInicio')
+    }
 
 
     changeFirst(){
