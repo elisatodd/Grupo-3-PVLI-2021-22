@@ -38,6 +38,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
         this.gamePoints=points;
     }
 
+    
     preload()
     {
         this.loadElements();
@@ -127,7 +128,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
     }
 
     /**
-     * 
+     * Carga todos los elemntos que se encuentran almacenados en el inventario a la nueva escena
      */
     loadElements()
     {
@@ -154,7 +155,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
     }
 
     /**
-     * 
+     * Guarda la lista de objetos del inventario actualizada para poder ser cargada más adelante
      */
     saveObject()
     {
@@ -189,7 +190,10 @@ export default class GAMEMANAGER extends Phaser.Scene{
     
     this.scene.registry.set('gamePoints', this.points);
     }
-    //método que muestra que funciona la acción del almacenar datos
+    
+    /**
+     * Muestra el número de elementos actuales en el inventario para el debug
+     */
     showElements()
     {
         console.log(this.inventario.length);
@@ -225,6 +229,10 @@ export default class GAMEMANAGER extends Phaser.Scene{
         obj.startdrag();
     }
 
+    /**
+     * 
+     * @returns devuelve la posicion que le corresponde en la pantalla según su posición en el inventario
+     */
     getInventoryPosition(){
         // El primer dígito es para el tamaño del objeto y el segundo para la separación entre objetos
         return ((this.itemsInInventory-1) * 98 +180);

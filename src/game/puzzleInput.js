@@ -31,13 +31,23 @@ create()
 //this.CreateTextEnter({x:100, y:100}, this);
 }
 
+
+/**
+ * 
+ * @returns Devuelve si la solución dada es igual a la que pide el puzle
+ */
 ResolvePuzzle()
 {
     return this.currentInput === this.solution;
 }
 
+/**
+ * Comprueba, a solicictud del jugador, si la entrada dada es la solucion, 
+ * reiniciando el input en caso negativo y llamando a
+ */
 CheckInput()
 {
+    //preguntar a eli pq no se hace aqui
     if(this.currentInput.length === this.solution.length && this.ResolvePuzzle())
     {
         //función que deba de realizar
@@ -58,7 +68,14 @@ CheckInput()
     }
     
 }
-
+  /**
+   * 
+   * @param {pair: x, y} pos, indica la posición donde aparece el texto
+   * @param {scene} scene la escena del puzzle 
+   * @param {string} textInput conde se muestra el texto que se le mostrará al jugaodr
+   * Crea y actualiza el texto con las características deseadas.
+   * Material obtenido y modificado de: https://phaser.io/examples/v3/view/input/keyboard/text-entry 
+   */
 CreateTextEnter(pos, scene, textInput)
 {
     //material sacado de: https://phaser.io/examples/v3/view/input/keyboard/text-entry
