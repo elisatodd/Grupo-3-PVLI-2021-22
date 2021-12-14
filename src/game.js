@@ -19,6 +19,7 @@ import Parque from './game/GameScenes/parque.js';
 import MenuPrincipal from './game/MenuScenes/menuprincipal.js';
 import MenuPausa from './game/MenuScenes/menupausa.js';
 import EscenaInicio from './game/MenuScenes/escenaInicio.js';
+import Cinematics from '../src/game/Cinematicas.js'
 
 //import Datos1 from'./game/Pruebas/pasoDeDatos1.js';
 //import Datos2 from'./game/Pruebas/pasoDeDatos2.js';
