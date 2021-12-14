@@ -4,8 +4,6 @@
  */
 
 import Escena from "../game/escena.js";
-import Object from "../game/Objects/objeto.js"
-import Data from "../data.js"
 
 export default class EscenaInicio extends Escena {
 
@@ -15,7 +13,6 @@ export default class EscenaInicio extends Escena {
     posX ;
     posY ;
     timedEvent;
-    playButton;
     constructor(data){
         // Nombre de la escena para el SceneManager
         super(data);
@@ -29,10 +26,10 @@ export default class EscenaInicio extends Escena {
     preload(){
         
         this._wallpaper = {name: 'initialScene', route: './assets/images/fondoInicio.jpg'};
-        this.playButton = new Object(Data.buttons.secondaryPlayButton, this);
         this.loadImage(this._wallpaper);
         this.loadFont("initialFont", "/assets/fonts/SpaceMono-Italic.ttf");
-        this.loadImage(this.playButton);
+        // this.playButton = new Object(Data.buttons.secondaryPlayButton, this);
+        // this.loadImage(this.playButton);
         
         //inicializo las variables para que empiece el texto desde el principio
         this.i=0;
@@ -46,9 +43,8 @@ export default class EscenaInicio extends Escena {
         this._wallpaper = this.spawnWallpaper(this._wallpaper);
         
         this.timedEvent = this.time.addEvent({ delay: 15, callback: this.onEvent, callbackScope: this, loop: true });
-        
-        this.playButton.assignFunctionality('startGame');
-        this.addBottom(this.playButton);
+        // this.playButton.assignFunctionality('startGame');
+        // this.addBottom(this.playButton);
 
     }
     

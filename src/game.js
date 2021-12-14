@@ -19,7 +19,9 @@ import Parque from './game/GameScenes/parque.js';
 import MenuPrincipal from './game/MenuScenes/menuprincipal.js';
 import MenuPausa from './game/MenuScenes/menupausa.js';
 import EscenaInicio from './game/MenuScenes/escenaInicio.js';
-import Cinematics from '../src/game/Cinematicas.js'
+import EscenaFinalMalo from './game/MenuScenes/escenaFinalMal.js'
+import EscenaFinalBueno from './game/MenuScenes/escenaFinalBueno.js'
+import EscenaFinalNormal from './game/MenuScenes/escenaFinalNormal.js'
 import Boot from './boot.js';
 
 //import Datos1 from'./game/Pruebas/pasoDeDatos1.js';
@@ -48,7 +50,7 @@ let config = {
     // mode: Phaser.Scale.FIT,  
     autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
   },
-  scene: [Boot, MenuPrincipal, EscenaInicio, Casa, Plaza, Calle, Bosque, Feria, CasetaFeria, CasaEspejos, Sombrereria, Mercado, Parque, 
+  scene: [Boot, MenuPrincipal, EscenaInicio,EscenaFinalMalo,EscenaFinalBueno,EscenaFinalNormal, Casa, Plaza, Calle, Bosque, Feria, CasetaFeria, CasaEspejos, Sombrereria, Mercado, Parque, 
     NumerosRasgados, PuzzleBanderines, PuzzleTopoz, CodigoIndscreto, CartaPuzle, PuzzleEspejos, MenuPausa] // Escenas que requiere el juego
   };
 

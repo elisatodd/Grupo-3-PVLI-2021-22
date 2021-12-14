@@ -16,7 +16,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
     points = 0;
   
     itemsInInventory = 0;
-    gameDuration = 900000; // = 90000 SEGUNDOS = 15 minutos
+    gameDuration = 12000; // = 90000 SEGUNDOS = 15 minutos
 
     //Necesito una matriz de salas, en la que hay posiciones que no tienen salas y entonces no son accesibles
     //Asigno directamente las escenas en sus posiciones en el array, con las casillas vacías correspondientes
@@ -83,12 +83,24 @@ export default class GAMEMANAGER extends Phaser.Scene{
      */
     endGame(){
 
-        if(this.scene.registry.get('puntuation') < points)
-            this.scene.registry.set('puntuation', points);
+        if(this.scene.registry.get('puntuation') < this.points){
+            this.scene.registry.set('puntuation', this.points);
+        
+        }
+        if(this.points<1){
+
+            this.scene.scene.start('escenaFinalMal');
+        }
+        else if(this.points>=14){
+            this.scene.scene.start('escenaFinalBueno')
+        }
+        else{
+            this.scene.scene.start('escenaFinalNormal')
+        }
+        console.log("FIN DE LA PARTIDA!");
         
 
-        console.log("FIN DE LA PARTIDA!");
-        this.scene.scene.start('menuPrincipal');
+        
         
     }
 

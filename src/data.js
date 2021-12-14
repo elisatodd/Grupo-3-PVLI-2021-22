@@ -72,6 +72,13 @@ const Data = {
             scale: 3,
             name: 'play'
         },
+        exitButton: {
+            sprite: './assets/images/exitbutton.png',
+            x: 1350,
+            y: 675,
+            scale: 3,
+            name: 'exit'
+        },
         hsButton: {
             sprite: './assets/images/hsbutton.png',
             x: 675,

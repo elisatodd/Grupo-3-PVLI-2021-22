@@ -5,9 +5,11 @@
 
 import Cinematicas from "../Cinematicas.js";
 import Data from "../../data.js"
+import Object from "../Objects/objeto.js"
 
 export default class EscenaInicio extends Cinematicas {
 
+    playButton;
     constructor(){
         // Nombre de la escena para el SceneManager
         super({ key: 'escenaInicio' });
@@ -18,10 +20,14 @@ export default class EscenaInicio extends Cinematicas {
     preload(){
         
         super.preload();
+        this.playButton = new Object(Data.buttons.secondaryPlayButton, this);
+        this.loadImage(this.playButton);
     }
     create(){        
-        this.assignText (Data.cinematics.initialText.string);
         super.create();
+        this.assignText(Data.cinematics.initialText.string);
+        this.playButton.assignFunctionality('startGame');
+        this.addBottom(this.playButton);
     }
 
     

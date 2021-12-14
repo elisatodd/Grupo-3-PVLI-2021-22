@@ -4,10 +4,12 @@
  */
 
 import Cinematicas from "../Cinematicas.js";
-import Data from "../../data.js"
+import Data from "../../data.js";
+import Object from "../Objects/objeto.js";
 
-export default class EscenaInicio extends Cinematicas {
-
+export default class EscenaFinalMalo extends Cinematicas {
+    
+    exitButton;
     constructor(){
         // Nombre de la escena para el SceneManager
         super({ key: 'escenaFinalMal' });
@@ -16,12 +18,15 @@ export default class EscenaInicio extends Cinematicas {
         };
     }
     preload(){
-        
+        this.exitButton = new Object(Data.buttons.exitButton, this);
+        this.loadImage(this.exitButton);
         super.preload();
     }
     create(){        
-        this.assignText (Data.cinematics.badEnding.string);
         super.create();
+        this.addBottom(this.exitButton);
+        this.exitButton.assignFunctionality('returnMenu');
+        this.assignText (Data.cinematics.badEnding.string);
     }
 
     
