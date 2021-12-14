@@ -34,13 +34,15 @@
             this.breturn = new OBJETO(Data.buttons.playButton, this);
         }
         this.loadImage(this._wallpaper);
-
-        this.loadObjects(this.objects);
-        this.loadObjects(this.characters);
-        this.loadObjects([this.bpause, this.bmute, this.bunmute, this.bunpause, this.breturn]);
+        
+        //a eliminar
+        //this.loadObjects(this.objects);
+        //this.loadObjects(this.characters);
+        //this.loadObjects([this.bpause, this.bmute, this.bunmute, this.bunpause, this.breturn]);
+         //this.loadArrows();
 
         this.createArrows();
-        this.loadArrows();
+       
     }
 
     create(){
