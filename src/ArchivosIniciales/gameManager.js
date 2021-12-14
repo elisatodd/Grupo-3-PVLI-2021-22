@@ -53,7 +53,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
         this.savePoints(0); 
 
         this.scene.registry.set('scenesIni', this.escenas);      
-        
+        this.scene.registry.set('inventario', []);
         info.scene.scene.start('plaza');
 
     }
@@ -133,7 +133,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
     loadElements()
     {
         let saveInventory = this.scene.registry.get('inventario');
-        if(saveInventory !== undefined)
+        if(saveInventory !== [])
         {
           
             this.inventario = saveInventory;
