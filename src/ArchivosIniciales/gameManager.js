@@ -111,7 +111,8 @@ export default class GAMEMANAGER extends Phaser.Scene{
      * @param {Object} info Objeto del panel de pausa
      */
     deletePause(info){
-        info.image.destroy();
+        info.scene.bunpause.image.destroy();
+        info.scene.breturn.image.destroy();
         info.scene.timedEvent.paused = false;
     }
 
@@ -120,7 +121,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
      * @param {Object} info boton de Pausa
      */
     pause(info){
-        info.scene.addBottom(info.scene.pause);
+        info.scene.spawnObjects([this.scene.bunpause, this.scene.breturn]);
         info.scene.timedEvent.paused = true;
     }
 

@@ -30,13 +30,14 @@
             this.bmute = new OBJETO(Data.buttons.buttonMute, this);
             this.bunmute = new OBJETO(Data.buttons.buttonUnMute, this);
             this.bpause = new OBJETO(Data.buttons.buttonPause, this);
-            this.pause = new OBJETO(Data.buttons.pausePannel, this);
+            this.bunpause = new OBJETO(Data.buttons.hsButton, this);
+            this.breturn = new OBJETO(Data.buttons.playButton, this);
         }
         this.loadImage(this._wallpaper);
 
         this.loadObjects(this.objects);
         this.loadObjects(this.characters);
-        this.loadObjects([this.bpause, this.bmute, this.bunmute, this.pause]);
+        this.loadObjects([this.bpause, this.bmute, this.bunmute, this.bunpause, this.breturn]);
 
         this.createArrows();
         this.loadArrows();
@@ -55,7 +56,8 @@
           this.bmute.assignFunctionality('mute');
           this.bunmute.assignFunctionality('mute');
           this.bpause.assignFunctionality('pause');
-          this.pause.assignFunctionality('deletePause');
+          this.bunpause.assignFunctionality('deletePause');
+          this.breturn.assignFunctionality('returnMenu');
   
           scenesIni[scenesIni.indexOf(this.scene.key)] = null;
           this.registry.set('scenesIni', scenesIni);
