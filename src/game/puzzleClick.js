@@ -7,7 +7,7 @@
  export default class PuzzleClick extends EscenaPuzzle {
     
     puzzle = this;
-    sceneGame;
+    sceneGame = '';
 
     winImage = {name: 'winImage', route: './assets/images/puzzles/win.png', pos : {x : 1000, y : 300}, scaleProportion: 30, functionality : this.LoadScene};
     loseImage = {name: 'lossImage', route: './assets/images/puzzles/lose.png', pos : {x:400, y:300}, scaleProportion: 1, functionality : this.LoadScene};
@@ -45,7 +45,7 @@ preload()
 create()
 {
 
-    super.create();
+    super.create();    
 
    //this.addSpecialButton(this.option1);
    //this.addSpecialButton(this.option2);
@@ -59,15 +59,16 @@ create()
 AssignScene(scene)
 {
     this.sceneGame = scene;
+    
 }
 
 /**
  * Carga de la escena de juego asociada al puzle
  */
 LoadScene()
-{
-    //se le pueden pasar valores para cambiar al personaje
-    this.scene.start(this.sceneGame)
+{    
+    this.scene.scene.start(this.scene.sceneGame);
+  
 }
 
 /**
