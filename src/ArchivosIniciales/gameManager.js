@@ -48,7 +48,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
     /**
      * @param {Object} info Objeto que da comienzo al juego al ser clicado
      * Inicia el juego dando los valores por defecto a las escenas, items... 
-     * Así como al tiempo y los puntos.
+     * Así como al tiempo y los puntos
      */
     startGame(info){
         this.saveTime(this.gameDuration); // le paso el tiempo que quiero que dure la partida
@@ -111,8 +111,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
      * @param {Object} info Objeto del panel de pausa
      */
     deletePause(info){
-        info.scene.bunpause.image.destroy();
-        info.scene.breturn.image.destroy();
+        info.image.destroy();
         info.scene.timedEvent.paused = false;
     }
 
@@ -121,7 +120,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
      * @param {Object} info boton de Pausa
      */
     pause(info){
-        info.scene.spawnObjects([this.scene.bunpause, this.scene.breturn]);
+        info.scene.addBottom(info.scene.pause);
         info.scene.timedEvent.paused = true;
     }
 
