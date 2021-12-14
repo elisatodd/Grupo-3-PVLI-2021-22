@@ -7,10 +7,9 @@
  export default class PuzzleClick extends EscenaPuzzle {
     
     puzzle = this;
-    sceneGame;
-    
+    sceneGame = '';
 
-    winImage = {name: 'winImage', route: './assets/images/puzzles/win.png', pos : {x : 400, y : 300}, scaleProportion: 1, functionality : this.LoadScene};
+    winImage = {name: 'winImage', route: './assets/images/puzzles/win.png', pos : {x : 1000, y : 300}, scaleProportion: 30, functionality : this.LoadScene};
     loseImage = {name: 'lossImage', route: './assets/images/puzzles/lose.png', pos : {x:400, y:300}, scaleProportion: 1, functionality : this.LoadScene};
 
    constructor(data) {
@@ -23,33 +22,33 @@
    }
 
    //pruebas
-   option1 = {name: 'zone1', route: './assets/images/puzzles/opcionA.png', pos : {x:200, y:250}, scaleProportion: 10, functionality : this.Win};
-   option2 = {name: 'zone2', route: './assets/images/puzzles/opcionB.png', pos : {x:400, y:250}, scaleProportion: 10, functionality : this.Lose};
-   option3 = {name: 'zone3', route: './assets/images/puzzles/opcionC.png', pos : {x:600, y:250}, scaleProportion: 10, functionality : this.Lose};
-   option4 = {name: 'zone4', route: './assets/images/puzzles/opcionD.png', pos : {x:800, y:250}, scaleProportion: 10, functionality : this.Lose};
+   //option1 = {name: 'zone1', route: './assets/images/puzzles/opcionA.png', pos : {x:200, y:250}, scaleProportion: 10, functionality : this.Win};
+   //option2 = {name: 'zone2', route: './assets/images/puzzles/opcionB.png', pos : {x:400, y:250}, scaleProportion: 10, functionality : this.Lose};
+   //option3 = {name: 'zone3', route: './assets/images/puzzles/opcionC.png', pos : {x:600, y:250}, scaleProportion: 10, functionality : this.Lose};
+   //option4 = {name: 'zone4', route: './assets/images/puzzles/opcionD.png', pos : {x:800, y:250}, scaleProportion: 10, functionality : this.Lose};
    //
 
 
 //a la hora de hacer el create en las escenas heredadas añadir un super para que se cargen ambos recursos
 preload()
 {
-    this._wallpaper = {name: 'cartaPuzle', route: './assets/images/puzzles/telefonoWallpaper.jpg'};
+    this._wallpaper = {name: 'cartaPuzle', route: './assets/images/puzzles/bluewallpaper.jpg'};
     this.loadImage(this._wallpaper);
 
     this.loadImage(this.winImage);
     this.loadImage(this.loseImage);
 
-    this.loadImage(this.option1);
-    this.loadImage(this.option2);
+    //this.loadImage(this.option1);
+    //this.loadImage(this.option2);
 }
 
 create()
 {
 
-    super.create();
+    super.create();    
 
-   this.addSpecialButton(this.option1);
-   this.addSpecialButton(this.option2);
+   //this.addSpecialButton(this.option1);
+   //this.addSpecialButton(this.option2);
 }
 
 
@@ -60,15 +59,16 @@ create()
 AssignScene(scene)
 {
     this.sceneGame = scene;
+    
 }
 
 /**
  * Carga de la escena de juego asociada al puzle
  */
 LoadScene()
-{
-    //se le pueden pasar valores para cambiar al personaje
-    this.scene.start(sceneGame);
+{    
+    this.scene.scene.start(this.scene.sceneGame);
+  
 }
 
 /**
@@ -76,7 +76,8 @@ LoadScene()
  */
 Win()
 {
-    this.scene.spawnWallpaper(this.scene._wallpaper);
+   
+    //this.scene.spawnWallpaper(this.scene._wallpaper);
     this.scene.addSpecialButton(this.scene.winImage);
 }
 

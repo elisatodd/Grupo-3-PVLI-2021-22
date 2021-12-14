@@ -41,11 +41,11 @@
         this.gameManager.points = this.registry.gamePoints;
     }
 
-        /**
-         * Crea un GameManager con acceso a la escena y al juego
-         * @param {Phaser.Game} game referencia al juego
-         * @param {Phaser.Scene} scene  referencia a la escena
-         */
+    /**
+    * Crea un GameManager con acceso a la escena y al juego
+    * @param {Phaser.Game} game referencia al juego
+    * @param {Phaser.Scene} scene  referencia a la escena
+    */
     createGameManager(game, scene)
     {
         this.gameManager = new GAMEMANAGER(game, scene);
