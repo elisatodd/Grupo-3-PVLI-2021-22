@@ -1,149 +1,149 @@
 const Data = {
-    arrows:{
-        left:{
-            sprite: './assets/images/flechaIzq.png', 
-            x: 60, 
-            y:  412.5, 
-            scale: 10, 
+    arrows: {
+        left: {
+            sprite: './assets/images/flechaIzq.png',
+            x: 60,
+            y: 412.5,
+            scale: 10,
             name: 'arrowLeft'
         },
-        rigth:{
-            sprite: './assets/images/flechaDcha.png', 
-            x: 1150, 
-            y:  412.5, 
-            scale: 10, 
+        rigth: {
+            sprite: './assets/images/flechaDcha.png',
+            x: 1150,
+            y: 412.5,
+            scale: 10,
             name: 'arrowRight'
         },
-        up:{
-            sprite: './assets/images/flechaArr.png', 
-            x: 625, 
-            y:  60, 
-            scale: 10, 
+        up: {
+            sprite: './assets/images/flechaArr.png',
+            x: 625,
+            y: 60,
+            scale: 10,
             name: 'arrowUp'
         },
-        down:{
-            sprite: './assets/images/flechaAbj.png', 
-            x: 625, 
-            y:  770, 
-            scale: 10, 
+        down: {
+            sprite: './assets/images/flechaAbj.png',
+            x: 625,
+            y: 770,
+            scale: 10,
             name: 'arrowDown'
         }
     },
     // Botones con funcionalidad colocados por las escenas
-    buttons:{
-        buttonMute:{
-            sprite: './assets/images/botonmute.png', 
-            x: 130, 
-            y:  50, 
-            scale: 12, 
+    buttons: {
+        buttonMute: {
+            sprite: './assets/images/botonmute.png',
+            x: 130,
+            y: 50,
+            scale: 12,
             name: 'mute'
         },
-        buttonUnMute:{
-            sprite: './assets/images/botonunmute.png', 
-            x: 130, 
-            y:  50, 
-            scale: 12, 
+        buttonUnMute: {
+            sprite: './assets/images/botonunmute.png',
+            x: 130,
+            y: 50,
+            scale: 12,
             name: 'unmute'
         },
-        buttonPause:{
-            sprite: './assets/images/botonpausa.png', 
-            x: 50, 
-            y:  50, 
-            scale: 12, 
+        buttonPause: {
+            sprite: './assets/images/botonpausa.png',
+            x: 50,
+            y: 50,
+            scale: 12,
             name: 'pause'
         },
-        pausePannel:{
-            sprite: './assets/images/wallpaperWeb.jpg', 
-            x: 665, 
-            y:  412.5, 
-            scale: 1, 
-            name: 'text'            
+        pausePannel: {
+            sprite: './assets/images/wallpaperWeb.jpg',
+            x: 665,
+            y: 412.5,
+            scale: 1,
+            name: 'text'
         },
-        playButton:{
-            sprite: './assets/images/playbutton.png', 
-            x: 675, 
-            y:  312.5, 
-            scale: 2, 
-            name: 'play'  
-        },secondaryPlayButton:{
-            sprite: './assets/images/playbutton.png', 
-            x: 1350, 
-            y:  675, 
-            scale: 3, 
-            name: 'play'  
+        playButton: {
+            sprite: './assets/images/playbutton.png',
+            x: 675,
+            y: 312.5,
+            scale: 2,
+            name: 'play'
+        }, secondaryPlayButton: {
+            sprite: './assets/images/playbutton.png',
+            x: 1350,
+            y: 675,
+            scale: 3,
+            name: 'play'
         },
-        hsButton:{
-            sprite: './assets/images/hsbutton.png', 
-            x: 675, 
-            y:  522.5, 
-            scale: 2, 
-            name: 'highscore'  
+        hsButton: {
+            sprite: './assets/images/hsbutton.png',
+            x: 675,
+            y: 522.5,
+            scale: 2,
+            name: 'highscore'
         },
-        hsPannel:{
-            sprite: './assets/images/HSBoard.png', 
-            x: 775, 
-            y:  522.5, 
-            scale: 2, 
-            name: 'highscoreBoard'  
+        hsPannel: {
+            sprite: './assets/images/HSBoard.png',
+            x: 775,
+            y: 522.5,
+            scale: 2,
+            name: 'highscoreBoard'
         }
     },
 
     // Objetos que se pueden recoger
     items: {
         moneda: {
-            sprite: './assets/images/moneda.png', 
-            x: 200, 
-            y:  750, 
-            scale: 14, 
+            sprite: './assets/images/moneda.png',
+            x: 200,
+            y: 750,
+            scale: 14,
             name: 'moneda'
         },
         caja: {
-            sprite: './assets/images/caja.png', 
-            x: 625, 
+            sprite: './assets/images/caja.png',
+            x: 625,
             y: 625,
-            scale: 5, 
+            scale: 5,
             name: 'caja'
         },
-        sombrero:{
+        sombrero: {
             sprite: './assets/images/sombrero.png',
-            x: 250, 
+            x: 250,
             y: 375,
-            scale: 6, 
+            scale: 6,
             name: 'sombrero'
         },
-        carta:{
+        carta: {
             sprite: './assets/images/Carta.png',
-            x: 1050, 
+            x: 1050,
             y: 775,
-            scale: 6, 
+            scale: 6,
             name: 'carta'
         },
-        pajarita:{
+        pajarita: {
             sprite: './assets/images/pajarita.png',
-            x: 900, 
+            x: 900,
             y: 775,
-            scale: 10, 
+            scale: 10,
             name: 'pajarita'
         },
-        pez:{
+        pez: {
             sprite: './assets/images/pez.png',
-            x: 600, 
+            x: 600,
             y: 700,
-            scale: 8, 
+            scale: 8,
             name: 'pez'
         },
-        flor:{
+        flor: {
             sprite: './assets/images/flor.png',
-            x: 700, 
+            x: 700,
             y: 755,
-            scale: 8, 
+            scale: 8,
             name: 'flor'
         }
     },
 
     // Personajes del juego
     npc: {
-        cafeteria:{
+        cafeteria: {
             sprite: './assets/images/cafeteria.png',
             x: 750,
             y: 475,
@@ -168,9 +168,9 @@ const Data = {
             vendedora: null,
             item: null,
         },
-        enamorado:{
+        enamorado: {
             sprite: './assets/images/enamorado.png',
-            x:  1000,
+            x: 1000,
             y: 575,
             scale: 2.5,
             name: 'enamorado',
@@ -180,7 +180,7 @@ const Data = {
             vendedora: null,
             item: 'flor',
         },
-        mujerGato:{
+        mujerGato: {
             sprite: './assets/images/mujerGato.png',
             x: 350,
             y: 525,
@@ -192,7 +192,7 @@ const Data = {
             vendedora: null,
             item: 'pez',
         },
-        excentrico:{
+        excentrico: {
             sprite: './assets/images/excentrico.png',
             x: 600,
             y: 525,
@@ -204,7 +204,7 @@ const Data = {
             vendedora: null,
             item: null,
         },
-        ninio:{
+        ninio: {
             sprite: './assets/images/ninio.png',
             x: 850,
             y: 525,
@@ -216,7 +216,7 @@ const Data = {
             vendedora: null,
             item: 'moneda',
         },
-        forzudo:{
+        forzudo: {
             sprite: './assets/images/forzudo.png',
             x: 350,
             y: 575,
@@ -228,9 +228,9 @@ const Data = {
             vendedora: null,
             item: null,
         },
-        cirquense:{
+        cirquense: {
             sprite: './assets/images/cirquense.jpg',
-            x:  600,
+            x: 600,
             y: 475,
             scale: 2,
             name: 'cirquense',
@@ -240,7 +240,7 @@ const Data = {
             vendedora: null,
             item: null,
         },
-        candado:{
+        candado: {
             sprite: './assets/images/candado.png',
             x: 100,
             y: 625,
@@ -252,7 +252,7 @@ const Data = {
             vendedora: null,
             item: null,
         },
-        carnicero:{
+        carnicero: {
             sprite: './assets/images/carnicero.png',
             x: 350,
             y: 475,
@@ -264,7 +264,7 @@ const Data = {
             vendedora: null,
             item: null,
         },
-        clienta:{
+        clienta: {
             sprite: './assets/images/clienta.png',
             x: 300,
             y: 575,
@@ -276,7 +276,7 @@ const Data = {
             vendedora: null,
             item: 'sombrero',
         },
-        vendedora:{
+        vendedora: {
             sprite: './assets/images/vendedora.png',
             x: 900,
             y: 475,
@@ -288,7 +288,7 @@ const Data = {
             vendedora: true,
             item: 'carta',
         },
-        policia:{
+        policia: {
             sprite: './assets/images/policia.png',
             x: 800,
             y: 525,
@@ -300,7 +300,7 @@ const Data = {
             vendedora: null,
             item: 'pajarita',
         },
-        campesino:{
+        campesino: {
             sprite: './assets/images/campesino.png',
             x: 200,
             y: 625,
@@ -314,20 +314,20 @@ const Data = {
         }
 
     },
-    
+
     // elementos que se utilizan para las cinemáticas
-    cinematics:{
-        initialText:{
-           string: "Estimado señor Calthrop;=Ha sido hallado el cadáver de Grace, su prometida e hija=del alcalde, en  muy trágicas condiciones.=Tras una breve deliberación hemos llegado a la conclusión=de que usted es el único posible culpable; ya que fue el=último en verla con vida.=Aunque nos pese admitirlo, puesto que usted era muy=preciado entre las gentes de este pueblo, debe presentarse=a juicio mañana a primera hora.=Si es inocente, tiene hasta entonces para demostrarlo=frente al jurado popular.=En ese caso, le deseo la mayor de las suertes=Un cordial saludo==                      Jefatura de policía de Leytonstone",
+    cinematics: {
+        initialText: {
+            string: "Estimado señor Calthrop;=Ha sido hallado el cadáver de Grace, su prometida e hija=del alcalde, en  muy trágicas condiciones.=Tras una breve deliberación hemos llegado a la conclusión=de que usted es el único posible culpable; ya que fue el=último en verla con vida.=Aunque nos pese admitirlo, puesto que usted era muy=preciado entre las gentes de este pueblo, debe presentarse=a juicio mañana a primera hora.=Si es inocente, tiene hasta entonces para demostrarlo=frente al jurado popular.=En ese caso, le deseo la mayor de las suertes=Un cordial saludo==                      Jefatura de policía de Leytonstone",
         },
-        badEnding:{
-            string:"El jurado ha finalizado la deliberación.==Gracias a las pruebas aportadas y los testimonios de los=habitantes, el acusado se declara culpable del asesinato=de Grace Bergman.==Por tanto será ejecutado en la horca esta misma tarde.",
+        badEnding: {
+            string: "El jurado ha finalizado la deliberación.==Gracias a las pruebas aportadas y los testimonios de los=habitantes, el acusado se declara culpable del asesinato=de Grace Bergman.==Por tanto será ejecutado en la horca esta misma tarde.",
         },
-        goodEnding:{
-            string:"El jurado ha finalizado la deliberación.==Gracias a las pruebas aportadas y los testimonios de los=habitantes, el acusado se declara inocente, y, por tanto,=es liberado de sus cargos.==Además se declara culpable a Alfred Jhones, de quien se=conoce que acosaba a la víctima.=Él es quien acabó con la vida de Grace y por lo tanto=será ejecutado esta misma tarde.==Gracias Donald Calthrop por su ayuda, sin usted no se=habría podido resolver el crimen.",
+        goodEnding: {
+            string: "El jurado ha finalizado la deliberación.==Gracias a las pruebas aportadas y los testimonios de los=habitantes, el acusado se declara inocente, y, por tanto,=es liberado de sus cargos.==Además se declara culpable a Alfred Jhones, de quien se=conoce que acosaba a la víctima.=Él es quien acabó con la vida de Grace y por lo tanto=será ejecutado esta misma tarde.==Gracias Donald Calthrop por su ayuda, sin usted no se=habría podido resolver el crimen.",
         },
-        neutralEnding:{
-            string:"El jurado ha finalizado la deliberación.==Gracias a las pruebas aportadas y los testimonios de los=habitantes, el acusado se declara inocente del asesinato=de Grace Bergman, y por tanto queda liberado de los=cargos.==Por desgracia no hay pruebas suficientes para descubrir=al verdadero culpable.==La memoria de Grace no quedará en paz.",
+        neutralEnding: {
+            string: "El jurado ha finalizado la deliberación.==Gracias a las pruebas aportadas y los testimonios de los=habitantes, el acusado se declara inocente del asesinato=de Grace Bergman, y por tanto queda liberado de los=cargos.==Por desgracia no hay pruebas suficientes para descubrir=al verdadero culpable.==La memoria de Grace no quedará en paz.",
         }
 
     }

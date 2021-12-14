@@ -52,6 +52,10 @@ export default class GAMEMANAGER extends Phaser.Scene{
         this.saveTime(this.gameDuration); // le paso el tiempo que quiero que dure la partida
         this.savePoints(0); 
 
+
+        if(!this.scene.registry.get('puntuation'))
+            this.scene.registry.set('puntuation', 0);
+
         this.scene.registry.set('scenesIni', this.escenas);      
         this.scene.registry.set('inventario', []);
         info.scene.scene.start('plaza');
@@ -73,8 +77,14 @@ export default class GAMEMANAGER extends Phaser.Scene{
      * Llamado cuando acabe el temporizador de la partida. Acaba el juego
      */
     endGame(){
+
+        if(this.scene.registry.get('puntuation') < points)
+            this.scene.registry.set('puntuation', points);
+        
+
         console.log("FIN DE LA PARTIDA!");
         this.scene.scene.start('menuPrincipal');
+        
     }
 
     /**
