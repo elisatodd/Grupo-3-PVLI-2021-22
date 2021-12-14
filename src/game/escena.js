@@ -53,7 +53,7 @@
 
    /**
     * Carga la imagen solicitada
-    * @param {Datos} info 
+    * @param {Datos} info ruta y nombre de la imagen solicitada
     */
     loadImage(info)
     {
@@ -62,7 +62,7 @@
 
     /**
      * Instancia en la escena el fondo correspondiente
-     * @param {Datos} info datos de la imagen a crear: posición, nombre, escala
+     * @param {Datos} info parámetros de la imagen a crear: posición, nombre, escala
      * @returns el objeto wallpaper
      */
     spawnWallpaper(info)
@@ -74,7 +74,7 @@
 
     /**
      * Instancia la imagen correspondiente en la escena
-     * @param {Datos} info  datos de la imagen a crear: posición, nombre, escala
+     * @param {Datos} info  parámetros de la imagen a crear: posición, nombre, escala
      */
     spawnImage(info)
     {
@@ -84,7 +84,7 @@
 
    /**
     * Asigna la escala a la escena basandose en los datos del wallpaper
-    * @param {Datos} container contiene la infromación de tamaño
+    * @param {Datos} container contiene la información de tamaño
     */
     assignScale(container)
     {
@@ -96,7 +96,7 @@
    /**
     * Crea una imagen-botón estándar(con relación al game manager)
     * con la funcionalidad y datos correspondientes
-    * @param {Datos} info datos del botón a crear
+    * @param {Datos} info parámetros del botón a crear
     */
     addBottom(info) {
         //debemos usar estos nombres al crear el objeto
@@ -112,11 +112,11 @@
     /**
      * Crea una imagen-botón estándar(sin relación con el game manager)
     * con la funcionalidad y datos correspondientes
-     * @param {Datos} info datos del botón a crear
+     * @param {Datos} info parámetros del botón a crear
      */
     addSpecialButton(info)
     {
-        this.spawnImage(info);   
+       this.spawnImage(info);   
         info.image.setInteractive();
         info.image.on('pointerdown', info.functionality);
     }
@@ -124,7 +124,7 @@
     /**
      * Crea una imagen-botón del tipo flecha, 
      * con la función de cambiar de escena cuandos e clique sobre ella
-     * @param {Datos} info 
+     * @param {Datos} info parámetros de la flecha a crear
      */
     addBottomArrows(info) {
         //debemos usar estos nombres al crear el objeto

@@ -9,8 +9,10 @@
     puzzle = this;
     sceneGame = '';
 
-    winImage = {name: 'winImage', route: './assets/images/puzzles/win.png', pos : {x : 1000, y : 300}, scaleProportion: 30, functionality : this.LoadScene};
-    loseImage = {name: 'lossImage', route: './assets/images/puzzles/lose.png', pos : {x:400, y:300}, scaleProportion: 1, functionality : this.LoadScene};
+    buttons = [];
+
+    winImage = {name: 'winImage', route: './assets/images/puzzles/win.png', pos : {x : 825, y : 412}, scaleProportion: 0.3, functionality : this.LoadScene};
+    loseImage = {name: 'lossImage', route: './assets/images/puzzles/lose.png', pos : {x:825, y:412}, scaleProportion: 0.8, functionality : this.LoadScene};
 
    constructor(data) {
  
@@ -72,22 +74,49 @@ LoadScene()
 }
 
 /**
- * Muestra la imagen asociada a solucionar del puzle como botón, dando feedback y permitiendo salir al jugador de la escena
+ * Crea un botón y lo almacena para ser desacivado una vez s ehaya seleccionado la opción
+ * @param {Datos} info parámetros del  botón a crear
  */
-Win()
+CreateClickPuzzleButton(info)
 {
-   
-    //this.scene.spawnWallpaper(this.scene._wallpaper);
-    this.scene.addSpecialButton(this.scene.winImage);
+   this.addSpecialButton(info);
+   this.buttons.push(info.image);
 }
 
 /**
- * Muestra el botón asociado a fallar la solución del puzle como botón, dando feedback y permitiendo salir al jugador de la escena
+ * Elimina los botones almacenados en el contendor d ela escena para no permitir
+ *  seleccionar otras opcioens una vez picada la primera
+ */
+EliminateButtons()
+{
+    for(let i = 0; i< this.buttons.length; i++)
+    {
+        this.buttons[i].destroy();
+    }
+}
+
+/**
+ * Elimina los demás botones y muestra la imagen asociada a solucionar del puzle como botón, 
+ * dando feedback y permitiendo salir al jugador de la escena
+ */
+Win()
+{      
+    let scene = this.scene;
+    scene.addSpecialButton(scene.winImage);
+    scene.EliminateButtons();
+    
+}
+
+
+/**
+ * Elimina los demás botones y muestra el botón asociado a fallar la solución del puzle como botón,
+ *  dando feedback y permitiendo salir al jugador de la escena
  */
 Lose()
 {
-    this.scene.spawnWallpaper(this.scene._wallpaper);
-    this.scene.addSpecialButton(this.scene.loseImage);
+    let scene = this.scene;
+    scene.EliminateButtons();    
+    scene.addSpecialButton(scene.loseImage);
 }
 
    
