@@ -27,13 +27,19 @@ export default class NPC extends Objeto{
     this.functionality = 'cargarDialogo';
   }
 
+  /**
+   * Guarda el texto y llama a la creación de este en pantalla
+   * @param {string} text texto a mostrar y guardar
+   */
   saveText(text)
   {
     this.texto = text;
     this.loadDialogue();
   }
 
-
+/**
+ * Muestra el diálogo en pantalla, creando su función y el marco sobr l que se muestra
+ */
   loadDialogue()
   {
     this.box = this.scene.add.image(this.scene.cameras.main.width / 2.5,this.scene.cameras.main.height- 155 , 'box');  
@@ -48,6 +54,11 @@ export default class NPC extends Objeto{
     }, this);
   }
 
+  /**
+   * Destruye el diálogo y la imagen solicitados
+   * @param {Iamge} img imagen a ser eleminada
+   * @param {String} dialogue diálogo a ser eliminado
+   */
   destroyDialogue(img, dialogue)
   {
     img.destroy();
