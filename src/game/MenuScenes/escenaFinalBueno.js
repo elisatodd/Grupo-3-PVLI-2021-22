@@ -10,7 +10,7 @@ export default class EscenaInicio extends Cinematicas {
 
     constructor(){
         // Nombre de la escena para el SceneManager
-        super({ key: 'escenaInicio' });
+        super({ key: 'escenaFinalBueno' });
         {
             
         };
@@ -20,7 +20,7 @@ export default class EscenaInicio extends Cinematicas {
         super.preload();
     }
     create(){        
-        this.assignText (Data.cinematics.neutralEnding.string);
+        this.assignText (Data.cinematics.goodEnding.string);
         super.create();
     }
 

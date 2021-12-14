@@ -318,7 +318,16 @@ const Data = {
     // elementos que se utilizan para las cinemáticas
     cinematics:{
         initialText:{
-           string: "Estimado señor Calthrop;=Ha sido hallado el cadáver de Grace, su prometida e hija=del alcalde, en  muy trágicas condiciones.=Tras una breve deliberación hemos llegado a la conclusión=de que usted es el único posible culpable; ya que fue el=último en verla con vida.=Aunque nos pese admitirlo, puesto que usted era muy=preciado entre las gentes de este pueblo, debe presentarse=a juicio mañana a primera hora.=Si es inocente, tiene hasta entonces para demostrarlo=frente al jurado popular.= En ese caso, le deseo la mayor de las suertes=Un cordial saludo==                      Jefatura de policía de Leytonstone"
+           string: "Estimado señor Calthrop;=Ha sido hallado el cadáver de Grace, su prometida e hija=del alcalde, en  muy trágicas condiciones.=Tras una breve deliberación hemos llegado a la conclusión=de que usted es el único posible culpable; ya que fue el=último en verla con vida.=Aunque nos pese admitirlo, puesto que usted era muy=preciado entre las gentes de este pueblo, debe presentarse=a juicio mañana a primera hora.=Si es inocente, tiene hasta entonces para demostrarlo=frente al jurado popular.=En ese caso, le deseo la mayor de las suertes=Un cordial saludo==                      Jefatura de policía de Leytonstone",
+        },
+        badEnding:{
+            string:"El jurado ha finalizado la deliberación.==Gracias a las pruebas aportadas y los testimonios de los=habitantes, el acusado se declara culpable del asesinato=de Grace Bergman.==Por tanto será ejecutado en la horca esta misma tarde.",
+        },
+        goodEnding:{
+            string:"El jurado ha finalizado la deliberación.==Gracias a las pruebas aportadas y los testimonios de los=habitantes, el acusado se declara inocente, y, por tanto,=es liberado de sus cargos.==Además se declara culpable a Alfred Jhones, de quien se=conoce que acosaba a la víctima.=Él es quien acabó con la vida de Grace y por lo tanto=será ejecutado esta misma tarde.==Gracias Donald Calthrop por su ayuda, sin usted no se=habría podido resolver el crimen.",
+        },
+        neutralEnding:{
+            string:"El jurado ha finalizado la deliberación.==Gracias a las pruebas aportadas y los testimonios de los=habitantes, el acusado se declara inocente del asesinato=de Grace Bergman, y por tanto queda liberado de los=cargos.==Por desgracia no hay pruebas suficientes para descubrir=al verdadero culpable.==La memoria de Grace no quedará en paz.",
         }
 
     }

@@ -16,7 +16,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
     points = 0;
   
     itemsInInventory = 0;
-    gameDuration = 90000; // = 90000 SEGUNDOS = 15 minutos
+    gameDuration = 900000; // = 90000 SEGUNDOS = 15 minutos
 
     //Necesito una matriz de salas, en la que hay posiciones que no tienen salas y entonces no son accesibles
     //Asigno directamente las escenas en sus posiciones en el array, con las casillas vacías correspondientes
