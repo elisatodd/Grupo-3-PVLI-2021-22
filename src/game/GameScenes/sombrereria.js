@@ -23,7 +23,7 @@ import Data from "../../data.js";
  
   preload(){
 
-    this._wallpaper = {name: 'sombrereria', route: './assets/images/nuevoFondo.jpg'};
+    this._wallpaper = {name: 'sombrereria', route: './assets/images/fondoSombrereria.jpg'};
     
     if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
       this.AddCharacter(new NPCItem(Data.npc.clienta, this));

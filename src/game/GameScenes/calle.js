@@ -21,7 +21,7 @@ export default class Calle extends EscenaJuego {
 
   preload(){
 
-    this._wallpaper = {name: 'plaza', route: './assets/images/fondoCalle.jpg'};
+    this._wallpaper = {name: 'calle', route: './assets/images/fondoCalle.jpg'};
 
     if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
       this.AddObject(new Item( Data.items.flor, this));
