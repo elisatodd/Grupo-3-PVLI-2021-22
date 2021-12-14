@@ -154,7 +154,7 @@ const Data = {
             last: 'Parece que puedo echar una mano.',
             third: 'Otro acertijo resuelto.',
             vendedora: null,
-            itemName: null,
+            item: null,
         },
         primo: {
             sprite: './assets/images/primo.png',
@@ -166,7 +166,7 @@ const Data = {
             first: 'Hola querido primo... sé que estás en apuros.\nTe ayudaré en el juicio si tú me ayudas\na descifrar el número que me dio una chica.',
             last: 'Gracias por tu ayuda.\nTranquilo, estaré de tu lado \nen el juicio.',
             vendedora: null,
-            itemName: null,
+            item: null,
         },
         enamorado:{
             sprite: './assets/images/enamorado.png',
@@ -178,7 +178,7 @@ const Data = {
             first: 'Neceisto un regalo para mi amada.\n¿Tienes algo para mi?',
             last: '¡Muchas gracias! A mi amada\nle va a encantar.',
             vendedora: null,
-            itemName: 'flor',
+            item: 'flor',
         },
         mujerGato:{
             sprite: './assets/images/mujerGato.png',
@@ -190,7 +190,7 @@ const Data = {
             first: '¡Ayuda! Mi gato está atrapado en ese árbol.\nOjalá tuviese algo para atraerlo...',
             last: '¡Muchas gracias! Por fin estás a\nsalvo pequeño Bandit.',
             vendedora: null,
-            itemName: 'pez',
+            item: 'pez',
         },
         excentrico:{
             sprite: './assets/images/excentrico.png',
@@ -202,7 +202,7 @@ const Data = {
             first: '¿Serás capaz de resolver mi acertijo?',
             last: 'Vaya... eres más inteligente de lo que pensaba.',
             vendedora: null,
-            itemName: null,
+            item: null,
         },
         ninio:{
             sprite: './assets/images/ninio.png',
@@ -214,7 +214,7 @@ const Data = {
             first: 'No tengo dinero para montar en\nla atracción.',
             last: '¡Muchas gracias señor!',
             vendedora: null,
-            itemName: 'moneda',
+            item: 'moneda',
         },
         forzudo:{
             sprite: './assets/images/forzudo.png',
@@ -226,7 +226,7 @@ const Data = {
             first: 'Por favor, ayúdame con este problema...',
             last: '¡Gracias!',
             vendedora: null,
-            itemName: null,
+            item: null,
         },
         cirquense:{
             sprite: './assets/images/cirquense.jpg',
@@ -238,7 +238,7 @@ const Data = {
             first: 'Todo se ha estropeado justo antes de\nque comience la feria...',
             last: 'Aún faltan algunos detalles...',
             vendedora: null,
-            itemName: null,
+            item: null,
         },
         candado:{
             sprite: './assets/images/candado.png',
@@ -250,7 +250,7 @@ const Data = {
             first: 'Parece que este candado\n tiene un puzle...',
             last: '¡Lo he resuelto!',
             vendedora: null,
-            itemName: null,
+            item: null,
         },
         carnicero:{
             sprite: './assets/images/carnicero.png',
@@ -262,7 +262,7 @@ const Data = {
             first: '¡¡Uno de estos chicos me ha robado!!\nPero quién habrá sido...',
             last: 'Gracias por resolver el misterio, joven.',
             vendedora: null,
-            itemName: null,
+            item: null,
         },
         clienta:{
             sprite: './assets/images/clienta.png',
@@ -274,7 +274,7 @@ const Data = {
             first: 'Necesito un nuevo sombrero.\nEsta tienda no tiene ninguno bonito.',
             last: '¡Gracias!¡Es perfecto!',
             vendedora: null,
-            itemName: 'sombrero',
+            item: 'sombrero',
         },
         vendedora:{
             sprite: './assets/images/vendedora.png',
@@ -286,7 +286,7 @@ const Data = {
             first: '¿Tienes alguna prueba que demuestre\n que estábais juntos?',
             last: 'Vaya... parece que realmente\nno has sido tú.',
             vendedora: true,
-            itemName: 'carta',
+            item: 'carta',
         },
         policia:{
             sprite: './assets/images/policia.png',
@@ -298,7 +298,7 @@ const Data = {
             first: '¿Tienes alguna prueba para el juicio?',
             last: 'Interesante evidencia...',
             vendedora: null,
-            itemName: 'pajarita',
+            item: 'pajarita',
         },
         campesino:{
             sprite: './assets/images/campesino.png',
@@ -310,7 +310,7 @@ const Data = {
             first: '¿Podrías dejarme algo para\nllevar mi mercancía?\nMi carro se ha roto.',
             last: 'Muy amable, gracias joven.',
             vendedora: null,
-            itemName: 'caja',
+            item: 'caja',
         }
 
     },
