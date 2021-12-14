@@ -36,5 +36,4 @@ export default class Bosque extends EscenaJuego {
     console.log("Escena Bosque");
     super.create();
   }
-
 }
