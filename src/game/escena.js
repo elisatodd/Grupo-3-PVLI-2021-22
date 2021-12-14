@@ -84,6 +84,10 @@
         } );   
     }
 
+    /**
+     * 
+     * @param {Datos} info contiene la información para la creación del objeto
+     */
     addSpecialButton(info)
     {
         this.spawnImage(info);   
