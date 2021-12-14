@@ -47,6 +47,8 @@ export default class GAMEMANAGER extends Phaser.Scene{
 
     /**
      * @param {Object} info Objeto que da comienzo al juego al ser clicado
+     * Inicia el juego dando los valores por defecto a las escenas, items... 
+     * Así como al tiempo y los puntos.
      */
     startGame(info){
         this.saveTime(this.gameDuration); // le paso el tiempo que quiero que dure la partida
@@ -74,7 +76,8 @@ export default class GAMEMANAGER extends Phaser.Scene{
     }
 
     /**
-     * Llamado cuando acabe el temporizador de la partida. Acaba el juego
+     * Llamado cuando acabe el temporizador de la partida. 
+     * Acaba el juego y guarda la puntuación en caso de ser mejor conseguida
      */
     endGame(){
 
