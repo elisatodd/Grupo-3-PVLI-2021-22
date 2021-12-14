@@ -30,12 +30,13 @@ export default class GAMEMANAGER extends Phaser.Scene{
 
         super({ key: 'GameManager' });
         {
+
         };
         
        
         this.game = game;
         this.scene = scene;
-        this.gamePoints=points;
+        this.points = points;
     }
 
     
@@ -52,12 +53,13 @@ export default class GAMEMANAGER extends Phaser.Scene{
      */
     startGame(info){
         this.saveTime(this.gameDuration); // le paso el tiempo que quiero que dure la partida
-        this.savePoints(0); 
+       
 
 
         if(!this.scene.registry.get('puntuation'))
             this.scene.registry.set('puntuation', 0);
 
+        this.scene.registry.set('points', 0);
         this.scene.registry.set('scenesIni', this.escenas);      
         this.scene.registry.set('inventario', []);
         info.scene.scene.start('plaza');
@@ -201,7 +203,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
     savePoints(){
      //this.game['gamePoints'] = {gamePoints: this.points};
     
-    this.scene.registry.set('gamePoints', this.points);
+    this.scene.registry.set('points', this.points);
     }
     
     /**
@@ -370,7 +372,6 @@ export default class GAMEMANAGER extends Phaser.Scene{
 
     /**
      * Suma puntuación cuando se le da el objeto correcto a un npc o se soluciona un puzle
-     * @param {int} actualPoints los puntos que ya había acumulados
      */
     addPoints(){
         this.points++;

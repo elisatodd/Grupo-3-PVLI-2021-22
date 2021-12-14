@@ -7,7 +7,7 @@
  export default class PuzzleBanderines extends EscenaPuzzle {
     
    
-    sceneGame = '';
+    sceneToLoad = 'feria';
 
     lastClicked = '';
     
@@ -82,7 +82,7 @@ CheckWin()
     if(win === true)
     {
         console.log("completado");
-        this.scene.start(sceneGame);
+        this.scene.LoadScene();
     }
 
 }

@@ -38,7 +38,7 @@
         if(time !== undefined)
         this.timedEvent = this.time.addEvent({ delay: time, callback: this.gameManager.endGame, callbackScope: this.gameManager });
           
-        this.gameManager.points = this.registry.gamePoints;
+       
     }
 
     /**
@@ -48,7 +48,7 @@
     */
     createGameManager(game, scene)
     {
-        this.gameManager = new GAMEMANAGER(game, scene);
+        this.gameManager = new GAMEMANAGER(game, scene, this.registry.get('points'));
     }
 
    /**

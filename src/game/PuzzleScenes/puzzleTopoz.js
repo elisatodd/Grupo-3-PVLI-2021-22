@@ -7,7 +7,7 @@
  export default class PuzzleTopoz extends EscenaPuzzle {
     
    
-    sceneGame = '';
+    sceneToLoad = 'caseta ';
     inicialize = false;
  
     
@@ -206,7 +206,7 @@ CheckPuzzle()
     if(allDown) 
     {
         console.log("completado");
-        this.start(sceneGame);
+        this.scene.scene.LoadScene();
     }
 }
 

@@ -12,7 +12,7 @@
     buttons = [];
 
     winImage = {name: 'winImage', route: './assets/images/puzzles/win.png', pos : {x : 825, y : 412}, scaleProportion: 0.3, functionality : this.LoadScene};
-    loseImage = {name: 'lossImage', route: './assets/images/puzzles/lose.png', pos : {x:825, y:412}, scaleProportion: 0.8, functionality : this.LoadScene};
+    loseImage = {name: 'lossImage', route: './assets/images/puzzles/lose.png', pos : {x:825, y:412}, scaleProportion: 0.8, functionality : this.LoadSceneNoPoints};
 
    constructor(data) {
  
@@ -67,7 +67,7 @@ AssignScene(scene)
 /**
  * Carga de la escena de juego asociada al puzle
  */
-LoadScene()
+LoadSceneNoPoints()
 {    
     this.scene.scene.start(this.scene.sceneGame);
   
