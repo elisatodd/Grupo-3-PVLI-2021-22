@@ -11,9 +11,9 @@ export default class EscenaInicio extends Escena {
 
     //texto que tiene que mostrar en pantalla
     texto = " ";
-    i = 0;
-    posX = 350;
-    posY = 120;
+    i ;
+    posX ;
+    posY ;
     timedEvent;
     playButton;
     constructor(){
@@ -32,23 +32,20 @@ export default class EscenaInicio extends Escena {
         this.loadImage(this._wallpaper);
         this.loadFont("initialFont", "/assets/fonts/SpaceMono-Italic.ttf");
         this.loadImage(this.playButton);
+        
+        //reseteo el texto
+        this.i=0;
+        this.posX=350;
+        this.posY=120;
     }
     
     create(){        
         //No se si necesito gm en esta escena
         this.createGameManager(this.game, this);
-        
-        
         this._wallpaper = this.spawnWallpaper(this._wallpaper);
-        this.assignText ("Estimado señor Calthrop;=Ha sido hallado el cadáver de Grace, su prometida e hija=del alcalde, "+ 
-        "en  muy trágicas condiciones.=Tras una breve deliberación hemos llegado a la conclusión=de que usted es el único posible culpable; "+ 
-        "ya que fue el=último en verla con vida.=Aunque nos pese admitirlo, puesto que usted era muy=preciado entre las gentes de este pueblo,"+
-        "debe presentarse=a juicio mañana a primera hora.=Si es inocente, tiene hasta entonces para demostrarlo=frente al jurado popular.="+
-        "En ese caso, le deseo la mayor de las suertes.="+
-        "Un cordial saludo==                      Jefatura de policía de Leytonstone"
-        );
+        this.assignText (Data.cinematics.initialText.string);
         
-        this.timedEvent = this.time.addEvent({ delay: 10, callback: this.onEvent, callbackScope: this, loop: true });
+        this.timedEvent = this.time.addEvent({ delay: 15, callback: this.onEvent, callbackScope: this, loop: true });
         
         this.playButton.assignFunctionality('startGame');
         this.addBottom(this.playButton);
