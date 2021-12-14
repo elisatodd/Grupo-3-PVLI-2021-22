@@ -1,6 +1,6 @@
 /**
  * Escena inicial que muestra por pantalla un texto con la historia del personaje
- * @extends Escena
+ * @extends Cinematicas
  */
 
 import Cinematicas from "../Cinematicas.js";
@@ -10,7 +10,7 @@ export default class EscenaInicio extends Cinematicas {
 
     constructor(){
         // Nombre de la escena para el SceneManager
-        super({ key: 'escenaInicio' });
+        super({ key: 'escenaFinalMal' });
         {
             
         };
@@ -20,7 +20,7 @@ export default class EscenaInicio extends Cinematicas {
         super.preload();
     }
     create(){        
-        this.assignText (Data.cinematics.initialText.string);
+        this.assignText (Data.cinematics.badEnding.string);
         super.create();
     }
 

@@ -20,7 +20,7 @@ export default class EscenaInicio extends Cinematicas {
         super.preload();
     }
     create(){        
-        this.assignText (Data.cinematics.neutralEnding.string);
+        this.assignText (Data.cinematics.initialText.string);
         super.create();
     }
 
