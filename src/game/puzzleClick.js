@@ -76,7 +76,8 @@ LoadScene()
  */
 Win()
 {
-    this.scene.spawnWallpaper(this.scene._wallpaper);
+   
+    //this.scene.spawnWallpaper(this.scene._wallpaper);
     this.scene.addSpecialButton(this.scene.winImage);
 }
 

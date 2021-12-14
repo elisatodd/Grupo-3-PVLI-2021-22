@@ -34,7 +34,7 @@ import PuzzleBanderines from './game/PuzzleScenes/puzzleBanderines.js'
 import PuzzleTopoz from './game/PuzzleScenes/PuzzleTopoz.js'
 import PuzzleCarniceria from './game/PuzzleScenes/puzzleCarniceria.js'
 
-import PuzzleClick from './game/puzzleClick.js';
+//import PuzzleClick from './game/puzzleClick.js';
 
 
 
