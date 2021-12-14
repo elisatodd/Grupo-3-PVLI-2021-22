@@ -315,6 +315,36 @@ const Data = {
 
     },
 
+    // Musica y efectos de sonido
+    sound:{
+        backgroundMusic:{
+            name: 'background',
+            route: './assets/sounds/Pooka.mp3',
+            config : {
+                mute: false,
+                volume: 0.25,
+                loop: true,
+                delay: 0,
+            }
+        },
+        winPuzzle:{
+            name:'winPuzzle',
+            route:'./assets/sounds/ganarPuzzle.wav'
+        },
+        losePuzzle:{
+            name: 'losePuzzle',
+            route:'./assets/sounds/perderPuzzle.wav'
+        },
+        takeItem:{
+            name:'takeItem',
+            route:'./assets/sounds/recogerObjeto.wav'
+        },
+        giveItem:{
+            name:'giveItem',
+            route:'./assets/sounds/ganarObjeto.wav'
+        }
+    },
+
     // elementos que se utilizan para las cinemáticas
     cinematics: {
         initialText: {

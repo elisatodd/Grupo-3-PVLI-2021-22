@@ -60,13 +60,7 @@
             this.hsButton.assignFunctionality('showHighScore');
             this.hsBoard.assignFunctionality('deleteImage');
             
-            const config = {
-                mute: false,
-                volume: 0.25,
-                loop: true,
-                delay: 0,
-            };
-            this.backgroundMusic = this.sound.add("background", config);
+            this.backgroundMusic = this.sound.add(Data.sound.backgroundMusic.name, Data.sound.backgroundMusic.config);
 
             this.backgroundMusic.play();
 
