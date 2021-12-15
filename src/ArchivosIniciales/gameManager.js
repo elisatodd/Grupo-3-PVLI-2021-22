@@ -131,7 +131,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
      * @param {Object} info boton de Pausa
      */
     pause(info){
-        info.scene.addBottom(info.scene.pause);
+        info.scene.addBottom(info.scene.bunpause);
         info.scene.timedEvent.paused = true;
     }
 

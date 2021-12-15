@@ -36,6 +36,7 @@ import PuzzleBanderines from './game/PuzzleScenes/puzzleBanderines.js'
 import PuzzleTopoz from './game/PuzzleScenes/PuzzleTopoz.js'
 import PuzzleCarniceria from './game/PuzzleScenes/puzzleCarniceria.js'
 import PuzzleEspejos from './game/PuzzleScenes/puzleEspejos.js'
+import PuzzleCandado from './game/PuzzleScenes/puzzleCandado.js'
 
 //import PuzzleClick from './game/puzzleClick.js';
 
@@ -51,7 +52,7 @@ let config = {
     autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
   },
   scene: [Boot, MenuPrincipal, EscenaInicio,EscenaFinalMalo,EscenaFinalBueno,EscenaFinalNormal, Casa, Plaza, Calle, Bosque, Feria, CasetaFeria, CasaEspejos, Sombrereria, Mercado, Parque, 
-    NumerosRasgados, PuzzleBanderines, PuzzleTopoz, CodigoIndscreto, CartaPuzle, PuzzleEspejos, PuzzleCarniceria, MenuPausa] // Escenas que requiere el juego
+    NumerosRasgados, PuzzleBanderines, PuzzleTopoz ,PuzzleCandado ,CodigoIndscreto, CartaPuzle, PuzzleEspejos, PuzzleCarniceria, MenuPausa] // Escenas que requiere el juego
   };
 
 
