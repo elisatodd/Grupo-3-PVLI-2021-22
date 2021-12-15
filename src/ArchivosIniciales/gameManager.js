@@ -18,6 +18,9 @@ export default class GAMEMANAGER extends Phaser.Scene{
     itemsInInventory = 0;
     gameDuration = 900000; // = 900000 SEGUNDOS = 15 minutos
 
+    zoneUnlocked = false;
+
+
     //Necesito una matriz de salas, en la que hay posiciones que no tienen salas y entonces no son accesibles
     //Asigno directamente las escenas en sus posiciones en el array, con las casillas vacías correspondientes
     escenas = [
@@ -26,17 +29,17 @@ export default class GAMEMANAGER extends Phaser.Scene{
         'mercado', 'calle', 'plaza', 'casa'
     ];
 
-    constructor(game, scene, points){
+    constructor(game, scene, points, unlocked){
 
         super({ key: 'GameManager' });
         {
 
         };
         
-       
         this.game = game;
         this.scene = scene;
         this.points = points;
+        this.zoneUnlocked = unlocked;
     }
 
     
@@ -62,6 +65,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
         this.scene.registry.set('points', 0);
         this.scene.registry.set('scenesIni', this.escenas);      
         this.scene.registry.set('inventario', []);
+        this.scene.registry.set('unlocked', false);
         info.scene.scene.start('plaza');
 
     }
@@ -200,10 +204,9 @@ export default class GAMEMANAGER extends Phaser.Scene{
     * @param {Number} info tiempo restante
     */
     saveTime(info){
-        
     // this.game['timeLeft'] = {time: info};
   
-    this.scene.registry.set('timeLeft', info);
+        this.scene.registry.set('timeLeft', info);
     }
 
     /**
@@ -212,7 +215,15 @@ export default class GAMEMANAGER extends Phaser.Scene{
     savePoints(){
      //this.game['gamePoints'] = {gamePoints: this.points};
     
-    this.scene.registry.set('points', this.points);
+        this.scene.registry.set('points', this.points);
+    }
+
+    /**
+     * Desbloquea una zona al terminar el puzzle de la Carta
+     */
+    saveUnlocked(){
+        this.zoneUnlocked = true;
+        this.scene.registry.set('unlocked', this.zoneUnlocked);
     }
     
     /**

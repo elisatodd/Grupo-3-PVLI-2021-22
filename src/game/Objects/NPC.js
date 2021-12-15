@@ -21,7 +21,7 @@ export default class NPC extends Objeto{
     this.puzzle = npc.puzzle;
     this.first = npc.first;
     this.last = npc.last;
-    this.esVendedora = npc.esVendedora;
+    this.esVendedora = npc.vendedora;
 
     // Los NPC siempre tienen la función de cargar diálogo
     this.functionality = 'cargarDialogo';
@@ -67,20 +67,20 @@ export default class NPC extends Objeto{
     if (!this.esVendedora && !this.solved && this.puzzle != null)
     {
       this.scene.gameManager.saveTime(this.scene.timedEvent.delay - this.scene.timedEvent.getElapsed());
+      this.scene.gameManager.addPoints();
       this.scene.gameManager.savePoints();
       this.scene.timedEvent.remove(false); // cancelo el timer anterior
       this.scene.scene.start(this.puzzle);
       this.solved = true;
-      this.scene.gameManager.addPoints();
       
     }else if (this.esVendedora && this.cartaEntregada && !this.solved){
       this.scene.gameManager.saveTime(this.scene.timedEvent.delay - this.scene.timedEvent.getElapsed());
+      this.scene.gameManager.addPoints();
+      this.solved = true;
       this.scene.gameManager.savePoints();
+      this.scene.gameManager.saveUnlocked();
       this.scene.timedEvent.remove(false); // cancelo el timer anterior
       this.scene.scene.start(this.puzzle);
-      this.solved = true;
-      this.scene.gameManager.addPoints();
-
     }
       
   }

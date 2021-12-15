@@ -48,7 +48,7 @@
     */
     createGameManager(game, scene)
     {
-        this.gameManager = new GAMEMANAGER(game, scene, this.registry.get('points'));
+        this.gameManager = new GAMEMANAGER(game, scene, this.registry.get('points'), this.registry.get('unlocked'));
     }
 
    /**

@@ -36,7 +36,7 @@ const Data = {
                 left: true,
                 right: true,
                 down: false,
-                up: false
+                up: true
             },
             arrowsDirs:{
                 left: 'calle',
@@ -319,7 +319,7 @@ const Data = {
             y: 475,
             scale: 1.75,
             name: 'vendedora',
-            puzzle: 'CartaPuzle',
+            puzzle: 'cartaPuzle',
             first: '¿Tienes alguna prueba que demuestre\n que estábais juntos?',
             last: 'Vaya... parece que realmente\nno has sido tú.',
             vendedora: true,
