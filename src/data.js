@@ -352,6 +352,44 @@ const Data = {
 
     },
 
+    wallpapers:{
+        bosque: {
+            name: 'bosque ', 
+            route: './assets/images/fondoBosque.jpg'
+        },
+        calle: {
+            name: 'calle', 
+            route: './assets/images/fondoCalle.jpg'
+        },
+        casa: {
+            name: 'casa', 
+            route: './assets/images/fondoCasa.jpg'}
+        },
+        casaEspejos: {
+            name: 'espejos ', 
+            route: './assets/images/fondoEspejos.jpg'
+        },
+        casetaFeria: {
+
+        },
+        feria: {
+
+        },
+        mercado: {
+
+        },
+        parque: {
+
+        },
+        plaza: {
+
+        },
+        sombrereria: {
+
+        }
+
+    },
+
     // Musica y efectos de sonido
     sound:{
         backgroundMusic:{
