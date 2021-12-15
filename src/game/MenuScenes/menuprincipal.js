@@ -26,11 +26,7 @@
     preload(){
         this._wallpaper = {name: 'mainmenu ', route: './assets/images/nuevoFondo.jpg'};
         this.loadImage(this._wallpaper);
-        this.load.audio("background", './assets/sounds/Pooka.mp3');
-        this.load.audio("winPuzzle", './assets/sounds/ganarPuzzle.wav');
-        this.load.audio("losePuzzle", './assets/sounds/perderPuzzle.wav');
-        this.load.audio("takeItem", './assets/sounds/recogerObjeto.wav');
-        this.load.audio("giveItem", './assets/sounds/ganarObjeto.wav');
+      
 
         if (this.first){
             this.playButton = new Object(Data.buttons.playButton, this);
