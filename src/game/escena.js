@@ -30,7 +30,7 @@
 
     create()
     {
-        this._wallpaper = this.spawnWallpaper(this._wallpaper);
+        this.spawnWallpaper(this._wallpaper);
      
         this.createGameManager(this.game, this);       
         

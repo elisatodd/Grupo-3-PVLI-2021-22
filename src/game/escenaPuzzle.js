@@ -24,12 +24,13 @@
   ResolvePuzzle()
   {}
 
-  LoadScene()
+  LoadScene(puzzle)
   {
-    this.gameManager.saveTime(this.timedEvent.delay - this.timedEvent.getElapsed());
-    this.timedEvent.remove(false); // cancelo el timer anterior
-    this.gameManager.addPoints();
-    this.gameManager.savePoints();
+    if(!puzzle) puzzle = this;
+    puzzle.gameManager.saveTime(puzzle.timedEvent.delay - puzzle.timedEvent.getElapsed());
+    puzzle.timedEvent.remove(false); // cancelo el timer anterior
+    puzzle.gameManager.addPoints();
+    puzzle.gameManager.savePoints();
 
     // Efecto de sonido
     const config = {
@@ -38,9 +39,9 @@
       loop: false,
       delay: 0,
     };
-    let sfx = this.scene.scene.sound.add("winPuzzle", config);
+    let sfx = puzzle.scene.scene.sound.add("winPuzzle", config);
     sfx.play();
 
-    this.scene.start(this.sceneToLoad);
+    puzzle.scene.start(puzzle.sceneToLoad);
   }
 }

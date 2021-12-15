@@ -6,12 +6,11 @@
 
  export default class PuzzleClick extends EscenaPuzzle {
     
-    puzzle = this;
-    sceneGame = '';
+    puzzle = this;    
 
     buttons = [];
 
-    winImage = {name: 'winImage', route: './assets/images/puzzles/win.png', pos : {x : 825, y : 412}, scaleProportion: 0.3, functionality : this.LoadScene};
+    winImage = {name: 'winImage', route: './assets/images/puzzles/win.png', pos : {x : 825, y : 412}, scaleProportion: 0.3, functionality : this.LoadScenePoints};
     loseImage = {name: 'lossImage', route: './assets/images/puzzles/lose.png', pos : {x:825, y:412}, scaleProportion: 0.8, functionality : this.LoadSceneNoPoints};
 
    constructor(data) {
@@ -60,7 +59,7 @@ create()
  */
 AssignScene(scene)
 {
-    this.sceneGame = scene;
+    this.sceneToLoad = scene;
     
 }
 
@@ -71,6 +70,10 @@ LoadSceneNoPoints()
 {    
     this.scene.scene.start(this.scene.sceneGame);
   
+}
+LoadScenePoints()
+{
+    this.scene.LoadScene(this.scene);
 }
 
 /**

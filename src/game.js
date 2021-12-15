@@ -51,7 +51,7 @@ let config = {
     autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
   },
   scene: [Boot, MenuPrincipal, EscenaInicio,EscenaFinalMalo,EscenaFinalBueno,EscenaFinalNormal, Casa, Plaza, Calle, Bosque, Feria, CasetaFeria, CasaEspejos, Sombrereria, Mercado, Parque, 
-    NumerosRasgados, PuzzleBanderines, PuzzleTopoz, CodigoIndscreto, CartaPuzle, PuzzleEspejos, MenuPausa] // Escenas que requiere el juego
+    NumerosRasgados, PuzzleBanderines, PuzzleTopoz, CodigoIndscreto, CartaPuzle, PuzzleEspejos, PuzzleCarniceria, MenuPausa] // Escenas que requiere el juego
   };
 
 
