@@ -29,6 +29,24 @@ const Data = {
             name: 'arrowDown'
         }
     },
+
+    scenesArrows:{
+        plaza:{
+            arrows:{
+                left: true,
+                right: true,
+                down: false,
+                up: false
+            },
+            arrowsDirs:{
+                left: 'calle',
+                right: 'casa',
+                down: false,
+                up: 'bosque'
+            }
+        }
+    },
+
     // Botones con funcionalidad colocados por las escenas
     buttons: {
         buttonMute: {
