@@ -7,9 +7,7 @@ export default class Boot extends Phaser.Scene {
       super({ key: 'boot' });
     }
   
-    /**
-     * Carga de todos los assets
-     */
+    
     preload() {
         
      this.Load();
@@ -23,7 +21,9 @@ export default class Boot extends Phaser.Scene {
         this.scene.start('menuPrincipal');
     }
 
-
+    /**
+     * Carga de todos los assets
+     */
     Load()
     {
         
@@ -32,7 +32,7 @@ export default class Boot extends Phaser.Scene {
         this.LoadImages(Data.items);
         this.LoadImages(Data.npc);
 
-        this.loadSounds();
+        this.LoadSounds();
        
     }  
 
@@ -43,7 +43,7 @@ export default class Boot extends Phaser.Scene {
           }
     }
 
-    loadSounds()
+    LoadSounds()
     {
         for (const value of Object.values(Data.sound)) {
             this.load.audio(value.name, value.route);
