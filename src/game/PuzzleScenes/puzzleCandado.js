@@ -2,7 +2,7 @@ import PuzzleInput from '../puzzleInput.js'
 
 export default class PuzzleCandado extends PuzzleInput {
 
-    puzzle = {name: 'candado', route: './assets/images/puzzles/candadosimbolos.png', pos:{x : 1000,y : 450}, image : '', scaleProportion : 2
+    puzzle = {name: 'candadosimbolo', route: './assets/images/puzzles/candadosimbolos.png', pos:{x : 1000,y : 450}, image : '', scaleProportion : 2
 };
 
   constructor() {

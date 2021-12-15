@@ -223,7 +223,7 @@ const Data = {
             y: 525,
             scale: 2,
             name: 'excentrico',
-            puzzle: null,
+            puzzle: 'puzzleEspejos',
             first: '¿Serás capaz de resolver mi acertijo?',
             last: 'Vaya... eres más inteligente de lo que pensaba.',
             vendedora: null,

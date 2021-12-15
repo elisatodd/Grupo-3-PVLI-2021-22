@@ -8,7 +8,7 @@ export default class PuzzleCarniceria extends PuzzleClick {
   option3 = {name: 'zone3', route: './assets/images/puzzles/optionC.png', pos : {x:1160, y:530}, scaleProportion: 10, image : '', functionality : this.Lose};
   option4 = {name: 'zone4', route: './assets/images/puzzles/optionD.png', pos : {x:1280, y:530}, scaleProportion: 10, image: '', functionality : this.Win};
   
-  text = {name: 'text', route: './assets/images/puzzles/puzleCarniceria.PNG', pos : {x:400, y:300}, scaleProportion: 0.7};
+  text = {name: 'textoNinios', route: './assets/images/puzzles/puzleCarniceria.png', pos : {x:400, y:300}, scaleProportion: 0.7};
   imageNinios = {name: 'ninios', route: './assets/images/puzzles/ninios.png', pos : {x:1100, y:300}, scaleProportion: 1};
 
   constructor() {
