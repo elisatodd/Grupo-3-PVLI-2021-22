@@ -363,29 +363,35 @@ const Data = {
         },
         casa: {
             name: 'casa', 
-            route: './assets/images/fondoCasa.jpg'}
+            route: './assets/images/fondoCasa.jpg'
         },
         casaEspejos: {
-            name: 'espejos ', 
+            name: 'espejos', 
             route: './assets/images/fondoEspejos.jpg'
         },
         casetaFeria: {
-
+            name: 'caseta ',
+            route: './assets/images/fondoCaseta.jpg'
         },
         feria: {
-
+            name: 'feria ', 
+            route: './assets/images/fondoCirco.jpg'
         },
         mercado: {
-
+            name: 'mercado',
+            route: './assets/images/fondoMercado.jpg'
         },
         parque: {
-
+            name: 'parque', 
+            route: './assets/images/fondoParque.jpg'
         },
         plaza: {
-
+            name: 'plaza', 
+            route: './assets/images/fondoPlaza.jpg'
         },
         sombrereria: {
-
+            name: 'sombrereria',
+             route: './assets/images/fondoSombrereria.jpg'
         }
 
     },

@@ -18,12 +18,11 @@ export default class Feria extends EscenaJuego {
     };
     this.arrows = [true, true, true, false];
     this.arrowsDirs = ['casaEspejos', 'casetaFeria', 'bosque', false];
+    this._wallpaper=[Data.wallpapers.feria][0];  
   }
 
   preload(){
-    this._wallpaper = {name: 'feria ', route: './assets/images/fondoCirco.jpg'};
     
-
     if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
       this.AddCharacter(new NPC(Data.npc.cirquense, this));
       this.AddCharacter(new NPC(Data.npc.cirquense2, this));

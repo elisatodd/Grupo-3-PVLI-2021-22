@@ -19,13 +19,12 @@ export default class Mercado extends EscenaJuego {
 
     this.arrows = [false, true, false, true];
     this.arrowsDirs = [false, 'calle', false, 'parque'];
-
+    this._wallpaper=[Data.wallpapers.mercado][0];  
   }
  
   preload(){
 
-    this._wallpaper = {name: 'mercado', route: './assets/images/fondoMercado.jpg'};
-  
+   
     if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
       this.AddCharacter(new NPC(Data.npc.carnicero, this));
       this.AddObject(new Item(Data.items.pez, this)); 

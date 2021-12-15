@@ -18,11 +18,12 @@ export default class Bosque extends EscenaJuego {
     };
     this.arrows = [false, false, true, true];
     this.arrowsDirs = [false, false, 'plaza', 'feria'];
+
+    this._wallpaper=[Data.wallpapers.bosque][0];
   }
 
   preload(){
-    this._wallpaper = {name: 'bosque ', route: './assets/images/fondoBosque.jpg'};
-
+    
     if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
       this.AddCharacter(new NPCItem(Data.npc.policia, this));
       this.AddCharacter(new NPCItem(Data.npc.campesino, this));

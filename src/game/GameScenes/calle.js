@@ -17,11 +17,10 @@ export default class Calle extends EscenaJuego {
     };
     this.arrows = [true, true, false, true];
     this.arrowsDirs = ['mercado', 'plaza', false, 'sombrereria'];
+    this._wallpaper=[Data.wallpapers.calle][0];  
   }
 
   preload(){
-
-    this._wallpaper = {name: 'calle', route: './assets/images/fondoCalle.jpg'};
 
     if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
       this.AddObject(new Item( Data.items.flor, this));

@@ -20,12 +20,11 @@ export default class Parque extends EscenaJuego {
 
     this.arrows = [false, false, true, false];
     this.arrowsDirs = [false, false, 'mercado', false];
-
+    this._wallpaper=[Data.wallpapers.parque][0];  
   }
 
   preload(){
-    this._wallpaper = {name: 'parque', route: './assets/images/fondoParque.jpg'};
-
+    
     if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
       this.AddCharacter(new NPC(Data.npc.candado,this));
       this.AddCharacter(new NPCItem(Data.npc.enamorado,this));

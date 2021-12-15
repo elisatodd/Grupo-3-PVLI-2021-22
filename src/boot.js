@@ -32,6 +32,8 @@ export default class Boot extends Phaser.Scene {
         this.LoadImages(Data.items);
         this.LoadImages(Data.npc);
 
+        this.LoadWallpapers();
+
         this.LoadSounds();
        
     }  
@@ -40,6 +42,13 @@ export default class Boot extends Phaser.Scene {
     {
         for (const value of Object.values(file)) {
             this.load.image(value.name, value.sprite);
+          }
+    }
+
+    LoadWallpapers()
+    {
+        for (const value of Object.values(Data.wallpapers)) {
+            this.load.image(value.name, value.route);
           }
     }
 

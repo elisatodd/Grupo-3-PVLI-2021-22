@@ -34,7 +34,8 @@ export default class EscenaJuego extends Escena {
             this.bunpause = new OBJETO(Data.buttons.hsButton, this);
             this.breturn = new OBJETO(Data.buttons.playButton, this);
         }
-        this.loadImage(this._wallpaper);
+        
+        //this.loadImage(this._wallpaper);
 
         //a eliminar
         //this.loadObjects(this.objects);

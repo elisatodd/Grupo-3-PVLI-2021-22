@@ -17,11 +17,11 @@ export default class CasetaFeria extends EscenaJuego {
     };
     this.arrows = [true, false, false, false];  
     this.arrowsDirs = ['feria', false, false, false];
+    this._wallpaper=[Data.wallpapers.casetaFeria][0];  
   }
 
   preload(){
-    this._wallpaper = {name: 'caseta ', route: './assets/images/fondoCaseta.jpg'};
-
+   
     if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
       this.AddCharacter(new NPCItem(Data.npc.ninio, this));
       this.AddCharacter(new NPC(Data.npc.forzudo, this));

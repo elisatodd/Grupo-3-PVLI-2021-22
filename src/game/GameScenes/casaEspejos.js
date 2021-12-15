@@ -14,11 +14,11 @@ export default class CasaEsp extends EscenaJuego { // DEBERIA HEREDAR DE GAMESCE
     };
     this.arrows = [false, true, false, false];
     this.arrowsDirs = [false, 'feria', false, false];
+    this._wallpaper=[Data.wallpapers.casaEspejos][0];  
   }
   
   preload(){
-    this._wallpaper = {name: 'espejos ', route: './assets/images/fondoEspejos.jpg'};
-
+    
     if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
       this.AddCharacter(new NPC(Data.npc.excentrico, this));
     }

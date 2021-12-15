@@ -19,12 +19,11 @@ export default class Plaza extends EscenaJuego {
     this.arrows = [Data.scenesArrows.plaza.arrows.left, Data.scenesArrows.plaza.arrows.right, Data.scenesArrows.plaza.arrows.down, Data.scenesArrows.plaza.arrows.up];
     //this.arrowsDirs = ['calle', 'casa', false, 'bosque'];
     this.arrowsDirs = [Data.scenesArrows.plaza.arrowsDirs.left, Data.scenesArrows.plaza.arrowsDirs.right, Data.scenesArrows.plaza.arrowsDirs.down, Data.scenesArrows.plaza.arrowsDirs.up];
+    this._wallpaper = [Data.wallpapers.plaza][0];
   }
 
   preload(){
     
-    this._wallpaper = {name: 'plaza', route: './assets/images/fondoPlaza.jpg'};
-
     this.load.image('box', '../../../assets/images/testing.png');
   
     if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){

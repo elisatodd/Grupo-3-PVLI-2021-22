@@ -19,10 +19,11 @@ export default class Casa extends EscenaJuego {
     };
     this.arrows = [true, false, false, false];
     this.arrowsDirs = ['plaza', false, false, false];
+    this._wallpaper=[Data.wallpapers.casa][0];  
   }
 
   preload(){
-    this._wallpaper = {name: 'casa', route: './assets/images/fondoCasa.jpg'};
+   
 
     if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
 

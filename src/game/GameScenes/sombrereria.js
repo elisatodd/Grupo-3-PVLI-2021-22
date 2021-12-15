@@ -18,12 +18,11 @@ import Data from "../../data.js";
 
     this.arrows = [false, false, true, false];
     this.arrowsDirs = [false, false, 'calle', false];
-
+    this._wallpaper=[Data.wallpapers.sombrereria][0];  
   }
  
   preload(){
 
-    this._wallpaper = {name: 'sombrereria', route: './assets/images/fondoSombrereria.jpg'};
     
     if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
       this.AddCharacter(new NPCItem(Data.npc.clienta, this));
