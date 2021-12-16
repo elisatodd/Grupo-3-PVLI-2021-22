@@ -43,6 +43,7 @@ export default class Plaza extends EscenaJuego {
       this.arrows[3] = false;
     }else{
       this.arrows[3] = new OBJETO(Data.arrows.up, this);
+      this.assignArrows();
       this.spawnArrows();
     }
   }

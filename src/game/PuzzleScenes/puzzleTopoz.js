@@ -7,7 +7,7 @@
  export default class PuzzleTopoz extends EscenaPuzzle {
     
    
-    sceneToLoad = 'caseta ';
+    sceneToLoad = 'casetaFeria';
     inicialize = false;
  
     

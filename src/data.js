@@ -263,7 +263,7 @@ const Data = {
             y: 575,
             scale: 2.5,
             name: 'forzudo',
-            puzzle: 'puzzleTopoz',
+            puzzle: 'topoz',
             first: 'Por favor, ayúdame con este problema...',
             last: '¡Gracias!',
             vendedora: null,

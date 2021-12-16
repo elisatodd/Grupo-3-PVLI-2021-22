@@ -16,7 +16,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
     points = 0;
   
     itemsInInventory = 0;
-    gameDuration = 900000; // = 900000 SEGUNDOS = 15 minutos
+    gameDuration = 100; // = 900000 SEGUNDOS = 15 minutos
 
     zoneUnlocked = false;
 
