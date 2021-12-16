@@ -190,7 +190,7 @@ const Data = {
             y: 475,
             scale: 1.5,
             name: 'cafeteria',
-            puzzle: null, // luego cambiará
+            puzzle: 'puzzleCafeteria', // luego cambiará
             first: 'Está cerrado.',
             last: 'Parece que puedo echar una mano.',
             third: 'Otro acertijo resuelto.',
