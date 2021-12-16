@@ -110,6 +110,22 @@ const Data = {
             y: 522.5,
             scale: 2,
             name: 'highscoreBoard'
+        },
+        exitPauseButtom: 
+        {
+            sprite: './assets/images/continuebutton.png',
+            x: 675,
+            y: 312.5,
+            scale: 3,
+            name: 'exitPauseButtom'   
+        },
+        exitMenuButtom: 
+        {
+            sprite: './assets/images/exitbutton.png',
+            x: 675,
+            y: 522.5,
+            scale: 3,
+            name: 'exitMenuButtom'   
         }
     },
 

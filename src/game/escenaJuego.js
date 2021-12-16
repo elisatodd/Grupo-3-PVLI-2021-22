@@ -31,8 +31,8 @@ export default class EscenaJuego extends Escena {
             this.bmute = new OBJETO(Data.buttons.buttonMute, this);
             this.bunmute = new OBJETO(Data.buttons.buttonUnMute, this);
             this.bpause = new OBJETO(Data.buttons.buttonPause, this);
-            this.bunpause = new OBJETO(Data.buttons.hsButton, this);
-            this.breturn = new OBJETO(Data.buttons.playButton, this);
+            this.bunpause = new OBJETO(Data.buttons.exitPauseButtom, this);
+            this.breturn = new OBJETO(Data.buttons.exitMenuButtom, this);
         }
         
         //this.loadImage(this._wallpaper);

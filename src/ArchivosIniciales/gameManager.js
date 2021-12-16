@@ -127,6 +127,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
      */
     deletePause(info){
         info.image.destroy();
+        info.scene.breturn.image.destroy();
         info.scene.timedEvent.paused = false;
     }
 
@@ -136,6 +137,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
      */
     pause(info){
         info.scene.addBottom(info.scene.bunpause);
+        info.scene.addBottom(info.scene.breturn);
         info.scene.timedEvent.paused = true;
     }
 
