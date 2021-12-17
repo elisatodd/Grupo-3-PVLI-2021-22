@@ -67,7 +67,6 @@ export default class NPC extends Objeto{
     if (!this.esVendedora && !this.solved && this.puzzle != null)
     {
       this.scene.gameManager.saveTime(this.scene.timedEvent.delay - this.scene.timedEvent.getElapsed());
-      this.scene.gameManager.addPoints();
       this.scene.gameManager.savePoints();
       this.scene.timedEvent.remove(false); // cancelo el timer anterior
       this.scene.scene.start(this.puzzle);
@@ -75,7 +74,6 @@ export default class NPC extends Objeto{
       
     }else if (this.esVendedora && this.cartaEntregada && !this.solved){
       this.scene.gameManager.saveTime(this.scene.timedEvent.delay - this.scene.timedEvent.getElapsed());
-      this.scene.gameManager.addPoints();
       this.solved = true;
       this.scene.gameManager.savePoints();
       this.scene.gameManager.saveUnlocked();

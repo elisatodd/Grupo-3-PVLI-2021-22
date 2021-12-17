@@ -18,6 +18,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
     itemsInInventory = 0;
     gameDuration = 900000; // = 900000 SEGUNDOS = 15 minutos
     MAX_POINTS = 15;
+    points_to_win = 8;
 
     zoneUnlocked = false;
 
@@ -57,8 +58,6 @@ export default class GAMEMANAGER extends Phaser.Scene{
      */
     startGame(info){
         this.saveTime(this.gameDuration); // le paso el tiempo que quiero que dure la partida
-       
-
 
         if(!this.scene.registry.get('puntuation'))
             this.scene.registry.set('puntuation', 0);
@@ -77,11 +76,6 @@ export default class GAMEMANAGER extends Phaser.Scene{
         info.scene.scene.start('escenaInicio')
     }
 
-
-    changeFirst(){
-
-    }
-
     /**
      * Llamado cuando acabe el temporizador de la partida. 
      * Acaba el juego y guarda la puntuación en caso de ser mejor conseguida
@@ -96,7 +90,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
 
             this.scene.scene.start('escenaFinalMal');
         }
-        else if(this.points>=14){
+        else if(this.points>=this.points_to_win){
             this.scene.scene.start('escenaFinalBueno')
         }
         else{
