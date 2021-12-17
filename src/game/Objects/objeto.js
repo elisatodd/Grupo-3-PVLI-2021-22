@@ -14,12 +14,18 @@ export default class OBJETO{
   text = "  ";
   box;
 
-  constructor(sprite, x, y, esc, nom, e){
-       
-    this.route = sprite; 
-    this.pos = {x,y};
-    this.scaleProportion = esc;
-    this.name = nom;
+  /**
+   * 
+   * @param {Data} object Conjunto de info. del objeto obtenida de data.js
+   * @param {Scene} e escena en la que está el objeto
+   */
+  constructor(object, e){
+    this.route = object.sprite; 
+    let x = object.x;
+    let y = object.y;
+    this.pos = {x, y};
+    this.scaleProportion = object.scale;
+    this.name = object.name;
     this.scene = e;
   }
 
@@ -56,7 +62,7 @@ export default class OBJETO{
   {
     this.scene.load.image('box', './assets/images/box.png');
 
-    this.box = this.scene.add.image(500, 800, 'box');  
+    this.box = this.scene.add.image(this.scene.cameras.main.width / 2, 700, 'box');  
     this.box.setScale(this.scene.scale/1.35).setScrollFactor(0);
    
     //var textConfig={fontSize:'25px',color:'#000000',fontFamily: 'Arial'};  

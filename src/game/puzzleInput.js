@@ -27,36 +27,63 @@
 
 create()
 {
+    super.create();
 //this.CreateTextEnter({x:100, y:100}, this);
 }
 
+
+/**
+ * 
+ * @returns Devuelve si la solución dada es igual a la que pide el puzle
+ */
 ResolvePuzzle()
 {
     return this.currentInput === this.solution;
 }
 
+/**
+ * Comprueba, a solicictud del jugador, si la entrada dada es la solucion, 
+ * reiniciando el input en caso negativo y llamando a
+ */
 CheckInput()
 {
-if(this.currentInput.length === this.solution.length)
-{
-    if(this.ResolvePuzzle())
+    //preguntar a eli pq no se hace aqui
+    if(this.currentInput.length === this.solution.length && this.ResolvePuzzle())
     {
-        console.log("aciertito");
         //función que deba de realizar
         this.actionWin();
     }
-   
-    else this.currentInput = '';
-}
-}
+    else {
+        this.currentInput = '';
 
+        // Efecto de sonido
+        const config = {
+            mute: false,
+            volume: 0.5,
+            loop: false,
+            delay: 0,
+        };
+        let sfx = this.scene.scene.sound.add("losePuzzle", config);
+        sfx.play();
+    }
+    
+}
+  /**
+   * 
+   * @param {pair: x, y} pos, indica la posición donde aparece el texto
+   * @param {scene} scene la escena del puzzle 
+   * @param {string} textInput conde se muestra el texto que se le mostrará al jugaodr
+   * Crea y actualiza el texto con las características deseadas.
+   * Material obtenido y modificado de: https://phaser.io/examples/v3/view/input/keyboard/text-entry 
+   */
 CreateTextEnter(pos, scene, textInput)
 {
     //material sacado de: https://phaser.io/examples/v3/view/input/keyboard/text-entry
+    let text = this.add.text(pos.x+50, pos.y+100, textInput,  { fontSize:'30px',color:'#000000',fontFamily: 'Georgia'});
+    text.setStroke('#fff', 10);
 
-    this.add.text(pos.x+50, pos.y+100, textInput, { font: '52px Courier', fill: '#000000' });
-
-    var textEntry = this.add.text(pos.x+70, pos.y+200, '', { font: '50px Courier', fill: '#000000' });
+    var textEntry = this.add.text(pos.x+70  , pos.y+200, '',  { fontSize:'30px',color:'#000000',fontFamily: 'Georgia'});
+    textEntry.setStroke('#fff', 5);
 
     this.input.keyboard.on('keydown', function (event) {
 

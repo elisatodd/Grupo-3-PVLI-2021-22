@@ -3,76 +3,55 @@
  * @extends EscenaJuego
  */
 
-  import EscenaJuego from "../escenaJuego.js";
-  //preguntar guille si se puede quitar de algua manera
-  import OBJETO from "../Objects/objeto.js";
-  import Item from "../Objects/item.js";
-  import NPC from "../Objects/NPC.js";
- 
-  export default class Plaza extends EscenaJuego {
+import EscenaJuego from "../escenaJuego.js";
+import Item from "../Objects/item.js";
+import OBJETO from "../Objects/objeto.js";
+import NPC from "../Objects/NPC.js";
+import Data from "../../data.js"
+export default class Plaza extends EscenaJuego {
 
-    first = true;
-    pause;
+  constructor(){
+    // Nombre de la escena para el SceneManager
+    super({ key: 'plaza' }); 
+    {
+      
+    };
+    //this.arrows = [true, true, false, true];
+    this.arrows = [Data.scenesArrows.plaza.arrows.left, Data.scenesArrows.plaza.arrows.right, Data.scenesArrows.plaza.arrows.down, false];
+    //this.arrowsDirs = ['calle', 'casa', false, 'bosque'];
+    this.arrowsDirs = [Data.scenesArrows.plaza.arrowsDirs.left, Data.scenesArrows.plaza.arrowsDirs.right, Data.scenesArrows.plaza.arrowsDirs.down, Data.scenesArrows.plaza.arrowsDirs.up];
+    this._wallpaper = [Data.wallpapers.plaza][0];
+  }
 
-    constructor(){
-      // Nombre de la escena para el SceneManager
-      super({ key: 'plaza' }); 
-      {
-        
-      };
-      this.arrows = [true, true, false, true];
-      this.arrowsDirs = ['calle', 'casa', false, 'bosque'];
-
-    }
+  preload(){
+    
+    this.load.image('box', '../../../assets/images/testing.png');
   
-    preload(){
+    if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
+      this.AddObject(new Item(Data.items.moneda, this));
+      this.AddCharacter(new NPC(Data.npc.cafeteria, this)); // Primero estará cerrada
+    } 
+    super.preload();
+  }
 
-      this._wallpaper = {name: 'plaza', route: './assets/images/nuevoFondo.jpg'};
-      this.loadImage(this._wallpaper);
-      
+  create(){
 
-      this.load.image('box', '../../../assets/images/box.png');
-
-
-      if (this.first){
-      this.AddObject(new Item('./assets/images/moneda.png', 200, this.cameras.main.height - 70, 14, 'moneda', this));
-      this.AddCharacter(new NPC('./assets/images/cafeteria.png', 600, this.cameras.main.height - 200, 3, 'cafeteria', this, null, " Está cerrado.", "Abierto")); // Primero estará cerrada
-      this.pause = new OBJETO('./assets/images/botonpausa.png', 50, 50, 8, 'pause', this);
-    }
-
-      this.loadObjects(this.objects);
-      this.loadObjects(this.characters);
-      this.loadObjects([this.pause]);
-
-
-      this.createArrows();
-      this.loadArrows();
-
-    }
-  
-    create(){
-      
-      console.log("Escena Plaza");
-      this._wallpaper = this.spawnWallpaper(this._wallpaper);
-
-      this.createGameManager(this.game, this);
-      this.gameManager.loadElements();
-      
+    console.log("Escena Plaza");
+    super.create();
+    
+    if (!this.gameManager.zoneUnlocked){
+      this.arrows[3] = false;
+    }else{
+      this.arrows[3] = new OBJETO(Data.arrows.up, this);
       this.assignArrows();
       this.spawnArrows();
-
-      if (this.first){
-
-        this.assignObjects(this.objects, 'moveToInventory'); // ASSIGN FIRST
-        this.assignObjects(this.characters, 'cargarDialogo');
-        
-        this.pause.assignFunctionality('pause');
-        this.first = false;
-        
-      }
-      this.spawnObjects(this.objects);
-      this.spawnObjects(this.characters);
-      this.spawnObjects([this.pause]);
-     
     }
   }
+
+  // update()
+  // {
+
+  //   console.log(this.timedEvent.getRemainingSeconds());
+
+  // }
+}

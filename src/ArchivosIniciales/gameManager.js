@@ -11,9 +11,18 @@ export default class GAMEMANAGER extends Phaser.Scene{
     //referencia a game
     game = '';
     scene = '';
+
+    //Puntos del jugador
+    points = 0;
   
     itemsInInventory = 0;
-    
+    gameDuration = 900000; // = 900000 SEGUNDOS = 15 minutos
+    MAX_POINTS = 15;
+    points_to_win = 8;
+
+    zoneUnlocked = false;
+
+
     //Necesito una matriz de salas, en la que hay posiciones que no tienen salas y entonces no son accesibles
     //Asigno directamente las escenas en sus posiciones en el array, con las casillas vacías correspondientes
     escenas = [
@@ -22,33 +31,73 @@ export default class GAMEMANAGER extends Phaser.Scene{
         'mercado', 'calle', 'plaza', 'casa'
     ];
 
-    constructor(game, scene){
+    constructor(game, scene, points, unlocked){
 
         super({ key: 'GameManager' });
         {
+
         };
         
-       
         this.game = game;
         this.scene = scene;
-      
+        this.points = points;
+        this.zoneUnlocked = unlocked;
     }
 
+    
     preload()
     {
         this.loadElements();
-        this.showElements();
-    }
-
-    testing(){
-        console.log("probando asignar funciones");
+        //this.showElements();
     }
 
     /**
      * @param {Object} info Objeto que da comienzo al juego al ser clicado
+     * Inicia el juego dando los valores por defecto a las escenas, items... 
+     * Así como al tiempo y los puntos
      */
     startGame(info){
+        this.saveTime(this.gameDuration); // le paso el tiempo que quiero que dure la partida
+
+        if(!this.scene.registry.get('puntuation'))
+            this.scene.registry.set('puntuation', 0);
+
+        this.scene.registry.set('points', 0);
+        this.scene.registry.set('scenesIni', this.escenas);      
+        this.scene.registry.set('inventario', []);
+        this.scene.registry.set('unlocked', false);
         info.scene.scene.start('plaza');
+
+    }
+    /**
+     * Da comienzo a la escena de introducción
+     */
+    startIntroduction(info){
+        info.scene.scene.start('escenaInicio')
+    }
+
+    /**
+     * Llamado cuando acabe el temporizador de la partida. 
+     * Acaba el juego y guarda la puntuación en caso de ser mejor conseguida
+     */
+    endGame(){
+
+        if(this.scene.registry.get('puntuation') < this.points){
+            this.scene.registry.set('puntuation', this.points);
+        
+        }
+        if(this.points<10){
+
+            this.scene.scene.start('escenaFinalMal');
+        }
+        else if(this.points>=this.points_to_win){
+            this.scene.scene.start('escenaFinalBueno')
+        }
+        else{
+            this.scene.scene.start('escenaFinalNormal')
+        }
+        console.log("FIN DE LA PARTIDA!");
+        
     }
 
     /**
@@ -67,24 +116,52 @@ export default class GAMEMANAGER extends Phaser.Scene{
         info.image.destroy();
     }
 
+    /**
+     * Cancela la pausa
+     * @param {Object} info Objeto del panel de pausa
+     */
+    deletePause(info){
+        info.image.destroy();
+        info.scene.breturn.image.destroy();
+        info.scene.timedEvent.paused = false;
+    }
+
+    /**
+     * inicia la pausa
+     * @param {Object} info boton de Pausa
+     */
     pause(info){
-        info.scene.scene.start('menuPausa');
+        info.scene.addBottom(info.scene.bunpause);
+        info.scene.addBottom(info.scene.breturn);
+        info.scene.timedEvent.paused = true;
     }
 
-    returnPause(info)
+    /**
+     * Desactiva/Activa el sonido
+     * @param {Object} info boton de mutear
+     */
+    mute(info){
+        info.scene.game.sound.mute = !info.scene.game.sound.mute;
+    }
+
+    /**
+     * @param {Object} info boton de vuelta al menu principal
+     */
+    returnMenu(info)
     {
-        info.scene.scene.start(info.scene.scene);
-
+        info.scene.scene.start('menuPrincipal');
     }
 
+    /**
+     * Carga todos los elemntos que se encuentran almacenados en el inventario a la nueva escena
+     */
     loadElements()
     {
-        
-        if('inventario' in this.game)
+        let saveInventory = this.scene.registry.get('inventario');
+        if(saveInventory !== [])
         {
-            this.inventario = this.game['inventario'].inventario;
-            this.inventarioID = this.game['inventario'].inventarioID;
-            
+          
+            this.inventario = saveInventory;
             this.scene.spawnObjects(this.inventario);
             //bucle que recorre el inventario
             for(let i = 0; i < this.inventario.length; i++)
@@ -99,29 +176,59 @@ export default class GAMEMANAGER extends Phaser.Scene{
             }
             this.showElements();
         }
+       
     }
 
+    /**
+     * Guarda la lista de objetos del inventario actualizada para poder ser cargada más adelante
+     */
     saveObject()
     {
-         //codigo a explicar sobre almacenamiento de datos(Raúl)
+        //codigo a explicar sobre almacenamiento de datos(Raúl)
         
         //id del objeto en el inventario(a implementar) se pasa a true pues esta recogido
         //this.inventarioID[i] = true;
 
         //se actualiza el inventario global con estos datos
-        this.game['inventario'] = { 
-            inventario: this.inventario,
-            inventarioID: this.inventarioID };
+
+        this.scene.registry.set('inventario', this.inventario);
        
-            this.showElements();
-        
-        
+       
+        this.showElements();
+    }
+    /**
+    * Guarda el tiempo que queda para que acabe el juego
+    * @param {Number} info tiempo restante
+    */
+    saveTime(info){
+    // this.game['timeLeft'] = {time: info};
+  
+        this.scene.registry.set('timeLeft', info);
     }
 
-    //método que muestra que funciona la acción del almacenar datos
+    /**
+    * guarda la puntuación actual del jugador
+    */
+    savePoints(){
+     //this.game['gamePoints'] = {gamePoints: this.points};
+    
+        this.scene.registry.set('points', this.points);
+    }
+
+    /**
+     * Desbloquea una zona al terminar el puzzle de la Carta
+     */
+    saveUnlocked(){
+        this.zoneUnlocked = true;
+        this.scene.registry.set('unlocked', this.zoneUnlocked);
+    }
+    
+    /**
+     * Muestra el número de elementos actuales en el inventario para el debug
+     */
     showElements()
     {
-        console.log(this.game['inventario'].inventario.length);
+        console.log(this.inventario.length);
     }
 
     /**
@@ -132,7 +239,16 @@ export default class GAMEMANAGER extends Phaser.Scene{
         this.itemsInInventory++;
         this.inventario.push(obj);
         this.saveObject();
-        //this.showElements();
+        // Efecto de sonido
+        const config = {
+            mute: false,
+            volume: 0.5,
+            loop: false,
+            delay: 0,
+        };
+        let sfx = obj.scene.sound.add("takeItem", config);
+        sfx.play();
+
         obj.moveToInv();
     }
 
@@ -145,9 +261,13 @@ export default class GAMEMANAGER extends Phaser.Scene{
         obj.startdrag();
     }
 
+    /**
+     * 
+     * @returns devuelve la posicion que le corresponde en la pantalla según su posición en el inventario
+     */
     getInventoryPosition(){
         // El primer dígito es para el tamaño del objeto y el segundo para la separación entre objetos
-        return ((this.itemsInInventory-1) * 110 + 100);
+        return ((this.itemsInInventory-1) * 98 +180);
     }
     /**
      * Muestra el texto que tiene asociado un NPC
@@ -165,7 +285,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
 
     /**
      * Cambia de escena
-     * @param {*} iniScene escena en la que se encuentra actualmente
+     * @param {Scene} iniScene escena en la que se encuentra actualmente
      * @param {*} direction direccion en la que el usuario se mueve
      */
     changeScene(iniScene, direction)
@@ -187,6 +307,9 @@ export default class GAMEMANAGER extends Phaser.Scene{
         }
 
         let next = this.escenas[scenePosition];
+        this.saveTime(iniScene.timedEvent.delay - iniScene.timedEvent.getElapsed());
+        this.savePoints();
+        iniScene.timedEvent.remove(false); // cancelo el timer anterior
         iniScene.scene.start(next);
     }
 
@@ -224,7 +347,23 @@ export default class GAMEMANAGER extends Phaser.Scene{
                 if (this.checkOverlap(this.scene.characters[i].image, id.image)){
 
                     this.deleteItem(id.name);
-                    this.scene.characters[i].solved = true;
+                    if (this.scene.characters[i].esVendedora)
+                        this.scene.characters[i].cartaEntregada = true;
+                    else {
+                        this.scene.characters[i].solved = true;
+                        this.addPoints();
+                    }
+
+                    // Efecto de sonido
+                    const config = {
+                        mute: false,
+                        volume: 0.5,
+                        loop: false,
+                        delay: 0,
+                    };
+                    let sfx = id.scene.sound.add("giveItem", config);
+                    sfx.play();
+
                     return true;
                 }
             }
@@ -246,6 +385,18 @@ export default class GAMEMANAGER extends Phaser.Scene{
                 this.inventario.splice(i, 1);            
             }
         } 
+    }
+
+    /**
+     * Suma puntuación cuando se le da el objeto correcto a un npc o se soluciona un puzle
+     */
+    addPoints(){
+        this.points++;
+        console.log("Puntos: " + this.points);
+        if (this.points >= this.MAX_POINTS){
+            this.endGame();
+        }
+        
     }
 
     

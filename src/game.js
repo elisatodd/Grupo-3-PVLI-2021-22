@@ -18,7 +18,11 @@ import Parque from './game/GameScenes/parque.js';
 
 import MenuPrincipal from './game/MenuScenes/menuprincipal.js';
 import MenuPausa from './game/MenuScenes/menupausa.js';
-
+import EscenaInicio from './game/MenuScenes/escenaInicio.js';
+import EscenaFinalMalo from './game/MenuScenes/escenaFinalMal.js'
+import EscenaFinalBueno from './game/MenuScenes/escenaFinalBueno.js'
+import EscenaFinalNormal from './game/MenuScenes/escenaFinalNormal.js'
+import Boot from './boot.js';
 
 //import Datos1 from'./game/Pruebas/pasoDeDatos1.js';
 //import Datos2 from'./game/Pruebas/pasoDeDatos2.js';
@@ -28,12 +32,16 @@ import MenuPausa from './game/MenuScenes/menupausa.js';
 import NumerosRasgados from './game/PuzzleScenes/NumerosRasgados.js';
 import CodigoIndscreto from './game/PuzzleScenes/CodigoIndiscreto.js';
 import CartaPuzle from './game/PuzzleScenes/CartaPuzle.js';
-
+import PuzzleBanderines from './game/PuzzleScenes/puzzleBanderines.js'
+import PuzzleTopoz from './game/PuzzleScenes/PuzzleTopoz.js'
+import PuzzleCarniceria from './game/PuzzleScenes/puzzleCarniceria.js'
+import PuzzleEspejos from './game/PuzzleScenes/puzleEspejos.js'
+import PuzzleCandado from './game/PuzzleScenes/puzzleCandado.js'
+import PuzzleCafeteria from './game/PuzzleScenes/puzleCafeteria.js'
 
 //import PuzzleClick from './game/puzzleClick.js';
 
 
-import PuzzleBanderines from './game/puzzleBanderines.js'
 
 let config = {
   type: Phaser.AUTO,
@@ -44,10 +52,15 @@ let config = {
     // mode: Phaser.Scale.FIT,  
     autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
   },
-  scene: [MenuPrincipal, Casa, Plaza, Calle, Bosque, Feria, CasetaFeria, CasaEspejos, Sombrereria, Mercado, Parque, NumerosRasgados, CodigoIndscreto,CartaPuzle, MenuPausa] // Escenas que requiere el juego
+  scene: [Boot, MenuPrincipal, EscenaInicio,EscenaFinalMalo,EscenaFinalBueno,EscenaFinalNormal, Casa, Plaza, Calle, Bosque, Feria, CasetaFeria, CasaEspejos, Sombrereria, Mercado, Parque, 
+    NumerosRasgados, PuzzleCafeteria, PuzzleBanderines, PuzzleTopoz ,PuzzleCandado ,CodigoIndscreto, CartaPuzle, PuzzleEspejos, PuzzleCarniceria, MenuPausa] // Escenas que requiere el juego
   };
 
 
 
 new Phaser.Game(config);
+
+
+
+
 

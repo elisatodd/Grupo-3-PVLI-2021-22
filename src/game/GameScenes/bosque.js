@@ -1,75 +1,40 @@
 /**
  * Escena del bosque
  * @extends EscenaJuego
- */
- import EscenaJuego from '../escenaJuego.js';
- import Item from "../Objects/item.js";
- import NPC from "../Objects/NPC.js";
- import NPCItem from "../Objects/NPCItem.js";
- import OBJETO from "../Objects/objeto.js";
+*/
+import EscenaJuego from '../escenaJuego.js';
+import Item from "../Objects/item.js";
+import NPCItem from "../Objects/NPCItem.js";
+import Data from "../../data.js";
 
 
- export default class Bosque extends EscenaJuego {
+export default class Bosque extends EscenaJuego {
+
+  constructor(){
+    // Nombre de la escena para el SceneManager
+    super({ key: 'bosque' }); 
+    {
+
+    };
+    this.arrows = [false, false, true, true];
+    this.arrowsDirs = [false, false, 'plaza', 'feria'];
+
+    this._wallpaper=[Data.wallpapers.bosque][0];
+  }
+
+  preload(){
     
-    first = true;
-    pause;
-
-    constructor(){
-        // Nombre de la escena para el SceneManager
-        super({ key: 'bosque' }); 
-        {
-
-        };
-        this.arrows = [false, false, true, true];
-        this.arrowsDirs = [false, false, 'plaza', 'feria'];
+    if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
+      this.AddCharacter(new NPCItem(Data.npc.policia, this));
+      this.AddCharacter(new NPCItem(Data.npc.campesino, this));
+      this.AddObject(new Item(Data.items.pajarita, this));
     }
 
-    preload(){
-        this._wallpaper = {name: 'bosque ', route: './assets/images/nuevoFondo.jpg'};
-        this.loadImage(this._wallpaper);
+    super.preload();
+  }
 
-        if (this.first){
-            this.AddCharacter(new NPCItem('./assets/images/policia.png', 800, this.cameras.main.height - 300, 0.75, 'policia', this,  null, "ALTO AHÍ, inspección", "Interesante evidencia...", 'pajarita' ));
-            this.AddCharacter(new NPCItem('./assets/images/campesino.png', 200, this.cameras.main.height - 200, 1, 'campesino', this,  null, "Se rompio la carreta", "Gracias justo lo que buscaba", 'caja' ));
-            this.AddObject(new Item('./assets/images/pajarita.png', 1000, this.cameras.main.height - 70, 10, 'pajarita', this));
-            this.pause = new OBJETO('./assets/images/botonpausa.png', 50, 50, 8, 'pause', this);
-
-        }
-
-        this.loadObjects(this.objects);
-        this.loadObjects(this.characters);
-        this.loadObjects([this.pause]);
-
-
-        this.createArrows();
-        this.loadArrows();
-    }
-
-    create(){
-    
-        this._wallpaper = this.spawnWallpaper(this._wallpaper);
-     
-        this.createGameManager(this.game, this);
-        this.gameManager.loadElements();
-        
-        this.assignArrows();
-        this.spawnArrows();
-  
-        if (this.first){
-  
-          this.assignObjects(this.objects, 'moveToInventory');
-          this.assignObjects(this.characters, 'cargarDialogo');
-          this.pause.assignFunctionality('pause');
-
-          this.first = false;
-  
-        }
-        this.spawnObjects(this.objects);
-        this.spawnObjects(this.characters);
-        this.spawnObjects([this.pause]);
-
-
-        console.log("Escena Bosque");
-    }
-
+  create(){
+    console.log("Escena Bosque");
+    super.create();
+  }
 }

@@ -10,21 +10,34 @@ export default class item extends Objeto{
     iniposy;
     canDrag = false;
 
-    constructor(sprite, x, y, esc, nom, e, make){
-
-        super(sprite, x, y, esc, nom, e);
-        this.functionality = this.moverAlInventario;
+    /**
+     * 
+     * @param {Data} newItem Datos del objeto que se quiere crear, obtenidos de Data.js
+     * @param {Escena} scene Escena en la que se va a encontrar el objeto
+     */
+    constructor(newItem, scene){
+      super(newItem, scene);
+      //los items tienen como funcionalidad colocarse en el inventario siempre
+      this.functionality = 'moveToInventory';
     }
 
-    moverAlInventario(){
-        this.e.gameManager.moverAlInventario(this);
-        this.e.moverAlInventario(this.e.gameManager.objetosEnInventario, dirImagen, 725, 100 + (this.e.gameManager.objetosEnInventario*100), escala*2 );
 
-        //Cambiar funcionalidad a arrastrar
+    //?no son lo mismo este y el de abajo
+    /**
+     *Elimina el objeto de la escena y es desplazado al inventario
+     */
+    moverAlInventario(){
+      this.e.gameManager.moverAlInventario(this);
+      this.e.moverAlInventario(this.e.gameManager.objetosEnInventario, dirImagen, 725, 100 + (this.e.gameManager.objetosEnInventario*100), escala*2 );
+
+      //Cambiar funcionalidad a arrastrar
         
     }
 
-    
+    /**
+     * Elimina el objeto de la escena y es desplazado al inventario
+     * @param {Scene} scene escena en la que se realza dicha acción
+     */
     moveToInv(scene){
 
       if(scene !== undefined)this.scene = scene;
@@ -39,7 +52,9 @@ export default class item extends Objeto{
       this.functionality = 'drag';
     }
 
-    
+    /**
+     * Guarda la psición inicial y comienza el ciclo de arrastre
+     */
     startdrag()
     {
       
@@ -49,11 +64,12 @@ export default class item extends Objeto{
       this.scene.input.off('pointerdown', this.startdrag, this);
       this.scene.input.on('pointermove', this.dodrag, this);
       this.scene.input.on('pointerup',this.stopdrag,this);
-
-      console.log("A");
-
     }
 
+    /**
+     * Despalza el objeto por la escena junto al puntero
+     * @param {Mouse position : x, y} pointer 
+     */
     dodrag(pointer)
     {
       let x = this.pointer.x;
@@ -63,9 +79,13 @@ export default class item extends Objeto{
 
       this.image.destroy();
       this.scene.spawnObjects([this]);
-      console.log("B "+ this.pos.x);
     }
 
+    /**
+     * Detiene el ciclo de arrastre,
+     * comprueba si el objeto desencadena alfuna acción 
+     * y lo devuelve al inventario en caso contrario
+     */
     stopdrag()
     {
       this.scene.input.off('pointermove', this.dodrag, this);
@@ -81,9 +101,7 @@ export default class item extends Objeto{
       {
         this.scene.spawnObjects([this]);
       }
-     
 
-      console.log("C");
 
     }
    
