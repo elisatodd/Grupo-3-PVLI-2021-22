@@ -17,6 +17,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
   
     itemsInInventory = 0;
     gameDuration = 900000; // = 900000 SEGUNDOS = 15 minutos
+    MAX_POINTS = 15;
 
     zoneUnlocked = false;
 
@@ -397,8 +398,10 @@ export default class GAMEMANAGER extends Phaser.Scene{
      */
     addPoints(){
         this.points++;
-
         console.log("Puntos: " + this.points);
+        if (this.points >= this.MAX_POINTS){
+            this.endGame();
+        }
         
     }
 
