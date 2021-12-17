@@ -1,10 +1,4 @@
 
-import GameZone from './ArchivosIniciales/GameScene.js';
-import Puzzle from './ArchivosIniciales/PuzzleScene.js';
-import PuzzleInput from './game/puzzleInput.js';
-import EscenaMenu from './game/escenaMenu.js';
-import EscenaJuego from './game/escenaJuego.js';
-import Puzzle1 from './game/Pruebas/puzzlePrueba.js';
 import Casa from './game/GameScenes/casa.js'
 import Calle from './game/GameScenes/calle.js';
 import Plaza from './game/GameScenes/plaza.js';
