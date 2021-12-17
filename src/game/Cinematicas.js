@@ -27,7 +27,7 @@ export default class EscenaInicio extends Escena {
         
         this._wallpaper = {name: 'initialScene', route: './assets/images/fondoInicio.jpg'};
         this.loadImage(this._wallpaper);
-        this.loadFont("initialFont", "/assets/fonts/SpaceMono-Italic.ttf");
+        this.loadFont("initialFont", "./assets/fonts/SpaceMono-Italic.ttf");
         // this.playButton = new Object(Data.buttons.secondaryPlayButton, this);
         // this.loadImage(this.playButton);
         

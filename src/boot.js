@@ -3,6 +3,7 @@ import Data from "./data.js";
 
 export default class Boot extends Phaser.Scene {
     
+    wallpaper;
     constructor() {
       super({ key: 'boot' });
     }
@@ -10,7 +11,9 @@ export default class Boot extends Phaser.Scene {
     
     preload() {
         
-     this.Load();
+        this.text = this.add.text(10, 10, 'Cargando Juego ...', { font: '40px Courier', fill: '#FF0000' });
+        
+        this.Load();
        
     }
 
