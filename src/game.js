@@ -33,7 +33,7 @@ import NumerosRasgados from './game/PuzzleScenes/NumerosRasgados.js';
 import CodigoIndscreto from './game/PuzzleScenes/CodigoIndiscreto.js';
 import CartaPuzle from './game/PuzzleScenes/CartaPuzle.js';
 import PuzzleBanderines from './game/PuzzleScenes/puzzleBanderines.js'
-import PuzzleTopoz from './game/PuzzleScenes/PuzzleTopoz.js'
+import PuzzleTopoz from './game/PuzzleScenes/puzzleTopoz.js'
 import PuzzleCarniceria from './game/PuzzleScenes/puzzleCarniceria.js'
 import PuzzleEspejos from './game/PuzzleScenes/puzleEspejos.js'
 import PuzzleCandado from './game/PuzzleScenes/puzzleCandado.js'
