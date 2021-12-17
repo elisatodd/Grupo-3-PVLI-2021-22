@@ -43,7 +43,7 @@ let config = {
   width: 1550,
   height: 825,
   scale: {
-    // mode: Phaser.Scale.FIT,  
+     mode: Phaser.Scale.FIT,  
     autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
   },
   scene: [Boot, MenuPrincipal, EscenaInicio,EscenaFinalMalo,EscenaFinalBueno,EscenaFinalNormal, Casa, Plaza, Calle, Bosque, Feria, CasetaFeria, CasaEspejos, Sombrereria, Mercado, Parque, 

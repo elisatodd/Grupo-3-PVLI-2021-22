@@ -45,7 +45,7 @@ export default class NPC extends Objeto{
     this.box = this.scene.add.image(this.scene.cameras.main.width / 2.5,this.scene.cameras.main.height- 155 , 'box');  
     this.box.setScale(this.scene.scale/1.35).setScrollFactor(0);
 
-    let text = this.scene.add.text(this.scene.cameras.main.width/3.8 , this.scene.cameras.main.height-185, this.texto, 
+    let text = this.scene.add.text(this.scene.cameras.main.width/4.5 , this.scene.cameras.main.height-230, this.texto, 
       { fontSize:'30px',color:'#000000',fontFamily: 'Arial'});
 
     this.box.setInteractive();

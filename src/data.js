@@ -36,7 +36,7 @@ const Data = {
                 left: true,
                 right: true,
                 down: false,
-                up: true
+                up: true,
             },
             arrowsDirs:{
                 left: 'calle',
@@ -204,7 +204,7 @@ const Data = {
             scale: 2,
             name: 'primo',
             puzzle: 'NumerosRasgados',
-            first: 'Hola querido primo... sé que estás en apuros.\nTe ayudaré en el juicio si tú me ayudas\na descifrar el número que me dio una chica.',
+            first: 'Hola querido primo... sé que estás en\napuros.\nTe ayudaré en el juicio si tú me ayudas\na descifrar el número que me dio una\nchica.',
             last: 'Gracias por tu ayuda.\nTranquilo, estaré de tu lado \nen el juicio.',
             vendedora: null,
             item: null,
@@ -224,11 +224,11 @@ const Data = {
         mujerGato: {
             sprite: './assets/images/mujerGato.png',
             x: 350,
-            y: 525,
-            scale: 1,
+            y: 650,
+            scale: 1.3,
             name: 'mujer',
             puzzle: null,
-            first: '¡Ayuda! Mi gato está atrapado en ese árbol.\nOjalá tuviese algo para atraerlo...',
+            first: '¡Ayuda! Mi gato está atrapado en ese\nárbol.\nOjalá tuviese algo para atraerlo...',
             last: '¡Muchas gracias! Por fin estás a\nsalvo pequeño Bandit.',
             vendedora: null,
             item: 'pez',
@@ -248,7 +248,7 @@ const Data = {
         ninio: {
             sprite: './assets/images/ninio.png',
             x: 850,
-            y: 525,
+            y: 600,
             scale: 3,
             name: 'ninio',
             puzzle: null,
@@ -272,7 +272,7 @@ const Data = {
         cirquense: {
             sprite: './assets/images/cirquense.jpg',
             x: 300,
-            y: 550,
+            y: 580,
             scale: 2,
             name: 'cirquense',
             puzzle: 'codigoIndiscreto',
@@ -283,8 +283,8 @@ const Data = {
         },
         cirquense2: {
             sprite: './assets/images/cirquense2.jpg',
-            x: 700,
-            y: 550,
+            x: 900,
+            y: 570,
             scale: 2,
             name: 'cirquense2',
             puzzle: 'banderines',
@@ -331,8 +331,8 @@ const Data = {
         },
         vendedora: {
             sprite: './assets/images/vendedora.png',
-            x: 900,
-            y: 475,
+            x:650,
+            y: 500,
             scale: 1.75,
             name: 'vendedora',
             puzzle: 'cartaPuzle',
@@ -405,10 +405,15 @@ const Data = {
             name: 'plaza', 
             route: './assets/images/fondoPlaza.jpg'
         },
+        pantallaCarga: {
+            name: 'pantallaCarga', 
+            route: './assets/images/fondoCarga.jpg'
+        },
         sombrereria: {
             name: 'sombrereria',
-             route: './assets/images/fondoSombrereria.jpg'
-        }
+             route: './assets/images/fondoSombrereria.jpg',
+        },
+    
 
     },
 

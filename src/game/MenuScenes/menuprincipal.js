@@ -13,6 +13,7 @@
     hsButton;
     hsBoard;
 
+    text;
     backgroundMusic;
 
     constructor(){
@@ -24,6 +25,7 @@
     }
 
     preload(){
+        
         this._wallpaper = {name: 'mainmenu ', route: './assets/images/nuevoFondo.jpg'};
         this.loadImage(this._wallpaper);
       

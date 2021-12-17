@@ -17,7 +17,7 @@ export default class Plaza extends EscenaJuego {
       
     };
     //this.arrows = [true, true, false, true];
-    this.arrows = [Data.scenesArrows.plaza.arrows.left, Data.scenesArrows.plaza.arrows.right, Data.scenesArrows.plaza.arrows.down, false];
+    this.arrows = [Data.scenesArrows.plaza.arrows.left, Data.scenesArrows.plaza.arrows.right, Data.scenesArrows.plaza.arrows.down, !Data.scenesArrows.plaza.arrows.up];
     //this.arrowsDirs = ['calle', 'casa', false, 'bosque'];
     this.arrowsDirs = [Data.scenesArrows.plaza.arrowsDirs.left, Data.scenesArrows.plaza.arrowsDirs.right, Data.scenesArrows.plaza.arrowsDirs.down, Data.scenesArrows.plaza.arrowsDirs.up];
     this._wallpaper = [Data.wallpapers.plaza][0];
@@ -38,7 +38,7 @@ export default class Plaza extends EscenaJuego {
     super.create();
     
     if (!this.gameManager.zoneUnlocked){
-      this.arrows[3] = false;
+      this.arrows[3] = true;
     }else{
       this.arrows[3] = new OBJETO(Data.arrows.up, this);
       this.assignArrows();
