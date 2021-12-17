@@ -2,10 +2,10 @@
  * Escena del menu pausa
  * @extends EscenaMenu
  */
- import EscenaMenu from '../escenaMenu.js';
+ import Escena from '../escena.js';
  import Object from "../Objects/objeto.js";
 
- export default class MenuPausa extends EscenaMenu {
+ export default class MenuPausa extends Escena {
     
     first = true;
     pausa;
