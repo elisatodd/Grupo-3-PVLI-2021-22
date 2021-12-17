@@ -2,11 +2,11 @@
  * Escena del menñu principal
  * @extends EscenaMenu
  */
- import EscenaMenu from '../escenaMenu.js';
+ import Escena from '../escena.js';
  import Object from "../Objects/objeto.js";
  import Data from "../../data.js"
 
- export default class MenuPrincipal extends EscenaMenu {
+ export default class MenuPrincipal extends Escena {
 
     first = true;
     playButton;

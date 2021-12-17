@@ -42,9 +42,9 @@ La otra pieza clave de la jugabilidad son los puzzles, que se encontrarán distr
 <h3>Relato breve y parcial de una partida típica</h3>
 
 <p>Anotación: Entenderemos por habitación cada pantalla o escenario que forma parte del juego y por el que el jugador puede desplazarse. Cada habitación es diferente y se unen formando una conexión de habitaciones por las que el jugador se mueve para avanzar en el juego.</p>
-<p>La partida comenzará en la habitación correspondiente a la plaza del pueblo. A partir de ese momento podrá desplazarse por las diferentes habitaciones en las que podrá recoger objetos y realizar pequeños puzles en su intento de avanzar en la historia y ganarse una buena reputación. Para ello deberá recoger objetos en las habitaciones por las que se le vaya permitiendo avanzar e intentar utilizarlos con las personas adecuadas. Además encontrará problemas en forma de puzles que intentará resolver, que también contribuirán a obtener su inocencia. El objetivo es encontrar y resolver la mayor cantidad de problemas posible, antes de que se acabe el tiempo.</p>
+<p>La partida comenzará en la habitación correspondiente a la plaza del pueblo. A partir de ese momento podrá desplazarse por las diferentes habitaciones en las que podrá recoger objetos y realizar pequeños puzles en su intento de avanzar en la historia y ganarse una buena reputación. Para ello deberá recoger objetos en las habitaciones por las que se le vaya permitiendo avanzar e intentar utilizarlos con las personas adecuadas.Los puzles que resuelva también también contribuirán a obtener su inocencia. El objetivo es encontrar y resolver la mayor cantidad de problemas posible, antes de que se acabe el tiempo.</p>
     
- <p>Tras pasar 15 minutos, terminará el control del jugador sobre la partida y comenzará el juicio. Si ha conseguido realizar 7 puzles de los 15 posibles, será declarado inocente. Si no ha llegado a ese mínimo, será condenado a muerte. Además, si ha resuelto todos los puzles durante el trascurso de la partida, al final del juicio se sabrá lo que realmente le ocurrió a su amada, y el verdadero culpable del crimen.</p>
+ <p>Tras pasar 15 minutos, terminará el control del jugador sobre la partida y comenzará el juicio. Si ha conseguido obtener 8 de los 15 posibles puntos decredibilidad, será declarado inocente. Si no ha llegado a ese mínimo, será condenado a muerte. Además, si haobtenido todos los puntos posibles durante el trascurso de la partida, al final del juicio se sabrá lo que realmente le ocurrió a su amada, y el verdadero culpable del crimen.</p>
 
 
 <h2>Jugabilidad</h2>
@@ -58,9 +58,9 @@ La otra pieza clave de la jugabilidad son los puzzles, que se encontrarán distr
 
 <h4>Mecánicas de escenario</h4>
 <ul>
-<li>Cambio de habitación: En el lateral izquierdo y derecho de la pantalla, y en la parte superior e inferior, se sitúan unos elementos interactuables en forma de flecha, señalando hacia la siguiente habitación. Al interactuar con dichos elementos, la cámara se moverá hacia la habitación situada a continuación de la actual, en la dirección indicada por la flecha. No todas las habitaciones tendrán las cuatro flechas, sólo flechas apuntando hacia la dirección en la cual sea posible desplazarse.
+<li>Cambio de habitación: Habrán hasta 4 elementos interactuables en forma de flecha en los 4 lados de la pantalla según cuántas habitaciones colindantes haya y, por tanto, sea posible desplazarse. Al interactuar con dichos elementos, la cámara se moverá hacia la habitación situada a continuación de la actual, en la dirección indicada por la flecha. 
 <li>Paso del tiempo controlado: Con el inicio del juego comienza una cuenta atrás que delimita el tiempo de partida. El tiempo restante se muestra al jugador.</li>
-<li>Pop ups: Al interactuar con los personajes del juego, o al activar un puzle, se mostrará una nueva pantalla, a la que llamaremos pop-up. Podrá ser una pantalla de diálogo o una pantalla que muestra un puzle. Los pop ups serán diferentes con cada uno de estos casos. En el caso del diálogo, se mostrará al protagonista y al NPC con el que se hable, y un cuadro de texto en la zona inferior. En el caso de los puzles, ocupará toda la pantalla, impidiendo ver la habitación actual.</li>
+<li>Pop ups: Al interactuar con los personajes del juego, o al activar un puzle, se mostrará una nueva pantalla, a la que llamaremos pop-up. Podrá ser una pantalla de diálogo o una pantalla que muestra un puzle. Los pop ups serán diferentes con cada uno de estos casos. En el caso del diálogo, se mostrará un cuadro de texto en la zona inferior. En el caso de los puzles, ocupará toda la pantalla, impidiendo ver la habitación actual.</li>
 </ul>
 
 <h4>Mecánicas de puzles</h4>
@@ -73,7 +73,7 @@ La otra pieza clave de la jugabilidad son los puzzles, que se encontrarán distr
 </ul>
 
 <h4>Controles</h4>
-<p>El jugador podrá moverse apuntando y hclicando con el puntero del ratón en la flecha correspondiente a la dirección en la que desea desplazarse. Para interactuar con objetos y personajes también utilizará el ratón, clicando sobre aquello con lo que quiera interactuar.</p>
+<p>El jugador podrá moverse apuntando y clicando con el puntero del ratón en la flecha correspondiente a la dirección en la que desea desplazarse. Para interactuar con objetos y personajes utilizará el ratón, clicando sobre aquello con lo que quiera interactuar. Además, podrá arrastra los objetos de los que disponga en el inventario.</p>
 
 <h4>Cámara</h4>
 <p>El jugador tendrá una vista en 2D de la habitación en la que se encuentre. Se mostrarán todos los objetos y detalles de la habitación que sean necesarios para el trascurso de la partida. Es un juego en primera persona, y el propio jugador no podrá verse a sí mismo.</p>
@@ -81,33 +81,33 @@ La otra pieza clave de la jugabilidad son los puzzles, que se encontrarán distr
 
 
 <h3>Dinámica</h3>
-<p>Hay un sistema de puntuación interno: la reputación. Se mide en números enteros y comenzará a 0. Cada vez que el jugador resuelva un problema en el pueblo, su reputación aumentará en un punto, hasta un máximo de 15. El objetivo del juego es ser declarado inocente, por lo que el jugador debe intentar resolver la mayor cantidad de puzles posible para tener una buena reputación.
+<p>Hay un sistema de puntuación interno: la reputación. Se mide en números enteros y comenzará a 0. Cada vez que el jugador resuelva un problema en el pueblo, su reputación aumentará en un punto, hasta un máximo de 15. El objetivo del juego es ser declarado inocente, por lo que el jugador debe intentar obtener la mayor cantidad de puntos posible para tener una buena reputación.
 El juego tiene tres posibles finales, dependiendo de la reputación que el jugador pueda conseguir en el tiempo dado.
     <ul>
 <li>Perder: Si al finalizar el tiempo la reputación tiene un valor de 7 o menor, el jugador pierde.</li>
 <li>Ganar: Si al finalizar el tiempo la reputación tiene un valor de 8 o mayor, el jugador gana.</li>
 <li>Ganar con final perfecto: Si al finalizar el tiempo la reputación tiene un valor exacto de 15, el jugador gana, y, además, se mostrará el verdadero culpable del crimen.</li>
 </ul>
-<p>Durante una misma sesión de juego, se mostrará al jugador su récord de reputación conseguida en una partida, en un desplegable del menú de inicio.
-Del jugador se espera que desarrolle una estrategia basada en observar bien las habitaciones y relacionar los elementos que contienen. Para resolver los puzles se requiere tener habilidades lógicas e intuitivas.</p>
+<p>En las sesiones de juego, el jugador podrá ver su récord de reputación conseguida en una partida, en un desplegable del menú de inicio.
+Del jugador se espera que desarrolle una estrategia basada en observar bien las habitaciones y relacionar los elementos que contienen, así como identificar que objetos necesitas los diferentes NPCs. Para resolver los puzles se requiere tener habilidades lógicas e intuitivas.</p>
 <p>Es de esperar que el jugador promedio necesite jugar más de una vez para conseguir ganar con el final perfecto. Esto se conseguirá ajustando el tiempo límite para que el jugador tenga que administrar bien el tiempo, y ser rápido en la observación de los escenarios. Con cada vez que juegue se dará cuenta de algunos aspectos del juego de los que no se había percatado en su partida anterior, avanzando así y pudiendo superar el juego completo en dos o tres partidas de media.</p>
 
 
 <img src="assets/arte/dinámica_partida.png" width="725">
 
-<p>En el juego hay diferentes puzles cada uno con una dinámica única que deberemos completar para poder avanzar en el juego. Estos puzles son:</p>
+<p>En el juego hay diferentes puzles, divididos en 4 dinámicas: input, cliquear en la opción correcta, Topoz y Banderines . Estos puzles son:</p>
 <ul>
 <li>Alarma por el Expreso: en este puzle se presentarán cuatro mesas con un número determinado de objetos de diferente valor. En una de las mesas faltará un objeto y el jugador deberá averiguar cual es el objeto que se necesita en esa mesa para que todas ellas tengan el mismo valor.</li>
 <li>Números rasgados: para completar este puzle el jugador deberá obtener la combinación correcta de una secuencia de números. Para ello se darán una serie de pistas para poder saber el orden de ellos.</li> 
 <li>Banderines de Vértigo: para completar este puzle se deberá encontrar el orden correcto de una serie de banderines, para que los signos matemáticos y números que cada uno representa, formen una operación que tenga sentido matemático.</li>
 <li>El Código Indiscreto: en este puzle se presentará al jugador una imágen con un código numérico oculto. Deberá descifrarlo para completar el puzle.</li>
 <li>El Juego de los Espejos: en este puzle se presentará una pantalla con vista cenital mostrándonos una serie de espejos colocados de diferentes formas junto con un pequeño láser. El objetivo será obtener el camino que haría el láser al rebotar con ellos averiguando por cuales de las diferentes salidas pasará el láser al final.</li>
-<li>Topoz: en este puzle se presentará un tablero 3x3 donde estarán todas las piezas cara abajo. Al clicar sobre una de ella, esa pieza y todas las adyacentes cambiarán a la posición opuesta a la que se encontraban. Para completar este puzle el jugador deberá colocar todas las piezas del tablero cara arriba.</li>
+<li>Topoz: en este puzle se presentará un tablero 3x3 donde estarán todas las piezas cara abajo. Al clicar sobre una de ella, esa pieza y todas las que se encuentren en su misma fila o columna cambiarán a la posición opuesta a la que se encontraban. Para completar este puzle el jugador deberá colocar todas las piezas del tablero cara arriba.</li>
 <li>La Carta: en este puzle se presentará un texto del cual el jugador deberá sacar un mensaje secreto, a partir de la primera letra de cada frase.</li>
 <li>Inocencia y juventud: en este puzle se presentarán cuatro personajes que están acusados de un hurto. Cada uno de ellos da una frase en su defensa, aunque solo uno de ellos dice la verdad. Para completar este puzle el jugador deberá averiguar, utilizando la lógica, cuál de los personajes es el verdadero culpable.</li>
 <li>Encadenados: en este puzle se presenta un sistema de ecuaciones codificadas con una serie de símbolos. Cada símbolo representará un número de una cifra. De esta manera deberemos obtener el valor de cada símbolo para sacar la combinación correcta, que está compuesta de dos símbolos, indicados en el candado.</li>
     </ul>
-<p>La última dinámica es la recolección de objetos, esparcidos por el mapa de juego, que se utilizarán para intentar ayudar a los diferentes personajes que se encuentren. El jugador deberá hacer uso de la lógica para intuir que objeto puede servir de ayuda a cada NPC con el que hable, apoyándose en los diálogos que haya tenido con dicho personaje. Cada vez que haga un uso adecuado de un objeto, su reputación aumentará en un punto.</p>
+<p>La última dinámica es la recolección de objetos, esparcidos por el mapa de juego, que se utilizarán para ayudar a los diferentes personajes que se encuentren. El jugador deberá hacer uso de la lógica para intuir que objeto puede servir de ayuda a cada NPC con el que hable, apoyándose en los diálogos que haya tenido con dicho personaje. Cada vez que haga un uso adecuado de un objeto, su reputación aumentará en un punto.</p>
 <ul>
 <li>Moneda: se entregará al niño de la feria.</li>
 <li>Carta: se entregará a la dueña de la sombrerería. Una vez entregada desbloqueará el camibo hacia el bosque.</li>
@@ -121,8 +121,8 @@ Del jugador se espera que desarrolle una estrategia basada en observar bien las 
 
 
 <h3>Estética</h3>   
-<p>La paleta de colores del juego se basará en tonos pastel apagados recordando a las películas de Hitchcock. Dará el ambiente lúgubre y pesimista que se vive en el pueblo tras el asesinato, a la vez que refleja la situación animica del protagonista.</p>
-<p>El estilo artístico del juego será minimalista para reforzar a nivel visual los objetos relevantes para los puzzles.</p>
+<p>La paleta de colores del juego se basará en tonos pastel apagados recordando a las películas de Hitchcock. Dará el ambiente antiguo y rural que se vive en el pueblo tras el asesinato, a la vez que refleja la situación animica del protagonista.</p>
+<p>El estilo artístico del juego será cartoon y minimalista para reforzar a nivel visual los objetos relevantes para los puzzles.</p>
 <p>Los diferentes escenarios constarán de fondos simples que establecerán la ambientación de un antiguo pueblo inglés. Los objetos que se encuentren por las habitaciones, y no tengan relevancia con la trama, mantendrán la simpleza, acentuando sólo los elementos necesarios para el uso correcto e intuitivo por parte del jugador; evitando así la sobrecarga visual en el escenario.</p>
 <p>En la misma línea los personajes que se presenten ante el jugador serán sencillos, dando predilección por elementos característicos (bigotes, sombreros, barbas, vestimenta…) sobre el detalle elevado; manteniendo la concordancia y dando estímulos visuales al jugador.</p>
 
@@ -130,16 +130,14 @@ Del jugador se espera que desarrolle una estrategia basada en observar bien las 
 
 
 <h2>Menús y modos de juego</h2>
-<p>El juego poseerá 3 menús:</p>
+<p>El juego poseerá 2 menús:</p>
 
 <img src="assets/arte/menus.png" width="750">
 
 <ul>
-<li>Menú portada: el menú que se encontrará el jugador al entrar al juego y siempre que salga de partida. Tendrá el botón de inicio de partida y servirá como puente para entrar al juego como tal. También mostrará el mayor porcentaje de credibilidad que el jugador haya conseguido en la sesión de juego.</li>
+<li>Menú portada: el menú que se encontrará el jugador al entrar al juego y siempre que salga de partida. Tendrá el botón de inicio de partida y servirá como puente para entrar al juego como tal. También mostrará el botón para el pop up donde se muestra el mayor porcentaje de credibilidad que el jugador haya conseguido en la sesión de juego.</li>
 
 <li>Menú de pausa: menú que podrá desplegar el jugador en cualquier momento que este ingame: podrá reanudar la partida y salir. Mientras esté activado, no transcurrirá el tiempo límite de la partida.</li> 
-
-<li>Menú fin de partida: menú donde se mostrará el porcentaje de reputación que se ha conseguido al finalizar la partida. Tendrá una imagen diferente según si el jugador ha sido declarado inocente o culpable. Desde él se puede salir al menú portada.</li>    
 </ul>
 
 
@@ -157,12 +155,11 @@ Del jugador se espera que desarrolle una estrategia basada en observar bien las 
 <ul>
     <li>Botón de iniciar partida: se encuentra en la pantalla de inicio y, al pulsar en este se inicia una partida nueva.</li>
     <li>Flechas de cambio de pantalla: permiten al jugador cambiar habitación, moviéndose así por todo el escenario.</li>
-    <li>Cronómetro: Muestra el tiempo de juego restante.</li>
 </ul>
 
 
 <h2>Contenido</h2>
-<p>El juego consta de 10 habitaciones en las habrá difrerentes puzles y enigmas a descifrar.</p>
+<p>El juego consta de 10 habitaciones en las habrá difrerentes puzles, objetos y personajes con los que interactuar.</p>
 
 <img src="assets/arte/zones.png" width="1000">
 
@@ -184,6 +181,7 @@ Del jugador se espera que desarrolle una estrategia basada en observar bien las 
     <li>Clienta: Está en la sombrerería. Se muestra preocupada por no poder encontrar un sombrero que le agrade.</li>
     <li>Campesino: Se encuentra en la zona del bosque. Está muy atareado ya que su cargamento se ha desperdigado al romperse su carro de transporte.</li>
     <li>Circense: Está en la zona de la feria, es el jefe del recinto ferial. Necesita ayuda con los últimos preparativos antes de la noche de feria.</li>
+    <li>Circense2: Está en la zona de la feria, es el jefe del recinto ferial. gemelo del anterior, resentido con su hermano por ser el dueño del circo.</li>
     <li>Niño: Se encuentra en la zona de la caseta de feria. Está llorando porque no tiene dinero para montarse en un tiovivo.</li>
     <li>Forzudo: Se encuentra en la caseta de feria.</li>
     <li>Excéntrico: Se encuentra en la casa de los espejos.</li>
@@ -204,7 +202,7 @@ Del jugador se espera que desarrolle una estrategia basada en observar bien las 
 <p>El juego no se divide en niveles sino que se desarrolla toda la trama e historia del juego en una única partida con una duración determinada. </p>
 
 <h3>Cinemáticas</h3>
-<p>Habrá cuatro cinemáticas principales. Al inicio se mostrará cómo se descubre el cadáver, al alcalde colerizado y la llegada y lectura de la carta a casa de Donald.
+<p>Habrá cuatro cinemáticas principales. Al inicio se mostrará la lectura de la carta a casa de Donald.
 Al final del juego se presentarán tres cinemáticas diferentes, dependiendo de los resultados obtenidos por el jugador:</p>
 <ul>
 <li>Si ha perdido por no tener suficiente reputación, se mostrará el juicio en el que se le declara culpable y se le condena a muerte.</li>
