@@ -132,7 +132,7 @@ const Data = {
     // Objetos que se pueden recoger
     items: {
         moneda: {
-            sprite: './assets/images/moneda.png',
+            sprite: './assets/images/Moneda.png',
             x: 200,
             y: 750,
             scale: 14,
