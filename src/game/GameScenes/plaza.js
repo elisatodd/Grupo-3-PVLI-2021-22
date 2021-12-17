@@ -24,8 +24,6 @@ export default class Plaza extends EscenaJuego {
   }
 
   preload(){
-    
-    this.load.image('box', '../../../assets/images/testing.png');
   
     if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
       this.AddObject(new Item(Data.items.moneda, this));

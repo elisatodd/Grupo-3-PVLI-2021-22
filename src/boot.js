@@ -27,6 +27,7 @@ export default class Boot extends Phaser.Scene {
     Load()
     {
         
+        this.load.image('box', './assets/images/testing.png');
         this.LoadImages(Data.arrows);
         this.LoadImages(Data.buttons);
         this.LoadImages(Data.items);
