@@ -16,7 +16,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
     points = 0;
   
     itemsInInventory = 0;
-    gameDuration = 900000; // = 900000 SEGUNDOS = 15 minutos
+    gameDuration = 90000; // = 900000 SEGUNDOS = 15 minutos
     MAX_POINTS = 15;
     points_to_win = 8;
 
@@ -42,6 +42,9 @@ export default class GAMEMANAGER extends Phaser.Scene{
         this.scene = scene;
         this.points = points;
         this.zoneUnlocked = unlocked;
+
+        if(!this.scene.registry.get('puntuation'))
+            this.scene.registry.set('puntuation', 0);
     }
 
     
@@ -59,8 +62,8 @@ export default class GAMEMANAGER extends Phaser.Scene{
     startGame(info){
         this.saveTime(this.gameDuration); // le paso el tiempo que quiero que dure la partida
 
-        if(!this.scene.registry.get('puntuation'))
-            this.scene.registry.set('puntuation', 0);
+        // if(!this.scene.registry.get('puntuation'))
+        //     this.scene.registry.set('puntuation', 0);
 
         this.scene.registry.set('points', 0);
         this.scene.registry.set('scenesIni', this.escenas);      
@@ -84,17 +87,18 @@ export default class GAMEMANAGER extends Phaser.Scene{
 
         if(this.scene.registry.get('puntuation') < this.points){
             this.scene.registry.set('puntuation', this.points);
-        
         }
-        if(this.points<10){
-
+        if(this.points < this.points_to_win){
+            console.log("FIN MALO");
             this.scene.scene.start('escenaFinalMal');
         }
-        else if(this.points>=this.points_to_win){
-            this.scene.scene.start('escenaFinalBueno')
+        else if(this.points >= this.MAX_POINTS){
+            console.log("FIN BUENO");
+            this.scene.scene.start('escenaFinalBueno');
         }
         else{
-            this.scene.scene.start('escenaFinalNormal')
+            console.log("FIN NORMAL");
+            this.scene.scene.start('escenaFinalNormal');
         }
         console.log("FIN DE LA PARTIDA!");
         
@@ -106,6 +110,15 @@ export default class GAMEMANAGER extends Phaser.Scene{
      */
     showHighScore(info){
         info.scene.addBottom(info.scene.hsBoard);
+        let texto = "Best points: " + this.scene.registry.get('puntuation');
+        info.scene.text = info.scene.add.text(this.scene.cameras.main.width/2 - 190 , this.scene.cameras.main.height/2 -100, texto, 
+            { fontSize:'50px',color:'#000000',fontFamily: 'initialFont'});
+      
+    }
+
+    deleteHighScore(info){
+        info.image.destroy();
+        info.scene.text.destroy();
     }
 
     /**
@@ -393,9 +406,9 @@ export default class GAMEMANAGER extends Phaser.Scene{
     addPoints(){
         this.points++;
         console.log("Puntos: " + this.points);
-        if (this.points >= this.MAX_POINTS){
-            this.endGame();
-        }
+        // if (this.points >= this.MAX_POINTS){
+        //     this.endGame();
+        // }
         
     }
 

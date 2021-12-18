@@ -12,7 +12,6 @@
     playButton;
     hsButton;
     hsBoard;
-
     text;
     backgroundMusic;
 
@@ -29,7 +28,6 @@
         this._wallpaper = {name: 'mainmenu ', route: './assets/images/fondoMenu.jpg'};
         this.loadImage(this._wallpaper);
       
-
         if (this.first){
             this.playButton = new Object(Data.buttons.playButton, this);
             this.hsButton = new Object(Data.buttons.hsButton, this);
@@ -56,7 +54,7 @@
                 
             this.playButton.assignFunctionality('startIntroduction');
             this.hsButton.assignFunctionality('showHighScore');
-            this.hsBoard.assignFunctionality('deleteImage');
+            this.hsBoard.assignFunctionality('deleteHighScore');
             
             this.backgroundMusic = this.sound.add(Data.sound.backgroundMusic.name, Data.sound.backgroundMusic.config);
 

@@ -23,6 +23,7 @@ export default class EscenaFinalMalo extends Cinematicas {
         super.preload();
     }
     create(){        
+        console.log("Creada escena final");
         super.create();
         this.addBottom(this.exitButton);
         this.exitButton.assignFunctionality('returnMenu');

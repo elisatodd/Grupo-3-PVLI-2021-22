@@ -27,9 +27,6 @@ export default class EscenaInicio extends Escena {
         
         this._wallpaper = {name: 'initialScene', route: './assets/images/fondoInicio.jpg'};
         this.loadImage(this._wallpaper);
-        this.loadFont("initialFont", "./assets/fonts/SpaceMono-Italic.ttf");
-        // this.playButton = new Object(Data.buttons.secondaryPlayButton, this);
-        // this.loadImage(this.playButton);
         
         //inicializo las variables para que empiece el texto desde el principio
         this.i=0;
@@ -71,17 +68,6 @@ export default class EscenaInicio extends Escena {
     assignText(story){
         this.texto= story;
     }
-
-    //Sacado de la documentación de clase literalmente
-    loadFont(name, url) {
-    let newFont = new FontFace(name, `url(${url})`);
-    newFont.load().then(function (loaded) {
-        document.fonts.add(loaded);
-    }).catch(function (error) {
-        return error;
-    });
-}
-
 
     
 }

@@ -29,7 +29,6 @@
     if(!puzzle) puzzle = this;
     puzzle.gameManager.saveTime(puzzle.timedEvent.delay - puzzle.timedEvent.getElapsed());
     puzzle.timedEvent.remove(false); // cancelo el timer anterior
-    puzzle.gameManager.addPoints();
     puzzle.gameManager.savePoints();
 
     // Efecto de sonido

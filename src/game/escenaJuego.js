@@ -51,6 +51,10 @@ export default class EscenaJuego extends Escena {
         super.create();
         this.gameManager.loadElements();
 
+        if (this.gameManager.points >= this.gameManager.MAX_POINTS){
+            this.gameManager.endGame();
+        }
+
         this.assignArrows();
         this.spawnArrows();
 

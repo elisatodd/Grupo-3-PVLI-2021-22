@@ -21,7 +21,8 @@ export default class EscenaFinalBueno extends Cinematicas {
         this.loadImage(this.exitButton);
         super.preload();
     }
-    create(){        
+    create(){      
+        console.log("Creada escena final");  
         super.create();
         this.addBottom(this.exitButton);
         this.exitButton.assignFunctionality('returnMenu');
