@@ -80,7 +80,7 @@ const Data = {
         playButton: {
             sprite: './assets/images/playbutton.png',
             x: 675,
-            y: 312.5,
+            y: 300,
             scale: 2,
             name: 'play'
         }, secondaryPlayButton: {
@@ -107,8 +107,8 @@ const Data = {
         hsPannel: {
             sprite: './assets/images/HSBoard.png',
             x: 775,
-            y: 522.5,
-            scale: 2,
+            y: 400,
+            scale: 2.5,
             name: 'highscoreBoard'
         },
         exitPauseButtom: 
