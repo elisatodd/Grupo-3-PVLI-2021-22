@@ -68,7 +68,8 @@ AssignScene(scene)
  */
 LoadSceneNoPoints()
 {    
-    this.scene.scene.start(this.scene.sceneGame);
+    //this.scene.scene.start(this.scene.sceneToLoad);
+    this.scene.scene.start(this.scene.sceneGame)
   
 }
 LoadScenePoints()
@@ -93,7 +94,7 @@ CreateClickPuzzleButton(info)
 EliminateButtons()
 {
     for(let i = 0; i< this.buttons.length; i++)
-    {
+    {        
         this.buttons[i].destroy();
     }
 }
