@@ -10,7 +10,7 @@
 
     buttons = [];
 
-    winImage = {name: 'winImage', route: './assets/images/puzzles/win.png', pos : {x : 825, y : 412}, scaleProportion: 0.3, functionality : this.LoadScenePoints};
+    winImage = {name: 'winImage', route: './assets/images/puzzles/win.png', pos : {x : 780, y : 412}, scaleProportion: 0.7, functionality : this.LoadScenePoints};
     loseImage = {name: 'lossImage', route: './assets/images/puzzles/lose.png', pos : {x:825, y:412}, scaleProportion: 0.8, functionality : this.LoadSceneNoPoints};
 
    constructor(data) {

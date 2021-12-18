@@ -14,7 +14,6 @@ export default class Boot extends Phaser.Scene {
         this.text = this.add.text(10, 10, 'Cargando Juego ...', { font: '40px Courier', fill: '#FF0000' });
         
         this.Load();
-       
     }
 
     /**
@@ -29,7 +28,6 @@ export default class Boot extends Phaser.Scene {
      */
     Load()
     {
-        
         this.load.image('box', './assets/images/testing.png');
         this.LoadImages(Data.arrows);
         this.LoadImages(Data.buttons);
