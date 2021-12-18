@@ -69,7 +69,7 @@ export default class OBJETO{
     //this.add.text(this.cameras.main.width/3.5, 480, texto, textConfig);
 
     let text = this.scene.add.text(this.scene.cameras.main.width/3.5, 480, texto, 
-      { fontSize:'25px',color:'#000000',fontFamily: 'Arial'});
+      { fontSize:'25px',color:'#000000',fontFamily: 'initialFont'});
 
     this.box.setInteractive();
     this.box.on('pointerdown', function(f){

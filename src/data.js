@@ -161,8 +161,8 @@ const Data = {
         },
         pajarita: {
             sprite: './assets/images/pajarita.png',
-            x: 900,
-            y: 775,
+            x: 550,
+            y: 600,
             scale: 10,
             name: 'pajarita'
         },
