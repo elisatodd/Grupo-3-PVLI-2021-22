@@ -26,7 +26,7 @@
 
     preload(){
         
-        this._wallpaper = {name: 'mainmenu ', route: './assets/images/nuevoFondo.jpg'};
+        this._wallpaper = {name: 'mainmenu ', route: './assets/images/fondoMenu.jpg'};
         this.loadImage(this._wallpaper);
       
 
