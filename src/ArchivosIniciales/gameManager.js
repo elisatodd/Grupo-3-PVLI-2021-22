@@ -109,7 +109,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
      * @param {Object} info Objeto que enseña la tabla de puntuación al ser clicado
      */
     showHighScore(info){
-        info.scene.addBottom(info.scene.hsBoard);
+        info.scene.addButton(info.scene.hsBoard);
         let texto = "Best points: " + this.scene.registry.get('puntuation');
         info.scene.text = info.scene.add.text(this.scene.cameras.main.width/2 - 190 , this.scene.cameras.main.height/2 -100, texto, 
             { fontSize:'50px',color:'#000000',fontFamily: 'initialFont'});
@@ -144,8 +144,8 @@ export default class GAMEMANAGER extends Phaser.Scene{
      * @param {Object} info boton de Pausa
      */
     pause(info){
-        info.scene.addBottom(info.scene.bunpause);
-        info.scene.addBottom(info.scene.breturn);
+        info.scene.addButton(info.scene.bunpause);
+        info.scene.addButton(info.scene.breturn);
         info.scene.timedEvent.paused = true;
     }
 

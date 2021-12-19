@@ -79,7 +79,7 @@ const Data = {
         },
         playButton: {
             sprite: './assets/images/playbutton.png',
-            x: 675,
+            x: 300,
             y: 300,
             scale: 2,
             name: 'play'
@@ -99,7 +99,7 @@ const Data = {
         },
         hsButton: {
             sprite: './assets/images/hsbutton.png',
-            x: 675,
+            x: 300,
             y: 522.5,
             scale: 2,
             name: 'highscore'
@@ -216,8 +216,8 @@ const Data = {
             scale: 2.5,
             name: 'enamorado',
             puzzle: null,
-            first: 'Necesito un regalo para mi\namada.\n\n¿Tienes algo para mi?',
-            last: '¡Muchas gracias!\n\nA mi amada le va a encantar.',
+            first: 'Necesito un regalo para mi\namado.\n\n¿Tienes algo para mi?',
+            last: '¡Muchas gracias!\n\nA mi amado le va a encantar.',
             vendedora: null,
             item: 'flor',
         },

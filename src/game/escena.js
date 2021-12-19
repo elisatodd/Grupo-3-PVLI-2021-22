@@ -22,27 +22,26 @@
     constructor(data) {
       super(data);       
       {
-         
       }; 
-    
     }
 
-
+    /**
+     * Crea lo común a todas las escenas: fondo, tiempo y gameManager
+     */
     create()
     {
         this.spawnWallpaper(this._wallpaper);
      
         this.createGameManager(this.game, this);       
         
+        // Recoge el tiempo restante de juego al crearse esta escena.
         let time = this.registry.get('timeLeft');
         if(time !== undefined)
-        this.timedEvent = this.time.addEvent({ delay: time, callback: this.gameManager.endGame, callbackScope: this.gameManager });
-          
-       
+            this.timedEvent = this.time.addEvent({ delay: time, callback: this.gameManager.endGame, callbackScope: this.gameManager });
     }
 
     /**
-    * Crea un GameManager con acceso a la escena y al juego
+    * Crea un GameManager con acceso a la escena y al juego.
     * @param {Phaser.Game} game referencia al juego
     * @param {Phaser.Scene} scene  referencia a la escena
     */
@@ -51,7 +50,7 @@
         this.gameManager = new GAMEMANAGER(game, scene, this.registry.get('points'), this.registry.get('unlocked'));
     }
 
-   /**
+    /**
     * Carga la imagen solicitada
     * @param {Datos} info ruta y nombre de la imagen solicitada
     */
@@ -84,7 +83,7 @@
 
    /**
     * Asigna la escala a la escena basandose en los datos del wallpaper
-    * @param {Datos} container contiene la información de tamaño
+    * @param {Datos} container contiene la información de escala
     */
     assignScale(container)
     {
@@ -98,7 +97,7 @@
     * con la funcionalidad y datos correspondientes
     * @param {Datos} info parámetros del botón a crear
     */
-    addBottom(info) {
+    addButton(info) {
         //debemos usar estos nombres al crear el objeto
         this.spawnImage(info);   
         info.image.setInteractive();
@@ -111,7 +110,8 @@
 
     /**
      * Crea una imagen-botón estándar(sin relación con el game manager)
-    * con la funcionalidad y datos correspondientes
+     * con la funcionalidad y datos correspondientes.
+     * Se utilizan en los puzzles de clicar en la opción correcta.
      * @param {Datos} info parámetros del botón a crear
      */
     addSpecialButton(info)
@@ -126,7 +126,7 @@
      * con la función de cambiar de escena cuandos e clique sobre ella
      * @param {Datos} info parámetros de la flecha a crear
      */
-    addBottomArrows(info) {
+    addButtonArrows(info) {
         //debemos usar estos nombres al crear el objeto
         this.spawnImage(info);    
         info.image.setInteractive();

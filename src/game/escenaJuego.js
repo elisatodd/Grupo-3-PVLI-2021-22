@@ -110,7 +110,7 @@ export default class EscenaJuego extends Escena {
     spawnArrows() {
         for (let i = 0; i < this.arrows.length; i++)
             if (this.arrows[i] != false)
-                this.addBottomArrows(this.arrows[i]);
+                this.addButtonArrows(this.arrows[i]);
     }
 
     /**
@@ -159,7 +159,7 @@ export default class EscenaJuego extends Escena {
      */
     spawnObjects(container) {
         for (let i = 0; i < container.length; i++) {
-            this.addBottom(container[i]);
+            this.addButton(container[i]);
         }
     }
 }

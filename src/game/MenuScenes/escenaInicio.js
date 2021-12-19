@@ -9,26 +9,26 @@ import Object from "../Objects/objeto.js"
 
 export default class EscenaInicio extends Cinematicas {
 
+    // Botón que permite comenzar el juego.
     playButton;
+
     constructor(){
-        // Nombre de la escena para el SceneManager
         super({ key: 'escenaInicio' });
         {
             
         };
     }
+    
     preload(){
-        
         super.preload();
         this.playButton = new Object(Data.buttons.secondaryPlayButton, this);
         this.loadImage(this.playButton);
     }
+
     create(){        
         super.create();
         this.assignText(Data.cinematics.initialText.string);
         this.playButton.assignFunctionality('startGame');
-        this.addBottom(this.playButton);
+        this.addButton(this.playButton);
     }
-
-    
 }

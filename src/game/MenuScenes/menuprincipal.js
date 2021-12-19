@@ -63,8 +63,8 @@
             this.first = false;
         }
         
-        this.addBottom(this.playButton);
-        this.addBottom(this.hsButton);
+        this.addButton(this.playButton);
+        this.addButton(this.hsButton);
     }
 
 
