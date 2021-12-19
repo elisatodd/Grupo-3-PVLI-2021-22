@@ -1,5 +1,5 @@
 import PuzzleInput from '../puzzleInput.js'
-import Data from '../../Data.js'
+import Data from '../../data.js'
 
 export default class CodigoIndscreto extends PuzzleInput {
 
