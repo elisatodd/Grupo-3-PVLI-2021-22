@@ -166,7 +166,7 @@ export default class GAMEMANAGER extends Phaser.Scene{
     }
 
     /**
-     * Carga todos los elemntos que se encuentran almacenados en el inventario a la nueva escena
+     * Carga todos los elementos que se encuentran almacenados en el inventario a la nueva escena
      */
     loadElements()
     {

@@ -22,15 +22,20 @@ export default class Casa extends EscenaJuego {
     this._wallpaper=[Data.wallpapers.casa][0];  
   }
 
+  /**
+   * Crea los objetos que deben aparecer en la escena: items y NPCs.
+   */
   preload(){
-   
 
-    if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
+    if (this.registry.get('scenesIni').indexOf(this.scene.key) !== -1){
+      let primo = new NPC(Data.npc.primo, this);
+      let carta = new Item(Data.items.carta, this);
+      let sombrero = new Item(Data.items.sombrero, this);
 
-      this.AddCharacter(new NPC(Data.npc.primo, this));
-      this.AddObject(new Item(Data.items.sombrero, this));
-      this.AddObject(new Item(Data.items.carta, this));
+      this.objects = [carta,sombrero];
+      this.characters = [primo];
     }
+    
     super.preload();
   }
 
