@@ -467,7 +467,7 @@ const Data = {
     puzlesObjects:{
         textNinios:{
             name: 'textoNinios', 
-            sprite: './assets/images/puzzles/puzleCarniceria.png', 
+            sprite: './assets/images/puzzles/puzleCarniceria.PNG', 
             pos : {x:400, y:300}, 
             scaleProportion: 0.7
         },
