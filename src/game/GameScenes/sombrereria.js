@@ -26,8 +26,8 @@ import Data from "../../data.js";
     preload(){
 
       if (this.registry.get('scenesIni').indexOf(this.scene.key) !== -1){
-        let clienta = new NPC(Data.npc.clienta, this);
-        let vendedora = new NPC(Data.npc.vendedora, this);
+        let clienta = new NPCItem(Data.npc.clienta, this);
+        let vendedora = new NPCItem(Data.npc.vendedora, this);
 
         this.characters = [clienta, vendedora];
       }
