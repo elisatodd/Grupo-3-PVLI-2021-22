@@ -79,7 +79,7 @@ const Data = {
         },
         playButton: {
             sprite: './assets/images/playbutton.png',
-            x: 675,
+            x: 300,
             y: 300,
             scale: 2,
             name: 'play'
@@ -99,7 +99,7 @@ const Data = {
         },
         hsButton: {
             sprite: './assets/images/hsbutton.png',
-            x: 675,
+            x: 300,
             y: 522.5,
             scale: 2,
             name: 'highscore'
@@ -216,8 +216,8 @@ const Data = {
             scale: 2.5,
             name: 'enamorado',
             puzzle: null,
-            first: 'Necesito un regalo para mi\namada.\n\n¿Tienes algo para mi?',
-            last: '¡Muchas gracias!\n\nA mi amada le va a encantar.',
+            first: 'Necesito un regalo para mi\namado.\n\n¿Tienes algo para mi?',
+            last: '¡Muchas gracias!\n\nA mi amado le va a encantar.',
             vendedora: null,
             item: 'flor',
         },
@@ -445,6 +445,76 @@ const Data = {
             name:'giveItem',
             route:'./assets/sounds/ganarObjeto.wav'
         }
+    },
+
+    puzlesObjects:{
+        textNinios:{
+            name: 'textoNinios', 
+            route: './assets/images/puzzles/puzleCarniceria.png', 
+            pos : {x:400, y:300}, 
+            scaleProportion: 0.7
+        },
+
+        imageNinios:{
+            name: 'ninios', 
+            route: './assets/images/puzzles/ninios.png', 
+            pos : {x:1100, y:300}, 
+            scaleProportion: 1
+        },
+
+        puzzleCandado:{
+            name: 'candadosimbolo', 
+            route: './assets/images/puzzles/candadosimbolos.png', 
+            pos:{x : 1000,y : 450}, 
+            image : '', 
+            scaleProportion : 2
+        },    
+        textAcertijo:{
+            name: 'textacertijo',
+            route: './assets/images/puzzles/textoLaser.PNG', 
+            pos : {x:300, y:100}, 
+            scaleProportion: 2,
+        },
+        acertijo:{
+            name: 'acertijo', 
+            route: './assets/images/puzzles/laberintoEspejos.png', 
+            pos : {x:700, y:450}, 
+            scaleProportion: 1.5
+        },
+        enigma:{
+            name: 'enigma', 
+            route: './assets/images/puzzles/cafeteriaPuzzle.png', 
+            pos : {x:500, y:300}, 
+            scaleProportion: 0.7
+        },
+        acertijoCafeteria:{
+            name: 'acertijoCaferia', 
+            route: './assets/images/puzzles/opcionesCafeteria.png', 
+            pos : {x:1200, y:450}, 
+            scaleProportion: 0.7
+        },
+        NumerosPuzle:{
+            name: 'rasgados', 
+            route: './assets/images/puzzles/telefono.jpg', 
+            pos:{x : 1000,y : 400}, 
+            image : '', 
+            scaleProportion : 0.7,
+        },
+        puzzleCI:{
+            name: 'nota', 
+            route: './assets/images/puzzles/palomitasIndiscreto.png', 
+            pos:{x : 1000,y : 500}, 
+            image : '', 
+            scaleProportion : 0.9
+        },
+        carta:{
+            name: 'cartaNovia', 
+            route: './assets/images/puzzles/LaCarta.jpg', 
+            pos:{x : 1000,y : 410}, 
+            image : '', 
+            scaleProportion : 2
+        },
+
     },
 
     // elementos que se utilizan para las cinemáticas

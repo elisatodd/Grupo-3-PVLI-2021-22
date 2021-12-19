@@ -1,10 +1,10 @@
 
 import PuzzleInput from '../puzzleInput.js'
+import Data from '../../data.js'
 
 export default class NumerosRasgados extends PuzzleInput {
 
-    carta = {name: 'rasgados', route: './assets/images/puzzles/telefono.jpg', pos:{x : 1000,y : 400}, image : '', scaleProportion : 0.7
-};
+  carta = Data.puzlesObjects.NumerosPuzle;
 
   constructor() {
 
@@ -12,26 +12,24 @@ export default class NumerosRasgados extends PuzzleInput {
     {
     };
 
-   
+
   }
 
-  preload()
-  {
+  preload() {
     this.solution = "978564231";
     this.textInput = "¿Cual es el número?";
     this.sceneToLoad = 'casa';
     this.actionWin = this.LoadScene;
 
-    this._wallpaper = {name: 'numRasg', route: './assets/images/puzzles/telefonoWallpaper.jpg'};
+    this._wallpaper = { name: 'numRasg', route: './assets/images/puzzles/telefonoWallpaper.jpg' };
     this.loadImage(this._wallpaper);
     this.loadImage(this.carta);
-    
+
   }
-  create()
-  {
+  create() {
     super.create();
     this.spawnImage(this.carta);
-    this.CreateTextEnter({x:50, y:100}, this, '¿Cuál es el número?');
+    this.CreateTextEnter({ x: 50, y: 100 }, this, '¿Cuál es el número?');
   }
 
 

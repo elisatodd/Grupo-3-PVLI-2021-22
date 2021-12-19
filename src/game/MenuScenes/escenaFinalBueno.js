@@ -8,25 +8,35 @@ import Data from "../../data.js";
 import Object from "../Objects/objeto.js";
 
 export default class EscenaFinalBueno extends Cinematicas {
+
+    // Botón que permite salir del juego.
     exitButton;
-    constructor(){
-        // Nombre de la escena para el SceneManager
+
+    constructor() {
         super({ key: 'escenaFinalBueno' });
         {
-            
+
         };
     }
-    preload(){
+    
+    /**
+     * Carga el botón necesario para continuar.
+     */
+    preload() {
         this.exitButton = new Object(Data.buttons.exitButton, this);
         this.loadImage(this.exitButton);
         super.preload();
     }
-    create(){        
+
+    /**
+     * Añade los elementos de la escena
+     */
+    create() {
         super.create();
-        this.addBottom(this.exitButton);
+        this.addButton(this.exitButton);
         this.exitButton.assignFunctionality('returnMenu');
-        this.assignText (Data.cinematics.goodEnding.string);
+        this.assignText(Data.cinematics.goodEnding.string);
     }
 
-    
+
 }

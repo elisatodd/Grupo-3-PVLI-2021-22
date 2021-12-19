@@ -20,17 +20,21 @@ import Data from "../../data.js";
     this.arrowsDirs = [false, false, 'calle', false];
     this._wallpaper=[Data.wallpapers.sombrereria][0];  
   }
- 
-  preload(){
+   /**
+   * Crea los objetos que deben aparecer en la escena: items y NPCs.
+   */
+    preload(){
 
-    
-    if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
-      this.AddCharacter(new NPCItem(Data.npc.clienta, this));
-      this.AddCharacter(new NPCItem(Data.npc.vendedora, this));
+      if (this.registry.get('scenesIni').indexOf(this.scene.key) !== -1){
+        let clienta = new NPCItem(Data.npc.clienta, this);
+        let vendedora = new NPCItem(Data.npc.vendedora, this);
+
+        this.characters = [clienta, vendedora];
+      }
+      
+      super.preload();
     }
-
-    super.preload();
-  }
+  
 
   create(){
     console.log("Escena Sombrerería");

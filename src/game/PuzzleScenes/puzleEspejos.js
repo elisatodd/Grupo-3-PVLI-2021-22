@@ -1,15 +1,17 @@
 import PuzzleClick from '../puzzleClick.js';
+import Data from '../../data.js'
+
 
 export default class PuzzleEspejos extends PuzzleClick {
 
-  
-  option1 = {name: 'zone1', route: './assets/images/puzzles/optionA.png', pos : {x:400, y:450}, scaleProportion: 10, image : '', functionality : this.Lose};
-  option2 = {name: 'zone2', route: './assets/images/puzzles/optionB.png', pos : {x:725, y:780}, scaleProportion: 10, image : '', functionality : this.Win};
-  option3 = {name: 'zone3', route: './assets/images/puzzles/optionC.png', pos : {x:1080, y:450}, scaleProportion: 10, image : '', functionality : this.Lose};
-  option4 = {name: 'zone4', route: './assets/images/puzzles/optionD.png', pos : {x:725, y:100}, scaleProportion: 10, image: '', functionality : this.Lose};
-  
-  text = {name: 'textacertijo', route: './assets/images/puzzles/textoLaser.PNG', pos : {x:300, y:100}, scaleProportion: 2};
-  acertijo = {name: 'acertijo', route: './assets/images/puzzles/laberintoEspejos.png', pos : {x:700, y:450}, scaleProportion: 1.5};
+
+  option1 = { name: 'zone1', route: './assets/images/puzzles/optionA.png', pos: { x: 400, y: 450 }, scaleProportion: 10, image: '', functionality: this.Lose };
+  option2 = { name: 'zone2', route: './assets/images/puzzles/optionB.png', pos: { x: 725, y: 780 }, scaleProportion: 10, image: '', functionality: this.Win };
+  option3 = { name: 'zone3', route: './assets/images/puzzles/optionC.png', pos: { x: 1080, y: 450 }, scaleProportion: 10, image: '', functionality: this.Lose };
+  option4 = { name: 'zone4', route: './assets/images/puzzles/optionD.png', pos: { x: 725, y: 100 }, scaleProportion: 10, image: '', functionality: this.Lose };
+
+  text = Data.puzlesObjects.textAcertijo;
+  acertijo = Data.puzlesObjects.acertijo;
 
   constructor() {
 
@@ -18,13 +20,12 @@ export default class PuzzleEspejos extends PuzzleClick {
     };
   }
 
-  preload()
-  {
+  preload() {
 
     super.preload();
 
     this.AssignScene('casaEspejos');
-    
+
     this.loadImage(this.text);
     this.loadImage(this.acertijo);
 
@@ -32,22 +33,21 @@ export default class PuzzleEspejos extends PuzzleClick {
     this.loadImage(this.option2);
     this.loadImage(this.option3);
     this.loadImage(this.option4);
-    
-   
+
+
   }
 
 
-  create()
-  { 
-   super.create();
+  create() {
+    super.create();
 
-   this.CreateClickPuzzleButton(this.option1);
-   this.CreateClickPuzzleButton(this.option2);
-   this.CreateClickPuzzleButton(this.option3);
-   this.CreateClickPuzzleButton(this.option4);
+    this.CreateClickPuzzleButton(this.option1);
+    this.CreateClickPuzzleButton(this.option2);
+    this.CreateClickPuzzleButton(this.option3);
+    this.CreateClickPuzzleButton(this.option4);
 
-   this.spawnImage(this.text);
-   this.spawnImage(this.acertijo);
-  
+    this.spawnImage(this.text);
+    this.spawnImage(this.acertijo);
+
   }
 }

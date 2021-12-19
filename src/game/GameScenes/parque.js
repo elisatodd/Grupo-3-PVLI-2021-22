@@ -23,15 +23,23 @@ export default class Parque extends EscenaJuego {
     this._wallpaper=[Data.wallpapers.parque][0];  
   }
 
-  preload(){
-    
-    if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
-      this.AddCharacter(new NPC(Data.npc.candado,this));
-      this.AddCharacter(new NPCItem(Data.npc.enamorado,this));
-      this.AddObject(new Item(Data.items.caja, this)); 
+  /**
+   * Crea los objetos que deben aparecer en la escena: items y NPCs.
+   */
+   preload(){
+
+    if (this.registry.get('scenesIni').indexOf(this.scene.key) !== -1){
+      let enamorado = new NPCItem(Data.npc.enamorado, this);
+      let candado = new NPC(Data.npc.candado, this);
+      let caja = new Item(Data.items.caja, this);
+
+      this.objects = [caja];
+      this.characters = [enamorado, candado];
     }
+    
     super.preload();
   }
+
 
   create(){
     super.create();

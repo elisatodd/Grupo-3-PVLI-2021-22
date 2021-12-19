@@ -26,47 +26,53 @@ export default class EscenaJuego extends Escena {
         };
     }
 
+    /**
+     * Define los objetos comunes a todas las escenas de juego: flechas, botones de pausa, mute, y paneles de pausa.
+     */
     preload() {
-        if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)) {
+        // Solo lo hace una vez por partida
+        if (this.registry.get('scenesIni').indexOf(this.scene.key) !== -1) {
             this.bmute = new OBJETO(Data.buttons.buttonMute, this);
             this.bunmute = new OBJETO(Data.buttons.buttonUnMute, this);
             this.bpause = new OBJETO(Data.buttons.buttonPause, this);
             this.bunpause = new OBJETO(Data.buttons.exitPauseButtom, this);
             this.breturn = new OBJETO(Data.buttons.exitMenuButtom, this);
         }
-        
-        //this.loadImage(this._wallpaper);
-
-        //a eliminar
-        //this.loadObjects(this.objects);
-        //this.loadObjects(this.characters);
-        //this.loadObjects([this.bpause, this.bmute, this.bunmute, this.bunpause, this.breturn]);
-        //this.loadArrows();
-
+        // Hay flechas en todas las escenas pero hacen cosas distintas,
+        // por lo que hay que crear las flechas de cada escena.
         this.createArrows();
-
     }
 
+    /**
+     * Crea los objetos que se ven en la escena de juego. 
+     * También comprueba si se ha alcanzado el máximo de puntos.
+     */
     create() {
         super.create();
+        // Carga los items que tenga en el inventario.
         this.gameManager.loadElements();
 
-        this.assignArrows();
-        this.spawnArrows();
+        // Comprueba si el jugador ha obtenido los puntos máximos, así no tendrá que esperar a que acabe el tiempo de juego.
+        if (this.gameManager.points >= this.gameManager.MAX_POINTS){
+            this.gameManager.endGame();
+        }
 
+        // En la primera aparición, asigna funcionalidad a los botones
         let scenesIni = this.registry.get('scenesIni');
         if (scenesIni.indexOf(this.scene.key) !== -1) {
-
             this.bmute.assignFunctionality('mute');
             this.bunmute.assignFunctionality('mute');
             this.bpause.assignFunctionality('pause');
             this.bunpause.assignFunctionality('deletePause');
             this.breturn.assignFunctionality('returnMenu');
 
+            // Cambia el registro -> marca la escena como accedida
             scenesIni[scenesIni.indexOf(this.scene.key)] = null;
             this.registry.set('scenesIni', scenesIni);
-
-        }
+        }        
+        this.assignArrows();
+        // Dibuja los objetos
+        this.spawnArrows();
         this.spawnObjects(this.objects);
         this.spawnObjects(this.characters);
         this.spawnObjects([this.bpause, this.bmute]);
@@ -75,8 +81,7 @@ export default class EscenaJuego extends Escena {
 
     /**
     * Crea flechas para cambiar de zonas en la escena actual
-    * con la informacion de esta
-    * @param 
+    * con la informacion de la misma sacada del data.
     */
     createArrows() {
         for (let i = 0; i < this.arrows.length; i++) {
@@ -99,26 +104,13 @@ export default class EscenaJuego extends Escena {
         }
     }
 
-    //a eliminar
-    loadArrows() {
-        for (let i = 0; i < this.arrows.length; i++)
-            if (this.arrows[i] != false)
-                this.loadImage(this.arrows[i]);
-    }
-
     /**
-     * Instancia botones con los datos de las flechas en la escena.
+     * Instancia las flechas (botones) con los datos de las flechas definidos anteriormente.
      */
     spawnArrows() {
         for (let i = 0; i < this.arrows.length; i++)
             if (this.arrows[i] != false)
-                this.addBottomArrows(this.arrows[i]);
-    }
-
-    //a eliminar
-    loadObjects(container) {
-        for (let i = 0; i < container.length; i++)
-            this.loadImage(container[i]);
+                this.addButtonArrows(this.arrows[i]);
     }
 
     /**
@@ -163,92 +155,11 @@ export default class EscenaJuego extends Escena {
     /**
      * Instancia en la escena todos los objetos almacenados en el contenedor 
      * dado como parámetro
-     * @param {Array} container 
+     * @param {Array} container Objetos que queremos spawnear
      */
     spawnObjects(container) {
         for (let i = 0; i < container.length; i++) {
-            this.addBottom(container[i]);
+            this.addButton(container[i]);
         }
     }
-
-    /**
-     * Añade un item al array de objetos de la escena
-     * @param {item} object objeto para ser añadido al contenedor de objetos
-     */
-    AddObject(object) {
-        this.objects.push(object);
-    }
-
-    /**
-     * Añade un NPC al array de personajes d ela escena
-     * @param {NPC/NPCItem} character 
-     */
-    AddCharacter(character) {
-        this.characters.push(character);
-    }
-
-    //actives es un array donde se ven que objectos siguen estado activados, recogido del gameManager
-    CreateCharacters(actives) {
-        let i = 0;
-        for (let character of this.characters) {
-            if (actives[i] == true) {
-                //character();
-            }
-            i++;
-        }
-    }
-
-    //a eliminar?
-    CreateObjects(actives) {
-        let i = 0;
-        for (let object of this.objects) {
-            if (actives[i] == true) {
-                //object();
-            }
-            i++;
-        }
-    }
-
-    //posInv?
-    /**
-     * Mueve al inventario un objeto de la escena
-     * @param {Pos : {x,y}} posInv 
-     * @param {Item} obj 
-     * @param {Int} xPosition 
-     * @param {Int} yPosition 
-     * @param {Int} itemScale 
-     */
-    moverAlInventario(posInv, obj, xPosition, yPosition, itemScale) { // Pone un objeto de esta escena en el inventario
-        // Las posiciones dependen de cuantos objetos haya en el inventario
-        let inv1 = this.add.image(xPosition, yPosition, obj);
-        inv1.setScale(this.scale / itemScale).setScrollFactor(0);
-    }
-
-    //?devuelve el nombre?
-    /**
-     * Busca un objeto en el inventario
-     * @param {string} name nombre usado para encontra rel objeto en cuestión 
-     * @returns 
-     */
-    buscarObjeto(name) { // UN FOR RECORRIENDO EL ARRAY DE OBJETOS HASTA QUE ENCUENTRA EL NOMBRE
-        for (i = 0; i < this.objects.length; ++i) {
-            if (objects[i].dameNombre() == name) {
-                return objects[i].dameNombre();
-            }
-        }
-    }
-
-    /**
-     * Elimina un objeto del contenedor de objetos la escena
-     * @param {Item} obj 
-     */
-    // El GM llama a este método cuando se pasa un objeto al inventario, para que desaparezca de la escena
-    RemoveObject(obj) {
-        //Forma de borrar un elemento concreto de un vector
-        let indice = array.indexOf(obj);
-        if (indice !== -1) {
-            this.objects.splice(indice, 1);
-        }
-    }
-
 }

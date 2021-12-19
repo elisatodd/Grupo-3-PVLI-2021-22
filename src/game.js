@@ -11,7 +11,6 @@ import Mercado from './game/GameScenes/mercado.js';
 import Parque from './game/GameScenes/parque.js';
 
 import MenuPrincipal from './game/MenuScenes/menuprincipal.js';
-import MenuPausa from './game/MenuScenes/menupausa.js';
 import EscenaInicio from './game/MenuScenes/escenaInicio.js';
 import EscenaFinalMalo from './game/MenuScenes/escenaFinalMal.js'
 import EscenaFinalBueno from './game/MenuScenes/escenaFinalBueno.js'
@@ -47,7 +46,7 @@ let config = {
     autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
   },
   scene: [Boot, MenuPrincipal, EscenaInicio,EscenaFinalMalo,EscenaFinalBueno,EscenaFinalNormal, Casa, Plaza, Calle, Bosque, Feria, CasetaFeria, CasaEspejos, Sombrereria, Mercado, Parque, 
-    NumerosRasgados, PuzzleCafeteria, PuzzleBanderines, PuzzleTopoz ,PuzzleCandado ,CodigoIndscreto, CartaPuzle, PuzzleEspejos, PuzzleCarniceria, MenuPausa] // Escenas que requiere el juego
+    NumerosRasgados, PuzzleCafeteria, PuzzleBanderines, PuzzleTopoz ,PuzzleCandado ,CodigoIndscreto, CartaPuzle, PuzzleEspejos, PuzzleCarniceria] // Escenas que requiere el juego
   };
 
 

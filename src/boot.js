@@ -29,6 +29,9 @@ export default class Boot extends Phaser.Scene {
     Load()
     {
         this.load.image('box', './assets/images/testing.png');
+        
+        this.loadFont("initialFont", "./assets/fonts/SpaceMono-Italic.ttf");
+
         this.LoadImages(Data.arrows);
         this.LoadImages(Data.buttons);
         this.LoadImages(Data.items);
@@ -44,20 +47,31 @@ export default class Boot extends Phaser.Scene {
     {
         for (const value of Object.values(file)) {
             this.load.image(value.name, value.sprite);
-          }
+        }
     }
 
     LoadWallpapers()
     {
         for (const value of Object.values(Data.wallpapers)) {
             this.load.image(value.name, value.route);
-          }
+        }
     }
 
     LoadSounds()
     {
         for (const value of Object.values(Data.sound)) {
             this.load.audio(value.name, value.route);
-          }
+        }
+    }
+
+    //Sacado de la documentación de clase literalmente
+    loadFont(name, url) {
+        let newFont = new FontFace(name, `url(${url})`);
+        
+        newFont.load().then(function (loaded) {
+            document.fonts.add(loaded);
+        }).catch(function (error) {
+            return error;
+        });
     }
 }
