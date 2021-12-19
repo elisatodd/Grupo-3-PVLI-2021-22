@@ -15,16 +15,20 @@ export default class EscenaInicio extends Cinematicas {
     constructor(){
         super({ key: 'escenaInicio' });
         {
-            
         };
     }
-    
+    /**
+     * Carga el botón necesario para continuar.
+     */
     preload(){
         super.preload();
         this.playButton = new Object(Data.buttons.secondaryPlayButton, this);
         this.loadImage(this.playButton);
     }
 
+    /**
+     * Añade los elementos de la escena
+     */
     create(){        
         super.create();
         this.assignText(Data.cinematics.initialText.string);

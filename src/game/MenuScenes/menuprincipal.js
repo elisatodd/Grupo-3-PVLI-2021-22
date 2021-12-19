@@ -1,5 +1,5 @@
 /**
- * Escena del menñu principal
+ * Escena del menu principal del cual se pasa al juego
  * @extends EscenaMenu
  */
  import Escena from '../escena.js';
