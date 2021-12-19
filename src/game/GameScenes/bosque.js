@@ -32,8 +32,8 @@ export default class Bosque extends EscenaJuego {
         let campesino = new NPCItem(Data.npc.campesino, this);
         let pajarita = new Item(Data.items.pajarita, this);
   
-        this.objects = [policia, campesino];
-        this.characters = [pajarita];
+        this.objects = [pajarita];
+        this.characters = [policia, campesino];
       }
       
       super.preload();
