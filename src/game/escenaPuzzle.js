@@ -2,9 +2,9 @@
  * Intentando hacer una escena
  * @extends Escena
  */
- import Escena from './escena.js'
+import Escena from './escena.js'
 
- export default class EscenaPuzzle extends Escena {
+export default class EscenaPuzzle extends Escena {
 
   sceneToLoad = '';
 
@@ -15,18 +15,22 @@
   }
 
 
-  create()
-  {
+  create() {
     super.create();
   }
-  
-  //método virtual
-  ResolvePuzzle()
-  {}
 
-  LoadScene(puzzle)
-  {
-    if(!puzzle) puzzle = this;
+  //método virtual
+  ResolvePuzzle() {
+
+  }
+
+
+  /**
+   * Guarda los datos correspondientes al puzle (tiempo, puntos) y se añade la musica de ganar el puzle
+   * @param {Scene} puzzle escena del puzle
+   */
+  LoadScene(puzzle) {
+    if (!puzzle) puzzle = this;
     puzzle.gameManager.saveTime(puzzle.timedEvent.delay - puzzle.timedEvent.getElapsed());
     puzzle.timedEvent.remove(false); // cancelo el timer anterior
     puzzle.gameManager.savePoints();
