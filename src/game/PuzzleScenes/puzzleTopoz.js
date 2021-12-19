@@ -3,6 +3,7 @@
  * @extends EscenaPuzzle
  */
 import EscenaPuzzle from './../escenaPuzzle.js'
+import Data from '../../data.js';
 
 export default class PuzzleTopoz extends EscenaPuzzle {
 
@@ -12,8 +13,8 @@ export default class PuzzleTopoz extends EscenaPuzzle {
 
 
     //base grafica que sera usada para todos
-    up = { name: 'topoUp', route: './assets/images/puzzles/topoOff.png', pos: { x: "", y: "" }, scaleProportion: 2, image: "" };
-    down = { name: 'topoDown', route: './assets/images/puzzles/topoOn2.png', pos: { x: "", y: "" }, scaleProportion: 2, image: "" };
+    up = { name: 'topoUp', pos: { x: "", y: "" }, scaleProportion: 2, image: "" };
+    down = { name: 'topoDown', pos: { x: "", y: "" }, scaleProportion: 2, image: "" };
 
     //botón
     o1 = button({ id: 1, pos: { x: 400, y: 150 }, functionality: this.Change });
@@ -47,16 +48,7 @@ export default class PuzzleTopoz extends EscenaPuzzle {
 
     //a la hora de hacer el create en las escenas heredadas añadir un super para que se cargen ambos recursos
     preload() {
-        this._wallpaper = { name: 'cartaPuzle', route: './assets/images/puzzles/telefonoWallpaper.jpg' };
-        this.loadImage(this._wallpaper);
-        //imagen de up
-        this.loadImage(this.up);
-        //imagen de down
-        this.loadImage(this.down);
-        //imagen transparente
-        this.loadImage({ name: "transparent", route: "./assets/images/puzzles/transparent.png" });
-
-
+        this._wallpaper = Data.wallpapers.blueWallpaper;
     }
 
     create() {
@@ -114,9 +106,6 @@ export default class PuzzleTopoz extends EscenaPuzzle {
             obj.right = !obj.right;
         else this.addSpecialButton(obj);
 
-
-        console.log("objeto cambiado");
-
         if (obj.right === true) {
             this.up.pos = { x: obj.pos.x, y: obj.pos.y };
             this.spawnImage(this.up);
@@ -125,16 +114,9 @@ export default class PuzzleTopoz extends EscenaPuzzle {
         else {
             this.down.pos = { x: obj.pos.x, y: obj.pos.y };
             this.spawnImage(this.down);
-
         }
-
-
-
-
-
     }
 
-    //?decimos para que
     /**
      * Obtiene la posición del topo específico dentro del array bidimensional para 
      * poder modificar los que estan en su misma fila y columna

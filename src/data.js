@@ -582,9 +582,19 @@ const Data = {
         button:{
             name: 'button',
             sprite: './assets/images/puzzles/blueButton.png'
+        },
+        topoUp:{
+            name: 'topoUp',
+            sprite: './assets/images/puzzles/topoOff.png',
+        },
+        topoDown:{
+            name: 'topoDown',
+            sprite: './assets/images/puzzles/topoOn2.png'
+        },
+        transparent:{
+            name:'transparent',
+            sprite: './assets/images/puzzles/transparent.png'
         }
-
-
     },
 
     // elementos que se utilizan para las cinemáticas
