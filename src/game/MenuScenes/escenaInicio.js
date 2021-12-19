@@ -23,7 +23,6 @@ export default class EscenaInicio extends Cinematicas {
     preload(){
         super.preload();
         this.playButton = new Object(Data.buttons.secondaryPlayButton, this);
-        this.loadImage(this.playButton);
     }
 
     /**

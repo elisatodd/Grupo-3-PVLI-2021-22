@@ -38,8 +38,6 @@ export default class PuzzleBanderines extends EscenaPuzzle {
 
     //a la hora de hacer el create en las escenas heredadas añadir un super para que se cargen ambos recursos
     preload() {
-        this._wallpaper = { name: 'cartaPuzle', route: './assets/images/puzzles/telefonoWallpaper.jpg' };
-        this.loadImage(this._wallpaper);
         this.loadImage(this.button);
 
         for (let i = 0; i < this.bands.length; i++)

@@ -28,7 +28,7 @@ export default class Feria extends EscenaJuego {
 
     if (this.registry.get('scenesIni').indexOf(this.scene.key) !== -1){
       let cirquense = new NPC(Data.npc.cirquense, this);
-      let cirquense2 = new NPC(Data.npc.cirquense2)
+      let cirquense2 = new NPC(Data.npc.cirquense2, this)
 
       this.characters = [cirquense, cirquense2];
     }

@@ -16,14 +16,12 @@ export default class NumerosRasgados extends PuzzleInput {
   }
 
   preload() {
+    super.preload();
+
     this.solution = "978564231";
     this.textInput = "¿Cual es el número?";
     this.sceneToLoad = 'casa';
     this.actionWin = this.LoadScene;
-
-    this._wallpaper = { name: 'numRasg', route: './assets/images/puzzles/telefonoWallpaper.jpg' };
-    this.loadImage(this._wallpaper);
-    this.loadImage(this.carta);
 
   }
   create() {

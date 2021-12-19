@@ -56,7 +56,7 @@
     */
     loadImage(info)
     {
-        this.load.image(info.name, info.route);
+        this.load.image(info.name, info.sprite);
     }
 
     /**
