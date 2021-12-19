@@ -6,6 +6,7 @@ import Escena from './escena.js'
 
 export default class EscenaPuzzle extends Escena {
 
+  // Escena que debe salir cuando acabe el puzzle
   sceneToLoad = '';
 
   constructor(data) {
@@ -19,23 +20,24 @@ export default class EscenaPuzzle extends Escena {
     super.create();
   }
 
-  //método virtual
+  // Método virtual
   ResolvePuzzle() {
-
   }
 
-
   /**
-   * Guarda los datos correspondientes al puzle (tiempo, puntos) y se añade la musica de ganar el puzle
-   * @param {Scene} puzzle escena del puzle
+   * Llamado cuando se completa el puzzle.
+   * Guarda los datos correspondientes al puzzle (tiempo, puntos) y se añade la musica de ganar el puzzle.
+   * Cambia de escena a la que estaba el jugador antes de hacer el puzzle.
+   * @param {Scene} puzzle escena del puzzle
    */
   LoadScene(puzzle) {
     if (!puzzle) puzzle = this;
+
     puzzle.gameManager.saveTime(puzzle.timedEvent.delay - puzzle.timedEvent.getElapsed());
     puzzle.timedEvent.remove(false); // cancelo el timer anterior
     puzzle.gameManager.savePoints();
 
-    // Efecto de sonido
+    // Efecto de sonido al resolver el puzzle
     const config = {
       mute: false,
       volume: 0.1,

@@ -51,7 +51,6 @@ export default class GAMEMANAGER extends Phaser.Scene{
     preload()
     {
         this.loadElements();
-        //this.showElements();
     }
 
     /**
@@ -61,9 +60,6 @@ export default class GAMEMANAGER extends Phaser.Scene{
      */
     startGame(info){
         this.saveTime(this.gameDuration); // le paso el tiempo que quiero que dure la partida
-
-        // if(!this.scene.registry.get('puntuation'))
-        //     this.scene.registry.set('puntuation', 0);
 
         this.scene.registry.set('points', 0);
         this.scene.registry.set('scenesIni', this.escenas);      

@@ -24,7 +24,7 @@ export default class Boot extends Phaser.Scene {
     }
 
     /**
-     * Carga de todos los assets
+     * Carga de todos los assets 
      */
     Load()
     {
@@ -36,6 +36,8 @@ export default class Boot extends Phaser.Scene {
         this.LoadImages(Data.buttons);
         this.LoadImages(Data.items);
         this.LoadImages(Data.npc);
+        this.LoadImages(Data.wallpapers);
+        this.LoadImages(Data.puzlesObjects);
 
         this.LoadWallpapers();
 

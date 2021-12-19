@@ -16,15 +16,12 @@ export default class PuzzleCandado extends PuzzleInput {
   }
 
   preload() {
+    super.preload();
+    
     this.solution = "76";
     this.textInput = "¿Qué número representa cada símbolo?";
     this.sceneToLoad = 'parque';
     this.actionWin = this.LoadScene;
-
-    this._wallpaper = { name: 'candadoPuzzle', route: './assets/images/puzzles/telefonoWallpaper.jpg' };
-    this.loadImage(this._wallpaper);
-    this.loadImage(this.candado);
-
   }
   create() {
     super.create();

@@ -3,6 +3,7 @@
  * @extends EscenaPuzzle
  */
 import EscenaPuzzle from './escenaPuzzle.js'
+import Data from '../data.js'
 
 export default class PuzzleClick extends EscenaPuzzle {
 
@@ -10,30 +11,20 @@ export default class PuzzleClick extends EscenaPuzzle {
 
     buttons = [];
 
-    winImage = { name: 'winImage', route: './assets/images/puzzles/win.png', pos: { x: 780, y: 412 }, scaleProportion: 0.7, functionality: this.LoadScenePoints };
-    loseImage = { name: 'lossImage', route: './assets/images/puzzles/lose.png', pos: { x: 825, y: 412 }, scaleProportion: 0.8, functionality: this.LoadSceneNoPoints };
+    winImage = { name: 'winImage', pos: { x: 780, y: 412 }, scaleProportion: 0.7, functionality: this.LoadScenePoints };
+    loseImage = { name: 'lossImage', pos: { x: 825, y: 412 }, scaleProportion: 0.8, functionality: this.LoadSceneNoPoints };
 
     constructor(data) {
-
         super(data);
         {
         };
-
-
     }
 
-
-    //a la hora de hacer el create en las escenas heredadas añadir un super para que se cargen ambos recursos
     preload() {
-        this._wallpaper = { name: 'fondoazul', route: './assets/images/puzzles/bluewallpaper.jpg' };
-        this.loadImage(this._wallpaper);
-
-        this.loadImage(this.winImage);
-        this.loadImage(this.loseImage);
+        this._wallpaper = Data.wallpapers.blueWallpaper;
     }
 
     create() {
-
         super.create();
     }
 

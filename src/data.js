@@ -371,48 +371,65 @@ const Data = {
     wallpapers:{
         bosque: {
             name: 'bosque ', 
-            route: './assets/images/fondoBosque.jpg'
+            sprite: './assets/images/fondoBosque.jpg'
         },
         calle: {
             name: 'calle', 
-            route: './assets/images/fondoCalle.jpg'
+            sprite: './assets/images/fondoCalle.jpg'
         },
         casa: {
             name: 'casa', 
-            route: './assets/images/fondoCasa.jpg'
+            sprite: './assets/images/fondoCasa.jpg'
         },
         casaEspejos: {
             name: 'espejos', 
-            route: './assets/images/fondoEspejos.jpg'
+            sprite: './assets/images/fondoEspejos.jpg'
         },
         casetaFeria: {
             name: 'caseta ',
-            route: './assets/images/fondoCaseta.jpg'
+            sprite: './assets/images/fondoCaseta.jpg'
         },
         feria: {
             name: 'feria ', 
-            route: './assets/images/fondoCirco.jpg'
+            sprite: './assets/images/fondoCirco.jpg'
         },
         mercado: {
             name: 'mercado',
-            route: './assets/images/fondoMercado.jpg'
+            sprite: './assets/images/fondoMercado.jpg'
         },
         parque: {
             name: 'parque', 
-            route: './assets/images/fondoParque.jpg'
+            sprite: './assets/images/fondoParque.jpg'
         },
         plaza: {
             name: 'plaza', 
-            route: './assets/images/fondoPlaza.jpg'
+            sprite: './assets/images/fondoPlaza.jpg'
         },
         pantallaCarga: {
             name: 'pantallaCarga', 
-            route: './assets/images/fondoCarga.jpg'
+            sprite: './assets/images/fondoCarga.jpg'
         },
         sombrereria: {
             name: 'sombrereria',
-             route: './assets/images/fondoSombrereria.jpg',
+            sprite: './assets/images/fondoSombrereria.jpg',
         },
+        mainMenu:{
+            name: 'mainmenu',
+            sprite: './assets/images/fondoMenu.jpg'
+        },
+        initialScene:{
+            name: 'initialScene',
+            sprite: './assets/images/fondoInicio.jpg'
+        },
+        blueWallpaper:{
+            name: 'fondoazul',
+            sprite: './assets/images/puzzles/bluewallpaper.jpg'
+        },
+        redWallpaper:{
+            name: 'fondorojo',
+            sprite: './assets/images/puzzles/telefonoWallpaper.jpg'
+
+        }
     
 
     },
@@ -450,70 +467,94 @@ const Data = {
     puzlesObjects:{
         textNinios:{
             name: 'textoNinios', 
-            route: './assets/images/puzzles/puzleCarniceria.png', 
+            sprite: './assets/images/puzzles/puzleCarniceria.png', 
             pos : {x:400, y:300}, 
             scaleProportion: 0.7
         },
 
         imageNinios:{
             name: 'ninios', 
-            route: './assets/images/puzzles/ninios.png', 
+            sprite: './assets/images/puzzles/ninios.png', 
             pos : {x:1100, y:300}, 
             scaleProportion: 1
         },
 
         puzzleCandado:{
             name: 'candadosimbolo', 
-            route: './assets/images/puzzles/candadosimbolos.png', 
+            sprite: './assets/images/puzzles/candadosimbolos.png', 
             pos:{x : 1000,y : 450}, 
             image : '', 
             scaleProportion : 2
         },    
         textAcertijo:{
             name: 'textacertijo',
-            route: './assets/images/puzzles/textoLaser.PNG', 
+            sprite: './assets/images/puzzles/textoLaser.PNG', 
             pos : {x:300, y:100}, 
             scaleProportion: 2,
         },
         acertijo:{
             name: 'acertijo', 
-            route: './assets/images/puzzles/laberintoEspejos.png', 
+            sprite: './assets/images/puzzles/laberintoEspejos.png', 
             pos : {x:700, y:450}, 
             scaleProportion: 1.5
         },
         enigma:{
             name: 'enigma', 
-            route: './assets/images/puzzles/cafeteriaPuzzle.png', 
+            sprite: './assets/images/puzzles/cafeteriaPuzzle.png', 
             pos : {x:500, y:300}, 
             scaleProportion: 0.7
         },
         acertijoCafeteria:{
             name: 'acertijoCaferia', 
-            route: './assets/images/puzzles/opcionesCafeteria.png', 
+            sprite: './assets/images/puzzles/opcionesCafeteria.png', 
             pos : {x:1200, y:450}, 
             scaleProportion: 0.7
         },
         NumerosPuzle:{
             name: 'rasgados', 
-            route: './assets/images/puzzles/telefono.jpg', 
+            sprite: './assets/images/puzzles/telefono.jpg', 
             pos:{x : 1000,y : 400}, 
             image : '', 
             scaleProportion : 0.7,
         },
         puzzleCI:{
             name: 'nota', 
-            route: './assets/images/puzzles/palomitasIndiscreto.png', 
+            sprite: './assets/images/puzzles/palomitasIndiscreto.png', 
             pos:{x : 1000,y : 500}, 
             image : '', 
             scaleProportion : 0.9
         },
         carta:{
             name: 'cartaNovia', 
-            route: './assets/images/puzzles/LaCarta.jpg', 
+            sprite: './assets/images/puzzles/LaCarta.jpg', 
             pos:{x : 1000,y : 410}, 
             image : '', 
             scaleProportion : 2
         },
+        zone1:{
+            name: 'zone1', 
+            sprite: './assets/images/puzzles/optionA.png'
+        },
+        zone2:{
+            name: 'zone2', 
+            sprite: './assets/images/puzzles/optionB.png'
+        },
+        zone3:{
+            name: 'zone3', 
+            sprite: './assets/images/puzzles/optionC.png'
+        },
+        zone4:{
+            name: 'zone4',
+            sprite: './assets/images/puzzles/optionD.png'
+        },
+        winImage:{
+            name: 'winImage',
+            sprite: './assets/images/puzzles/win.png',
+        },
+        lossImage:{
+            name: 'lossImage',
+            sprite: './assets/images/puzzles/lose.png',
+        }
 
     },
 

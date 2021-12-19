@@ -3,6 +3,7 @@
  * @extends EscenaPuzzle
  */
 import EscenaPuzzle from './escenaPuzzle.js'
+import Data from '../data.js';
 
 export default class PuzzleInput extends EscenaPuzzle {
 
@@ -14,21 +15,20 @@ export default class PuzzleInput extends EscenaPuzzle {
 
 
     constructor(data) {
-
-
         super(data);
         {
         };
     }
 
+    preload(){
+        this._wallpaper = Data.wallpapers.redWallpaper;
+    }
 
     create() {
         super.create();
     }
 
-
     /**
-     * 
      * @returns Devuelve si la solución dada es igual a la que pide el puzle
      */
     ResolvePuzzle() {
