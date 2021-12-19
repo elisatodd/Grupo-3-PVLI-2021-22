@@ -20,15 +20,22 @@ export default class Calle extends EscenaJuego {
     this._wallpaper=[Data.wallpapers.calle][0];  
   }
 
-  preload(){
+   /**
+   * Crea los objetos que deben aparecer en la escena: items y NPCs.
+   */
+    preload(){
 
-    if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
-      this.AddObject(new Item( Data.items.flor, this));
-      this.AddCharacter(new NPCItem(Data.npc.mujerGato,this));
+      if (this.registry.get('scenesIni').indexOf(this.scene.key) !== -1){
+        let mujerGato = new NPCItem(Data.npc.mujerGato, this);
+        let flor = new Item(Data.items.flor, this);
+  
+        this.objects = [flor];
+        this.characters = [mujerGato];
+      }
+      
+      super.preload();
     }
-
-    super.preload();
-  }
+  
 
   create(){   
     

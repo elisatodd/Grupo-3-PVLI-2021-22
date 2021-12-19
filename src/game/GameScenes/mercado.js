@@ -21,18 +21,22 @@ export default class Mercado extends EscenaJuego {
     this.arrowsDirs = [false, 'calle', false, 'parque'];
     this._wallpaper=[Data.wallpapers.mercado][0];  
   }
- 
-  preload(){
+   /**
+   * Crea los objetos que deben aparecer en la escena: items y NPCs.
+   */
+    preload(){
 
-   
-    if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
-      this.AddCharacter(new NPC(Data.npc.carnicero, this));
-      this.AddObject(new Item(Data.items.pez, this)); 
+      if (this.registry.get('scenesIni').indexOf(this.scene.key) !== -1){
+        let carnicero = new NPC(Data.npc.carnicero, this);
+        let pez = new Item(Data.items.pez, this);
+  
+        this.objects = [pez];
+        this.characters = [carnicero];
+      }
+      
+      super.preload();
     }
-
-    super.preload();
-  }
-
+  
   create(){
     super.create();
     console.log("Escena Mercado");

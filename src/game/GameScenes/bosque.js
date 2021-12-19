@@ -22,16 +22,23 @@ export default class Bosque extends EscenaJuego {
     this._wallpaper=[Data.wallpapers.bosque][0];
   }
 
-  preload(){
-    
-    if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
-      this.AddCharacter(new NPCItem(Data.npc.policia, this));
-      this.AddCharacter(new NPCItem(Data.npc.campesino, this));
-      this.AddObject(new Item(Data.items.pajarita, this));
-    }
+    /**
+   * Crea los objetos que deben aparecer en la escena: items y NPCs.
+   */
+     preload(){
 
-    super.preload();
-  }
+      if (this.registry.get('scenesIni').indexOf(this.scene.key) !== -1){
+        let policia = new NPCItem(Data.npc.policia, this);
+        let campesino = new NPCItem(Data.npc.campesino, this);
+        let pajarita = new Item(Data.items.pajarita, this);
+  
+        this.objects = [policia, campesino];
+        this.characters = [pajarita];
+      }
+      
+      super.preload();
+    }
+  
 
   create(){
     console.log("Escena Bosque");

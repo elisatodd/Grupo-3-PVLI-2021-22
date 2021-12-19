@@ -19,14 +19,18 @@ export default class CasetaFeria extends EscenaJuego {
     this.arrowsDirs = ['feria', false, false, false];
     this._wallpaper=[Data.wallpapers.casetaFeria][0];  
   }
+  /**
+   * Crea los objetos que deben aparecer en la escena: items y NPCs.
+   */
+   preload(){
 
-  preload(){
-   
-    if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
-      this.AddCharacter(new NPCItem(Data.npc.ninio, this));
-      this.AddCharacter(new NPC(Data.npc.forzudo, this));
+    if (this.registry.get('scenesIni').indexOf(this.scene.key) !== -1){
+      let ninio = new NPCItem(Data.npc.ninio, this);
+      let forzudo = new NPC(Data.npc.forzudo, this);
+
+      this.characters = [ninio, forzudo];
     }
-      
+    
     super.preload();
   }
 

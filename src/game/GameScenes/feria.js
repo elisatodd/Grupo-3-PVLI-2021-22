@@ -21,12 +21,18 @@ export default class Feria extends EscenaJuego {
     this._wallpaper=[Data.wallpapers.feria][0];  
   }
 
-  preload(){
-    
-    if (-1 !== this.registry.get('scenesIni').indexOf(this.scene.key)){
-      this.AddCharacter(new NPC(Data.npc.cirquense, this));
-      this.AddCharacter(new NPC(Data.npc.cirquense2, this));
+  /**
+   * Crea los objetos que deben aparecer en la escena: items y NPCs.
+   */
+   preload(){
+
+    if (this.registry.get('scenesIni').indexOf(this.scene.key) !== -1){
+      let cirquense = new NPC(Data.npc.cirquense, this);
+      let cirquense2 = new NPC(Data.npc.cirquense2)
+
+      this.characters = [cirquense, cirquense2];
     }
+    
     super.preload();
   }
 
