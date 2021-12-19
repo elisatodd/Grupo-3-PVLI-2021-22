@@ -447,6 +447,109 @@ const Data = {
         }
     },
 
+    puzlesObjects:{
+    //     opACarniceria:{
+    //         name: 'zone1', 
+    //         route: './assets/images/puzzles/optionA.png', 
+    //         pos : {x:920, y:530}, 
+    //         scaleProportion: 10, 
+    //         image : '', 
+    //         functionality : 'Lose',
+    //     },
+    //     opBCarniceria:{
+    //         name: 'zone1', 
+    //         route: './assets/images/puzzles/optionB.png', 
+    //         pos : {x:1040, y:530}, 
+    //         scaleProportion: 10, 
+    //         image : '', 
+    //         functionality : 'Lose',
+    //     },
+    //     opCCarniceria:{
+    //         name: 'zone1', 
+    //         route: './assets/images/puzzles/optionC.png', 
+    //         pos : {x:1160, y:530}, 
+    //         scaleProportion: 10, 
+    //         image : '', 
+    //         functionality : 'Lose',
+    //     },
+    //     opDCarniceria:{
+    //         name: 'zone1', 
+    //         route: './assets/images/puzzles/optionD.png', 
+    //         pos : {x:1280, y:530}, 
+    //         scaleProportion: 10, 
+    //         image : '', 
+    //         functionality : 'Win',
+    //     },
+
+        textNinios:{
+            name: 'textoNinios', 
+            route: './assets/images/puzzles/puzleCarniceria.png', 
+            pos : {x:400, y:300}, 
+            scaleProportion: 0.7
+        },
+
+        imageNinios:{
+            name: 'ninios', 
+            route: './assets/images/puzzles/ninios.png', 
+            pos : {x:1100, y:300}, 
+            scaleProportion: 1
+        },
+
+        puzzleCandado:{
+            name: 'candadosimbolo', 
+            route: './assets/images/puzzles/candadosimbolos.png', 
+            pos:{x : 1000,y : 450}, 
+            image : '', 
+            scaleProportion : 2
+        },    
+        textAcertijo:{
+            name: 'textacertijo',
+            route: './assets/images/puzzles/textoLaser.PNG', 
+            pos : {x:300, y:100}, 
+            scaleProportion: 2,
+        },
+        acertijo:{
+            name: 'acertijo', 
+            route: './assets/images/puzzles/laberintoEspejos.png', 
+            pos : {x:700, y:450}, 
+            scaleProportion: 1.5
+        },
+        enigma:{
+            name: 'enigma', 
+            route: './assets/images/puzzles/cafeteriaPuzzle.png', 
+            pos : {x:500, y:300}, 
+            scaleProportion: 0.7
+        },
+        acertijoCafeteria:{
+            name: 'acertijoCaferia', 
+            route: './assets/images/puzzles/opcionesCafeteria.png', 
+            pos : {x:1200, y:450}, 
+            scaleProportion: 0.7
+        },
+        NumerosPuzle:{
+            name: 'rasgados', 
+            route: './assets/images/puzzles/telefono.jpg', 
+            pos:{x : 1000,y : 400}, 
+            image : '', 
+            scaleProportion : 0.7,
+        },
+        puzzleCI:{
+            name: 'nota', 
+            route: './assets/images/puzzles/palomitasIndiscreto.png', 
+            pos:{x : 1000,y : 500}, 
+            image : '', 
+            scaleProportion : 0.9
+        },
+        carta:{
+            name: 'cartaNovia', 
+            route: './assets/images/puzzles/LaCarta.jpg', 
+            pos:{x : 1000,y : 410}, 
+            image : '', 
+            scaleProportion : 2
+        },
+
+    },
+
     // elementos que se utilizan para las cinemáticas
     cinematics: {
         initialText: {

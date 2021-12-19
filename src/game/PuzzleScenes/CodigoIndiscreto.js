@@ -1,8 +1,9 @@
 import PuzzleInput from '../puzzleInput.js'
+import Data from '../../Data.js'
 
 export default class CodigoIndscreto extends PuzzleInput {
 
-  puzzle = {name: 'nota', route: './assets/images/puzzles/palomitasIndiscreto.png', pos:{x : 1000,y : 500}, image : '', scaleProportion : 0.9};
+  puzzle = Data.puzlesObjects.puzzleCI;
 
   constructor() {
 

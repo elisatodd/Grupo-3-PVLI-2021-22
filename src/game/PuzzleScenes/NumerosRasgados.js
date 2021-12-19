@@ -1,10 +1,10 @@
 
 import PuzzleInput from '../puzzleInput.js'
+import Data from '../../data.js'
 
 export default class NumerosRasgados extends PuzzleInput {
 
-    carta = {name: 'rasgados', route: './assets/images/puzzles/telefono.jpg', pos:{x : 1000,y : 400}, image : '', scaleProportion : 0.7
-};
+    carta = Data.puzlesObjects.NumerosPuzle;
 
   constructor() {
 

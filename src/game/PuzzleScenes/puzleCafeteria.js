@@ -1,4 +1,6 @@
 import PuzzleClick from '../puzzleClick.js';
+import Data from '../../data.js';
+
 
 export default class PuzzleCafeteria extends PuzzleClick {
 
@@ -7,8 +9,8 @@ export default class PuzzleCafeteria extends PuzzleClick {
   option2 = {name: 'zone2', route: './assets/images/puzzles/optionB.png', pos : {x:1200, y:575}, scaleProportion: 10, image : '', functionality : this.Lose};
   option3 = {name: 'zone3', route: './assets/images/puzzles/optionC.png', pos : {x:1400, y:575}, scaleProportion: 10, image : '', functionality : this.Lose};
   
-  enigma = {name: 'enigma', route: './assets/images/puzzles/cafeteriaPuzzle.png', pos : {x:500, y:300}, scaleProportion: 0.7};
-  acertijo = {name: 'acertijoCaferia', route: './assets/images/puzzles/opcionesCafeteria.png', pos : {x:1200, y:450}, scaleProportion: 0.7};
+  enigma = Data.puzlesObjects.enigma;
+  acertijo = Data.puzlesObjects.acertijoCafeteria;
 
   constructor() {
 

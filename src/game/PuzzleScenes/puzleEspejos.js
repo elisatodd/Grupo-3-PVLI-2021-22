@@ -1,4 +1,6 @@
 import PuzzleClick from '../puzzleClick.js';
+import Data from '../../data.js'
+
 
 export default class PuzzleEspejos extends PuzzleClick {
 
@@ -8,8 +10,8 @@ export default class PuzzleEspejos extends PuzzleClick {
   option3 = {name: 'zone3', route: './assets/images/puzzles/optionC.png', pos : {x:1080, y:450}, scaleProportion: 10, image : '', functionality : this.Lose};
   option4 = {name: 'zone4', route: './assets/images/puzzles/optionD.png', pos : {x:725, y:100}, scaleProportion: 10, image: '', functionality : this.Lose};
   
-  text = {name: 'textacertijo', route: './assets/images/puzzles/textoLaser.PNG', pos : {x:300, y:100}, scaleProportion: 2};
-  acertijo = {name: 'acertijo', route: './assets/images/puzzles/laberintoEspejos.png', pos : {x:700, y:450}, scaleProportion: 1.5};
+  text = Data.puzlesObjects.textAcertijo;
+  acertijo = Data.puzlesObjects.acertijo;
 
   constructor() {
 

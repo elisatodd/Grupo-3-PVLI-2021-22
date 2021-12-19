@@ -1,8 +1,9 @@
 import PuzzleInput from '../puzzleInput.js'
+import Data from '../../data.js'
 
 export default class CartaPuzle extends PuzzleInput {
 
-    carta = {name: 'cartaNovia', route: './assets/images/puzzles/LaCarta.jpg', pos:{x : 1000,y : 410}, image : '', scaleProportion : 2};
+    carta = Data.puzlesObjects.carta;
 
   constructor() {
 
