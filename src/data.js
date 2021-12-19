@@ -448,39 +448,6 @@ const Data = {
     },
 
     puzlesObjects:{
-    //     opACarniceria:{
-    //         name: 'zone1', 
-    //         route: './assets/images/puzzles/optionA.png', 
-    //         pos : {x:920, y:530}, 
-    //         scaleProportion: 10, 
-    //         image : '', 
-    //         functionality : 'Lose',
-    //     },
-    //     opBCarniceria:{
-    //         name: 'zone1', 
-    //         route: './assets/images/puzzles/optionB.png', 
-    //         pos : {x:1040, y:530}, 
-    //         scaleProportion: 10, 
-    //         image : '', 
-    //         functionality : 'Lose',
-    //     },
-    //     opCCarniceria:{
-    //         name: 'zone1', 
-    //         route: './assets/images/puzzles/optionC.png', 
-    //         pos : {x:1160, y:530}, 
-    //         scaleProportion: 10, 
-    //         image : '', 
-    //         functionality : 'Lose',
-    //     },
-    //     opDCarniceria:{
-    //         name: 'zone1', 
-    //         route: './assets/images/puzzles/optionD.png', 
-    //         pos : {x:1280, y:530}, 
-    //         scaleProportion: 10, 
-    //         image : '', 
-    //         functionality : 'Win',
-    //     },
-
         textNinios:{
             name: 'textoNinios', 
             route: './assets/images/puzzles/puzleCarniceria.png', 
