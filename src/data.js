@@ -554,7 +554,36 @@ const Data = {
         lossImage:{
             name: 'lossImage',
             sprite: './assets/images/puzzles/lose.png',
+        },
+        band1:{
+            name: 'band1',
+            sprite: './assets/images/puzzles/b4.png'
+        },
+        band2:{
+            name: 'band2',
+            sprite: './assets/images/puzzles/bx.png'
+        },
+        band3:{
+            name: 'band3',
+            sprite: './assets/images/puzzles/b3.png'
+        },
+        band4:{
+            name: 'band4',
+            sprite: './assets/images/puzzles/b=.png'
+        },
+        band5:{
+            name: 'band5',
+            sprite: './assets/images/puzzles/b1.png'
+        },
+        band6:{
+            name: 'band6',
+            sprite: './assets/images/puzzles/b2.png'
+        },
+        button:{
+            name: 'button',
+            sprite: './assets/images/puzzles/blueButton.png'
         }
+
 
     },
 
