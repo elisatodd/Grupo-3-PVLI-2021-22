@@ -43,9 +43,6 @@ export default class PuzzleTopoz extends EscenaPuzzle {
 
     }
 
-
-
-
     //a la hora de hacer el create en las escenas heredadas añadir un super para que se cargen ambos recursos
     preload() {
         this._wallpaper = Data.wallpapers.blueWallpaper;
