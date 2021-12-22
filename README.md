@@ -2,10 +2,17 @@
 **PVLI 2021-2022**
 
 **Grupo 3:**
+KIWI GAMES
 Elisa Todd Rodríguez,
 Laura Gómez Bodego,
 Antonio Povedano Ortiz,
 Raúl Saavedra de la Riera.
+
+**Página web del juego:**
+<https://elisatodd.github.io/Grupo-3-PVLI-2021-22/>
+
+**Página con la gestión del proyecto (GitHub):**
+<https://github.com/elisatodd/Grupo-3-PVLI-2021-22>
 
 <h3>Capturas de pantalla del juego</h3>
  <img src="assets/arte/Captura1.png" width="600">
@@ -13,13 +20,22 @@ Raúl Saavedra de la Riera.
    <img src="assets/arte/CAP3.jpeg" width="600">
     <img src="assets/arte/CAP4.jpeg" width="600">
      <img src="assets/arte/CAP5.jpeg" width="600">
+     
+<h3>Arquitectura software</h3>
+ <p>El juego se creará siguiendo la siguiente estructura UML:</p>
+ <img src="DiagramaUML.png" width="600">
+ 
+ <h3>Sistemas y plataformas usadas para el desarrollo del proyecto</h3>
+<p>Para la realización de The Right Man, los integrantes del equipo utiliza GitHub, junto con sus aplicaciones de escritorio GitHub Desktop y GitKraken.
+De este modo trabajamos en paralelo constantemente. No es necesario crear nuevas grandes ramas al estar el contenido separado en diferentes clases y archivos. Sí que se ha utilizado una rama gh-pages para subir los cambios deseados a la página web cuando hubiese un determinado avance, y no cada pequeña contribución.</p>
+<p>En cuanto a la organización, utilizamos Pivotal Tracker (<https://www.pivotaltracker.com/n/projects/2533670>) y una pizarra física, en la que anotamos las tareas pendientes más relevantes en orden de importancia. Para la comunicación, lo más importante son reuniones presenciales, y la comunicación cara a cara entre los miembros del grupo, con daily sprints sobre el avance conseguido por cada miembro en ese punto del proyecto. Y como soporte virtual, Discord y WhatsApp, aunque con mucha menos frecuencia. </p>
 
 **Género:** Puzles, aventura gráfica, misterio.
 
 **Modos:** Historia, singlepayer.
 
 **Público objetivo:**
-    Edad: A partir de 15 años.
+    Edad: A partir de 12 años.
     Sexo: Cualquiera.
     Idioma: Español.
     
@@ -29,10 +45,6 @@ Conexión a internet necesaria.
 
 <h2>Descripción</h2>
 <p>En <em>The Right Man</em> tomaremos el papel de Donald Calthrop , un joven acusado a muerte por el crimen de su amada, que solo tú sabes que no has cometido. Para demostrar tu inocencia, tendrás que convencer al jurado, recogiendo pruebas e investigando lo que realmente ocurrió, antes de que se celebre el juicio. Mientras tanto intentarás limpiar tu nombre, ayudando a los habitantes del pueblo en sus tareas.</p>
-
-
-<h2>Logotipo y portada de juego</h2>
-
 
 <h2>Aspectos generales</h2>
 
@@ -85,7 +97,6 @@ La otra pieza clave de la jugabilidad son los puzzles, que se encontrarán distr
 <h4>Cámara</h4>
 <p>El jugador tendrá una vista en 2D de la habitación en la que se encuentre. Se mostrarán todos los objetos y detalles de la habitación que sean necesarios para el trascurso de la partida. Es un juego en primera persona, y el propio jugador no podrá verse a sí mismo.</p>
 <p>En el lateral derecho, separado del escenario, habrá una vista del inventario del jugador.</p>
-
 
 <h3>Dinámica</h3>
 <p>Hay un sistema de puntuación interno: la reputación. Se mide en números enteros y comenzará a 0. Cada vez que el jugador resuelva un problema en el pueblo, su reputación aumentará en un punto, hasta un máximo de 15. El objetivo del juego es ser declarado inocente, por lo que el jugador debe intentar obtener la mayor cantidad de puntos posible para tener una buena reputación.
