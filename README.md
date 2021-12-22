@@ -7,6 +7,13 @@ Laura Gómez Bodego,
 Antonio Povedano Ortiz,
 Raúl Saavedra de la Riera.
 
+<h3>Capturas de pantalla del juego</h3>
+ <img src="assets/arte/Captura1.png" width="600">
+  <img src="assets/arte/CAP2.jpeg" width="600">
+   <img src="assets/arte/CAP3.jpeg" width="600">
+    <img src="assets/arte/CAP4.jpeg" width="600">
+     <img src="assets/arte/CAP5.jpeg" width="600">
+
 **Género:** Puzles, aventura gráfica, misterio.
 
 **Modos:** Historia, singlepayer.
