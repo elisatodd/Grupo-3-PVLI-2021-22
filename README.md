@@ -26,9 +26,9 @@ Raúl Saavedra de la Riera.
  <img src="DiagramaUML.png" width="600">
  
  <h3>Sistemas y plataformas usadas para el desarrollo del proyecto</h3>
-<p>Para la realización de The Right Man, los integrantes del equipo utiliza GitHub, junto con sus aplicaciones de escritorio GitHub Desktop y GitKraken.
-De este modo trabajamos en paralelo constantemente. No es necesario crear nuevas grandes ramas al estar el contenido separado en diferentes clases y archivos. Sí que se ha utilizado una rama gh-pages para subir los cambios deseados a la página web cuando hubiese un determinado avance, y no cada pequeña contribución.</p>
-<p>En cuanto a la organización, utilizamos Pivotal Tracker (<https://www.pivotaltracker.com/n/projects/2533670>) y una pizarra física, en la que anotamos las tareas pendientes más relevantes en orden de importancia. Para la comunicación, lo más importante son reuniones presenciales, y la comunicación cara a cara entre los miembros del grupo, con daily sprints sobre el avance conseguido por cada miembro en ese punto del proyecto. Y como soporte virtual, Discord y WhatsApp, aunque con mucha menos frecuencia. </p>
+<p>Para la realización de The Right Man, los integrantes del equipo utilizan GitHub, junto con sus aplicaciones de escritorio GitHub Desktop y GitKraken.
+De este modo trabajamos en paralelo constantemente. No es necesario crear nuevas ramas al estar el contenido separado en diferentes clases y archivos. Sí que se ha utilizado una rama gh-pages, para subir los cambios deseados a la página web cuando hubiese un determinado avance, y no con cada pequeña contribución.</p>
+<p>En cuanto a la organización, utilizamos Pivotal Tracker (<https://www.pivotaltracker.com/n/projects/2533670>) y una pizarra física, en la que anotamos las tareas pendientes más relevantes, en orden de importancia. Para la comunicación, la base fueron reuniones presenciales, y la comunicación cara a cara entre los miembros del grupo, con daily sprints hablando sobre el avance conseguido por cada miembro en ese punto del proyecto. Como soporte virtual, Discord y WhatsApp, aunque con mucha menos frecuencia. </p>
 
 **Género:** Puzles, aventura gráfica, misterio.
 
