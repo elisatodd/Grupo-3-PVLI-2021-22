@@ -1,4 +1,8 @@
+/**
+ * Este archivo contiene todos los assets del juego, con sus posiciones y características individuales.
+ */
 const Data = {
+    // Las flechas en sí, comunes a todas las habitaciones.
     arrows: {
         left: {
             sprite: './assets/images/flechaIzq.png',
@@ -30,6 +34,7 @@ const Data = {
         }
     },
 
+    // Lugar al cual apunta cada flecha de cada habitación, es decir, a qué otra habitación nos lleva.
     scenesArrows:{
         plaza:{
             arrows:{
@@ -368,6 +373,7 @@ const Data = {
 
     },
 
+    // fondos para las diferentes escenas
     wallpapers:{
         bosque: {
             name: 'bosque ', 
@@ -464,6 +470,7 @@ const Data = {
         }
     },
 
+    // Objetos que aparecen en las escenas de puzzles: opciones, imágenes, textos, cartas...
     puzlesObjects:{
         textNinios:{
             name: 'textoNinios', 

@@ -258,9 +258,11 @@ export default class GAMEMANAGER extends Phaser.Scene {
      * @returns devuelve la posicion que le corresponde en la pantalla según su posición en el inventario
      */
     getInventoryPosition() {
-        // El primer dígito es para el tamaño del objeto y el segundo para la separación entre objetos
+        // El primer dígito es para el tamaño del objeto y el segundo para la separación entre objetos.
+        // No dependen de la pantalla, son los tamaños con los que quedan visualmente bien posicionados.
         return ((this.itemsInInventory - 1) * 98 + 180);
     }
+
     /**
      * Muestra el texto que tiene asociado un NPC
      * @param {NPC} npc personaje clicado 
@@ -378,10 +380,6 @@ export default class GAMEMANAGER extends Phaser.Scene {
     addPoints() {
         this.points++;
         console.log("Puntos: " + this.points);
-        // if (this.points >= this.MAX_POINTS){
-        //     this.endGame();
-        // }
-
     }
 
 
