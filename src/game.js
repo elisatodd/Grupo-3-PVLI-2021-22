@@ -28,6 +28,8 @@ import PuzzleEspejos from './game/PuzzleScenes/puzleEspejos.js'
 import PuzzleCandado from './game/PuzzleScenes/puzzleCandado.js'
 import PuzzleCafeteria from './game/PuzzleScenes/puzleCafeteria.js'
 
+import Boot from './boot.js';
+
 let config = {
   type: Phaser.AUTO,
   // Configuracion del cuadro de juego

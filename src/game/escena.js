@@ -3,7 +3,7 @@
  * @extends Phaser.Scene
  */
  
- import GAMEMANAGER from '../ArchivosIniciales/gameManager.js';
+ import GAMEMANAGER from '../gameManager.js';
  export default class Escena extends Phaser.Scene {
 
     _wallpaper;

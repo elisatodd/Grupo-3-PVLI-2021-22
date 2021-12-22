@@ -5,6 +5,7 @@
 
 export default class GAMEMANAGER extends Phaser.Scene {
 
+    game;
     // Array que guarda los objetos que se han recolectado
     inventario = [];
     scene = '';
@@ -30,11 +31,12 @@ export default class GAMEMANAGER extends Phaser.Scene {
         'mercado', 'calle', 'plaza', 'casa'
     ];
 
-    constructor(scene, points, unlocked) {
+    constructor(game, scene, points, unlocked) {
 
         super({ key: 'GameManager' });
         {
         };
+        this.game = game;
         this.scene = scene;
         this.points = points;
         this.zoneUnlocked = unlocked;
